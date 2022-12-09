@@ -10,6 +10,13 @@ export namespace Components {
         "size": string;
         "variant": string;
     }
+    interface SrFlex {
+        "direction": 'horizontal' | 'vertical' | 'horizontal-reverse' | 'vertical-reverse';
+        "gap": number;
+        "hAlign": 'left' | 'center' | 'right' | 'around' | 'between';
+        "vAlign": 'top' | 'center' | 'bottom' | 'stretch';
+        "wrap": boolean;
+    }
     interface SrHeader {
         /**
           * The `level` property allows users to indicate what header hierarchy this element is. It mus take a number from `1` to `6`.
@@ -34,6 +41,12 @@ declare global {
         prototype: HTMLSrButtonElement;
         new (): HTMLSrButtonElement;
     };
+    interface HTMLSrFlexElement extends Components.SrFlex, HTMLStencilElement {
+    }
+    var HTMLSrFlexElement: {
+        prototype: HTMLSrFlexElement;
+        new (): HTMLSrFlexElement;
+    };
     interface HTMLSrHeaderElement extends Components.SrHeader, HTMLStencilElement {
     }
     var HTMLSrHeaderElement: {
@@ -48,6 +61,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "sr-button": HTMLSrButtonElement;
+        "sr-flex": HTMLSrFlexElement;
         "sr-header": HTMLSrHeaderElement;
         "sr-paragraph": HTMLSrParagraphElement;
     }
@@ -57,6 +71,13 @@ declare namespace LocalJSX {
         "onClicked"?: (event: SrButtonCustomEvent<any>) => void;
         "size"?: string;
         "variant"?: string;
+    }
+    interface SrFlex {
+        "direction"?: 'horizontal' | 'vertical' | 'horizontal-reverse' | 'vertical-reverse';
+        "gap"?: number;
+        "hAlign"?: 'left' | 'center' | 'right' | 'around' | 'between';
+        "vAlign"?: 'top' | 'center' | 'bottom' | 'stretch';
+        "wrap"?: boolean;
     }
     interface SrHeader {
         /**
@@ -72,6 +93,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "sr-button": SrButton;
+        "sr-flex": SrFlex;
         "sr-header": SrHeader;
         "sr-paragraph": SrParagraph;
     }
@@ -81,6 +103,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "sr-button": LocalJSX.SrButton & JSXBase.HTMLAttributes<HTMLSrButtonElement>;
+            "sr-flex": LocalJSX.SrFlex & JSXBase.HTMLAttributes<HTMLSrFlexElement>;
             "sr-header": LocalJSX.SrHeader & JSXBase.HTMLAttributes<HTMLSrHeaderElement>;
             "sr-paragraph": LocalJSX.SrParagraph & JSXBase.HTMLAttributes<HTMLSrParagraphElement>;
         }
