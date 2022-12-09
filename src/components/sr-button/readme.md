@@ -9,8 +9,8 @@
 
 | Property  | Attribute | Description | Type     | Default     |
 | --------- | --------- | ----------- | -------- | ----------- |
-| `size`    | `size`    |             | `string` | `"medium"`  |
-| `variant` | `variant` |             | `string` | `"neutral"` |
+| `size`    | `size`    |             | `string` | `'medium'`  |
+| `variant` | `variant` |             | `string` | `'neutral'` |
 
 
 ## Events

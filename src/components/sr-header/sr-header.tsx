@@ -6,20 +6,18 @@ import { ColorPrimary, ColorBody, FontHeading1 } from '../../design-tokens/js/va
  * Use this array as a pivotal collection of Host attributes to remove.
  * Check its use in the componentWillLoad() lifecycle handler below.
  */
-const ariaAttributes = [
-  'aria-role'
-];
+const ariaAttributes = ['aria-role'];
 
 /**
  * The component starts with the @Component decorator, part of the TypeScript built-in capabilities
  * and currently an stage 3 proposal in the TC39 committee. More info:
  * https://github.com/tc39/proposal-decorators.
- * 
+ *
  * Please check out the comment blocks on top the component and its props. Whatever content we place
  * right above the @Component decorator will become the actual description of teh component in
  * the generated documentation. Such blocks do support markdown syntax, so you can provide rich descriptions
- * right on the code. 
- * 
+ * right on the code.
+ *
  * Same applies to @Prop decorators: Whatever text we place right on top of each Prop will eventually be included
  * in the properties output table displayed in the README docs generated upon building the project.
  */
@@ -35,12 +33,12 @@ const ariaAttributes = [
  */
 @Component({
   // The component decorator object payload is documented at https://stenciljs.com/docs/component
-  tag: 'hs-header',
-  styleUrl: 'hs-header.css',
+  tag: 'sr-header',
+  styleUrl: 'sr-header.css',
   shadow: false,
   scoped: true,
 })
-export class HsHeader {
+export class SRHeader {
   /**
    * A reference to the host element. This is, the actual <hs-header /> tag
    * that wraps the HTML output of this component.
@@ -53,7 +51,7 @@ export class HsHeader {
    * These can be recognized by the @Prop decorator. The truthy 'reflect'
    * property of the decorator object payload ensures that such property
    * will be also available in HTML, and not just when consuming Stencil
-   * components from other components. 
+   * components from other components.
    */
 
   /**
@@ -62,12 +60,12 @@ export class HsHeader {
    */
   @Prop({ reflect: true })
   level: number = 1; // This annotation is a TypeScript union type, defaulting to 1
-  
+
   /**
    * Provides support for implementing horizontal alignment to the text contained in the header.
    */
   @Prop({ reflect: true })
-  textAlign: 'left' | 'right' | 'center' = 'left'; // This annotation is a TypeScript union type with a default value set to 'left'
+  textAlign: 'left' | 'right' | 'center' | 'justify' = 'left'; // This annotation is a TypeScript union type with a default value set to 'left'
 
   /**
    * This is a class field. It is not visible as a property since it lacks
@@ -81,14 +79,14 @@ export class HsHeader {
    */
   componentWillLoad() {
     /**
-     * We validate here that the 'level' property, which will be used later to compose a 
+     * We validate here that the 'level' property, which will be used later to compose a
      * HTML tag 'on the fly', will only take values from 1 to 6. TypeScript gives us
      * statical type checking on dev time but TypeScript annotations are wiped once the component
      * is traspiled. This conditional check ensures that the component is properly used
      * later on "in the wild".
      */
     if (this.level < 1 || this.level > 6) {
-      throw new Error("HsHeader: the level property must be between 1 and 6");
+      throw new Error('SRHeader: the level property must be between 1 and 6');
     }
 
     /**
@@ -123,7 +121,7 @@ export class HsHeader {
       font-size: ${this.level === 1 ? `${FontHeading1.fontSize}px` : undefined};
       text-align: ${this.textAlign};
     `;
- 
+
     return (
       <Tag className={tagStyles} role="heading">
         <slot></slot>

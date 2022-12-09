@@ -6,11 +6,11 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface HsButton {
+    interface SrButton {
         "size": string;
         "variant": string;
     }
-    interface HsHeader {
+    interface SrHeader {
         /**
           * The `level` property allows users to indicate what header hierarchy this element is. It mus take a number from `1` to `6`.
          */
@@ -18,38 +18,47 @@ export namespace Components {
         /**
           * Provides support for implementing horizontal alignment to the text contained in the header.
          */
-        "textAlign": 'left' | 'right' | 'center';
+        "textAlign": 'left' | 'right' | 'center' | 'justify';
+    }
+    interface SrParagraph {
     }
 }
-export interface HsButtonCustomEvent<T> extends CustomEvent<T> {
+export interface SrButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLHsButtonElement;
+    target: HTMLSrButtonElement;
 }
 declare global {
-    interface HTMLHsButtonElement extends Components.HsButton, HTMLStencilElement {
+    interface HTMLSrButtonElement extends Components.SrButton, HTMLStencilElement {
     }
-    var HTMLHsButtonElement: {
-        prototype: HTMLHsButtonElement;
-        new (): HTMLHsButtonElement;
+    var HTMLSrButtonElement: {
+        prototype: HTMLSrButtonElement;
+        new (): HTMLSrButtonElement;
     };
-    interface HTMLHsHeaderElement extends Components.HsHeader, HTMLStencilElement {
+    interface HTMLSrHeaderElement extends Components.SrHeader, HTMLStencilElement {
     }
-    var HTMLHsHeaderElement: {
-        prototype: HTMLHsHeaderElement;
-        new (): HTMLHsHeaderElement;
+    var HTMLSrHeaderElement: {
+        prototype: HTMLSrHeaderElement;
+        new (): HTMLSrHeaderElement;
+    };
+    interface HTMLSrParagraphElement extends Components.SrParagraph, HTMLStencilElement {
+    }
+    var HTMLSrParagraphElement: {
+        prototype: HTMLSrParagraphElement;
+        new (): HTMLSrParagraphElement;
     };
     interface HTMLElementTagNameMap {
-        "hs-button": HTMLHsButtonElement;
-        "hs-header": HTMLHsHeaderElement;
+        "sr-button": HTMLSrButtonElement;
+        "sr-header": HTMLSrHeaderElement;
+        "sr-paragraph": HTMLSrParagraphElement;
     }
 }
 declare namespace LocalJSX {
-    interface HsButton {
-        "onClicked"?: (event: HsButtonCustomEvent<any>) => void;
+    interface SrButton {
+        "onClicked"?: (event: SrButtonCustomEvent<any>) => void;
         "size"?: string;
         "variant"?: string;
     }
-    interface HsHeader {
+    interface SrHeader {
         /**
           * The `level` property allows users to indicate what header hierarchy this element is. It mus take a number from `1` to `6`.
          */
@@ -57,19 +66,23 @@ declare namespace LocalJSX {
         /**
           * Provides support for implementing horizontal alignment to the text contained in the header.
          */
-        "textAlign"?: 'left' | 'right' | 'center';
+        "textAlign"?: 'left' | 'right' | 'center' | 'justify';
+    }
+    interface SrParagraph {
     }
     interface IntrinsicElements {
-        "hs-button": HsButton;
-        "hs-header": HsHeader;
+        "sr-button": SrButton;
+        "sr-header": SrHeader;
+        "sr-paragraph": SrParagraph;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "hs-button": LocalJSX.HsButton & JSXBase.HTMLAttributes<HTMLHsButtonElement>;
-            "hs-header": LocalJSX.HsHeader & JSXBase.HTMLAttributes<HTMLHsHeaderElement>;
+            "sr-button": LocalJSX.SrButton & JSXBase.HTMLAttributes<HTMLSrButtonElement>;
+            "sr-header": LocalJSX.SrHeader & JSXBase.HTMLAttributes<HTMLSrHeaderElement>;
+            "sr-paragraph": LocalJSX.SrParagraph & JSXBase.HTMLAttributes<HTMLSrParagraphElement>;
         }
     }
 }

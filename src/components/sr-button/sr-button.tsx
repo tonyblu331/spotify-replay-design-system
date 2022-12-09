@@ -1,17 +1,16 @@
 import { Component, h, Prop, Event } from '@stencil/core';
 
 @Component({
-  tag: 'hs-button',
-  styleUrl: 'hs-button.css',
+  tag: 'sr-button',
+  styleUrl: 'sr-button.css',
   shadow: false, // Disable Shadow DOM to benefit from global styles defined in Design Tokens
 })
-export class HsButton {
+export class SRButton {
+  @Prop()
+  variant = 'neutral';
 
   @Prop()
-  variant = "neutral";
-
-  @Prop()
-  size = "medium";
+  size = 'medium';
 
   @Event({})
   clicked;
@@ -22,10 +21,9 @@ export class HsButton {
 
   render() {
     return (
-      <button class={`${this.variant} ${this.size}`} onClick={(e) => this.clickHandler(e)}>
+      <button class={`${this.variant} ${this.size}`} onClick={e => this.clickHandler(e)}>
         <slot></slot>
       </button>
     );
   }
-
 }
