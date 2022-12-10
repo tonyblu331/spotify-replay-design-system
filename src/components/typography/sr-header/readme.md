@@ -7,12 +7,10 @@
 
 ## Overview
 
-Heading component, with support for header elements spanning from `h1` to `h6`, and custom alignment.
-Its convenience for pointing out document sections makes it one of the most consumed components in our Design System.
-### Example:
-```html
-<hs-heading level="1" text-align="center">Section name</hs-heading>
-```
+TODOJCS wtf to call this, header or heading ASK TONY
+TODOJCS MAKE ALL COMMENTS LIKE THIS ONE (AT LEAST ADD EXAMPLE OF USAGE ?)
+ Heading component, with support for header elements spanning from `h1` to `h6`, and custom alignment.
+ Its convenience for pointing out document sections makes it one of the most consumed components in our Design System.
 
 ## Properties
 

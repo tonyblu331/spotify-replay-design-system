@@ -7,8 +7,13 @@ import {
 } from '../../../design-tokens/js/variables.js';
 
 /**
+ TODOJCS wtf to call this, header or heading ASK TONY
+ TODOJCS MAKE ALL COMMENTS LIKE THIS ONE (AT LEAST ADD EXAMPLE OF USAGE ?)
  * Heading component, with support for header elements spanning from `h1` to `h6`, and custom alignment.
  * Its convenience for pointing out document sections makes it one of the most consumed components in our Design System.
+ @property `level`
+ @property `align`
+
  * ### Example:
  * ```html
  * <hs-heading level="1" text-align="center">Section name</hs-heading>

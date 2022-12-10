@@ -7,17 +7,38 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface SrButton {
+        /**
+          * Button size. TODOJCS add available variants as | expr
+         */
         "size": string;
+        /**
+          * Type of button. TODOJCS add available variants as | expression
+         */
         "variant": string;
     }
     interface SrFlex {
+        /**
+          * TODOROSE DOCUMENT
+         */
         "direction": | 'horizontal'
     | 'vertical'
     | 'horizontal-reverse'
     | 'vertical-reverse';
+        /**
+          * TODOROSE DOCUMENT
+         */
         "gap": number;
+        /**
+          * TODOROSE DOCUMENT
+         */
         "hAlignment": 'left' | 'center' | 'right' | 'around' | 'between';
+        /**
+          * TODOROSE DOCUMENT
+         */
         "vAlignment": 'top' | 'center' | 'bottom' | 'stretch';
+        /**
+          * TODOROSE DOCUMENT
+         */
         "wrap": boolean;
     }
     interface SrHeader {
@@ -31,6 +52,9 @@ export namespace Components {
         "textAlign": 'left' | 'right' | 'center' | 'justify';
     }
     interface SrList {
+        /**
+          * Opt for an ordered list `<ol>` or `<ul>` if false. False by default
+         */
         "ordered": boolean;
     }
     interface SrListItem {
@@ -90,18 +114,42 @@ declare global {
 }
 declare namespace LocalJSX {
     interface SrButton {
+        /**
+          * Emitted when button is clicked
+         */
         "onClicked"?: (event: SrButtonCustomEvent<any>) => void;
+        /**
+          * Button size. TODOJCS add available variants as | expr
+         */
         "size"?: string;
+        /**
+          * Type of button. TODOJCS add available variants as | expression
+         */
         "variant"?: string;
     }
     interface SrFlex {
+        /**
+          * TODOROSE DOCUMENT
+         */
         "direction"?: | 'horizontal'
     | 'vertical'
     | 'horizontal-reverse'
     | 'vertical-reverse';
+        /**
+          * TODOROSE DOCUMENT
+         */
         "gap"?: number;
+        /**
+          * TODOROSE DOCUMENT
+         */
         "hAlignment"?: 'left' | 'center' | 'right' | 'around' | 'between';
+        /**
+          * TODOROSE DOCUMENT
+         */
         "vAlignment"?: 'top' | 'center' | 'bottom' | 'stretch';
+        /**
+          * TODOROSE DOCUMENT
+         */
         "wrap"?: boolean;
     }
     interface SrHeader {
@@ -115,6 +163,9 @@ declare namespace LocalJSX {
         "textAlign"?: 'left' | 'right' | 'center' | 'justify';
     }
     interface SrList {
+        /**
+          * Opt for an ordered list `<ol>` or `<ul>` if false. False by default
+         */
         "ordered"?: boolean;
     }
     interface SrListItem {

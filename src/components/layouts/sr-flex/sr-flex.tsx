@@ -1,13 +1,22 @@
 import { Component, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
 
+/**
+ * Flex container
+ * @property `vAlignment` TODOROSE
+ document when you have some spare time :DD:D
+ plz and thank u
+ */
 @Component({
   tag: 'sr-flex',
   styleUrl: 'sr-flex.css',
   shadow: false,
   scoped: true,
 })
-export class SrFlex {
+export class SRFlex {
+  /**
+   * TODOROSE DOCUMENT
+   */
   @Prop({ reflect: true })
   direction:
     | 'horizontal'
@@ -15,15 +24,27 @@ export class SrFlex {
     | 'horizontal-reverse'
     | 'vertical-reverse' = 'horizontal';
 
+  /**
+   * TODOROSE DOCUMENT
+   */
   @Prop({ reflect: true, attribute: 'vAlignment' })
   vAlignment: 'top' | 'center' | 'bottom' | 'stretch' = 'top';
 
+  /**
+   * TODOROSE DOCUMENT
+   */
   @Prop({ reflect: true, attribute: 'hAlignment' })
   hAlignment: 'left' | 'center' | 'right' | 'around' | 'between' = 'left';
 
+  /**
+   * TODOROSE DOCUMENT
+   */
   @Prop({ reflect: true })
   gap: number = 0;
 
+  /**
+   * TODOROSE DOCUMENT
+   */
   @Prop({ reflect: true })
   wrap: boolean = false;
 
