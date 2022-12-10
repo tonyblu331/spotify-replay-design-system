@@ -19,9 +19,9 @@ export namespace Components {
     }
     interface SrHeader {
         /**
-          * The `level` property allows users to indicate what header hierarchy this element is. It must take a number from `1` to `6`.
+          * The `level` property allows users to indicate what header hierarchy this element is. It must take a number from `1` to `2`.
          */
-        "level": number;
+        "level": 1 | 2;
         /**
           * Provides support for implementing horizontal alignment to the text contained in the header.
          */
@@ -100,9 +100,9 @@ declare namespace LocalJSX {
     }
     interface SrHeader {
         /**
-          * The `level` property allows users to indicate what header hierarchy this element is. It must take a number from `1` to `6`.
+          * The `level` property allows users to indicate what header hierarchy this element is. It must take a number from `1` to `2`.
          */
-        "level"?: number;
+        "level"?: 1 | 2;
         /**
           * Provides support for implementing horizontal alignment to the text contained in the header.
          */
