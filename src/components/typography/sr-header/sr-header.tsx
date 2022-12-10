@@ -14,7 +14,7 @@ import { FontHeading1, FontHeading2, ColorBody } from '../../../design-tokens/js
   tag: 'sr-header',
   styleUrl: 'sr-header.css',
   shadow: false,
-  scoped: true
+  scoped: true,
 })
 export class SRHeader {
   /**
@@ -54,11 +54,8 @@ export class SRHeader {
   }
 
   render() {
-    console.debug('rendering sr-header with level=', this.level);
     // We create a JSX tag on the fly
     const Tag = `h${this.level}`;
-    console.log(this.textAlign);
-    
 
     // TODOJCS fontHeading design tokens have good values? Font family is off
     // TODOJCS ASK Tony:
