@@ -1,5 +1,5 @@
 export default {
-  title: 'Components/List',
+  title: 'Components/Text Content/List',
   argTypes: {
     items: {
       description: 'Items to be injected in the component slot',
