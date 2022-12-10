@@ -15,9 +15,10 @@ export default {
       control: {
         type: 'number',
         min: 1,
-        max: 6,
+        max: 2,
       },
-      description: 'The header level (h1-h6)',
+      description: 'The header level (h1-h2)',
+      defaultValue: 1,
     },
   },
 };

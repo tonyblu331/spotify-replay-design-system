@@ -19,7 +19,7 @@ export class SRList {
   // TODOJCS ASK PABLO why ordered toggle doesnt work (always false)
 
   render() {
-    console.log('instantiation with ordered=', this.ordered);
+    console.debug('rendering sr-list with ordered=', this.ordered);
     const Tag = `${this.ordered ? 'o' : 'u'}l`;
 
     const tagStyles = css``;

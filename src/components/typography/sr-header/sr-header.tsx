@@ -1,6 +1,6 @@
 import { Component, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
-import { FontHeading1, ColorBody } from '../../../design-tokens/js/variables.js';
+import { FontHeading1, FontHeading2, ColorBody } from '../../../design-tokens/js/variables.js';
 
 /**
  * Heading component, with support for header elements spanning from `h1` to `h6`, and custom alignment.
@@ -18,10 +18,11 @@ import { FontHeading1, ColorBody } from '../../../design-tokens/js/variables.js'
 export class SRHeader {
   /**
    * The `level` property allows users to indicate what header hierarchy this element is.
-   * It must take a number from `1` to `6`.
+   * It must take a number from `1` to `2`.
    */
   @Prop({ reflect: true })
-  level: number = 1;
+  level: 1 | 2 /*| 3| 4 | 5 | 6 */ = 1;
+  // TODOJCS Add more headings or keep 2 lvls and subheading?
 
   /**
    * Provides support for implementing horizontal alignment to the text contained in the header.
@@ -42,7 +43,17 @@ export class SRHeader {
     }
   }
 
+  getFontHeadingToken() {
+    switch (this.level) {
+      case 1:
+        return FontHeading1;
+      case 2:
+        return FontHeading2;
+    }
+  }
+
   render() {
+    console.debug('rendering sr-header with level=', this.level);
     // We create a JSX tag on the fly
     const Tag = `h${this.level}`;
 
@@ -51,7 +62,7 @@ export class SRHeader {
     // - what color for heading? pureblack? colorbody?
     const tagStyles = css`
       color: ${ColorBody}
-      font-size: ${this.level === 1 ? `${FontHeading1.fontSize}px` : undefined};
+      font-size: ${FontHeading1.fontSize}px;
       text-align: ${this.textAlign};
     `;
 
