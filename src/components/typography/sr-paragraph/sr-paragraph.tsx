@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'sr-paragraph',
@@ -6,11 +6,15 @@ import { Component, Host, h } from '@stencil/core';
   shadow: true,
 })
 export class SRParagraph {
+  // TODOJCS
+  // Prop for alignment/justification?
+  // Prop for font weight? color?
+
   render() {
     return (
-      <Host>
+      <p>
         <slot></slot>
-      </Host>
+      </p>
     );
   }
 }

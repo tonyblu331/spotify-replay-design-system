@@ -2,7 +2,7 @@ export default {
   title: 'Components/Paragraph',
   argTypes: {
     text: {
-      description: 'Transcluded text to be injected in the component slot',
+      description: 'Text to be injected in the component slot',
       defaultValue: 'Lorem ipsum dolor sit amet',
       control: { type: 'text' },
     },
