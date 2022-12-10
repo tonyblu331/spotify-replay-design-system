@@ -1,5 +1,5 @@
 export default {
-  title: 'Components/Button',
+  title: 'Components/Form/Button',
   argTypes: {
     text: {
       description: 'Transcluded text to be injected in the component slot',

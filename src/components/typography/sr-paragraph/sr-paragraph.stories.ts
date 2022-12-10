@@ -1,5 +1,5 @@
 export default {
-  title: 'Components/Paragraph',
+  title: 'Components/Typography/Paragraph',
   argTypes: {
     text: {
       description: 'Text to be injected in the component slot',
