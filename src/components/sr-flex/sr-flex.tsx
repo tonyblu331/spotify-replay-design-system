@@ -12,11 +12,11 @@ export class SrFlex {
   @Prop({ reflect: true }) 
   direction: 'horizontal' | 'vertical' | 'horizontal-reverse' | 'vertical-reverse' = 'horizontal';
 
-  @Prop({ reflect: true })
-  vAlign: 'top' | 'center' | 'bottom' | 'stretch' = 'top';
+  @Prop({ reflect: true, attribute: 'vAlignment' })
+  vAlignment: 'top' | 'center' | 'bottom' | 'stretch' = 'top';
 
-  @Prop({ reflect: true})
-  hAlign: 'left' | 'center' | 'right' | 'around' | 'between' = 'left';
+  @Prop({ reflect: true, attribute: 'hAlignment'})
+  hAlignment: 'left' | 'center' | 'right' | 'around' | 'between' = 'left';
 
   @Prop({ reflect: true})
   gap: number = 0;
@@ -40,7 +40,7 @@ export class SrFlex {
   }
 
   hAlignHandler() {
-    switch (this.hAlign) {
+    switch (this.hAlignment) {
       case 'left': 
         return 'flex-start';
       case 'center': 
@@ -57,7 +57,7 @@ export class SrFlex {
   }
 
   vAlignHandler() {
-    switch (this.vAlign) {
+    switch (this.vAlignment) {
       case 'top': 
         return 'flex-start';
       case 'center': 
@@ -72,13 +72,13 @@ export class SrFlex {
   }
 
   render() {
-    console.log(this.wrap);
     const flexStyle = css`
       display: flex;
       flex-direction: ${this.directionHandler()};
       gap: ${this.gap}px;
       flex-wrap: ${this.wrap} ? wrap : unset;
       justify-content: ${this.hAlignHandler()};
+      align-items: ${this.vAlignHandler()};
     `
     return (
       <div class={flexStyle}>

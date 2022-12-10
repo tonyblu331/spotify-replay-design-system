@@ -13,8 +13,8 @@ export namespace Components {
     interface SrFlex {
         "direction": 'horizontal' | 'vertical' | 'horizontal-reverse' | 'vertical-reverse';
         "gap": number;
-        "hAlign": 'left' | 'center' | 'right' | 'around' | 'between';
-        "vAlign": 'top' | 'center' | 'bottom' | 'stretch';
+        "hAlignment": 'left' | 'center' | 'right' | 'around' | 'between';
+        "vAlignment": 'top' | 'center' | 'bottom' | 'stretch';
         "wrap": boolean;
     }
     interface SrHeader {
@@ -94,8 +94,8 @@ declare namespace LocalJSX {
     interface SrFlex {
         "direction"?: 'horizontal' | 'vertical' | 'horizontal-reverse' | 'vertical-reverse';
         "gap"?: number;
-        "hAlign"?: 'left' | 'center' | 'right' | 'around' | 'between';
-        "vAlign"?: 'top' | 'center' | 'bottom' | 'stretch';
+        "hAlignment"?: 'left' | 'center' | 'right' | 'around' | 'between';
+        "vAlignment"?: 'top' | 'center' | 'bottom' | 'stretch';
         "wrap"?: boolean;
     }
     interface SrHeader {
