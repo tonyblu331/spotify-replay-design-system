@@ -1,6 +1,10 @@
 import { Component, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
-import { FontHeading1, FontHeading2, ColorBody } from '../../../design-tokens/js/variables.js';
+import {
+  FontHeading1,
+  FontHeading2,
+  ColorBody,
+} from '../../../design-tokens/js/variables.js';
 
 /**
  * Heading component, with support for header elements spanning from `h1` to `h6`, and custom alignment.

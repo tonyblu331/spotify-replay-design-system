@@ -1,4 +1,4 @@
-@import "../../design-tokens/css/_variables.css";
+@import '../../design-tokens/css/_variables.css';
 
 :host {
   display: block;
@@ -38,4 +38,3 @@ button.large {
   font-size: 16px;
   padding: 12px 24px;
 }
-

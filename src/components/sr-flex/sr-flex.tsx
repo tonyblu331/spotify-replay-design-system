@@ -5,68 +5,71 @@ import { css } from '@emotion/css';
   tag: 'sr-flex',
   styleUrl: 'sr-flex.css',
   shadow: false,
-  scoped: true
+  scoped: true,
 })
 export class SrFlex {
-
-  @Prop({ reflect: true }) 
-  direction: 'horizontal' | 'vertical' | 'horizontal-reverse' | 'vertical-reverse' = 'horizontal';
+  @Prop({ reflect: true })
+  direction:
+    | 'horizontal'
+    | 'vertical'
+    | 'horizontal-reverse'
+    | 'vertical-reverse' = 'horizontal';
 
   @Prop({ reflect: true, attribute: 'vAlignment' })
   vAlignment: 'top' | 'center' | 'bottom' | 'stretch' = 'top';
 
-  @Prop({ reflect: true, attribute: 'hAlignment'})
+  @Prop({ reflect: true, attribute: 'hAlignment' })
   hAlignment: 'left' | 'center' | 'right' | 'around' | 'between' = 'left';
 
-  @Prop({ reflect: true})
+  @Prop({ reflect: true })
   gap: number = 0;
 
-  @Prop({ reflect: true})
+  @Prop({ reflect: true })
   wrap: boolean = false;
 
   directionHandler() {
     switch (this.direction) {
-      case 'horizontal': 
+      case 'horizontal':
         return 'row';
-      case 'vertical': 
+      case 'vertical':
         return 'column';
-      case 'horizontal-reverse': 
+      case 'horizontal-reverse':
         return 'row-reverse';
-      case 'vertical-reverse': 
+      case 'vertical-reverse':
         return 'column-reverse';
-      default: 
+      default:
         break;
     }
   }
 
   hAlignHandler() {
     switch (this.hAlignment) {
-      case 'left': 
+      case 'left':
         return 'flex-start';
-      case 'center': 
+      case 'center':
         return 'center';
-      case 'right': 
+      case 'right':
         return 'flex-end';
-      case 'around': 
+      case 'around':
         return 'space-around';
-      case 'between': 
+      case 'between':
         return 'space-between';
-      default: 
+      default:
         break;
     }
   }
 
   vAlignHandler() {
     switch (this.vAlignment) {
-      case 'top': 
+      case 'top':
         return 'flex-start';
-      case 'center': 
+      case 'center':
         return 'center';
-      case 'bottom': 
+      case 'bottom':
         return 'flex-end';
-      case 'stretch': 
+      case 'stretch':
         return 'stretch';
-      default: 
+      default:
         break;
     }
   }
@@ -79,12 +82,11 @@ export class SrFlex {
       flex-wrap: ${this.wrap} ? wrap : unset;
       justify-content: ${this.hAlignHandler()};
       align-items: ${this.vAlignHandler()};
-    `
+    `;
     return (
       <div class={flexStyle}>
         <slot></slot>
       </div>
     );
   }
-
 }

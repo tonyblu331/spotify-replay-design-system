@@ -21,7 +21,10 @@ export class SRButton {
 
   render() {
     return (
-      <button class={`${this.variant} ${this.size}`} onClick={e => this.clickHandler(e)}>
+      <button
+        class={`${this.variant} ${this.size}`}
+        onClick={e => this.clickHandler(e)}
+      >
         <slot></slot>
       </button>
     );

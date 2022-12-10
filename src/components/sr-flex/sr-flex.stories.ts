@@ -2,7 +2,12 @@ export default {
   title: 'Components/Layouts/Flex',
   argTypes: {
     direction: {
-      options: ['horizontal', 'vertical', 'horizontal-reverse', 'vertical-reverse'],
+      options: [
+        'horizontal',
+        'vertical',
+        'horizontal-reverse',
+        'vertical-reverse',
+      ],
       control: { type: 'select' },
       description: 'Flex direction',
     },
@@ -21,15 +26,16 @@ export default {
       description: ' The size of the gap between items in flex component',
     },
     wrap: {
-      description: 'Wrap helps to specify whether flex items are forced onto one line or can wrap onto multiple lines',
+      description:
+        'Wrap helps to specify whether flex items are forced onto one line or can wrap onto multiple lines',
       options: [true, false],
       control: { type: 'radio' },
       defaultValue: false,
-    }
+    },
   },
 };
 
-const Template = (args) => `
+const Template = args => `
   <sr-flex 
     direction=${args.direction}
     vAlignment=${args.vAlignment}
@@ -46,11 +52,11 @@ const Template = (args) => `
 export const FlexRow = Template.bind({});
 FlexRow.args = {
   direction: 'horizontal',
-  gap: 30
+  gap: 30,
 };
 
 export const FlexColumn = Template.bind({});
 FlexColumn.args = {
   direction: 'vertical',
-  gap: 0
+  gap: 0,
 };

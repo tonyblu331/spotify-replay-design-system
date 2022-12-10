@@ -7,3 +7,5 @@ loader
 .storybook
 storybook-static
 www
+design-tokens
+*.md
