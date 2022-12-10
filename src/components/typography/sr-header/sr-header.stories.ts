@@ -28,8 +28,8 @@ const Template = args => `
   </hs-header>
 `;
 
-export const ComponentStory = Template.bind({});
-ComponentStory.args = {
+export const LeftAlignedLevel1 = Template.bind({});
+LeftAlignedLevel1.args = {
   textAlign: 'left',
   level: 1,
 };

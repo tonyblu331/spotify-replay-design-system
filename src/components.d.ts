@@ -19,13 +19,18 @@ export namespace Components {
     }
     interface SrHeader {
         /**
-          * The `level` property allows users to indicate what header hierarchy this element is. It mus take a number from `1` to `6`.
+          * The `level` property allows users to indicate what header hierarchy this element is. It must take a number from `1` to `6`.
          */
         "level": number;
         /**
           * Provides support for implementing horizontal alignment to the text contained in the header.
          */
         "textAlign": 'left' | 'right' | 'center' | 'justify';
+    }
+    interface SrList {
+        "ordered": boolean;
+    }
+    interface SrListItem {
     }
     interface SrParagraph {
     }
@@ -53,6 +58,18 @@ declare global {
         prototype: HTMLSrHeaderElement;
         new (): HTMLSrHeaderElement;
     };
+    interface HTMLSrListElement extends Components.SrList, HTMLStencilElement {
+    }
+    var HTMLSrListElement: {
+        prototype: HTMLSrListElement;
+        new (): HTMLSrListElement;
+    };
+    interface HTMLSrListItemElement extends Components.SrListItem, HTMLStencilElement {
+    }
+    var HTMLSrListItemElement: {
+        prototype: HTMLSrListItemElement;
+        new (): HTMLSrListItemElement;
+    };
     interface HTMLSrParagraphElement extends Components.SrParagraph, HTMLStencilElement {
     }
     var HTMLSrParagraphElement: {
@@ -63,6 +80,8 @@ declare global {
         "sr-button": HTMLSrButtonElement;
         "sr-flex": HTMLSrFlexElement;
         "sr-header": HTMLSrHeaderElement;
+        "sr-list": HTMLSrListElement;
+        "sr-list-item": HTMLSrListItemElement;
         "sr-paragraph": HTMLSrParagraphElement;
     }
 }
@@ -81,7 +100,7 @@ declare namespace LocalJSX {
     }
     interface SrHeader {
         /**
-          * The `level` property allows users to indicate what header hierarchy this element is. It mus take a number from `1` to `6`.
+          * The `level` property allows users to indicate what header hierarchy this element is. It must take a number from `1` to `6`.
          */
         "level"?: number;
         /**
@@ -89,12 +108,19 @@ declare namespace LocalJSX {
          */
         "textAlign"?: 'left' | 'right' | 'center' | 'justify';
     }
+    interface SrList {
+        "ordered"?: boolean;
+    }
+    interface SrListItem {
+    }
     interface SrParagraph {
     }
     interface IntrinsicElements {
         "sr-button": SrButton;
         "sr-flex": SrFlex;
         "sr-header": SrHeader;
+        "sr-list": SrList;
+        "sr-list-item": SrListItem;
         "sr-paragraph": SrParagraph;
     }
 }
@@ -105,6 +131,8 @@ declare module "@stencil/core" {
             "sr-button": LocalJSX.SrButton & JSXBase.HTMLAttributes<HTMLSrButtonElement>;
             "sr-flex": LocalJSX.SrFlex & JSXBase.HTMLAttributes<HTMLSrFlexElement>;
             "sr-header": LocalJSX.SrHeader & JSXBase.HTMLAttributes<HTMLSrHeaderElement>;
+            "sr-list": LocalJSX.SrList & JSXBase.HTMLAttributes<HTMLSrListElement>;
+            "sr-list-item": LocalJSX.SrListItem & JSXBase.HTMLAttributes<HTMLSrListItemElement>;
             "sr-paragraph": LocalJSX.SrParagraph & JSXBase.HTMLAttributes<HTMLSrParagraphElement>;
         }
     }

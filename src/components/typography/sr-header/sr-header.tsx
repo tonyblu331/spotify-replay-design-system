@@ -47,7 +47,7 @@ export class SRHeader {
     const Tag = `h${this.level}`;
 
     // TODOJCS fontHeading design tokens have good values? Font family is off
-    // TODOJCS check with Tony:
+    // TODOJCS ASK Tony:
     // - what color for heading? pureblack? colorbody?
     const tagStyles = css`
       color: ${ColorBody}
