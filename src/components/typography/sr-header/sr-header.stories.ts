@@ -24,9 +24,9 @@ export default {
 };
 
 const Template = args => `
-  <hs-header level="${args.level}" text-align="${args.textAlign}">
+  <sr-header level="${args.level}" textAlign="${args.textAlign}">
     ${args.text}
-  </hs-header>
+  </sr-header>
 `;
 
 export const LeftAlignedLevel1 = Template.bind({});
