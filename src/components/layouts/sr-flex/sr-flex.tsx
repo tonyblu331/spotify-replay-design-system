@@ -101,7 +101,7 @@ export class SRFlex {
       display: flex;
       flex-direction: ${this.directionHandler()};
       gap: ${this.gap}px;
-      flex-wrap: ${this.wrap} ? wrap : unset;
+      flex-wrap: ${this.wrap ? 'wrap' : 'unset'};
       justify-content: ${this.hAlignHandler()};
       align-items: ${this.vAlignHandler()};
     `;
