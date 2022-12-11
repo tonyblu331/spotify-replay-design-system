@@ -15,7 +15,8 @@ import { css } from '@emotion/css';
 })
 export class SRFlex {
   /**
-   * TODOROSE DOCUMENT
+   * The `direction` property allows users to indicate what direction
+   * of children components or slots is.
    */
   @Prop({ reflect: true })
   direction:
@@ -25,25 +26,25 @@ export class SRFlex {
     | 'vertical-reverse' = 'horizontal';
 
   /**
-   * TODOROSE DOCUMENT
+   * The `vAlignment` property allows user to align children or slots on the cross axis
    */
   @Prop({ reflect: true, attribute: 'vAlignment' })
   vAlignment: 'top' | 'center' | 'bottom' | 'stretch' = 'top';
 
   /**
-   * TODOROSE DOCUMENT
+   * The `hAlignment` property allows user to align children or slots on the main axis
    */
   @Prop({ reflect: true, attribute: 'hAlignment' })
   hAlignment: 'left' | 'center' | 'right' | 'around' | 'between' = 'left';
 
   /**
-   * TODOROSE DOCUMENT
+   * Spacing between children components in side flex
    */
   @Prop({ reflect: true })
   gap: number = 0;
 
   /**
-   * TODOROSE DOCUMENT
+   * Allow children components wrap onto multiple lines
    */
   @Prop({ reflect: true })
   wrap: boolean = false;

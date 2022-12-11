@@ -29,24 +29,27 @@ export default {
       description:
         'Wrap helps to specify whether flex items are forced onto one line or can wrap onto multiple lines',
       options: [true, false],
-      control: { type: 'radio' },
+      control: { type: 'boolean' },
       defaultValue: false,
     },
   },
 };
 
 const Template = args => `
+<sr-card padding="large" hasBorder>
   <sr-flex 
-    direction=${args.direction}
-    vAlignment=${args.vAlignment}
-    hAlignment=${args.hAlignment}
-    wrap=${args.wrap} 
-    gap=${args.gap}
-  >
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
+      direction=${args.direction}
+      vAlignment=${args.vAlignment}
+      hAlignment=${args.hAlignment}
+      wrap=${args.wrap} 
+      gap=${args.gap}
+    >
+      <sr-card backgroundColor="dark" padding="large"></sr-card>
+      <sr-card backgroundColor="primary" padding="large"></sr-card>
+      <sr-card backgroundColor="secondary" padding="large"></sr-card>
   </sr-flex>
+</sr-card>
+  
 `;
 
 export const FlexRow = Template.bind({});
