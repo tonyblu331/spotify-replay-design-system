@@ -4,6 +4,8 @@ import { css } from '@emotion/css';
 /**
  * The `<sr-stack>` component is a layout component manages layout of children
  * along the vertical or horizontal axis.
+ * @property `orientation` (default 'vertical')
+ * @property `gap` (default 0)
  *
  * ### Example
  * ```html

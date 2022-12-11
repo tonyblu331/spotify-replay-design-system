@@ -7,16 +7,8 @@
 
 ## Overview
 
-The `<sr-stack>` component is a layout component providing horizontal and vertical
-flow capabilities for all its children components and elements.
-
-### Example
-```html
-<sr-stack orientation="vertical" gap="small">
- <img src="test.png" />
- <button>Save</button>
-</sr-stack>
-```
+The `<sr-stack>` component is a layout component manages layout of children
+along the vertical or horizontal axis.
 
 ## Properties
 

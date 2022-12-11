@@ -5,6 +5,11 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+The `<sr-card>` component is used to group various pieces of content
+into a container.
+
 ## Properties
 
 | Property          | Attribute         | Description                              | Type                                              | Default        |

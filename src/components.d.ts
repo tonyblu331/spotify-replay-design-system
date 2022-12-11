@@ -51,7 +51,7 @@ export namespace Components {
     | 'horizontal-reverse'
     | 'vertical-reverse';
         /**
-          * Spacing between children components in side flex
+          * The `gap` property adjusts spacing between children components in side flex
          */
         "gap": number;
         /**
@@ -63,7 +63,7 @@ export namespace Components {
          */
         "vAlignment": 'top' | 'center' | 'bottom' | 'stretch';
         /**
-          * Allow children components wrap onto multiple lines
+          * The `wrap` property allows children components wrap onto multiple lines
          */
         "wrap": boolean;
     }
@@ -218,7 +218,7 @@ declare namespace LocalJSX {
     | 'horizontal-reverse'
     | 'vertical-reverse';
         /**
-          * Spacing between children components in side flex
+          * The `gap` property adjusts spacing between children components in side flex
          */
         "gap"?: number;
         /**
@@ -230,7 +230,7 @@ declare namespace LocalJSX {
          */
         "vAlignment"?: 'top' | 'center' | 'bottom' | 'stretch';
         /**
-          * Allow children components wrap onto multiple lines
+          * The `wrap` property allows children components wrap onto multiple lines
          */
         "wrap"?: boolean;
     }
