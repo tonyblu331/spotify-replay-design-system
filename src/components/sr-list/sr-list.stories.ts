@@ -15,8 +15,8 @@ export default {
   },
 };
 
-const Template = ({ items }) => `
-  <sr-list>
+const Template = ({ items, ordered }) => `
+  <sr-list ordered="${ordered}">
     ${items}
   </sr-list>
 `;
