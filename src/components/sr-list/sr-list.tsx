@@ -22,7 +22,6 @@ export class SRList {
   ordered: boolean = false;
 
   // TODOJCS ASK PABLO what is up with the comma being rendered between list items
-  // TODOJCS ASK PABLO why ordered toggle doesnt work (always false)
 
   render() {
     console.debug('rendering sr-list with ordered=', this.ordered);
