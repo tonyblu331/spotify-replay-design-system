@@ -2,14 +2,16 @@ import { Component, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
 
 /**
- * The `<sr-stack>` component is a layout component providing horizontal and vertical
- * flow capabilities for all its children components and elements.
+ * The `<sr-stack>` component is a layout component manages layout of children
+ * along the vertical or horizontal axis.
  *
  * ### Example
  * ```html
- * <sr-stack orientation="vertical" gap="small">
- *  <img src="test.png" />
- *  <button>Save</button>
+ * <sr-stack orientation="vertical" gap="30">
+ *  <sr-heading level="1">Card</sr-heading>
+ *  <sr-card>
+ *    <sr-heading level="1">Card Header</sr-heading>
+ *  </sr-card>
  * </sr-stack>
  * ```
  */

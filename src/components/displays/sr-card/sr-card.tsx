@@ -9,6 +9,22 @@ import {
   ColorFoundationNeutralPureBlak,
 } from '../../../design-tokens/js/variables.js';
 
+/**
+ * The `<sr-card>` component is used to group various pieces of content
+ * into a container.
+ * @property `padding` (default 'SpacingSmall')
+ * @property `margin`
+ * @property `backgroundColor` (default 'default')
+ * @property `hasBorder` (default false)
+ *
+ * ### Example
+ * ```html
+ *  <sr-card>
+ *    <sr-heading level="1">Card Header</sr-heading>
+ *    <sr-paragraph>Show content here!</sr-paragraph>
+ *  </sr-card>
+ * ```
+ */
 @Component({
   tag: 'sr-card',
   styleUrl: 'sr-card.css',

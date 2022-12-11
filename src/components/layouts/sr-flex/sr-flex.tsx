@@ -2,10 +2,23 @@ import { Component, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
 
 /**
- * Flex container
- * @property `vAlignment` TODOROSE
- document when you have some spare time :DD:D
- plz and thank u
+ * The `<sr-flex>` component is a layout component manages layout of children components.
+ * Its convenience for arranging direction and alignment of children inside the flex component.
+ * @property `direction` (default 'horizontal')
+ * @property `vAlignment` (default 'top')
+ * @property `hAlignment` (default 'left')
+ * @property `gap` (default 0)
+ * @property `wrap` (default false)
+ *
+ * ### Example
+ * ```html
+ * <sr-stack orientation="vertical" gap="30">
+ *  <sr-heading level="1">Card</sr-heading>
+ *  <sr-card>
+ *    <sr-heading level="1">Card Header</sr-heading>
+ *  </sr-card>
+ * </sr-stack>
+ * ```
  */
 @Component({
   tag: 'sr-flex',
