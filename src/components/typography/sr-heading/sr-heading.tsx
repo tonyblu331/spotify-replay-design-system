@@ -3,36 +3,31 @@ import { css } from '@emotion/css';
 import {
   FontHeading1,
   FontHeading2,
-  ColorBody,
 } from '../../../design-tokens/js/variables.js';
 
 /**
- TODOJCS wtf to call this, header or heading ASK TONY
- TODOJCS MAKE ALL COMMENTS LIKE THIS ONE (AT LEAST ADD EXAMPLE OF USAGE ?)
- * Heading component, with support for header elements spanning from `h1` to `h6`, and custom alignment.
+ * Heading component, with support for heading elements spanning from `h1` to `h6`, and custom alignment.
  * Its convenience for pointing out document sections makes it one of the most consumed components in our Design System.
  @property `level` (default 1)
  @property `align` (default 'left')
 
  * ### Example:
  * ```html
- * <hs-heading level="1" text-align="center">Section name</hs-heading>
+ * <sr-heading level="2" text-align="center">Section name</hs-header>
  * ```
  */
 @Component({
-  tag: 'sr-header',
-  styleUrl: 'sr-header.css',
+  tag: 'sr-heading',
+  styleUrl: 'sr-heading.css',
   shadow: false,
   scoped: true,
 })
-export class SRHeader {
+export class SRHeading {
   /**
    * The `level` property allows users to indicate what header hierarchy this element is.
-   * It must take a number from `1` to `2`.
-   */
+   * It must take a number from `1` to `6`.  */
   @Prop({ reflect: true })
-  level: 1 | 2 /*| 3| 4 | 5 | 6 */ = 1;
-  // TODOJCS Add more headings or keep 2 lvls and subheading?
+  level: 1 | 2 | 3 | 4 | 5 | 6 = 1;
 
   /**
    * Provides support for implementing horizontal alignment to the text contained in the header.
@@ -59,6 +54,15 @@ export class SRHeader {
         return FontHeading1;
       case 2:
         return FontHeading2;
+      // TODOJCS get design tokens for h3-6
+      // case 3:
+      //   return FontHeading3;
+      // case 4:
+      //   return FontHeading4;
+      // case 5:
+      //   return FontHeading5;
+      // case 6:
+      //   return FontHeading6;
     }
   }
 
@@ -68,10 +72,10 @@ export class SRHeader {
 
     // TODOJCS fontHeading design tokens have good values? Font family is off
     // TODOJCS ASK Tony:
-    // - what color for heading? pureblack? colorbody?
+    // - what default color for heading? pureblack? colorbody?
     const tagStyles = css`
-      color: ${ColorBody}
-      font-size: ${FontHeading1.fontSize}px;
+      color: #e0e0e0 
+      font-size: ${this.getFontHeadingToken().fontSize}px;
       text-align: ${this.textAlign};
     `;
 

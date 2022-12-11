@@ -67,11 +67,11 @@ export namespace Components {
          */
         "wrap": boolean;
     }
-    interface SrHeader {
+    interface SrHeading {
         /**
-          * The `level` property allows users to indicate what header hierarchy this element is. It must take a number from `1` to `2`.
+          * The `level` property allows users to indicate what header hierarchy this element is. It must take a number from `1` to `6`.
          */
-        "level": 1 | 2;
+        "level": 1 | 2 | 3 | 4 | 5 | 6;
         /**
           * Provides support for implementing horizontal alignment to the text contained in the header.
          */
@@ -117,11 +117,11 @@ declare global {
         prototype: HTMLSrFlexElement;
         new (): HTMLSrFlexElement;
     };
-    interface HTMLSrHeaderElement extends Components.SrHeader, HTMLStencilElement {
+    interface HTMLSrHeadingElement extends Components.SrHeading, HTMLStencilElement {
     }
-    var HTMLSrHeaderElement: {
-        prototype: HTMLSrHeaderElement;
-        new (): HTMLSrHeaderElement;
+    var HTMLSrHeadingElement: {
+        prototype: HTMLSrHeadingElement;
+        new (): HTMLSrHeadingElement;
     };
     interface HTMLSrListElement extends Components.SrList, HTMLStencilElement {
     }
@@ -146,7 +146,7 @@ declare global {
         "sr-callout": HTMLSrCalloutElement;
         "sr-card": HTMLSrCardElement;
         "sr-flex": HTMLSrFlexElement;
-        "sr-header": HTMLSrHeaderElement;
+        "sr-heading": HTMLSrHeadingElement;
         "sr-list": HTMLSrListElement;
         "sr-list-item": HTMLSrListItemElement;
         "sr-paragraph": HTMLSrParagraphElement;
@@ -217,11 +217,11 @@ declare namespace LocalJSX {
          */
         "wrap"?: boolean;
     }
-    interface SrHeader {
+    interface SrHeading {
         /**
-          * The `level` property allows users to indicate what header hierarchy this element is. It must take a number from `1` to `2`.
+          * The `level` property allows users to indicate what header hierarchy this element is. It must take a number from `1` to `6`.
          */
-        "level"?: 1 | 2;
+        "level"?: 1 | 2 | 3 | 4 | 5 | 6;
         /**
           * Provides support for implementing horizontal alignment to the text contained in the header.
          */
@@ -242,7 +242,7 @@ declare namespace LocalJSX {
         "sr-callout": SrCallout;
         "sr-card": SrCard;
         "sr-flex": SrFlex;
-        "sr-header": SrHeader;
+        "sr-heading": SrHeading;
         "sr-list": SrList;
         "sr-list-item": SrListItem;
         "sr-paragraph": SrParagraph;
@@ -256,7 +256,7 @@ declare module "@stencil/core" {
             "sr-callout": LocalJSX.SrCallout & JSXBase.HTMLAttributes<HTMLSrCalloutElement>;
             "sr-card": LocalJSX.SrCard & JSXBase.HTMLAttributes<HTMLSrCardElement>;
             "sr-flex": LocalJSX.SrFlex & JSXBase.HTMLAttributes<HTMLSrFlexElement>;
-            "sr-header": LocalJSX.SrHeader & JSXBase.HTMLAttributes<HTMLSrHeaderElement>;
+            "sr-heading": LocalJSX.SrHeading & JSXBase.HTMLAttributes<HTMLSrHeadingElement>;
             "sr-list": LocalJSX.SrList & JSXBase.HTMLAttributes<HTMLSrListElement>;
             "sr-list-item": LocalJSX.SrListItem & JSXBase.HTMLAttributes<HTMLSrListItemElement>;
             "sr-paragraph": LocalJSX.SrParagraph & JSXBase.HTMLAttributes<HTMLSrParagraphElement>;
