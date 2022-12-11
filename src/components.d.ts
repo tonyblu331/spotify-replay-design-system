@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { SpacingLarge, SpacingSmall } from "./design-tokens/js/variables.js";
 export namespace Components {
     interface SrButton {
         /**
@@ -26,28 +27,43 @@ export namespace Components {
          */
         "type": 'note' | 'warning' | 'critical';
     }
+    interface SrCard {
+        /**
+          * TODOROSE Update type referring to design
+         */
+        "backgroundColor": 'primary' | 'secondary' | 'default' | 'dark';
+        "hasBorder": boolean;
+        /**
+          * TODOROSE Update type referring to design
+         */
+        "margin": SpacingLarge | SpacingSmall;
+        /**
+          * TODOROSE Update type referring to design
+         */
+        "padding": SpacingLarge | SpacingSmall;
+    }
     interface SrFlex {
         /**
-          * TODOROSE DOCUMENT
+          * The `direction` property allows users to indicate what direction of children components or slots is.
          */
         "direction": | 'horizontal'
     | 'vertical'
     | 'horizontal-reverse'
     | 'vertical-reverse';
         /**
-          * TODOROSE DOCUMENT
+          * Spacing between children components in side flex
          */
         "gap": number;
         /**
-          * TODOROSE DOCUMENT
+          * The `hAlignment` property allows user to align children or slots on the main axis
          */
         "hAlignment": 'left' | 'center' | 'right' | 'around' | 'between';
         /**
-          * TODOROSE DOCUMENT
+          * The `vAlignment` property allows user to align children or slots on the cross axis
          */
         "vAlignment": 'top' | 'center' | 'bottom' | 'stretch';
         /**
-          * TODOROSE DOCUMENT
+          * Allow children components wrap onto multiple lines
          */
         "wrap": boolean;
     }
@@ -89,6 +105,12 @@ declare global {
         prototype: HTMLSrCalloutElement;
         new (): HTMLSrCalloutElement;
     };
+    interface HTMLSrCardElement extends Components.SrCard, HTMLStencilElement {
+    }
+    var HTMLSrCardElement: {
+        prototype: HTMLSrCardElement;
+        new (): HTMLSrCardElement;
+    };
     interface HTMLSrFlexElement extends Components.SrFlex, HTMLStencilElement {
     }
     var HTMLSrFlexElement: {
@@ -122,6 +144,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "sr-button": HTMLSrButtonElement;
         "sr-callout": HTMLSrCalloutElement;
+        "sr-card": HTMLSrCardElement;
         "sr-flex": HTMLSrFlexElement;
         "sr-header": HTMLSrHeaderElement;
         "sr-list": HTMLSrListElement;
@@ -154,28 +177,43 @@ declare namespace LocalJSX {
          */
         "type"?: 'note' | 'warning' | 'critical';
     }
+    interface SrCard {
+        /**
+          * TODOROSE Update type referring to design
+         */
+        "backgroundColor"?: 'primary' | 'secondary' | 'default' | 'dark';
+        "hasBorder"?: boolean;
+        /**
+          * TODOROSE Update type referring to design
+         */
+        "margin"?: SpacingLarge | SpacingSmall;
+        /**
+          * TODOROSE Update type referring to design
+         */
+        "padding"?: SpacingLarge | SpacingSmall;
+    }
     interface SrFlex {
         /**
-          * TODOROSE DOCUMENT
+          * The `direction` property allows users to indicate what direction of children components or slots is.
          */
         "direction"?: | 'horizontal'
     | 'vertical'
     | 'horizontal-reverse'
     | 'vertical-reverse';
         /**
-          * TODOROSE DOCUMENT
+          * Spacing between children components in side flex
          */
         "gap"?: number;
         /**
-          * TODOROSE DOCUMENT
+          * The `hAlignment` property allows user to align children or slots on the main axis
          */
         "hAlignment"?: 'left' | 'center' | 'right' | 'around' | 'between';
         /**
-          * TODOROSE DOCUMENT
+          * The `vAlignment` property allows user to align children or slots on the cross axis
          */
         "vAlignment"?: 'top' | 'center' | 'bottom' | 'stretch';
         /**
-          * TODOROSE DOCUMENT
+          * Allow children components wrap onto multiple lines
          */
         "wrap"?: boolean;
     }
@@ -202,6 +240,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "sr-button": SrButton;
         "sr-callout": SrCallout;
+        "sr-card": SrCard;
         "sr-flex": SrFlex;
         "sr-header": SrHeader;
         "sr-list": SrList;
@@ -215,6 +254,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "sr-button": LocalJSX.SrButton & JSXBase.HTMLAttributes<HTMLSrButtonElement>;
             "sr-callout": LocalJSX.SrCallout & JSXBase.HTMLAttributes<HTMLSrCalloutElement>;
+            "sr-card": LocalJSX.SrCard & JSXBase.HTMLAttributes<HTMLSrCardElement>;
             "sr-flex": LocalJSX.SrFlex & JSXBase.HTMLAttributes<HTMLSrFlexElement>;
             "sr-header": LocalJSX.SrHeader & JSXBase.HTMLAttributes<HTMLSrHeaderElement>;
             "sr-list": LocalJSX.SrList & JSXBase.HTMLAttributes<HTMLSrListElement>;
