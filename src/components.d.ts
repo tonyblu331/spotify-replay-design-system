@@ -192,8 +192,8 @@ declare global {
         "sr-list": HTMLSrListElement;
         "sr-list-item": HTMLSrListItemElement;
         "sr-paragraph": HTMLSrParagraphElement;
-        "sr-textinput": HTMLSrTextinputElement;
         "sr-stack": HTMLSrStackElement;
+        "sr-textinput": HTMLSrTextinputElement;
     }
 }
 declare namespace LocalJSX {
