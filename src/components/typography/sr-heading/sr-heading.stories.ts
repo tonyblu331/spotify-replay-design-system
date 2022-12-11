@@ -15,18 +15,18 @@ export default {
       control: {
         type: 'number',
         min: 1,
-        max: 2,
+        max: 6,
       },
-      description: 'The header level (h1-h2)',
+      description: 'The header level (h1-h6)',
       defaultValue: 1,
     },
   },
 };
 
 const Template = args => `
-  <sr-header level="${args.level}" textAlign="${args.textAlign}">
+  <sr-heading level="${args.level}" textAlign="${args.textAlign}">
     ${args.text}
-  </sr-header>
+  </sr-heading>
 `;
 
 export const LeftAlignedLevel1 = Template.bind({});

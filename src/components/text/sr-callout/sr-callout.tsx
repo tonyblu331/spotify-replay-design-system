@@ -89,7 +89,7 @@ export class SRCallout {
         <div class={bodyStyles}>
           <div class={headerStyles}>
             {/* TODOJCS use header element here? what level?? ask tony */}
-            {/* <sr-header level={2}>{this.headerText}</sr-header> */}
+            {/* <sr-heading level={2}>{this.headerText}</sr-heading> */}
             {this.headerText}
           </div>
           <slot></slot>
