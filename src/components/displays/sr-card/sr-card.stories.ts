@@ -34,7 +34,7 @@ const Template = args => `
     margin=${args.margin}
     hasBorder=${args.border}
     >
-    <sr-header level="1">Header</sr-header>
+    <sr-heading level="1">Header</sr-heading>
     <sr-paragraph>Show content here!</sr-paragraph>
   </sr-card>
 `;
