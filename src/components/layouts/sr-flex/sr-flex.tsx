@@ -38,13 +38,13 @@ export class SRFlex {
   hAlignment: 'left' | 'center' | 'right' | 'around' | 'between' = 'left';
 
   /**
-   * Spacing between children components in side flex
+   * The `gap` property adjusts spacing between children components in side flex
    */
   @Prop({ reflect: true })
   gap: number = 0;
 
   /**
-   * Allow children components wrap onto multiple lines
+   * The `wrap` property allows children components wrap onto multiple lines
    */
   @Prop({ reflect: true })
   wrap: boolean = false;
