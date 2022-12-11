@@ -11,8 +11,8 @@ import {
  TODOJCS MAKE ALL COMMENTS LIKE THIS ONE (AT LEAST ADD EXAMPLE OF USAGE ?)
  * Heading component, with support for header elements spanning from `h1` to `h6`, and custom alignment.
  * Its convenience for pointing out document sections makes it one of the most consumed components in our Design System.
- @property `level`
- @property `align`
+ @property `level` (default 1)
+ @property `align` (default 'left')
 
  * ### Example:
  * ```html
