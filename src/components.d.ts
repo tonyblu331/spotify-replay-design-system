@@ -87,6 +87,16 @@ export namespace Components {
     }
     interface SrParagraph {
     }
+    interface SrStack {
+        /**
+          * The `gap` property sets the spacing in between elements, and has no effect in the leading or trailing element.
+         */
+        "gap": number;
+        /**
+          * The `orientation` property sets the direction for the flow, either vertical or horizontal.
+         */
+        "orientation": 'vertical' | 'horizontal';
+    }
 }
 export interface SrButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -141,6 +151,12 @@ declare global {
         prototype: HTMLSrParagraphElement;
         new (): HTMLSrParagraphElement;
     };
+    interface HTMLSrStackElement extends Components.SrStack, HTMLStencilElement {
+    }
+    var HTMLSrStackElement: {
+        prototype: HTMLSrStackElement;
+        new (): HTMLSrStackElement;
+    };
     interface HTMLElementTagNameMap {
         "sr-button": HTMLSrButtonElement;
         "sr-callout": HTMLSrCalloutElement;
@@ -150,6 +166,7 @@ declare global {
         "sr-list": HTMLSrListElement;
         "sr-list-item": HTMLSrListItemElement;
         "sr-paragraph": HTMLSrParagraphElement;
+        "sr-stack": HTMLSrStackElement;
     }
 }
 declare namespace LocalJSX {
@@ -237,6 +254,16 @@ declare namespace LocalJSX {
     }
     interface SrParagraph {
     }
+    interface SrStack {
+        /**
+          * The `gap` property sets the spacing in between elements, and has no effect in the leading or trailing element.
+         */
+        "gap"?: number;
+        /**
+          * The `orientation` property sets the direction for the flow, either vertical or horizontal.
+         */
+        "orientation"?: 'vertical' | 'horizontal';
+    }
     interface IntrinsicElements {
         "sr-button": SrButton;
         "sr-callout": SrCallout;
@@ -246,6 +273,7 @@ declare namespace LocalJSX {
         "sr-list": SrList;
         "sr-list-item": SrListItem;
         "sr-paragraph": SrParagraph;
+        "sr-stack": SrStack;
     }
 }
 export { LocalJSX as JSX };
@@ -260,6 +288,7 @@ declare module "@stencil/core" {
             "sr-list": LocalJSX.SrList & JSXBase.HTMLAttributes<HTMLSrListElement>;
             "sr-list-item": LocalJSX.SrListItem & JSXBase.HTMLAttributes<HTMLSrListItemElement>;
             "sr-paragraph": LocalJSX.SrParagraph & JSXBase.HTMLAttributes<HTMLSrParagraphElement>;
+            "sr-stack": LocalJSX.SrStack & JSXBase.HTMLAttributes<HTMLSrStackElement>;
         }
     }
 }

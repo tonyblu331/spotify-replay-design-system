@@ -73,8 +73,6 @@ export class SrCard {
   }
 
   renderStyling() {
-    console.log(this.hasBorder);
-
     return css`
       padding: ${this.paddingHandler()};
       margin: ${this.marginHandler()};
