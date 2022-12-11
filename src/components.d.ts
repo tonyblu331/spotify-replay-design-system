@@ -16,6 +16,16 @@ export namespace Components {
          */
         "variant": string;
     }
+    interface SrCallout {
+        /**
+          * The title to display in the topmost part of the callout
+         */
+        "headerText": string;
+        /**
+          * Indicates the importance of the callout. The default is 'note', for the lowest level of importance.
+         */
+        "type": 'note' | 'warning' | 'critical';
+    }
     interface SrFlex {
         /**
           * TODOROSE DOCUMENT
@@ -73,6 +83,12 @@ declare global {
         prototype: HTMLSrButtonElement;
         new (): HTMLSrButtonElement;
     };
+    interface HTMLSrCalloutElement extends Components.SrCallout, HTMLStencilElement {
+    }
+    var HTMLSrCalloutElement: {
+        prototype: HTMLSrCalloutElement;
+        new (): HTMLSrCalloutElement;
+    };
     interface HTMLSrFlexElement extends Components.SrFlex, HTMLStencilElement {
     }
     var HTMLSrFlexElement: {
@@ -105,6 +121,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "sr-button": HTMLSrButtonElement;
+        "sr-callout": HTMLSrCalloutElement;
         "sr-flex": HTMLSrFlexElement;
         "sr-header": HTMLSrHeaderElement;
         "sr-list": HTMLSrListElement;
@@ -126,6 +143,16 @@ declare namespace LocalJSX {
           * Type of button. TODOJCS add available variants as | expression
          */
         "variant"?: string;
+    }
+    interface SrCallout {
+        /**
+          * The title to display in the topmost part of the callout
+         */
+        "headerText"?: string;
+        /**
+          * Indicates the importance of the callout. The default is 'note', for the lowest level of importance.
+         */
+        "type"?: 'note' | 'warning' | 'critical';
     }
     interface SrFlex {
         /**
@@ -174,6 +201,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "sr-button": SrButton;
+        "sr-callout": SrCallout;
         "sr-flex": SrFlex;
         "sr-header": SrHeader;
         "sr-list": SrList;
@@ -186,6 +214,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "sr-button": LocalJSX.SrButton & JSXBase.HTMLAttributes<HTMLSrButtonElement>;
+            "sr-callout": LocalJSX.SrCallout & JSXBase.HTMLAttributes<HTMLSrCalloutElement>;
             "sr-flex": LocalJSX.SrFlex & JSXBase.HTMLAttributes<HTMLSrFlexElement>;
             "sr-header": LocalJSX.SrHeader & JSXBase.HTMLAttributes<HTMLSrHeaderElement>;
             "sr-list": LocalJSX.SrList & JSXBase.HTMLAttributes<HTMLSrListElement>;
