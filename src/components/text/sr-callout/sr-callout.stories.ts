@@ -19,7 +19,7 @@ export default {
 };
 
 const Template = ({ headerText, type, content }) => {
-  if (headerText !== '') {
+  if (headerText) {
     return `
       <sr-callout headerText="${headerText}" type="${type}">
         ${content}

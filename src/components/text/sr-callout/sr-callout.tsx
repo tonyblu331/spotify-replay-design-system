@@ -23,8 +23,8 @@ export class SRCallout {
   /**
    * The title to display in the topmost part of the callout
    */
-  @Prop({ mutable: true })
-  headerText: string = '';
+  @Prop({ mutable: true, attribute: 'headerText' })
+  headerText?: string;
 
   /**
    * Indicates the importance of the callout. The default is 'note', for the lowest level of importance.
@@ -33,7 +33,7 @@ export class SRCallout {
   type: 'note' | 'warning' | 'critical' = 'note';
 
   componentWillLoad() {
-    if (this.headerText !== '') return;
+    if (this.headerText) return;
     switch (this.type) {
       case 'note':
         this.headerText = 'Note';
@@ -43,6 +43,8 @@ export class SRCallout {
         break;
       case 'critical':
         this.headerText = 'Critical';
+        break;
+      default:
         break;
     }
   }
@@ -59,6 +61,9 @@ export class SRCallout {
         return this.warning;
       case 'critical':
         return this.critical;
+      default:
+        console.log('Error!!');
+        break;
     }
   }
 

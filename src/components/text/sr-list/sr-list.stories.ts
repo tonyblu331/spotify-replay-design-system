@@ -23,17 +23,11 @@ const Template = ({ items, ordered }) => `
 
 export const unordered = Template.bind({});
 unordered.args = {
-  items: [
-    '<sr-list-item>List item</sr-list-item>',
-    '<sr-list-item>Another list item</sr-list-item>',
-  ],
+  items: `<sr-list-item>Item 1</sr-list-item><sr-list-item>Item 1</sr-list-item>`,
 };
 
 export const ordered = Template.bind({});
 ordered.args = {
-  items: [
-    '<sr-list-item>Item 1</sr-list-item>',
-    '<sr-list-item>Item 2</sr-list-item>',
-  ],
+  items: `<sr-list-item>Item 1</sr-list-item><sr-list-item>Item 1</sr-list-item>`,
   ordered: true,
 };

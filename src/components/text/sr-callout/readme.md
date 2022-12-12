@@ -13,10 +13,10 @@ TODOJCS clarify with Tony
 
 ## Properties
 
-| Property     | Attribute     | Description                                                                                         | Type                                | Default  |
-| ------------ | ------------- | --------------------------------------------------------------------------------------------------- | ----------------------------------- | -------- |
-| `headerText` | `header-text` | The title to display in the topmost part of the callout                                             | `string`                            | `''`     |
-| `type`       | `type`        | Indicates the importance of the callout. The default is 'note', for the lowest level of importance. | `"critical" \| "note" \| "warning"` | `'note'` |
+| Property     | Attribute    | Description                                                                                         | Type                                | Default     |
+| ------------ | ------------ | --------------------------------------------------------------------------------------------------- | ----------------------------------- | ----------- |
+| `headerText` | `headertext` | The title to display in the topmost part of the callout                                             | `string`                            | `undefined` |
+| `type`       | `type`       | Indicates the importance of the callout. The default is 'note', for the lowest level of importance. | `"critical" \| "note" \| "warning"` | `'note'`    |
 
 
 ----------------------------------------------

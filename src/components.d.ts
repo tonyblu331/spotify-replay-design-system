@@ -21,7 +21,7 @@ export namespace Components {
         /**
           * The title to display in the topmost part of the callout
          */
-        "headerText": string;
+        "headerText"?: string;
         /**
           * Indicates the importance of the callout. The default is 'note', for the lowest level of importance.
          */
