@@ -42,6 +42,8 @@ export namespace Components {
          */
         "padding": SpacingLarge | SpacingSmall;
     }
+    interface SrCombobox {
+    }
     interface SrFlex {
         /**
           * The `direction` property allows users to indicate what direction of children components or slots is.
@@ -77,6 +79,8 @@ export namespace Components {
          */
         "textAlign": 'left' | 'right' | 'center' | 'justify';
     }
+    interface SrHelptext {
+    }
     interface SrList {
         /**
           * Opt for an ordered list `<ol>` or `<ul>` if false. False by default
@@ -96,6 +100,8 @@ export namespace Components {
           * The `orientation` property sets the direction for the flow, either vertical or horizontal.
          */
         "orientation": 'vertical' | 'horizontal';
+    }
+    interface SrTextinput {
     }
 }
 export interface SrButtonCustomEvent<T> extends CustomEvent<T> {
@@ -121,6 +127,12 @@ declare global {
         prototype: HTMLSrCardElement;
         new (): HTMLSrCardElement;
     };
+    interface HTMLSrComboboxElement extends Components.SrCombobox, HTMLStencilElement {
+    }
+    var HTMLSrComboboxElement: {
+        prototype: HTMLSrComboboxElement;
+        new (): HTMLSrComboboxElement;
+    };
     interface HTMLSrFlexElement extends Components.SrFlex, HTMLStencilElement {
     }
     var HTMLSrFlexElement: {
@@ -132,6 +144,12 @@ declare global {
     var HTMLSrHeadingElement: {
         prototype: HTMLSrHeadingElement;
         new (): HTMLSrHeadingElement;
+    };
+    interface HTMLSrHelptextElement extends Components.SrHelptext, HTMLStencilElement {
+    }
+    var HTMLSrHelptextElement: {
+        prototype: HTMLSrHelptextElement;
+        new (): HTMLSrHelptextElement;
     };
     interface HTMLSrListElement extends Components.SrList, HTMLStencilElement {
     }
@@ -157,15 +175,24 @@ declare global {
         prototype: HTMLSrStackElement;
         new (): HTMLSrStackElement;
     };
+    interface HTMLSrTextinputElement extends Components.SrTextinput, HTMLStencilElement {
+    }
+    var HTMLSrTextinputElement: {
+        prototype: HTMLSrTextinputElement;
+        new (): HTMLSrTextinputElement;
+    };
     interface HTMLElementTagNameMap {
         "sr-button": HTMLSrButtonElement;
         "sr-callout": HTMLSrCalloutElement;
         "sr-card": HTMLSrCardElement;
+        "sr-combobox": HTMLSrComboboxElement;
         "sr-flex": HTMLSrFlexElement;
         "sr-heading": HTMLSrHeadingElement;
+        "sr-helptext": HTMLSrHelptextElement;
         "sr-list": HTMLSrListElement;
         "sr-list-item": HTMLSrListItemElement;
         "sr-paragraph": HTMLSrParagraphElement;
+        "sr-textinput": HTMLSrTextinputElement;
         "sr-stack": HTMLSrStackElement;
     }
 }
@@ -209,6 +236,8 @@ declare namespace LocalJSX {
          */
         "padding"?: SpacingLarge | SpacingSmall;
     }
+    interface SrCombobox {
+    }
     interface SrFlex {
         /**
           * The `direction` property allows users to indicate what direction of children components or slots is.
@@ -244,6 +273,8 @@ declare namespace LocalJSX {
          */
         "textAlign"?: 'left' | 'right' | 'center' | 'justify';
     }
+    interface SrHelptext {
+    }
     interface SrList {
         /**
           * Opt for an ordered list `<ol>` or `<ul>` if false. False by default
@@ -264,16 +295,21 @@ declare namespace LocalJSX {
          */
         "orientation"?: 'vertical' | 'horizontal';
     }
+    interface SrTextinput {
+    }
     interface IntrinsicElements {
         "sr-button": SrButton;
         "sr-callout": SrCallout;
         "sr-card": SrCard;
+        "sr-combobox": SrCombobox;
         "sr-flex": SrFlex;
         "sr-heading": SrHeading;
+        "sr-helptext": SrHelptext;
         "sr-list": SrList;
         "sr-list-item": SrListItem;
         "sr-paragraph": SrParagraph;
         "sr-stack": SrStack;
+        "sr-textinput": SrTextinput;
     }
 }
 export { LocalJSX as JSX };
@@ -283,12 +319,15 @@ declare module "@stencil/core" {
             "sr-button": LocalJSX.SrButton & JSXBase.HTMLAttributes<HTMLSrButtonElement>;
             "sr-callout": LocalJSX.SrCallout & JSXBase.HTMLAttributes<HTMLSrCalloutElement>;
             "sr-card": LocalJSX.SrCard & JSXBase.HTMLAttributes<HTMLSrCardElement>;
+            "sr-combobox": LocalJSX.SrCombobox & JSXBase.HTMLAttributes<HTMLSrComboboxElement>;
             "sr-flex": LocalJSX.SrFlex & JSXBase.HTMLAttributes<HTMLSrFlexElement>;
             "sr-heading": LocalJSX.SrHeading & JSXBase.HTMLAttributes<HTMLSrHeadingElement>;
+            "sr-helptext": LocalJSX.SrHelptext & JSXBase.HTMLAttributes<HTMLSrHelptextElement>;
             "sr-list": LocalJSX.SrList & JSXBase.HTMLAttributes<HTMLSrListElement>;
             "sr-list-item": LocalJSX.SrListItem & JSXBase.HTMLAttributes<HTMLSrListItemElement>;
             "sr-paragraph": LocalJSX.SrParagraph & JSXBase.HTMLAttributes<HTMLSrParagraphElement>;
             "sr-stack": LocalJSX.SrStack & JSXBase.HTMLAttributes<HTMLSrStackElement>;
+            "sr-textinput": LocalJSX.SrTextinput & JSXBase.HTMLAttributes<HTMLSrTextinputElement>;
         }
     }
 }
