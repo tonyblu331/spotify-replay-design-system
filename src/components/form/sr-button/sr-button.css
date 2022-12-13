@@ -4,6 +4,7 @@
   display: block;
 }
 
+/* TODOJCS style this button appropriately with DESIGN TOKENS */
 button {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -12,16 +13,15 @@ button {
   cursor: pointer;
   display: inline-block;
   line-height: 1;
+  color: var(--sr-color-body);
 }
 
 button.neutral {
-  color: var(--hs-color-body);
-  background-color: var(--hs-color-primary);
+  background-color: var(--sr-color-primary);
 }
 
 button.error {
-  color: var(--hs-color-body);
-  background-color: var(--hs-color-error);
+  background-color: var(--sr-color-error);
 }
 
 button.small {

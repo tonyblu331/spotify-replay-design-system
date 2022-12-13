@@ -3,7 +3,6 @@ export default {
   argTypes: {
     text: {
       description: 'Transcluded text to be injected in the component slot',
-      defaultValue: 'Submit',
     },
     variant: {
       options: ['neutral', 'error'],
@@ -11,7 +10,7 @@ export default {
       description: 'The button variant',
     },
     size: {
-      options: ['medium', 'small', 'large'],
+      options: ['small', 'medium', 'large'],
       control: { type: 'radio' },
       description: 'The button size',
     },
@@ -19,9 +18,9 @@ export default {
 };
 
 const Template = args => `
-  <hs-button variant="${args.variant}" size="${args.size}">
+  <sr-button variant="${args.variant}" size="${args.size}">
     ${args.text}
-  </hs-button>
+  </sr-button>
 `;
 
 export const Button = Template.bind({});
@@ -35,5 +34,5 @@ export const RedButton = Template.bind({});
 RedButton.args = {
   text: 'Button',
   variant: 'error',
-  size: 'medium',
+  size: 'small',
 };
