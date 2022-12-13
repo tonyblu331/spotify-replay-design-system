@@ -1,13 +1,20 @@
 import { Component, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
+import { SPACER } from '~/enum.js';
 import {
-  SpacingLarge,
-  SpacingSmall,
-  ColorFoundationUiGreenUiGreenDark,
+  ColorFoundationUiGreenUiGreen,
   ColorFoundationPinkPink300,
-  ColorFoundationRoseRose75,
-  ColorFoundationNeutralPureBlak,
+  ColorFoundationBlueBlue300,
+  ColorFoundationNeutralPureBlack,
   ColorFoundationNeutralPureWhite,
+  SpacerSpacer1,
+  SpacerSpacer2,
+  SpacerSpacer3,
+  SpacerSpacer4,
+  SpacerSpacer5,
+  SpacerSpacer6,
+  SpacerSpacer7,
+  SpacerSpacer8,
 } from '../../../design-tokens/js/variables.js';
 /**
  * The `<sr-box>` component is a primitive component.
@@ -31,7 +38,9 @@ import {
  * @property `width`
  * @property `height`
  * @property `boxShadow`
+ * @property `borderWidth`
  * */
+
 @Component({
   tag: 'sr-box',
   styleUrl: 'sr-box.css',
@@ -49,61 +58,61 @@ export class SrBox {
    * Control amount of white space around child components inside of a box
    */
   @Prop({ reflect: true })
-  padding: 'small' | 'large' | 'none' = 'small';
+  padding: SPACER = 'spacer8';
 
   /**
    * Define amount of white space at top side only
    */
   @Prop({ reflect: true, attribute: 'paddingTop' })
-  paddingTop?: 'small' | 'large' | 'none';
+  paddingTop?: SPACER;
 
   /**
    * Define amount of white space at right side only
    */
   @Prop({ reflect: true, attribute: 'paddingRight' })
-  paddingRight?: 'small' | 'large' | 'none';
+  paddingRight?: SPACER;
 
   /**
    * Define amount of white space at left side only
    */
   @Prop({ reflect: true, attribute: 'paddingLeft' })
-  paddingLeft?: 'small' | 'large' | 'none';
+  paddingLeft?: SPACER;
 
   /**
    * Define amount of white space at bottom side only
    */
   @Prop({ reflect: true, attribute: 'paddingBottom' })
-  paddingBottom?: 'small' | 'large' | 'none';
+  paddingBottom?: SPACER;
 
   /**
    * Control amount of white space around the box component itself.
    */
   @Prop({ reflect: true })
-  margin?: 'small' | 'large' | 'none' = 'small';
+  margin?: SPACER = 'spacer8';
 
   /**
    * Define amount of space at top side only.
    */
   @Prop({ reflect: true, attribute: 'marginTop' })
-  marginTop?: 'small' | 'large' | 'none';
+  marginTop?: SPACER;
 
   /**
    * Define amount of space at right side only.
    */
   @Prop({ reflect: true, attribute: 'marginRight' })
-  marginRight?: 'small' | 'large' | 'none';
+  marginRight?: SPACER;
 
   /**
    * Define amount of space at left side only.
    */
   @Prop({ reflect: true, attribute: 'marginLeft' })
-  marginLeft?: 'small' | 'large' | 'none';
+  marginLeft?: SPACER;
 
   /**
    * Define amount of space at bottom side only.
    */
   @Prop({ reflect: true, attribute: 'marginBottom' })
-  marginBottom?: 'small' | 'large' | 'none';
+  marginBottom?: SPACER;
 
   /**
    * Specify background fill inside box component
@@ -120,8 +129,8 @@ export class SrBox {
   /**
    * Enable or disable border around box component
    */
-  @Prop({ reflect: true, attribute: 'hasBorder' })
-  hasBorder: boolean = false;
+  @Prop({ reflect: true, attribute: 'isBorder' })
+  isBorder: boolean = false;
 
   /**
    * Specify border color
@@ -136,6 +145,12 @@ export class SrBox {
   borderRadius: 'default' | 'none' = 'default';
 
   /**
+   * Specify border width
+   */
+  @Prop({ reflect: true, attribute: 'borderWidth' })
+  borderWidth: 'thin' | 'thick' = 'thick';
+
+  /**
    * Specify width of box component
    */
   @Prop({ reflect: true })
@@ -147,34 +162,47 @@ export class SrBox {
   @Prop({ reflect: true })
   height: 'small' | 'medium' | 'large';
 
+  /**
+   * Control shadow effects around box component
+   */
   @Prop({ reflect: true, attribute: 'boxShadow' })
   boxShadow: 'level0' | 'level1' | 'level2' | 'level3' | 'level4';
 
-  /**
-   * TODOROSE Fix base on design token
-   */
   spacingHandler(selectedType, side?) {
-    if (!selectedType || selectedType == 'undefined' || selectedType === 'none')
-      return;
-    const spacing = selectedType === 'small' ? SpacingSmall : SpacingLarge;
+    if (!selectedType || selectedType == 'undefined') return;
+    const spacing = this.getSpacingValue(selectedType);
+
     if (!side) {
-      return `${spacing.top}px
-      ${spacing.right}px
-      ${spacing.bottom}px
-      ${spacing.left}px`;
+      return `${spacing}px
+      ${spacing}px
+      ${spacing}px
+      ${spacing}px`;
     } else {
-      switch (side) {
-        case 'top':
-          return `${spacing.top}px`;
-        case 'right':
-          return `${spacing.right}px`;
-        case 'bottom':
-          return `${spacing.bottom}px`;
-        case 'left':
-          return `${spacing.left}px`;
-        default:
-          break;
-      }
+      return `${spacing}px`;
+    }
+  }
+
+  getSpacingValue(selectedType) {
+    if (!selectedType || selectedType == undefined) return 0;
+    switch (selectedType) {
+      case 'spacer8':
+        return SpacerSpacer1;
+      case 'spacer16':
+        return SpacerSpacer2;
+      case 'spacer24':
+        return SpacerSpacer3;
+      case 'spacer32':
+        return SpacerSpacer4;
+      case 'spacer40':
+        return SpacerSpacer5;
+      case 'spacer48':
+        return SpacerSpacer6;
+      case 'spacer56':
+        return SpacerSpacer7;
+      case 'spacer64':
+        return SpacerSpacer8;
+      default:
+        break;
     }
   }
 
@@ -217,11 +245,11 @@ export class SrBox {
   backgroundHandler() {
     switch (this.backgroundColor) {
       case 'primary':
-        return ColorFoundationUiGreenUiGreenDark;
+        return ColorFoundationUiGreenUiGreen;
       case 'secondary':
         return ColorFoundationPinkPink300;
       case 'dark':
-        return ColorFoundationRoseRose75;
+        return ColorFoundationBlueBlue300;
       default:
         break;
     }
@@ -234,17 +262,15 @@ export class SrBox {
     switch (this.borderRadius) {
       case 'default':
         return '6px';
-      case 'none':
-        return '0px';
       default:
-        break;
+        return '0px';
     }
   }
 
   textColorHandler() {
     switch (this.color) {
       case 'dark':
-        return ColorFoundationNeutralPureBlak;
+        return ColorFoundationNeutralPureBlack;
       case 'bright':
         return ColorFoundationNeutralPureWhite;
       default:
@@ -258,9 +284,20 @@ export class SrBox {
   borderColorHandler() {
     switch (this.borderColor) {
       case 'default':
-        return ColorFoundationNeutralPureBlak;
+        return ColorFoundationNeutralPureBlack;
       case 'primary':
-        return ColorFoundationRoseRose75;
+        return ColorFoundationUiGreenUiGreen;
+      default:
+        break;
+    }
+  }
+
+  borderWidthHandler() {
+    switch (this.borderWidth) {
+      case 'thin':
+        return '1px';
+      case 'thick':
+        return '2px';
       default:
         break;
     }
@@ -282,7 +319,7 @@ export class SrBox {
       case 'level4':
         return '1px 6px 12px -3px rgba(60, 60, 60, 0.15), 0px 12px 24px -4.6px rgba(49, 49, 49, 0.24)';
       default:
-        break;
+        return '';
     }
   }
 
@@ -302,8 +339,9 @@ export class SrBox {
       margin-bottom: ${this.spacingHandler(this.marginBottom, 'bottom')};
       margin-left: ${this.spacingHandler(this.marginLeft, 'left')};
       background-color: ${this.backgroundHandler()};
-      border: 1px solid
-        ${this.hasBorder ? this.borderColorHandler() : 'transparent'};
+      border: ${this.isBorder
+        ? this.borderWidthHandler() + ' solid ' + this.borderColorHandler()
+        : ''};
       border-radius: ${this.borderRadiusHandler()};
       box-shadow: ${this.boxShadowHandler()};
     `;

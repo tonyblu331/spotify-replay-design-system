@@ -1,5 +1,6 @@
 import { Component, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
+import { SPACER } from '~/enum.js';
 import {
   SpacerSpacer1,
   SpacerSpacer2,
@@ -64,15 +65,7 @@ export class SRFlex {
    * The `gap` property adjusts spacing between children components inside flex
    */
   @Prop({ reflect: true })
-  gap?:
-    | 'Spacer1'
-    | 'Spacer2'
-    | 'Spacer3'
-    | 'Spacer4'
-    | 'Spacer5'
-    | 'Spacer6'
-    | 'Spacer7'
-    | 'Spacer8';
+  gap?: SPACER;
 
   /**
    * The `wrap` property allows children components wrap onto multiple lines
@@ -130,21 +123,21 @@ export class SRFlex {
   gapHandler() {
     if (!this.gap || this.gap == undefined) return 0;
     switch (this.gap) {
-      case 'Spacer1':
+      case 'spacer8':
         return SpacerSpacer1;
-      case 'Spacer2':
+      case 'spacer16':
         return SpacerSpacer2;
-      case 'Spacer3':
+      case 'spacer24':
         return SpacerSpacer3;
-      case 'Spacer4':
+      case 'spacer32':
         return SpacerSpacer4;
-      case 'Spacer5':
+      case 'spacer40':
         return SpacerSpacer5;
-      case 'Spacer6':
+      case 'spacer48':
         return SpacerSpacer6;
-      case 'Spacer7':
+      case 'spacer56':
         return SpacerSpacer7;
-      case 'Spacer8':
+      case 'spacer64':
         return SpacerSpacer8;
       default:
         break;

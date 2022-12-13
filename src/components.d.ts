@@ -5,22 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { SpacingLarge, SpacingSmall } from "./design-tokens/js/variables.js";
+import { SPACER } from "~/enum.js";
 export namespace Components {
-    interface HsButton {
-        "size": string;
-        "variant": string;
-    }
-    interface HsHeader {
-        /**
-          * The `level` property allows users to indicate what header hierarchy this element is. It mus take a number from `1` to `6`.
-         */
-        "level": number;
-        /**
-          * Provides support for implementing horizontal alignment to the text contained in the header.
-         */
-        "textAlign": 'left' | 'right' | 'center';
-    }
     interface SrBox {
         /**
           * Specify wrapper HTML element
@@ -38,59 +24,66 @@ export namespace Components {
           * Specify border radius
          */
         "borderRadius": 'default' | 'none';
+        /**
+          * Specify border width
+         */
+        "borderWidth": 'thin' | 'thick';
+        /**
+          * Control shadow effects around box component
+         */
         "boxShadow": 'level0' | 'level1' | 'level2' | 'level3' | 'level4';
         /**
           * Specify text color inside box component
          */
         "color": 'dark' | 'bright';
         /**
-          * Enable or disable border around box component
-         */
-        "hasBorder": boolean;
-        /**
           * Specify height of box component
          */
         "height": 'small' | 'medium' | 'large';
         /**
+          * Enable or disable border around box component
+         */
+        "isBorder": boolean;
+        /**
           * Control amount of white space around the box component itself.
          */
-        "margin"?: 'small' | 'large' | 'none';
+        "margin"?: SPACER;
         /**
           * Define amount of space at bottom side only.
          */
-        "marginBottom"?: 'small' | 'large' | 'none';
+        "marginBottom"?: SPACER;
         /**
           * Define amount of space at left side only.
          */
-        "marginLeft"?: 'small' | 'large' | 'none';
+        "marginLeft"?: SPACER;
         /**
           * Define amount of space at right side only.
          */
-        "marginRight"?: 'small' | 'large' | 'none';
+        "marginRight"?: SPACER;
         /**
           * Define amount of space at top side only.
          */
-        "marginTop"?: 'small' | 'large' | 'none';
+        "marginTop"?: SPACER;
         /**
           * Control amount of white space around child components inside of a box
          */
-        "padding": 'small' | 'large' | 'none';
+        "padding": SPACER;
         /**
           * Define amount of white space at bottom side only
          */
-        "paddingBottom"?: 'small' | 'large' | 'none';
+        "paddingBottom"?: SPACER;
         /**
           * Define amount of white space at left side only
          */
-        "paddingLeft"?: 'small' | 'large' | 'none';
+        "paddingLeft"?: SPACER;
         /**
           * Define amount of white space at right side only
          */
-        "paddingRight"?: 'small' | 'large' | 'none';
+        "paddingRight"?: SPACER;
         /**
           * Define amount of white space at top side only
          */
-        "paddingTop"?: 'small' | 'large' | 'none';
+        "paddingTop"?: SPACER;
         /**
           * Specify width of box component
          */
@@ -116,21 +109,6 @@ export namespace Components {
          */
         "type": 'note' | 'warning' | 'critical';
     }
-    interface SrCard {
-        /**
-          * TODOROSE Update type referring to design
-         */
-        "backgroundColor": 'primary' | 'secondary' | 'default' | 'dark';
-        "hasBorder": boolean;
-        /**
-          * TODOROSE Update type referring to design
-         */
-        "margin": SpacingLarge | SpacingSmall;
-        /**
-          * TODOROSE Update type referring to design
-         */
-        "padding": SpacingLarge | SpacingSmall;
-    }
     interface SrCombobox {
     }
     interface SrFlex {
@@ -144,14 +122,7 @@ export namespace Components {
         /**
           * The `gap` property adjusts spacing between children components inside flex
          */
-        "gap"?: | 'Spacer1'
-    | 'Spacer2'
-    | 'Spacer3'
-    | 'Spacer4'
-    | 'Spacer5'
-    | 'Spacer6'
-    | 'Spacer7'
-    | 'Spacer8';
+        "gap"?: SPACER;
         /**
           * The `hAlignment` property allows user to align children or slots on the main axis
          */
@@ -191,14 +162,7 @@ export namespace Components {
         /**
           * The `gap` property sets the spacing in between elements, and has no effect in the leading or trailing element.
          */
-        "gap"?: | 'Spacer1'
-    | 'Spacer2'
-    | 'Spacer3'
-    | 'Spacer4'
-    | 'Spacer5'
-    | 'Spacer6'
-    | 'Spacer7'
-    | 'Spacer8';
+        "gap"?: SPACER;
         /**
           * The `orientation` property sets the direction for the flow, either vertical or horizontal.
          */
@@ -207,27 +171,11 @@ export namespace Components {
     interface SrTextinput {
     }
 }
-export interface HsButtonCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLHsButtonElement;
-}
 export interface SrButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLSrButtonElement;
 }
 declare global {
-    interface HTMLHsButtonElement extends Components.HsButton, HTMLStencilElement {
-    }
-    var HTMLHsButtonElement: {
-        prototype: HTMLHsButtonElement;
-        new (): HTMLHsButtonElement;
-    };
-    interface HTMLHsHeaderElement extends Components.HsHeader, HTMLStencilElement {
-    }
-    var HTMLHsHeaderElement: {
-        prototype: HTMLHsHeaderElement;
-        new (): HTMLHsHeaderElement;
-    };
     interface HTMLSrBoxElement extends Components.SrBox, HTMLStencilElement {
     }
     var HTMLSrBoxElement: {
@@ -245,12 +193,6 @@ declare global {
     var HTMLSrCalloutElement: {
         prototype: HTMLSrCalloutElement;
         new (): HTMLSrCalloutElement;
-    };
-    interface HTMLSrCardElement extends Components.SrCard, HTMLStencilElement {
-    }
-    var HTMLSrCardElement: {
-        prototype: HTMLSrCardElement;
-        new (): HTMLSrCardElement;
     };
     interface HTMLSrComboboxElement extends Components.SrCombobox, HTMLStencilElement {
     }
@@ -307,12 +249,9 @@ declare global {
         new (): HTMLSrTextinputElement;
     };
     interface HTMLElementTagNameMap {
-        "hs-button": HTMLHsButtonElement;
-        "hs-header": HTMLHsHeaderElement;
         "sr-box": HTMLSrBoxElement;
         "sr-button": HTMLSrButtonElement;
         "sr-callout": HTMLSrCalloutElement;
-        "sr-card": HTMLSrCardElement;
         "sr-combobox": HTMLSrComboboxElement;
         "sr-flex": HTMLSrFlexElement;
         "sr-heading": HTMLSrHeadingElement;
@@ -325,21 +264,6 @@ declare global {
     }
 }
 declare namespace LocalJSX {
-    interface HsButton {
-        "onClicked"?: (event: HsButtonCustomEvent<any>) => void;
-        "size"?: string;
-        "variant"?: string;
-    }
-    interface HsHeader {
-        /**
-          * The `level` property allows users to indicate what header hierarchy this element is. It mus take a number from `1` to `6`.
-         */
-        "level"?: number;
-        /**
-          * Provides support for implementing horizontal alignment to the text contained in the header.
-         */
-        "textAlign"?: 'left' | 'right' | 'center';
-    }
     interface SrBox {
         /**
           * Specify wrapper HTML element
@@ -357,59 +281,66 @@ declare namespace LocalJSX {
           * Specify border radius
          */
         "borderRadius"?: 'default' | 'none';
+        /**
+          * Specify border width
+         */
+        "borderWidth"?: 'thin' | 'thick';
+        /**
+          * Control shadow effects around box component
+         */
         "boxShadow"?: 'level0' | 'level1' | 'level2' | 'level3' | 'level4';
         /**
           * Specify text color inside box component
          */
         "color"?: 'dark' | 'bright';
         /**
-          * Enable or disable border around box component
-         */
-        "hasBorder"?: boolean;
-        /**
           * Specify height of box component
          */
         "height"?: 'small' | 'medium' | 'large';
         /**
+          * Enable or disable border around box component
+         */
+        "isBorder"?: boolean;
+        /**
           * Control amount of white space around the box component itself.
          */
-        "margin"?: 'small' | 'large' | 'none';
+        "margin"?: SPACER;
         /**
           * Define amount of space at bottom side only.
          */
-        "marginBottom"?: 'small' | 'large' | 'none';
+        "marginBottom"?: SPACER;
         /**
           * Define amount of space at left side only.
          */
-        "marginLeft"?: 'small' | 'large' | 'none';
+        "marginLeft"?: SPACER;
         /**
           * Define amount of space at right side only.
          */
-        "marginRight"?: 'small' | 'large' | 'none';
+        "marginRight"?: SPACER;
         /**
           * Define amount of space at top side only.
          */
-        "marginTop"?: 'small' | 'large' | 'none';
+        "marginTop"?: SPACER;
         /**
           * Control amount of white space around child components inside of a box
          */
-        "padding"?: 'small' | 'large' | 'none';
+        "padding"?: SPACER;
         /**
           * Define amount of white space at bottom side only
          */
-        "paddingBottom"?: 'small' | 'large' | 'none';
+        "paddingBottom"?: SPACER;
         /**
           * Define amount of white space at left side only
          */
-        "paddingLeft"?: 'small' | 'large' | 'none';
+        "paddingLeft"?: SPACER;
         /**
           * Define amount of white space at right side only
          */
-        "paddingRight"?: 'small' | 'large' | 'none';
+        "paddingRight"?: SPACER;
         /**
           * Define amount of white space at top side only
          */
-        "paddingTop"?: 'small' | 'large' | 'none';
+        "paddingTop"?: SPACER;
         /**
           * Specify width of box component
          */
@@ -439,21 +370,6 @@ declare namespace LocalJSX {
          */
         "type"?: 'note' | 'warning' | 'critical';
     }
-    interface SrCard {
-        /**
-          * TODOROSE Update type referring to design
-         */
-        "backgroundColor"?: 'primary' | 'secondary' | 'default' | 'dark';
-        "hasBorder"?: boolean;
-        /**
-          * TODOROSE Update type referring to design
-         */
-        "margin"?: SpacingLarge | SpacingSmall;
-        /**
-          * TODOROSE Update type referring to design
-         */
-        "padding"?: SpacingLarge | SpacingSmall;
-    }
     interface SrCombobox {
     }
     interface SrFlex {
@@ -467,14 +383,7 @@ declare namespace LocalJSX {
         /**
           * The `gap` property adjusts spacing between children components inside flex
          */
-        "gap"?: | 'Spacer1'
-    | 'Spacer2'
-    | 'Spacer3'
-    | 'Spacer4'
-    | 'Spacer5'
-    | 'Spacer6'
-    | 'Spacer7'
-    | 'Spacer8';
+        "gap"?: SPACER;
         /**
           * The `hAlignment` property allows user to align children or slots on the main axis
          */
@@ -514,14 +423,7 @@ declare namespace LocalJSX {
         /**
           * The `gap` property sets the spacing in between elements, and has no effect in the leading or trailing element.
          */
-        "gap"?: | 'Spacer1'
-    | 'Spacer2'
-    | 'Spacer3'
-    | 'Spacer4'
-    | 'Spacer5'
-    | 'Spacer6'
-    | 'Spacer7'
-    | 'Spacer8';
+        "gap"?: SPACER;
         /**
           * The `orientation` property sets the direction for the flow, either vertical or horizontal.
          */
@@ -530,12 +432,9 @@ declare namespace LocalJSX {
     interface SrTextinput {
     }
     interface IntrinsicElements {
-        "hs-button": HsButton;
-        "hs-header": HsHeader;
         "sr-box": SrBox;
         "sr-button": SrButton;
         "sr-callout": SrCallout;
-        "sr-card": SrCard;
         "sr-combobox": SrCombobox;
         "sr-flex": SrFlex;
         "sr-heading": SrHeading;
@@ -551,12 +450,9 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "hs-button": LocalJSX.HsButton & JSXBase.HTMLAttributes<HTMLHsButtonElement>;
-            "hs-header": LocalJSX.HsHeader & JSXBase.HTMLAttributes<HTMLHsHeaderElement>;
             "sr-box": LocalJSX.SrBox & JSXBase.HTMLAttributes<HTMLSrBoxElement>;
             "sr-button": LocalJSX.SrButton & JSXBase.HTMLAttributes<HTMLSrButtonElement>;
             "sr-callout": LocalJSX.SrCallout & JSXBase.HTMLAttributes<HTMLSrCalloutElement>;
-            "sr-card": LocalJSX.SrCard & JSXBase.HTMLAttributes<HTMLSrCardElement>;
             "sr-combobox": LocalJSX.SrCombobox & JSXBase.HTMLAttributes<HTMLSrComboboxElement>;
             "sr-flex": LocalJSX.SrFlex & JSXBase.HTMLAttributes<HTMLSrFlexElement>;
             "sr-heading": LocalJSX.SrHeading & JSXBase.HTMLAttributes<HTMLSrHeadingElement>;

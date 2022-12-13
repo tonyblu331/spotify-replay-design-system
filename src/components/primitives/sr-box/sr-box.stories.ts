@@ -9,14 +9,12 @@ export default {
         "Specify wrapper HTML element <br> `'div'` `'section'` `'article'` `'span'`",
       options: ['div', 'section', 'article', 'span'],
       control: { type: 'select' },
-      defaultValue: 'div',
     },
     backgroundColor: {
       description:
         "Specify background fill inside box component <br> `'default'` `'primary'` `'secondary'` `'dark'`",
       options: ['default', 'primary', 'secondary', 'dark'],
       control: { type: 'select' },
-      defaultValue: 'default',
     },
     width: {
       description:
@@ -35,86 +33,175 @@ export default {
         "Specify text color inside box component <br> `'dark'` `'bright'`",
       options: ['dark', 'bright'],
       control: { type: 'radio' },
-      defaultValue: 'dark',
     },
-    border: {
+    isBorder: {
       description:
         'Enable or disable border around box component <br> `boolean`',
       control: { type: 'boolean' },
-      defaultValue: 'false',
     },
     borderColor: {
       description: "Specify border color <br> `'default'` `'primary'`",
       options: ['default', 'primary'],
       control: { type: 'select' },
-      defaultValue: 'default',
     },
     borderRadius: {
       description: "Specify border radius <br> `'default'` `'none'`",
       options: ['default', 'none'],
       control: { type: 'radio' },
-      defaultValue: 'default',
+    },
+    borderWidth: {
+      description: "Specify border width <br> `'thin'` `'thick'`",
+      options: ['thin', 'thick'],
+      control: { type: 'radio' },
     },
     padding: {
       description:
-        "Control amount of white space around child components inside of a box <br> `'small'` `'large'` `'none'`",
-      options: ['small', 'large', 'none'],
+        "Control amount of white space around child components inside of a box <br> `'spacer8'` `'spacer16'` `'spacer24'` `'spacer32'` `'spacer40'` `'spacer48'` `'spacer56'` `'spacer64'`",
+      options: [
+        'spacer8',
+        'spacer16',
+        'spacer24',
+        'spacer32',
+        'spacer40',
+        'spacer48',
+        'spacer56',
+        'spacer64',
+      ],
       control: { type: 'select' },
-      defaultValue: 'small',
     },
     paddingTop: {
       description:
-        "Control amount of white space at top side only <br> `'small'` `'large'` `'none'`",
-      options: ['small', 'large', 'none'],
+        "Control amount of white space at top side only <br> `'spacer8'` `'spacer16'` `'spacer24'` `'spacer32'` `'spacer40'` `'spacer48'` `'spacer56'` `'spacer64'`",
+      options: [
+        'spacer8',
+        'spacer16',
+        'spacer24',
+        'spacer32',
+        'spacer40',
+        'spacer48',
+        'spacer56',
+        'spacer64',
+      ],
       control: { type: 'select' },
     },
     paddingRight: {
       description:
-        "Control amount of white space at right side only <br> `'small'` `'large'` `'none'`",
-      options: ['small', 'large', 'none'],
+        "Control amount of white space at right side only <br> `'spacer8'` `'spacer16'` `'spacer24'` `'spacer32'` `'spacer40'` `'spacer48'` `'spacer56'` `'spacer64'`",
+      options: [
+        'spacer8',
+        'spacer16',
+        'spacer24',
+        'spacer32',
+        'spacer40',
+        'spacer48',
+        'spacer56',
+        'spacer64',
+      ],
       control: { type: 'select' },
     },
     paddingBottom: {
       description:
-        "Control amount of white space at bottom side only <br> `'small'` `'large'` `'none'`",
-      options: ['small', 'large', 'none'],
+        "Control amount of white space at bottom side only <br> `'spacer8'` `'spacer16'` `'spacer24'` `'spacer32'` `'spacer40'` `'spacer48'` `'spacer56'` `'spacer64'`",
+      options: [
+        'spacer8',
+        'spacer16',
+        'spacer24',
+        'spacer32',
+        'spacer40',
+        'spacer48',
+        'spacer56',
+        'spacer64',
+      ],
       control: { type: 'select' },
     },
     paddingLeft: {
       description:
-        "Control amount of white space at left side only <br> `'small'` `'large'` `'none'`",
-      options: ['small', 'large', 'none'],
+        "Control amount of white space at left side only <br> `'spacer8'` `'spacer16'` `'spacer24'` `'spacer32'` `'spacer40'` `'spacer48'` `'spacer56'` `'spacer64'`",
+      options: [
+        'spacer8',
+        'spacer16',
+        'spacer24',
+        'spacer32',
+        'spacer40',
+        'spacer48',
+        'spacer56',
+        'spacer64',
+      ],
       control: { type: 'select' },
     },
     margin: {
       description:
-        "Control amount of white space around the box component itself <br> `'small'` `'large'` `'none'`",
-      options: ['small', 'large', 'none'],
+        "Control amount of white space around the box component itself <br> `'spacer8'` `'spacer16'` `'spacer24'` `'spacer32'` `'spacer40'` `'spacer48'` `'spacer56'` `'spacer64'`",
+      options: [
+        'spacer8',
+        'spacer16',
+        'spacer24',
+        'spacer32',
+        'spacer40',
+        'spacer48',
+        'spacer56',
+        'spacer64',
+      ],
       control: { type: 'select' },
-      defaultValue: 'small',
     },
     marginTop: {
       description:
-        "Control amount of space at top side only <br> `'small'` `'large'` `'none'`",
-      options: ['small', 'large', 'none'],
+        "Control amount of space at top side only <br> `'spacer8'` `'spacer16'` `'spacer24'` `'spacer32'` `'spacer40'` `'spacer48'` `'spacer56'` `'spacer64'`",
+      options: [
+        'spacer8',
+        'spacer16',
+        'spacer24',
+        'spacer32',
+        'spacer40',
+        'spacer48',
+        'spacer56',
+        'spacer64',
+      ],
       control: { type: 'select' },
     },
     marginRight: {
       description:
-        "Control amount of space at right side only <br> `'small'` `'large'` `'none'`",
-      options: ['small', 'large', 'none'],
+        "Control amount of space at right side only <br> `'spacer8'` `'spacer16'` `'spacer24'` `'spacer32'` `'spacer40'` `'spacer48'` `'spacer56'` `'spacer64'`",
+      options: [
+        'spacer8',
+        'spacer16',
+        'spacer24',
+        'spacer32',
+        'spacer40',
+        'spacer48',
+        'spacer56',
+        'spacer64',
+      ],
       control: { type: 'select' },
     },
     marginBottom: {
       description:
-        "Control amount of space at bottom side only <br> `'small'` `'large'` `'none'`",
-      options: ['small', 'large', 'none'],
+        "Control amount of space at bottom side only <br> `'spacer8'` `'spacer16'` `'spacer24'` `'spacer32'` `'spacer40'` `'spacer48'` `'spacer56'` `'spacer64'`",
+      options: [
+        'spacer8',
+        'spacer16',
+        'spacer24',
+        'spacer32',
+        'spacer40',
+        'spacer48',
+        'spacer56',
+        'spacer64',
+      ],
       control: { type: 'select' },
     },
     marginLeft: {
       description:
-        "Control amount of space at left side only <br> `'small'` `'large'` `'none'`",
-      options: ['small', 'large', 'none'],
+        "Control amount of space at left side only <br> `'spacer8'` `'spacer16'` `'spacer24'` `'spacer32'` `'spacer40'` `'spacer48'` `'spacer56'` `'spacer64'`",
+      options: [
+        'spacer8',
+        'spacer16',
+        'spacer24',
+        'spacer32',
+        'spacer40',
+        'spacer48',
+        'spacer56',
+        'spacer64',
+      ],
       control: { type: 'select' },
     },
     boxShadow: {
@@ -126,44 +213,37 @@ export default {
   },
 };
 
-const Template = args => `
+const Template = args => {
+  const argsProps = Object.entries(args).reduce((prev, [key, value]) => {
+    return `${prev} ${key}="${value}"`.trim();
+  }, '');
+
+  return `
   <sr-box 
-    as=${args.as}
-    backgroundColor=${args.backgroundColor}
-    color=${args.color ? args.color : ''}
-    padding=${args.padding} 
-    margin=${args.margin}
-    paddingTop=${args.paddingTop}
-    paddingRight=${args.paddingRight}
-    paddingBottom=${args.paddingBottom}
-    paddingLeft=${args.paddingLeft}
-    marginTop=${args.marginTop}
-    marginRight=${args.marginRight}
-    marginBottom=${args.marginBottom}
-    marginLeft=${args.marginLeft}
-    hasBorder=${args.border}
-    borderColor=${args.borderColor}
-    borderRadius=${args.borderRadius}
-    width=${args.width}
-    height=${args.height}
-    boxShadow=${args.boxShadow}
+    ${argsProps}
     >
     <sr-heading level="1">${(args.text, 'Header')}</sr-heading>
     <sr-paragraph>Show content here!</sr-paragraph>
   </sr-box>
 `;
+};
 
-export const BoxPadding = Template.bind({});
-BoxPadding.args = {
-  padding: 'large',
+const defaultOptions = {
+  as: 'div',
   backgroundColor: 'primary',
+};
+
+export const BoxPadding = Template.bind({ as: 'div' });
+BoxPadding.args = {
+  ...defaultOptions,
+  padding: 'spacer8',
   text: 'Box Padding',
   color: 'bright',
 };
 
 export const BoxMargin = Template.bind({});
 BoxMargin.args = {
-  margin: 'large',
+  margin: 'spacer8',
   backgroundColor: 'primary',
   text: 'Box Margin',
   color: 'bright',
@@ -171,7 +251,7 @@ BoxMargin.args = {
 
 export const BoxBorder = Template.bind({});
 BoxBorder.args = {
-  border: 'true',
+  isBorder: 'true',
   text: 'Box Border',
 };
 

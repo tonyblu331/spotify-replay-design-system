@@ -26,16 +26,16 @@ export default {
     },
     gap: {
       description:
-        "Adjusting spacing between children components inside flex <br> `'Spacer1'` `'Spacer2'` `'Spacer3'` `'Spacer4'` `'Spacer5'` `'Spacer6'` `'Spacer7'` `'Spacer8'`",
+        "Adjusting spacing between children components inside flex <br> `'spacer8'` `'spacer16'` `'spacer24'` `'spacer32'` `'spacer40'` `'spacer48'` `'spacer56'` `'spacer64'`",
       options: [
-        'Spacer1',
-        'Spacer2',
-        'Spacer3',
-        'Spacer4',
-        'Spacer5',
-        'Spacer6',
-        'Spacer7',
-        'Spacer8',
+        'spacer8',
+        'spacer16',
+        'spacer24',
+        'spacer32',
+        'spacer40',
+        'spacer48',
+        'spacer56',
+        'spacer64',
       ],
       control: { type: 'select' },
     },
@@ -53,7 +53,7 @@ function renderCard(items) {
   let temp = '';
   for (let i = 0; i < items; i++) {
     const color = i % 2 == 0 ? 'dark' : 'primary';
-    temp += `<sr-box backgroundColor="${color}" padding="large">
+    temp += `<sr-box backgroundColor="${color}" padding="spacer16">
       <sr-heading level="1">Header ${i + 1}</sr-heading>
       <sr-paragraph>Show content here!</sr-paragraph>
     </sr-box>`;
@@ -62,7 +62,7 @@ function renderCard(items) {
 }
 
 const Template = args => `
-<sr-box padding="large" hasBorder>
+<sr-box padding="spacer16" hasBorder>
   <sr-flex 
       direction=${args.direction}
       vAlignment=${args.vAlignment}
@@ -92,13 +92,13 @@ const TemplateWrap = args => `
 export const FlexRow = Template.bind({});
 FlexRow.args = {
   direction: 'horizontal',
-  gap: 'Spacer1',
+  gap: 'spacer8',
 };
 
 export const FlexColumn = Template.bind({});
 FlexColumn.args = {
   direction: 'vertical',
-  gap: 'Spacer1',
+  gap: 'spacer8',
 };
 
 export const FlexWrap = TemplateWrap.bind({});
@@ -106,5 +106,5 @@ FlexWrap.args = {
   wrap: 'true',
   direction: 'horizontal',
   hAlignment: 'center',
-  gap: 'Spacer1',
+  gap: 'spacer8',
 };
