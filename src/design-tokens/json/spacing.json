@@ -1,0 +1,44 @@
+{
+  "Spacer": {
+    "spacer-1": {
+      "value": "8",
+      "type": "spacing",
+      "description": "8px Padding"
+    },
+    "spacer-2": {
+      "value": "16",
+      "type": "spacing",
+      "description": "16px Padding"
+    },
+    "spacer-3": {
+      "value": "24",
+      "type": "spacing",
+      "description": "24px Padding"
+    },
+    "spacer-4": {
+      "value": "32",
+      "type": "spacing",
+      "description": "32px Padding"
+    },
+    "spacer-5": {
+      "value": "40",
+      "type": "spacing",
+      "description": "40px Padding"
+    },
+    "spacer-6": {
+      "value": "48",
+      "type": "spacing",
+      "description": "48px Padding"
+    },
+    "spacer-7": {
+      "value": "56",
+      "type": "spacing",
+      "description": "56px Padding"
+    },
+    "spacer-8": {
+      "value": "64",
+      "type": "spacing",
+      "description": "64px Padding"
+    }
+  }
+}
