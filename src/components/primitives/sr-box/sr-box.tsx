@@ -58,7 +58,7 @@ export class SrBox {
    * Control amount of white space around child components inside of a box
    */
   @Prop({ reflect: true })
-  padding: SPACER = 'spacer8';
+  padding: SPACER = 'spacer-1';
 
   /**
    * Define amount of white space at top side only
@@ -88,7 +88,7 @@ export class SrBox {
    * Control amount of white space around the box component itself.
    */
   @Prop({ reflect: true })
-  margin?: SPACER = 'spacer8';
+  margin?: SPACER = 'spacer-1';
 
   /**
    * Define amount of space at top side only.
@@ -185,21 +185,21 @@ export class SrBox {
   getSpacingValue(selectedType) {
     if (!selectedType || selectedType == undefined) return 0;
     switch (selectedType) {
-      case 'spacer8':
+      case 'spacer-1':
         return SpacerSpacer1;
-      case 'spacer16':
+      case 'spacer-2':
         return SpacerSpacer2;
-      case 'spacer24':
+      case 'spacer-3':
         return SpacerSpacer3;
-      case 'spacer32':
+      case 'spacer-4':
         return SpacerSpacer4;
-      case 'spacer40':
+      case 'spacer-5':
         return SpacerSpacer5;
-      case 'spacer48':
+      case 'spacer-6':
         return SpacerSpacer6;
-      case 'spacer56':
+      case 'spacer-7':
         return SpacerSpacer7;
-      case 'spacer64':
+      case 'spacer-8':
         return SpacerSpacer8;
       default:
         break;

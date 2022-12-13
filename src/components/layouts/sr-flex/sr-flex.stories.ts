@@ -26,16 +26,16 @@ export default {
     },
     gap: {
       description:
-        "Adjusting spacing between children components inside flex <br> `'spacer8'` `'spacer16'` `'spacer24'` `'spacer32'` `'spacer40'` `'spacer48'` `'spacer56'` `'spacer64'`",
+        "Adjusting spacing between children components inside flex <br> `'spacer-1'` `'spacer-2'` `'spacer-3'` `'spacer-4'` `'spacer-5'` `'spacer-6'` `'spacer-7'` `'spacer-8'`",
       options: [
-        'spacer8',
-        'spacer16',
-        'spacer24',
-        'spacer32',
-        'spacer40',
-        'spacer48',
-        'spacer56',
-        'spacer64',
+        'spacer-1',
+        'spacer-2',
+        'spacer-3',
+        'spacer-4',
+        'spacer-5',
+        'spacer-6',
+        'spacer-7',
+        'spacer-8',
       ],
       control: { type: 'select' },
     },
@@ -53,7 +53,7 @@ function renderCard(items) {
   let temp = '';
   for (let i = 0; i < items; i++) {
     const color = i % 2 == 0 ? 'dark' : 'primary';
-    temp += `<sr-box backgroundColor="${color}" padding="spacer16">
+    temp += `<sr-box backgroundColor="${color}" padding="spacer-2">
       <sr-heading level="1">Header ${i + 1}</sr-heading>
       <sr-paragraph>Show content here!</sr-paragraph>
     </sr-box>`;
@@ -62,7 +62,7 @@ function renderCard(items) {
 }
 
 const Template = args => `
-<sr-box padding="spacer16" hasBorder>
+<sr-box padding="spacer-2" hasBorder>
   <sr-flex 
       direction=${args.direction}
       vAlignment=${args.vAlignment}
@@ -76,7 +76,7 @@ const Template = args => `
 `;
 
 const TemplateWrap = args => `
-<sr-box padding="large" hasBorder>
+<sr-box padding="spacer-2" hasBorder>
   <sr-flex 
       direction=${args.direction}
       vAlignment=${args.vAlignment}
@@ -92,13 +92,13 @@ const TemplateWrap = args => `
 export const FlexRow = Template.bind({});
 FlexRow.args = {
   direction: 'horizontal',
-  gap: 'spacer8',
+  gap: 'spacer-1',
 };
 
 export const FlexColumn = Template.bind({});
 FlexColumn.args = {
   direction: 'vertical',
-  gap: 'spacer8',
+  gap: 'spacer-1',
 };
 
 export const FlexWrap = TemplateWrap.bind({});
@@ -106,5 +106,5 @@ FlexWrap.args = {
   wrap: 'true',
   direction: 'horizontal',
   hAlignment: 'center',
-  gap: 'spacer8',
+  gap: 'spacer-1',
 };

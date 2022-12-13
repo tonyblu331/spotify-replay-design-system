@@ -1,9 +1,9 @@
 export type SPACER =
-  | 'spacer8'
-  | 'spacer16'
-  | 'spacer24'
-  | 'spacer32'
-  | 'spacer40'
-  | 'spacer48'
-  | 'spacer56'
-  | 'spacer64';
+  | 'spacer-1'
+  | 'spacer-2'
+  | 'spacer-3'
+  | 'spacer-4'
+  | 'spacer-5'
+  | 'spacer-6'
+  | 'spacer-7'
+  | 'spacer-8';

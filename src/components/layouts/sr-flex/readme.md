@@ -12,13 +12,13 @@ Its convenience for arranging direction and alignment of children inside the fle
 
 ## Properties
 
-| Property     | Attribute    | Description                                                                                          | Type                                                                                                          | Default        |
-| ------------ | ------------ | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | -------------- |
-| `direction`  | `direction`  | The `direction` property allows users to indicate what direction of children components or slots is. | `"horizontal" \| "horizontal-reverse" \| "vertical" \| "vertical-reverse"`                                    | `'horizontal'` |
-| `gap`        | `gap`        | The `gap` property adjusts spacing between children components inside flex                           | `"spacer16" \| "spacer24" \| "spacer32" \| "spacer40" \| "spacer48" \| "spacer56" \| "spacer64" \| "spacer8"` | `undefined`    |
-| `hAlignment` | `halignment` | The `hAlignment` property allows user to align children or slots on the main axis                    | `"around" \| "between" \| "center" \| "left" \| "right"`                                                      | `'left'`       |
-| `vAlignment` | `valignment` | The `vAlignment` property allows user to align children or slots on the cross axis                   | `"bottom" \| "center" \| "stretch" \| "top"`                                                                  | `'top'`        |
-| `wrap`       | `wrap`       | The `wrap` property allows children components wrap onto multiple lines                              | `boolean`                                                                                                     | `false`        |
+| Property     | Attribute    | Description                                                                                          | Type                                                                                                           | Default        |
+| ------------ | ------------ | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------- |
+| `direction`  | `direction`  | The `direction` property allows users to indicate what direction of children components or slots is. | `"horizontal" \| "horizontal-reverse" \| "vertical" \| "vertical-reverse"`                                     | `'horizontal'` |
+| `gap`        | `gap`        | The `gap` property adjusts spacing between children components inside flex                           | `"spacer-1" \| "spacer-2" \| "spacer-3" \| "spacer-4" \| "spacer-5" \| "spacer-6" \| "spacer-7" \| "spacer-8"` | `undefined`    |
+| `hAlignment` | `halignment` | The `hAlignment` property allows user to align children or slots on the main axis                    | `"around" \| "between" \| "center" \| "left" \| "right"`                                                       | `'left'`       |
+| `vAlignment` | `valignment` | The `vAlignment` property allows user to align children or slots on the cross axis                   | `"bottom" \| "center" \| "stretch" \| "top"`                                                                   | `'top'`        |
+| `wrap`       | `wrap`       | The `wrap` property allows children components wrap onto multiple lines                              | `boolean`                                                                                                      | `false`        |
 
 
 ----------------------------------------------

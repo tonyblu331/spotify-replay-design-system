@@ -137,10 +137,21 @@ export namespace Components {
         "wrap": boolean;
     }
     interface SrHeading {
+        "color": 'black' | 'white';
         /**
           * The `level` property allows users to indicate what header hierarchy this element is. It must take a number from `1` to `6`.
          */
-        "level": 1 | 2 | 3 | 4 | 5 | 6;
+        "level": | 'h1'
+    | 'h2-regular'
+    | 'h2-bold'
+    | 'h3-regular'
+    | 'h3-bold'
+    | 'h4-regular'
+    | 'h4-bold'
+    | 'h5-regular'
+    | 'h5-bold'
+    | 'h6-regular'
+    | 'h6-bold';
         /**
           * Provides support for implementing horizontal alignment to the text contained in the header.
          */
@@ -167,6 +178,81 @@ export namespace Components {
           * The `orientation` property sets the direction for the flow, either vertical or horizontal.
          */
         "orientation": 'vertical' | 'horizontal';
+    }
+    interface SrText {
+        /**
+          * Specify wrapper HTML element
+         */
+        "as": | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'h4'
+    | 'h5'
+    | 'h6'
+    | 'p'
+    | 'blockquote'
+    | 'caption'
+    | 'endnote';
+        /**
+          * Control font size
+         */
+        "color": 'black' | 'white';
+        /**
+          * Control font size
+         */
+        "fontSize": number;
+        /**
+          * Control font weight
+         */
+        "fontWeight": 'regular' | 'bold' | 'extraBold';
+        /**
+          * Define the space between characters in a text
+         */
+        "letterSpacing"?: number;
+        /**
+          * Define the height of a line
+         */
+        "lineHeight"?: number;
+        /**
+          * Control amount of white space around the box component itself.
+         */
+        "margin"?: number;
+        /**
+          * Define amount of space at bottom side only.
+         */
+        "marginBottom"?: number;
+        /**
+          * Define amount of space at left side only.
+         */
+        "marginLeft"?: number;
+        /**
+          * Define amount of space at right side only.
+         */
+        "marginRight"?: number;
+        /**
+          * Define amount of space at top side only.
+         */
+        "marginTop"?: number;
+        /**
+          * Control amount of white space around child components inside of a box
+         */
+        "padding": number;
+        /**
+          * Define amount of white space at bottom side only
+         */
+        "paddingBottom"?: number;
+        /**
+          * Define amount of white space at left side only
+         */
+        "paddingLeft"?: number;
+        /**
+          * Define amount of white space at right side only
+         */
+        "paddingRight"?: number;
+        /**
+          * Define amount of white space at top side only
+         */
+        "paddingTop"?: number;
     }
     interface SrTextinput {
     }
@@ -242,6 +328,12 @@ declare global {
         prototype: HTMLSrStackElement;
         new (): HTMLSrStackElement;
     };
+    interface HTMLSrTextElement extends Components.SrText, HTMLStencilElement {
+    }
+    var HTMLSrTextElement: {
+        prototype: HTMLSrTextElement;
+        new (): HTMLSrTextElement;
+    };
     interface HTMLSrTextinputElement extends Components.SrTextinput, HTMLStencilElement {
     }
     var HTMLSrTextinputElement: {
@@ -260,6 +352,7 @@ declare global {
         "sr-list-item": HTMLSrListItemElement;
         "sr-paragraph": HTMLSrParagraphElement;
         "sr-stack": HTMLSrStackElement;
+        "sr-text": HTMLSrTextElement;
         "sr-textinput": HTMLSrTextinputElement;
     }
 }
@@ -398,10 +491,21 @@ declare namespace LocalJSX {
         "wrap"?: boolean;
     }
     interface SrHeading {
+        "color"?: 'black' | 'white';
         /**
           * The `level` property allows users to indicate what header hierarchy this element is. It must take a number from `1` to `6`.
          */
-        "level"?: 1 | 2 | 3 | 4 | 5 | 6;
+        "level"?: | 'h1'
+    | 'h2-regular'
+    | 'h2-bold'
+    | 'h3-regular'
+    | 'h3-bold'
+    | 'h4-regular'
+    | 'h4-bold'
+    | 'h5-regular'
+    | 'h5-bold'
+    | 'h6-regular'
+    | 'h6-bold';
         /**
           * Provides support for implementing horizontal alignment to the text contained in the header.
          */
@@ -429,6 +533,81 @@ declare namespace LocalJSX {
          */
         "orientation"?: 'vertical' | 'horizontal';
     }
+    interface SrText {
+        /**
+          * Specify wrapper HTML element
+         */
+        "as"?: | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'h4'
+    | 'h5'
+    | 'h6'
+    | 'p'
+    | 'blockquote'
+    | 'caption'
+    | 'endnote';
+        /**
+          * Control font size
+         */
+        "color"?: 'black' | 'white';
+        /**
+          * Control font size
+         */
+        "fontSize"?: number;
+        /**
+          * Control font weight
+         */
+        "fontWeight"?: 'regular' | 'bold' | 'extraBold';
+        /**
+          * Define the space between characters in a text
+         */
+        "letterSpacing"?: number;
+        /**
+          * Define the height of a line
+         */
+        "lineHeight"?: number;
+        /**
+          * Control amount of white space around the box component itself.
+         */
+        "margin"?: number;
+        /**
+          * Define amount of space at bottom side only.
+         */
+        "marginBottom"?: number;
+        /**
+          * Define amount of space at left side only.
+         */
+        "marginLeft"?: number;
+        /**
+          * Define amount of space at right side only.
+         */
+        "marginRight"?: number;
+        /**
+          * Define amount of space at top side only.
+         */
+        "marginTop"?: number;
+        /**
+          * Control amount of white space around child components inside of a box
+         */
+        "padding"?: number;
+        /**
+          * Define amount of white space at bottom side only
+         */
+        "paddingBottom"?: number;
+        /**
+          * Define amount of white space at left side only
+         */
+        "paddingLeft"?: number;
+        /**
+          * Define amount of white space at right side only
+         */
+        "paddingRight"?: number;
+        /**
+          * Define amount of white space at top side only
+         */
+        "paddingTop"?: number;
+    }
     interface SrTextinput {
     }
     interface IntrinsicElements {
@@ -443,6 +622,7 @@ declare namespace LocalJSX {
         "sr-list-item": SrListItem;
         "sr-paragraph": SrParagraph;
         "sr-stack": SrStack;
+        "sr-text": SrText;
         "sr-textinput": SrTextinput;
     }
 }
@@ -461,6 +641,7 @@ declare module "@stencil/core" {
             "sr-list-item": LocalJSX.SrListItem & JSXBase.HTMLAttributes<HTMLSrListItemElement>;
             "sr-paragraph": LocalJSX.SrParagraph & JSXBase.HTMLAttributes<HTMLSrParagraphElement>;
             "sr-stack": LocalJSX.SrStack & JSXBase.HTMLAttributes<HTMLSrStackElement>;
+            "sr-text": LocalJSX.SrText & JSXBase.HTMLAttributes<HTMLSrTextElement>;
             "sr-textinput": LocalJSX.SrTextinput & JSXBase.HTMLAttributes<HTMLSrTextinputElement>;
         }
     }

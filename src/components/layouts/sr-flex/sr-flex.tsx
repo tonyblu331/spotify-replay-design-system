@@ -123,21 +123,21 @@ export class SRFlex {
   gapHandler() {
     if (!this.gap || this.gap == undefined) return 0;
     switch (this.gap) {
-      case 'spacer8':
+      case 'spacer-1':
         return SpacerSpacer1;
-      case 'spacer16':
+      case 'spacer-2':
         return SpacerSpacer2;
-      case 'spacer24':
+      case 'spacer-3':
         return SpacerSpacer3;
-      case 'spacer32':
+      case 'spacer-4':
         return SpacerSpacer4;
-      case 'spacer40':
+      case 'spacer-5':
         return SpacerSpacer5;
-      case 'spacer48':
+      case 'spacer-6':
         return SpacerSpacer6;
-      case 'spacer56':
+      case 'spacer-7':
         return SpacerSpacer7;
-      case 'spacer64':
+      case 'spacer-8':
         return SpacerSpacer8;
       default:
         break;
