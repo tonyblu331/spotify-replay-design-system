@@ -1,4 +1,4 @@
-@import '../../design-tokens/css/_variables.css';
+@import '../../../design-tokens/css/_variables.css';
 
 :host {
   display: block;
