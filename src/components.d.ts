@@ -7,6 +7,77 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { SpacingLarge, SpacingSmall } from "./design-tokens/js/variables.js";
 export namespace Components {
+    interface SrBox {
+        /**
+          * Specify background fill inside box component
+         */
+        "backgroundColor": 'primary' | 'secondary' | 'default' | 'dark';
+        /**
+          * Specify border color
+         */
+        "borderColor": 'default' | 'primary';
+        /**
+          * Specify border radius
+         */
+        "borderRadius": 'default' | 'none';
+        "boxShadow": 'level0' | 'level1' | 'level2' | 'level3' | 'level4';
+        /**
+          * Specify text color inside box component
+         */
+        "color": 'dark' | 'bright';
+        /**
+          * Enable or disable border around box component
+         */
+        "hasBorder": boolean;
+        /**
+          * Specify height of box component
+         */
+        "height": 'small' | 'medium' | 'large';
+        /**
+          * Control amount of white space around the box component itself.
+         */
+        "margin"?: 'small' | 'large' | 'none';
+        /**
+          * Define amount of space at bottom side only.
+         */
+        "marginBottom"?: 'small' | 'large' | 'none';
+        /**
+          * Define amount of space at left side only.
+         */
+        "marginLeft"?: 'small' | 'large' | 'none';
+        /**
+          * Define amount of space at right side only.
+         */
+        "marginRight"?: 'small' | 'large' | 'none';
+        /**
+          * Define amount of space at top side only.
+         */
+        "marginTop"?: 'small' | 'large' | 'none';
+        /**
+          * Control amount of white space around child components inside of a box
+         */
+        "padding": 'small' | 'large' | 'none';
+        /**
+          * Define amount of white space at bottom side only
+         */
+        "paddingBottom"?: 'small' | 'large' | 'none';
+        /**
+          * Define amount of white space at left side only
+         */
+        "paddingLeft"?: 'small' | 'large' | 'none';
+        /**
+          * Define amount of white space at right side only
+         */
+        "paddingRight"?: 'small' | 'large' | 'none';
+        /**
+          * Define amount of white space at top side only
+         */
+        "paddingTop"?: 'small' | 'large' | 'none';
+        /**
+          * Specify width of box component
+         */
+        "width": 'small' | 'medium' | 'large';
+    }
     interface SrButton {
         /**
           * Button size. TODOJCS add available variants as | expr
@@ -109,6 +180,12 @@ export interface SrButtonCustomEvent<T> extends CustomEvent<T> {
     target: HTMLSrButtonElement;
 }
 declare global {
+    interface HTMLSrBoxElement extends Components.SrBox, HTMLStencilElement {
+    }
+    var HTMLSrBoxElement: {
+        prototype: HTMLSrBoxElement;
+        new (): HTMLSrBoxElement;
+    };
     interface HTMLSrButtonElement extends Components.SrButton, HTMLStencilElement {
     }
     var HTMLSrButtonElement: {
@@ -182,6 +259,7 @@ declare global {
         new (): HTMLSrTextinputElement;
     };
     interface HTMLElementTagNameMap {
+        "sr-box": HTMLSrBoxElement;
         "sr-button": HTMLSrButtonElement;
         "sr-callout": HTMLSrCalloutElement;
         "sr-card": HTMLSrCardElement;
@@ -197,6 +275,77 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface SrBox {
+        /**
+          * Specify background fill inside box component
+         */
+        "backgroundColor"?: 'primary' | 'secondary' | 'default' | 'dark';
+        /**
+          * Specify border color
+         */
+        "borderColor"?: 'default' | 'primary';
+        /**
+          * Specify border radius
+         */
+        "borderRadius"?: 'default' | 'none';
+        "boxShadow"?: 'level0' | 'level1' | 'level2' | 'level3' | 'level4';
+        /**
+          * Specify text color inside box component
+         */
+        "color"?: 'dark' | 'bright';
+        /**
+          * Enable or disable border around box component
+         */
+        "hasBorder"?: boolean;
+        /**
+          * Specify height of box component
+         */
+        "height"?: 'small' | 'medium' | 'large';
+        /**
+          * Control amount of white space around the box component itself.
+         */
+        "margin"?: 'small' | 'large' | 'none';
+        /**
+          * Define amount of space at bottom side only.
+         */
+        "marginBottom"?: 'small' | 'large' | 'none';
+        /**
+          * Define amount of space at left side only.
+         */
+        "marginLeft"?: 'small' | 'large' | 'none';
+        /**
+          * Define amount of space at right side only.
+         */
+        "marginRight"?: 'small' | 'large' | 'none';
+        /**
+          * Define amount of space at top side only.
+         */
+        "marginTop"?: 'small' | 'large' | 'none';
+        /**
+          * Control amount of white space around child components inside of a box
+         */
+        "padding"?: 'small' | 'large' | 'none';
+        /**
+          * Define amount of white space at bottom side only
+         */
+        "paddingBottom"?: 'small' | 'large' | 'none';
+        /**
+          * Define amount of white space at left side only
+         */
+        "paddingLeft"?: 'small' | 'large' | 'none';
+        /**
+          * Define amount of white space at right side only
+         */
+        "paddingRight"?: 'small' | 'large' | 'none';
+        /**
+          * Define amount of white space at top side only
+         */
+        "paddingTop"?: 'small' | 'large' | 'none';
+        /**
+          * Specify width of box component
+         */
+        "width"?: 'small' | 'medium' | 'large';
+    }
     interface SrButton {
         /**
           * Emitted when button is clicked
@@ -298,6 +447,7 @@ declare namespace LocalJSX {
     interface SrTextinput {
     }
     interface IntrinsicElements {
+        "sr-box": SrBox;
         "sr-button": SrButton;
         "sr-callout": SrCallout;
         "sr-card": SrCard;
@@ -316,6 +466,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "sr-box": LocalJSX.SrBox & JSXBase.HTMLAttributes<HTMLSrBoxElement>;
             "sr-button": LocalJSX.SrButton & JSXBase.HTMLAttributes<HTMLSrButtonElement>;
             "sr-callout": LocalJSX.SrCallout & JSXBase.HTMLAttributes<HTMLSrCalloutElement>;
             "sr-card": LocalJSX.SrCard & JSXBase.HTMLAttributes<HTMLSrCardElement>;
