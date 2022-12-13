@@ -1,9 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
-import {
-  FontHeading1,
-  FontHeading2,
-} from '../../../design-tokens/js/variables.js';
 
 /**
  * Heading component, with support for heading elements spanning from `h1` to `h6`, and custom alignment.
@@ -49,11 +45,12 @@ export class SRHeading {
   }
 
   getFontHeadingToken() {
-    switch (this.level) {
-      case 1:
-        return FontHeading1;
-      case 2:
-        return FontHeading2;
+    switch (
+      this.level
+      // case 1:
+      //   return FontHeading1;
+      // case 2:
+      //   return FontHeading2;
       // TODOJCS get design tokens for h3-6
       // case 3:
       //   return FontHeading3;
@@ -63,6 +60,7 @@ export class SRHeading {
       //   return FontHeading5;
       // case 6:
       //   return FontHeading6;
+    ) {
     }
   }
 
@@ -75,10 +73,10 @@ export class SRHeading {
     // - what default color for heading? pureblack? colorbody?
     const tagStyles = css`
       color: #e0e0e0 
-      font-size: ${this.getFontHeadingToken().fontSize}px;
       text-align: ${this.textAlign};
     `;
 
+    // font-size: ${this.getFontHeadingToken().fontSize}px; //TODOJCS ADD TO ABOVE STRING
     return (
       <Tag className={tagStyles} aria-role="heading">
         <slot></slot>
