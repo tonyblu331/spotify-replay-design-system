@@ -174,15 +174,3 @@ BoxShadow.args = {
   text: 'Box Shadow',
   color: 'bright',
 };
-
-const Template2 = () => `
-<sr-box 
-backgroundColor= 'primary',
-boxShadow= 'level4',
-text= 'Box Shadow',
-color= 'bright',
-    >
-    <sr-heading level="1">${'Header'}</sr-heading>
-    <sr-paragraph>Show content here!</sr-paragraph>
-  </sr-box>`;
-export const BoxShadow2 = Template2.bind({});
