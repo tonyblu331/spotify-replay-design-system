@@ -8,8 +8,19 @@ export default {
       control: { type: 'radio' },
     },
     gap: {
-      defaultValue: 0,
-      description: ' The size of the gap between items in stack component',
+      description:
+        ' Sets the spacing in between elements, and has no effect in the leading or trailing element',
+      options: [
+        'Spacer1',
+        'Spacer2',
+        'Spacer3',
+        'Spacer4',
+        'Spacer5',
+        'Spacer6',
+        'Spacer7',
+        'Spacer8',
+      ],
+      control: { type: 'select' },
     },
   },
 };
@@ -37,11 +48,11 @@ const Template = args => `
 export const StackVertical = Template.bind({});
 StackVertical.args = {
   orientation: 'vertical',
-  gap: 30,
+  gap: 'Spacer1',
 };
 
 export const StackHorizontal = Template.bind({});
 StackHorizontal.args = {
   orientation: 'horizontal',
-  gap: 30,
+  gap: 'Spacer1',
 };

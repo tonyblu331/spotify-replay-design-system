@@ -128,9 +128,16 @@ export namespace Components {
     | 'horizontal-reverse'
     | 'vertical-reverse';
         /**
-          * The `gap` property adjusts spacing between children components in side flex
+          * The `gap` property adjusts spacing between children components inside flex
          */
-        "gap": number;
+        "gap"?: | 'Spacer1'
+    | 'Spacer2'
+    | 'Spacer3'
+    | 'Spacer4'
+    | 'Spacer5'
+    | 'Spacer6'
+    | 'Spacer7'
+    | 'Spacer8';
         /**
           * The `hAlignment` property allows user to align children or slots on the main axis
          */
@@ -170,7 +177,14 @@ export namespace Components {
         /**
           * The `gap` property sets the spacing in between elements, and has no effect in the leading or trailing element.
          */
-        "gap": number;
+        "gap"?: | 'Spacer1'
+    | 'Spacer2'
+    | 'Spacer3'
+    | 'Spacer4'
+    | 'Spacer5'
+    | 'Spacer6'
+    | 'Spacer7'
+    | 'Spacer8';
         /**
           * The `orientation` property sets the direction for the flow, either vertical or horizontal.
          */
@@ -404,9 +418,16 @@ declare namespace LocalJSX {
     | 'horizontal-reverse'
     | 'vertical-reverse';
         /**
-          * The `gap` property adjusts spacing between children components in side flex
+          * The `gap` property adjusts spacing between children components inside flex
          */
-        "gap"?: number;
+        "gap"?: | 'Spacer1'
+    | 'Spacer2'
+    | 'Spacer3'
+    | 'Spacer4'
+    | 'Spacer5'
+    | 'Spacer6'
+    | 'Spacer7'
+    | 'Spacer8';
         /**
           * The `hAlignment` property allows user to align children or slots on the main axis
          */
@@ -446,7 +467,14 @@ declare namespace LocalJSX {
         /**
           * The `gap` property sets the spacing in between elements, and has no effect in the leading or trailing element.
          */
-        "gap"?: number;
+        "gap"?: | 'Spacer1'
+    | 'Spacer2'
+    | 'Spacer3'
+    | 'Spacer4'
+    | 'Spacer5'
+    | 'Spacer6'
+    | 'Spacer7'
+    | 'Spacer8';
         /**
           * The `orientation` property sets the direction for the flow, either vertical or horizontal.
          */

@@ -1,5 +1,15 @@
 import { Component, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
+import {
+  SpacerSpacer1,
+  SpacerSpacer2,
+  SpacerSpacer3,
+  SpacerSpacer4,
+  SpacerSpacer5,
+  SpacerSpacer6,
+  SpacerSpacer7,
+  SpacerSpacer8,
+} from '../../../design-tokens/js/variables.js';
 
 /**
  * The `<sr-flex>` component is a layout component manages layout of children components.
@@ -51,10 +61,18 @@ export class SRFlex {
   hAlignment: 'left' | 'center' | 'right' | 'around' | 'between' = 'left';
 
   /**
-   * The `gap` property adjusts spacing between children components in side flex
+   * The `gap` property adjusts spacing between children components inside flex
    */
   @Prop({ reflect: true })
-  gap: number = 0;
+  gap?:
+    | 'Spacer1'
+    | 'Spacer2'
+    | 'Spacer3'
+    | 'Spacer4'
+    | 'Spacer5'
+    | 'Spacer6'
+    | 'Spacer7'
+    | 'Spacer8';
 
   /**
    * The `wrap` property allows children components wrap onto multiple lines
@@ -104,6 +122,30 @@ export class SRFlex {
         return 'flex-end';
       case 'stretch':
         return 'stretch';
+      default:
+        break;
+    }
+  }
+
+  gapHandler() {
+    if (!this.gap || this.gap == undefined) return 0;
+    switch (this.gap) {
+      case 'Spacer1':
+        return SpacerSpacer1;
+      case 'Spacer2':
+        return SpacerSpacer2;
+      case 'Spacer3':
+        return SpacerSpacer3;
+      case 'Spacer4':
+        return SpacerSpacer4;
+      case 'Spacer5':
+        return SpacerSpacer5;
+      case 'Spacer6':
+        return SpacerSpacer6;
+      case 'Spacer7':
+        return SpacerSpacer7;
+      case 'Spacer8':
+        return SpacerSpacer8;
       default:
         break;
     }

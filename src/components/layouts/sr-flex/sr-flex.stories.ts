@@ -9,25 +9,39 @@ export default {
         'vertical-reverse',
       ],
       control: { type: 'select' },
-      description: 'Flex direction',
+      description:
+        "Flex direction <br> `'horizontal'` `'vertical'` `'vertical'` `'vertical-reverse'`",
     },
     vAlignment: {
       options: ['top', 'center', 'bottom', 'stretch'],
       control: { type: 'select' },
-      description: 'Vertical alignment',
+      description:
+        "Vertical alignment <br> `'top'` `'center'` `'bottom'` `'stretch'`",
     },
     hAlignment: {
       options: ['left', 'center', 'right', 'around', 'between'],
       control: { type: 'select' },
-      description: 'Horizontal alignment',
+      description:
+        "Horizontal alignment <br> `'left'` `'center'` `'right'` `'around'` `'between'`",
     },
     gap: {
-      defaultValue: 0,
-      description: ' The size of the gap between items in flex component',
+      description:
+        "Adjusting spacing between children components inside flex <br> `'Spacer1'` `'Spacer2'` `'Spacer3'` `'Spacer4'` `'Spacer5'` `'Spacer6'` `'Spacer7'` `'Spacer8'`",
+      options: [
+        'Spacer1',
+        'Spacer2',
+        'Spacer3',
+        'Spacer4',
+        'Spacer5',
+        'Spacer6',
+        'Spacer7',
+        'Spacer8',
+      ],
+      control: { type: 'select' },
     },
     wrap: {
       description:
-        'Wrap helps to specify whether flex items are forced onto one line or can wrap onto multiple lines',
+        'Wrap helps to specify whether flex items are forced onto one line or can wrap onto multiple lines <br> `boolean`',
       options: [true, false],
       control: { type: 'boolean' },
       defaultValue: false,
@@ -78,13 +92,13 @@ const TemplateWrap = args => `
 export const FlexRow = Template.bind({});
 FlexRow.args = {
   direction: 'horizontal',
-  gap: 30,
+  gap: 'Spacer1',
 };
 
 export const FlexColumn = Template.bind({});
 FlexColumn.args = {
   direction: 'vertical',
-  gap: 30,
+  gap: 'Spacer1',
 };
 
 export const FlexWrap = TemplateWrap.bind({});
@@ -92,5 +106,5 @@ FlexWrap.args = {
   wrap: 'true',
   direction: 'horizontal',
   hAlignment: 'center',
-  gap: 30,
+  gap: 'Spacer1',
 };

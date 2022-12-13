@@ -1,5 +1,15 @@
 import { Component, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
+import {
+  SpacerSpacer1,
+  SpacerSpacer2,
+  SpacerSpacer3,
+  SpacerSpacer4,
+  SpacerSpacer5,
+  SpacerSpacer6,
+  SpacerSpacer7,
+  SpacerSpacer8,
+} from '../../../design-tokens/js/variables.js';
 
 /**
  * The `<sr-stack>` component is a layout component manages layout of children
@@ -36,12 +46,44 @@ export class SrStack {
    * in the leading or trailing element.
    */
   @Prop({ reflect: true })
-  gap: number = 0;
+  gap?:
+    | 'Spacer1'
+    | 'Spacer2'
+    | 'Spacer3'
+    | 'Spacer4'
+    | 'Spacer5'
+    | 'Spacer6'
+    | 'Spacer7'
+    | 'Spacer8';
+
+  gapHandler() {
+    if (!this.gap || this.gap == undefined) return 0;
+    switch (this.gap) {
+      case 'Spacer1':
+        return SpacerSpacer1;
+      case 'Spacer2':
+        return SpacerSpacer2;
+      case 'Spacer3':
+        return SpacerSpacer3;
+      case 'Spacer4':
+        return SpacerSpacer4;
+      case 'Spacer5':
+        return SpacerSpacer5;
+      case 'Spacer6':
+        return SpacerSpacer6;
+      case 'Spacer7':
+        return SpacerSpacer7;
+      case 'Spacer8':
+        return SpacerSpacer8;
+      default:
+        break;
+    }
+  }
 
   renderStackStyling() {
     return css`
       display: flex;
-      gap: ${this.gap}px;
+      gap: ${this.gapHandler()}px;
       flex-direction: ${this.orientation === 'horizontal' ? 'row' : 'column'};
     `;
   }
