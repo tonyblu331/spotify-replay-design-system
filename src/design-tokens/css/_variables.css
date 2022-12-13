@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 09 Dec 2022 12:15:15 GMT
+ * Generated on Tue, 13 Dec 2022 10:03:27 GMT
  */
 
 :root {
@@ -135,4 +135,12 @@
   --sr-typography-typography-text-endnote-400: [object Object]; /* Endnote Text in Regular */
   --sr-typography-typography-text-endnote-700: [object Object]; /* Endnote Text in Bold */
   --sr-typography-typography-text-endnote-900: [object Object]; /* Endnote Text in Extra Bold */
+  --sr-spacer-spacer-1: 8;
+  --sr-spacer-spacer-2: 16;
+  --sr-spacer-spacer-3: 24;
+  --sr-spacer-spacer-4: 32;
+  --sr-spacer-spacer-5: 40;
+  --sr-spacer-spacer-6: 48;
+  --sr-spacer-spacer-7: 56;
+  --sr-spacer-spacer-8: 64;
 }
