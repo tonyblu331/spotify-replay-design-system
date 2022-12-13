@@ -7,6 +7,20 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { SpacingLarge, SpacingSmall } from "./design-tokens/js/variables.js";
 export namespace Components {
+    interface HsButton {
+        "size": string;
+        "variant": string;
+    }
+    interface HsHeader {
+        /**
+          * The `level` property allows users to indicate what header hierarchy this element is. It mus take a number from `1` to `6`.
+         */
+        "level": number;
+        /**
+          * Provides support for implementing horizontal alignment to the text contained in the header.
+         */
+        "textAlign": 'left' | 'right' | 'center';
+    }
     interface SrBox {
         /**
           * Specify wrapper HTML element
@@ -193,11 +207,27 @@ export namespace Components {
     interface SrTextinput {
     }
 }
+export interface HsButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLHsButtonElement;
+}
 export interface SrButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLSrButtonElement;
 }
 declare global {
+    interface HTMLHsButtonElement extends Components.HsButton, HTMLStencilElement {
+    }
+    var HTMLHsButtonElement: {
+        prototype: HTMLHsButtonElement;
+        new (): HTMLHsButtonElement;
+    };
+    interface HTMLHsHeaderElement extends Components.HsHeader, HTMLStencilElement {
+    }
+    var HTMLHsHeaderElement: {
+        prototype: HTMLHsHeaderElement;
+        new (): HTMLHsHeaderElement;
+    };
     interface HTMLSrBoxElement extends Components.SrBox, HTMLStencilElement {
     }
     var HTMLSrBoxElement: {
@@ -277,6 +307,8 @@ declare global {
         new (): HTMLSrTextinputElement;
     };
     interface HTMLElementTagNameMap {
+        "hs-button": HTMLHsButtonElement;
+        "hs-header": HTMLHsHeaderElement;
         "sr-box": HTMLSrBoxElement;
         "sr-button": HTMLSrButtonElement;
         "sr-callout": HTMLSrCalloutElement;
@@ -293,6 +325,21 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface HsButton {
+        "onClicked"?: (event: HsButtonCustomEvent<any>) => void;
+        "size"?: string;
+        "variant"?: string;
+    }
+    interface HsHeader {
+        /**
+          * The `level` property allows users to indicate what header hierarchy this element is. It mus take a number from `1` to `6`.
+         */
+        "level"?: number;
+        /**
+          * Provides support for implementing horizontal alignment to the text contained in the header.
+         */
+        "textAlign"?: 'left' | 'right' | 'center';
+    }
     interface SrBox {
         /**
           * Specify wrapper HTML element
@@ -483,6 +530,8 @@ declare namespace LocalJSX {
     interface SrTextinput {
     }
     interface IntrinsicElements {
+        "hs-button": HsButton;
+        "hs-header": HsHeader;
         "sr-box": SrBox;
         "sr-button": SrButton;
         "sr-callout": SrCallout;
@@ -502,6 +551,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "hs-button": LocalJSX.HsButton & JSXBase.HTMLAttributes<HTMLHsButtonElement>;
+            "hs-header": LocalJSX.HsHeader & JSXBase.HTMLAttributes<HTMLHsHeaderElement>;
             "sr-box": LocalJSX.SrBox & JSXBase.HTMLAttributes<HTMLSrBoxElement>;
             "sr-button": LocalJSX.SrButton & JSXBase.HTMLAttributes<HTMLSrButtonElement>;
             "sr-callout": LocalJSX.SrCallout & JSXBase.HTMLAttributes<HTMLSrCalloutElement>;

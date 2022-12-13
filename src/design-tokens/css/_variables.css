@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 13 Dec 2022 10:03:27 GMT
+ * Generated on Tue, 13 Dec 2022 14:42:21 GMT
  */
 
 :root {
@@ -14,57 +14,60 @@
   --sr-color-foundation-ui-green-ui-green-dark-hover: #126f33;
   --sr-color-foundation-ui-green-ui-green-dark-active: #0d5326;
   --sr-color-foundation-neutral-pure-white: #ffffff; /* Pure White */
-  --sr-color-foundation-neutral-white-25: #fdfdfd;
-  --sr-color-foundation-neutral-white-50: #f7f7f7;
+  --sr-color-foundation-neutral-white-50: #fdfdfd;
   --sr-color-foundation-neutral-white-100: #f3f3f3;
-  --sr-color-foundation-neutral-gray-25: #e0e1e1;
-  --sr-color-foundation-neutral-gray-50: #cccdcd;
-  --sr-color-foundation-neutral-gray-75: #a3a4a5;
-  --sr-color-foundation-neutral-gray-100: #7a7c7e;
-  --sr-color-foundation-neutral-gray-200: #696c6e;
-  --sr-color-foundation-neutral-black-25: #515356;
-  --sr-color-foundation-neutral-black-50: #4b4d50;
-  --sr-color-foundation-neutral-black-75: #424548;
-  --sr-color-foundation-neutral-black-100: #323538;
-  --sr-color-foundation-neutral-pure-blak: #000000; /* Pure Black */
-  --sr-color-foundation-blue-blue-50: #eef5fe;
-  --sr-color-foundation-blue-blue-75: #b8d6fa;
+  --sr-color-foundation-neutral-white-200: #e0e1e1;
+  --sr-color-foundation-neutral-white-300: #cccdcd;
+  --sr-color-foundation-neutral-gray-200: #a3a4a5;
+  --sr-color-foundation-neutral-gray-300: #7a7c7e;
+  --sr-color-foundation-neutral-gray-100: #a9a9a9;
+  --sr-color-foundation-neutral-gray-400: #4b4d50;
+  --sr-color-foundation-neutral-black-100: #424548;
+  --sr-color-foundation-neutral-black-200: #323538;
+  --sr-color-foundation-neutral-pure-black: #000000; /* Pure Black */
+  --sr-color-foundation-neutral-black-300: #181818;
+  --sr-color-foundation-neutral-black-400: #121212;
+  --sr-color-foundation-pink-pink-50: #fbc6d9;
+  --sr-color-foundation-pink-pink-100: #faaec9;
+  --sr-color-foundation-pink-pink-200: #f88bb2;
+  --sr-color-foundation-pink-pink-300: #f673a2;
+  --sr-color-foundation-pink-pink-25: #ffccd3;
+  --sr-color-foundation-aqua-aqua-100: #c6f6ee;
+  --sr-color-foundation-aqua-aqua-200: #9cefe1;
   --sr-color-foundation-blue-blue-100: #9ac5f9;
   --sr-color-foundation-blue-blue-200: #6facf6;
   --sr-color-foundation-blue-blue-300: #519bf4;
   --sr-color-foundation-blue-blue-400: #396dab;
-  --sr-color-foundation-blue-blue-500: #315f95;
-  --sr-color-foundation-pink-pink-50: #fef1f6;
-  --sr-color-foundation-pink-pink-75: #fbc6d9;
-  --sr-color-foundation-pink-pink-100: #faaec9;
-  --sr-color-foundation-pink-pink-200: #f88bb2;
-  --sr-color-foundation-pink-pink-300: #f673a2;
-  --sr-color-foundation-pink-pink-400: #ac5171;
-  --sr-color-foundation-pink-pink-500: #964663;
-  --sr-color-foundation-yellow-yellow-50: #fefcea;
-  --sr-color-foundation-yellow-yellow-75: #fcf4a8;
+  --sr-color-foundation-blue-blue-500: #2941ab;
   --sr-color-foundation-yellow-yellow-100: #faef85;
   --sr-color-foundation-yellow-yellow-200: #f8e850;
   --sr-color-foundation-yellow-yellow-300: #f7e32c;
-  --sr-color-foundation-yellow-yellow-400: #ad9f1f;
-  --sr-color-foundation-yellow-yellow-500: #978a1b;
-  --sr-color-foundation-rose-rose-50: #ffedeb;
-  --sr-color-foundation-rose-rose-75: #ffb3ab;
-  --sr-color-foundation-rose-rose-100: #ff9489;
+  --sr-color-foundation-pastel-orange-pastel-orange-100: #ffdea6;
+  --sr-color-foundation-pastel-orange-pastel-orange-200: #ffd07f;
+  --sr-color-foundation-pastel-orange-pastel-orange-300: #ffc665;
+  --sr-color-foundation-rose-rose-100: #ffb3ab;
+  --sr-color-foundation-rose-rose-200: #ff9489;
   --sr-color-foundation-red-red-50: #ff6556;
-  --sr-color-foundation-red-red-75: #ff4633;
-  --sr-color-foundation-red-red-100: #b33124;
-  --sr-color-foundation-red-red-200: #9c2b1f;
-  --sr-color-spotify-brand-brand-palette-pastel-pink: #ffcdd3; /* Spotify Brand Palette Color, Pastel Pink */
-  --sr-color-spotify-brand-brand-palette-beige: #fbf0ef; /* Spotify Brand Palette Color, Beige */
-  --sr-color-spotify-brand-brand-palette-pastel-blue: #a1c3d3; /* Spotify Brand Palette Color, Pastel Blue */
-  --sr-color-spotify-brand-brand-palette-lime-green: #cdf564; /* Spotify Brand Palette Color, Lime Green */
-  --sr-color-spotify-brand-brand-palette-pastel-orange: #ffc665; /* Spotify Brand Palette Color, Pastel Orange */
-  --sr-color-spotify-brand-brand-palette-blue: #519bf4; /* Spotify Brand Palette, Blue */
-  --sr-color-spotify-brand-brand-palette-red: #ff4633; /* Spotify Brand Palette, Red */
-  --sr-color-spotify-brand-brand-palette-pink: #f673a2; /* Spotify Brand Palette, Pink */
-  --sr-color-spotify-brand-brand-palette-yellow: #f7e32c; /* Spotify Brand Palette, Yellow */
-  --sr-color-spotify-brand-spotify-green-spotify-green: #1ed860;
+  --sr-color-foundation-red-red-100: #ff4633;
+  --sr-color-foundation-red-red-200: #e12310;
+  --sr-color-foundation-red-red-300: #9c2b1f;
+  --sr-color-foundation-purple-purple-50: #b2a1e1;
+  --sr-color-foundation-purple-purple-100: #927ad5;
+  --sr-color-foundation-purple-purple-200: #6341c3;
+  --sr-color-foundation-purple-purple-300: #431ab7;
+  --sr-color-foundation-purple-purple-400: #2f1280;
+  --sr-color-foundation-pastel-pink-pastel-pink-100: #fed4da;
+  --sr-color-foundation-pastel-pink-pastel-pink-200: #fecbd2;
+  --sr-color-brand-palette-pastel-pink: #ffcdd3; /* Spotify Brand Palette Color, Pastel Pink */
+  --sr-color-brand-palette-beige: #fbf0ef; /* Spotify Brand Palette Color, Beige */
+  --sr-color-brand-palette-pastel-blue: #a1c3d3; /* Spotify Brand Palette Color, Pastel Blue */
+  --sr-color-brand-palette-lime-green: #cdf564; /* Spotify Brand Palette Color, Lime Green */
+  --sr-color-brand-palette-pastel-orange: #ffc665; /* Spotify Brand Palette Color, Pastel Orange */
+  --sr-color-brand-palette-blue: #519bf4; /* Spotify Brand Palette, Blue */
+  --sr-color-brand-palette-red: #ff4633; /* Spotify Brand Palette, Red */
+  --sr-color-brand-palette-pink: #f673a2; /* Spotify Brand Palette, Pink */
+  --sr-color-brand-palette-yellow: #f7e32c; /* Spotify Brand Palette, Yellow */
+  --sr-color-brand-palette-spotify-green: #1ed860; /* The Spotify Green */
   --sr-color-primary: #8f00ff;
   --sr-color-error: #ff0000;
   --sr-color-success: #00b53d;
@@ -109,19 +112,22 @@
   --sr-typography-body-paragraph-indent: 0;
   --sr-typography-body-paragraph-spacing: 0;
   --sr-typography-body-text-case: none;
+  --sr-typography-typography-headers-subheaders-subheading1-400: [object Object]; /* H3, Subheading Variation 1 in Regular */
+  --sr-typography-typography-headers-subheaders-subheading2-400: [object Object]; /* H4, Subheading Variation 2 in Regular */
+  --sr-typography-typography-headers-subheaders-subheading2-700: [object Object]; /* H4, Subheading Variation 2 in Bold */
+  --sr-typography-typography-headers-subheaders-subheading3-400: [object Object]; /* H5, Subheading Variation 3 in Regular */
+  --sr-typography-typography-headers-subheaders-subheading4-700: [object Object]; /* H6, Subheading Variation 3 in Bold */
+  --sr-typography-typography-headers-subheaders-subheading1-700: [object Object]; /* H3, Subheading Variation 1 in Bold */
+  --sr-typography-typography-headers-subheaders-subheading3-700: [object Object]; /* H5, Subheading Variation 3 in Bold */
+  --sr-typography-typography-headers-subheaders-subheading4-400: [object Object]; /* H6, Subheading Variation 3 in Regular */
   --sr-typography-typography-headers-displayxl-400: [object Object]; /* H1, Display, or XL Title in Regular */
   --sr-typography-typography-headers-displayxl-700: [object Object]; /* H1, Display, or XL Title in Bold */
   --sr-typography-typography-headers-displayxl-900: [object Object]; /* H1, Display, or XL Title in Extra Bold */
   --sr-typography-typography-headers-displaylg-400: [object Object]; /* H2, Large Display, or Main Section Title in Regular */
   --sr-typography-typography-headers-displaylg-700: [object Object]; /* H2, Large Display, or Main Section Title in Bold */
   --sr-typography-typography-headers-displaylg-900: [object Object]; /* H2, Large Display, or Main Section Title in Extra Bold */
-  --sr-typography-typography-headers-subheading1-400: [object Object]; /* H3, Subheading Variation 1 in Regular */
   --sr-typography-typography-headers-subheading1-900: [object Object]; /* H3, Subheading Variation 1 in Extra Bold */
-  --sr-typography-typography-headers-subheading2-400: [object Object]; /* H4, Subheading Variation 2 in Regular */
-  --sr-typography-typography-headers-subheading2-700: [object Object]; /* H4, Subheading Variation 2 in Bold */
   --sr-typography-typography-headers-subheading2-900: [object Object]; /* H4, Subheading Variation 2 in Extra Bold */
-  --sr-typography-typography-headers-subheading3-400: [object Object]; /* H5, Subheading Variation 3 in Regular */
-  --sr-typography-typography-headers-subheading4-700: [object Object]; /* H5, Subheading Variation 3 in Bold */
   --sr-typography-typography-headers-subheading4-900: [object Object]; /* H5, Subheading Variation 3 in Extra Bold */
   --sr-typography-typography-text-body-400: [object Object]; /* Body Text in Regular */
   --sr-typography-typography-text-blockquote-400: [object Object]; /* Blockquote in Regular */
@@ -135,6 +141,26 @@
   --sr-typography-typography-text-endnote-400: [object Object]; /* Endnote Text in Regular */
   --sr-typography-typography-text-endnote-700: [object Object]; /* Endnote Text in Bold */
   --sr-typography-typography-text-endnote-900: [object Object]; /* Endnote Text in Extra Bold */
+  --sr-shadow-elevation-light-light-elevation-0: [object Object];
+  --sr-shadow-elevation-light-light-elevation-0-2: [object Object];
+  --sr-shadow-elevation-light-light-elevation-1: [object Object];
+  --sr-shadow-elevation-light-light-elevation-1-2: [object Object];
+  --sr-shadow-elevation-light-light-elevation-2: [object Object];
+  --sr-shadow-elevation-light-light-elevation-2-2: [object Object];
+  --sr-shadow-elevation-light-light-elevation-3: [object Object];
+  --sr-shadow-elevation-light-light-elevation-3-2: [object Object];
+  --sr-shadow-elevation-light-light-elevation-4: [object Object];
+  --sr-shadow-elevation-light-light-elevation-4-2: [object Object];
+  --sr-shadow-elevation-dark-dark-elevation-0: [object Object];
+  --sr-shadow-elevation-dark-dark-elevation-0-2: [object Object];
+  --sr-shadow-elevation-dark-dark-elevation-1: [object Object];
+  --sr-shadow-elevation-dark-dark-elevation-1-2: [object Object];
+  --sr-shadow-elevation-dark-dark-elevation-2: [object Object];
+  --sr-shadow-elevation-dark-dark-elevation-2-2: [object Object];
+  --sr-shadow-elevation-dark-dark-elevation-3: [object Object];
+  --sr-shadow-elevation-dark-dark-elevation-3-2: [object Object];
+  --sr-shadow-elevation-dark-dark-elevation-4: [object Object];
+  --sr-shadow-elevation-dark-dark-elevation-4-2: [object Object];
   --sr-spacer-spacer-1: 8;
   --sr-spacer-spacer-2: 16;
   --sr-spacer-spacer-3: 24;
