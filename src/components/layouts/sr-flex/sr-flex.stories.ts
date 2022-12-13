@@ -39,16 +39,16 @@ function renderCard(items) {
   let temp = '';
   for (let i = 0; i < items; i++) {
     const color = i % 2 == 0 ? 'dark' : 'primary';
-    temp += `<sr-card backgroundColor="${color}" padding="large">
+    temp += `<sr-box backgroundColor="${color}" padding="large">
       <sr-heading level="1">Header ${i + 1}</sr-heading>
       <sr-paragraph>Show content here!</sr-paragraph>
-    </sr-card>`;
+    </sr-box>`;
   }
   return temp;
 }
 
 const Template = args => `
-<sr-card padding="large" hasBorder>
+<sr-box padding="large" hasBorder>
   <sr-flex 
       direction=${args.direction}
       vAlignment=${args.vAlignment}
@@ -58,11 +58,11 @@ const Template = args => `
     >
     ${renderCard(3)}
   </sr-flex>
-</sr-card>
+</sr-box>
 `;
 
 const TemplateWrap = args => `
-<sr-card padding="large" hasBorder>
+<sr-box padding="large" hasBorder>
   <sr-flex 
       direction=${args.direction}
       vAlignment=${args.vAlignment}
@@ -72,7 +72,7 @@ const TemplateWrap = args => `
     >
     ${renderCard(10)}
   </sr-flex>
-</sr-card>
+</sr-box>
 `;
 
 export const FlexRow = Template.bind({});
@@ -91,5 +91,6 @@ export const FlexWrap = TemplateWrap.bind({});
 FlexWrap.args = {
   wrap: 'true',
   direction: 'horizontal',
+  hAlignment: 'center',
   gap: 30,
 };
