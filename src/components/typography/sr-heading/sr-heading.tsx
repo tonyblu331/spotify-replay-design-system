@@ -1,8 +1,17 @@
 import { Component, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
 import {
-  FontHeading1,
-  FontHeading2,
+  TypographyTypographyHeadersDisplayxl900,
+  TypographyTypographyHeadersDisplaylg400,
+  TypographyTypographyHeadersDisplaylg700,
+  TypographyTypographyHeadersSubheadersSubheading1400,
+  TypographyTypographyHeadersSubheadersSubheading1700,
+  TypographyTypographyHeadersSubheadersSubheading2700,
+  TypographyTypographyHeadersSubheadersSubheading2400,
+  TypographyTypographyHeadersSubheadersSubheading3400,
+  TypographyTypographyHeadersSubheadersSubheading3700,
+  TypographyTypographyHeadersSubheadersSubheading4400,
+  TypographyTypographyHeadersSubheadersSubheading4700,
 } from '../../../design-tokens/js/variables.js';
 
 /**
@@ -27,7 +36,18 @@ export class SRHeading {
    * The `level` property allows users to indicate what header hierarchy this element is.
    * It must take a number from `1` to `6`.  */
   @Prop({ reflect: true })
-  level: 1 | 2 | 3 | 4 | 5 | 6 = 1;
+  level:
+    | 'h1'
+    | 'h2-regular'
+    | 'h2-bold'
+    | 'h3-regular'
+    | 'h3-bold'
+    | 'h4-regular'
+    | 'h4-bold'
+    | 'h5-regular'
+    | 'h5-bold'
+    | 'h6-regular'
+    | 'h6-bold' = 'h1';
 
   /**
    * Provides support for implementing horizontal alignment to the text contained in the header.
@@ -35,54 +55,198 @@ export class SRHeading {
   @Prop({ reflect: true, attribute: 'textAlign' })
   textAlign: 'left' | 'right' | 'center' | 'justify' = 'left';
 
-  componentWillLoad() {
-    /**
-     * We validate here that the 'level' property, which will be used later to compose a
-     * HTML tag 'on the fly', will only take values from 1 to 6. TypeScript gives us
-     * statical type checking on dev time but TypeScript annotations are wiped once the component
-     * is traspiled. This conditional check ensures that the component is properly used
-     * later on "in the wild".
-     */
-    if (this.level < 1 || this.level > 6) {
-      throw new Error('SRHeader: the level property must be between 1 and 6');
+  @Prop({ reflect: true })
+  color: 'black' | 'white' = 'black';
+
+  getFontSize() {
+    switch (this.level) {
+      case 'h1':
+        return TypographyTypographyHeadersDisplayxl900.fontSize.value.measure
+          .value;
+      case 'h2-regular':
+        return TypographyTypographyHeadersDisplaylg400.fontSize.value.measure
+          .value;
+      case 'h2-bold':
+        return TypographyTypographyHeadersDisplaylg700.fontSize.value.measure
+          .value;
+      case 'h3-regular':
+        return TypographyTypographyHeadersSubheadersSubheading1400.fontSize
+          .value.measure.value;
+      case 'h3-bold':
+        return TypographyTypographyHeadersSubheadersSubheading1700.fontSize
+          .value.measure.value;
+      case 'h4-regular':
+        return TypographyTypographyHeadersSubheadersSubheading2400.fontSize
+          .value.measure.value;
+      case 'h4-bold':
+        return TypographyTypographyHeadersSubheadersSubheading2700.fontSize
+          .value.measure.value;
+      case 'h5-regular':
+        return TypographyTypographyHeadersSubheadersSubheading3400.fontSize
+          .value.measure.value;
+      case 'h5-bold':
+        return TypographyTypographyHeadersSubheadersSubheading3700.fontSize
+          .value.measure.value;
+      case 'h6-regular':
+        return TypographyTypographyHeadersSubheadersSubheading4400.fontSize
+          .value.measure.value;
+      case 'h6-bold':
+        return TypographyTypographyHeadersSubheadersSubheading4700.fontSize
+          .value.measure.value;
     }
   }
 
-  getFontHeadingToken() {
+  getLineHeight() {
     switch (this.level) {
-      case 1:
-        return FontHeading1;
-      case 2:
-        return FontHeading2;
-      // TODOJCS get design tokens for h3-6
-      // case 3:
-      //   return FontHeading3;
-      // case 4:
-      //   return FontHeading4;
-      // case 5:
-      //   return FontHeading5;
-      // case 6:
-      //   return FontHeading6;
+      case 'h1':
+        return TypographyTypographyHeadersDisplayxl900.lineHeight.value.measure
+          .value;
+      case 'h2-regular':
+        return TypographyTypographyHeadersDisplaylg400.lineHeight.value.measure
+          .value;
+      case 'h2-bold':
+        return TypographyTypographyHeadersDisplaylg700.lineHeight.value.measure
+          .value;
+      case 'h3-regular':
+        return TypographyTypographyHeadersSubheadersSubheading1400.lineHeight
+          .value.measure.value;
+      case 'h3-bold':
+        return TypographyTypographyHeadersSubheadersSubheading1700.lineHeight
+          .value.measure.value;
+      case 'h4-regular':
+        return TypographyTypographyHeadersSubheadersSubheading2400.lineHeight
+          .value.measure.value;
+      case 'h4-bold':
+        return TypographyTypographyHeadersSubheadersSubheading2700.lineHeight
+          .value.measure.value;
+      case 'h5-regular':
+        return TypographyTypographyHeadersSubheadersSubheading3400.lineHeight
+          .value.measure.value;
+      case 'h5-bold':
+        return TypographyTypographyHeadersSubheadersSubheading3700.lineHeight
+          .value.measure.value;
+      case 'h6-regular':
+        return TypographyTypographyHeadersSubheadersSubheading4400.lineHeight
+          .value.measure.value;
+      case 'h6-bold':
+        return TypographyTypographyHeadersSubheadersSubheading4700.lineHeight
+          .value.measure.value;
+    }
+  }
+
+  getLetterSpacing() {
+    switch (this.level) {
+      case 'h1':
+      case 'h2-regular':
+      case 'h2-bold':
+        return 0.5;
+      case 'h3-regular':
+      case 'h3-bold':
+        return 0.25;
+      case 'h4-regular':
+      case 'h4-bold':
+        return 0;
+      case 'h5-regular':
+      case 'h5-bold':
+      case 'h6-regular':
+      case 'h6-bold':
+        return 0.15;
+    }
+  }
+
+  getMarginBottom() {
+    switch (this.level) {
+      case 'h1':
+        return 0.46;
+      case 'h2-bold':
+      case 'h2-regular':
+      case 'h4-regular':
+      case 'h4-bold':
+        return 0.6;
+      case 'h3-regular':
+      case 'h3-bold':
+        return 0.86;
+      case 'h5-regular':
+      case 'h5-bold':
+        return 0.7;
+      case 'h6-regular':
+      case 'h6-bold':
+        return 0.75;
+      default:
+        break;
+    }
+  }
+
+  renderTag() {
+    switch (this.level) {
+      case 'h1':
+        return 'h1';
+      case 'h2-bold':
+      case 'h2-regular':
+        return 'h2';
+      case 'h3-regular':
+      case 'h3-bold':
+        return 'h3';
+      case 'h4-regular':
+      case 'h4-bold':
+        return 'h4';
+      case 'h5-regular':
+      case 'h5-bold':
+        return 'h5';
+      case 'h6-regular':
+      case 'h6-bold':
+        return 'h6';
+      default:
+        break;
+    }
+  }
+
+  getFontWeight() {
+    switch (this.level) {
+      case 'h1':
+        return `${TypographyTypographyHeadersDisplayxl900.font.value.subfamily.value}`.toLocaleLowerCase();
+      case 'h2-regular':
+        return `${TypographyTypographyHeadersDisplaylg400.font.value.subfamily.value}`.toLocaleLowerCase();
+      case 'h2-bold':
+        return `${TypographyTypographyHeadersDisplaylg700.font.value.subfamily.value}`.toLocaleLowerCase();
+      case 'h3-regular':
+        return `${TypographyTypographyHeadersSubheadersSubheading1400.font.value.subfamily.value}`.toLocaleLowerCase();
+      case 'h3-bold':
+        return `${TypographyTypographyHeadersSubheadersSubheading1700.font.value.subfamily.value}`.toLocaleLowerCase();
+      case 'h4-regular':
+        return `${TypographyTypographyHeadersSubheadersSubheading2400.font.value.subfamily.value}`.toLocaleLowerCase();
+      case 'h4-bold':
+        return `${TypographyTypographyHeadersSubheadersSubheading2700.font.value.subfamily.value}`.toLocaleLowerCase();
+      case 'h5-regular':
+        return `${TypographyTypographyHeadersSubheadersSubheading3400.font.value.subfamily.value}`.toLocaleLowerCase();
+      case 'h5-bold':
+        return `${TypographyTypographyHeadersSubheadersSubheading3700.font.value.subfamily.value}`.toLocaleLowerCase();
+      case 'h6-regular':
+        return `${TypographyTypographyHeadersSubheadersSubheading4400.font.value.subfamily.value}`.toLocaleLowerCase();
+      case 'h6-bold':
+        return `${TypographyTypographyHeadersSubheadersSubheading4700.font.value.subfamily.value}`.toLocaleLowerCase();
     }
   }
 
   render() {
-    // We create a JSX tag on the fly
-    const Tag = `h${this.level}`;
-
-    // TODOJCS fontHeading design tokens have good values? Font family is off
-    // TODOJCS ASK Tony:
-    // - what default color for heading? pureblack? colorbody?
+    const Tag = this.renderTag();
     const tagStyles = css`
-      color: #e0e0e0 
-      font-size: ${this.getFontHeadingToken().fontSize}px;
       text-align: ${this.textAlign};
     `;
-
     return (
-      <Tag className={tagStyles} aria-role="heading">
+      <sr-text
+        as={Tag as any}
+        marginBottom={this.getMarginBottom()}
+        letterSpacing={this.getLetterSpacing()}
+        lineHeight={this.getLineHeight()}
+        fontSize={this.getFontSize()}
+        fontWeight={this.getFontWeight() as any}
+        aria-role="heading"
+        color={this.color}
+        class={tagStyles}
+      >
         <slot></slot>
-      </Tag>
+      </sr-text>
     );
   }
 }

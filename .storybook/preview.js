@@ -1,4 +1,5 @@
 import { defineCustomElements } from '../loader';
+import '../src/shared/css/global.css';
 
 defineCustomElements();
 
