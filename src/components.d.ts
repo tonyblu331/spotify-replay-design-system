@@ -110,6 +110,14 @@ export namespace Components {
         "type": 'note' | 'warning' | 'critical';
     }
     interface SrCombobox {
+        /**
+          * If true, the checkbox will allow the selection of an empty value
+         */
+        "allowEmpty": boolean;
+        /**
+          * Text string to add to a label to describe the combobox
+         */
+        "labelText"?: string;
     }
     interface SrFlex {
         /**
@@ -260,6 +268,10 @@ export namespace Components {
 export interface SrButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLSrButtonElement;
+}
+export interface SrComboboxCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLSrComboboxElement;
 }
 declare global {
     interface HTMLSrBoxElement extends Components.SrBox, HTMLStencilElement {
@@ -464,6 +476,18 @@ declare namespace LocalJSX {
         "type"?: 'note' | 'warning' | 'critical';
     }
     interface SrCombobox {
+        /**
+          * If true, the checkbox will allow the selection of an empty value
+         */
+        "allowEmpty"?: boolean;
+        /**
+          * Text string to add to a label to describe the combobox
+         */
+        "labelText"?: string;
+        /**
+          * Emitted when the one of the options in the combobox is selected
+         */
+        "onSelected"?: (event: SrComboboxCustomEvent<any>) => void;
     }
     interface SrFlex {
         /**

@@ -47,7 +47,7 @@ import {
   shadow: false,
   scoped: true,
 })
-export class SrBox {
+export class SRBox {
   /**
    * Specify wrapper HTML element
    */

@@ -5,8 +5,7 @@ import { Component, Host, h } from '@stencil/core';
   styleUrl: 'sr-textinput.css',
   shadow: true,
 })
-export class SrTextinput {
-
+export class SRTextinput {
   render() {
     return (
       <Host>
@@ -14,5 +13,4 @@ export class SrTextinput {
       </Host>
     );
   }
-
 }

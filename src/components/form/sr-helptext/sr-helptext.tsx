@@ -5,8 +5,7 @@ import { Component, Host, h } from '@stencil/core';
   styleUrl: 'sr-helptext.css',
   shadow: true,
 })
-export class SrHelptext {
-
+export class SRHelptext {
   render() {
     return (
       <Host>
@@ -14,5 +13,4 @@ export class SrHelptext {
       </Host>
     );
   }
-
 }

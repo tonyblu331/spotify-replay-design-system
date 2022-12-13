@@ -34,7 +34,7 @@ import {
   shadow: false,
   scoped: true,
 })
-export class SrStack {
+export class SRStack {
   /**
    * The `orientation` property sets the direction for the flow,
    * either vertical or horizontal.
