@@ -18,20 +18,20 @@ function renderCard() {
   let temp = '';
   for (let i = 0; i < 3; i++) {
     const color = i % 2 == 0 ? 'dark' : 'primary';
-    temp += `<sr-card backgroundColor="${color}" padding="large">
+    temp += `<sr-box backgroundColor="${color}" padding="large">
       <sr-heading level="1">Header ${i + 1}</sr-heading>
       <sr-paragraph>Show content here!</sr-paragraph>
-    </sr-card>`;
+    </sr-box>`;
   }
   return temp;
 }
 
 const Template = args => `
-  <sr-card padding="large" hasBorder>
+  <sr-box padding="small" hasBorder>
     <sr-stack gap=${args.gap} orientation=${args.orientation}>
     ${renderCard()}
     </sr-stack>
-  </sr-card>
+  </sr-box>
 `;
 
 export const StackVertical = Template.bind({});
