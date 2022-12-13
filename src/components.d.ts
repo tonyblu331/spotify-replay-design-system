@@ -9,6 +9,10 @@ import { SpacingLarge, SpacingSmall } from "./design-tokens/js/variables.js";
 export namespace Components {
     interface SrBox {
         /**
+          * Specify wrapper HTML element
+         */
+        "as": 'div' | 'section' | 'article' | 'span';
+        /**
           * Specify background fill inside box component
          */
         "backgroundColor": 'primary' | 'secondary' | 'default' | 'dark';
@@ -276,6 +280,10 @@ declare global {
 }
 declare namespace LocalJSX {
     interface SrBox {
+        /**
+          * Specify wrapper HTML element
+         */
+        "as"?: 'div' | 'section' | 'article' | 'span';
         /**
           * Specify background fill inside box component
          */

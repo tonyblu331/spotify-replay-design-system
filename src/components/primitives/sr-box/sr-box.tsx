@@ -13,6 +13,7 @@ import {
  * The `<sr-box>` component is a primitive component.
  * It is a simple wrapper component that can create other components such as card.
  *
+ * @property `as` (default 'div')
  * @property `padding` (default 'small')
  * @property `paddingTop`
  * @property `paddingRight`
@@ -38,6 +39,12 @@ import {
   scoped: true,
 })
 export class SrBox {
+  /**
+   * Specify wrapper HTML element
+   */
+  @Prop({ reflect: true })
+  as: 'div' | 'section' | 'article' | 'span' = 'div';
+
   /**
    * Control amount of white space around child components inside of a box
    */
@@ -259,6 +266,9 @@ export class SrBox {
     }
   }
 
+  /**
+   * TODOROSE Fix base on design token
+   */
   boxShadowHandler() {
     switch (this.boxShadow) {
       case 'level0':
@@ -299,10 +309,11 @@ export class SrBox {
     `;
   }
   render() {
+    const Tag = `${this.as}`;
     return (
-      <div class={this.renderStyling()}>
+      <Tag class={this.renderStyling()}>
         <slot></slot>
-      </div>
+      </Tag>
     );
   }
 }

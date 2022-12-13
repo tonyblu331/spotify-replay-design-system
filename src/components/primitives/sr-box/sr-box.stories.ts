@@ -4,6 +4,13 @@ export default {
   },
   title: 'Primitives/Box',
   argTypes: {
+    as: {
+      description:
+        "Specify wrapper HTML element <br> `'div'` `'section'` `'article'` `'span'`",
+      options: ['div', 'section', 'article', 'span'],
+      control: { type: 'select' },
+      defaultValue: 'div',
+    },
     backgroundColor: {
       description:
         "Specify background fill inside box component <br> `'default'` `'primary'` `'secondary'` `'dark'`",
@@ -121,6 +128,7 @@ export default {
 
 const Template = args => `
   <sr-box 
+    as=${args.as}
     backgroundColor=${args.backgroundColor}
     color=${args.color ? args.color : ''}
     padding=${args.padding} 
@@ -140,7 +148,7 @@ const Template = args => `
     height=${args.height}
     boxShadow=${args.boxShadow}
     >
-    <sr-heading level="1">${args.text || 'Header'}</sr-heading>
+    <sr-heading level="1">${(args.text, 'Header')}</sr-heading>
     <sr-paragraph>Show content here!</sr-paragraph>
   </sr-box>
 `;

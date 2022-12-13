@@ -14,6 +14,7 @@ It is a simple wrapper component that can create other components such as card.
 
 | Property          | Attribute         | Description                                                           | Type                                                       | Default     |
 | ----------------- | ----------------- | --------------------------------------------------------------------- | ---------------------------------------------------------- | ----------- |
+| `as`              | `as`              | Specify wrapper HTML element                                          | `"article" \| "div" \| "section" \| "span"`                | `'div'`     |
 | `backgroundColor` | `backgroundcolor` | Specify background fill inside box component                          | `"dark" \| "default" \| "primary" \| "secondary"`          | `'default'` |
 | `borderColor`     | `bordercolor`     | Specify border color                                                  | `"default" \| "primary"`                                   | `'default'` |
 | `borderRadius`    | `borderradius`    | Specify border radius                                                 | `"default" \| "none"`                                      | `'default'` |
