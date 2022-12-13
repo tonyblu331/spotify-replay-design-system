@@ -22,7 +22,7 @@ import { Component, Event, h, Host, Prop } from '@stencil/core';
   shadow: false,
   scoped: true,
 })
-export class SrCombobox {
+export class SRCombobox {
   /**
    * Text string to add to a label to describe the combobox
    */
