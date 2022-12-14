@@ -147,7 +147,8 @@ export class SrText {
     const Tag = `${this.as}`;
     const tagStyles = css`
       color: ${this.getFontColor()};
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', 'Helvetica Neue', 'Arial',
+        'San Francisco', 'Segoe UI', 'Roboto', 'sans-serif';
       line-height: ${this.lineHeight}%;
       font-size: ${this.fontSize}px !important;
       padding: ${this.padding}em;
