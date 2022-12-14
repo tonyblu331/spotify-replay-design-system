@@ -145,6 +145,9 @@ export namespace Components {
         "wrap": boolean;
     }
     interface SrHeading {
+        /**
+          * Specify text color
+         */
         "color": 'black' | 'white';
         /**
           * The `level` property allows users to indicate what header hierarchy this element is. It must take a number from `1` to `6`.
@@ -515,6 +518,9 @@ declare namespace LocalJSX {
         "wrap"?: boolean;
     }
     interface SrHeading {
+        /**
+          * Specify text color
+         */
         "color"?: 'black' | 'white';
         /**
           * The `level` property allows users to indicate what header hierarchy this element is. It must take a number from `1` to `6`.

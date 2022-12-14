@@ -55,6 +55,9 @@ export class SRHeading {
   @Prop({ reflect: true, attribute: 'textAlign' })
   textAlign: 'left' | 'right' | 'center' | 'justify' = 'left';
 
+  /**
+   * Specify text color
+   */
   @Prop({ reflect: true })
   color: 'black' | 'white' = 'black';
 

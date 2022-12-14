@@ -53,6 +53,7 @@ const Template = args => {
 
 const defaultOption = {
   textAlign: 'left',
+  color: 'black',
 };
 
 export const Header1 = Template.bind({});
