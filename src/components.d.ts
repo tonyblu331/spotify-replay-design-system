@@ -284,6 +284,14 @@ export namespace Components {
         "paddingTop"?: number;
     }
     interface SrTextinput {
+        /**
+          * TODOJCS describe prop
+         */
+        "label"?: string;
+        /**
+          * TODOJCS describe prop
+         */
+        "placeholder": string;
     }
 }
 export interface SrButtonCustomEvent<T> extends CustomEvent<T> {
@@ -675,6 +683,14 @@ declare namespace LocalJSX {
         "paddingTop"?: number;
     }
     interface SrTextinput {
+        /**
+          * TODOJCS describe prop
+         */
+        "label"?: string;
+        /**
+          * TODOJCS describe prop
+         */
+        "placeholder"?: string;
     }
     interface IntrinsicElements {
         "sr-box": SrBox;

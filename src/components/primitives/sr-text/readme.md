@@ -32,11 +32,13 @@
 ### Used by
 
  - [sr-heading](../../typography/sr-heading)
+ - [sr-textinput](../../form/sr-textinput)
 
 ### Graph
 ```mermaid
 graph TD;
   sr-heading --> sr-text
+  sr-textinput --> sr-text
   style sr-text fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
