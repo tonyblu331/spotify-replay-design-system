@@ -283,11 +283,11 @@ export namespace Components {
     }
     interface SrTextinput {
         /**
-          * TODOJCS describe prop
+          * Text label to place alongside the input
          */
         "label"?: string;
         /**
-          * TODOJCS describe prop
+          * The text to display when the input is empty
          */
         "placeholder": string;
     }
@@ -299,6 +299,10 @@ export interface SrButtonCustomEvent<T> extends CustomEvent<T> {
 export interface SrComboboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLSrComboboxElement;
+}
+export interface SrTextinputCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLSrTextinputElement;
 }
 declare global {
     interface HTMLSrBoxElement extends Components.SrBox, HTMLStencilElement {
@@ -673,11 +677,15 @@ declare namespace LocalJSX {
     }
     interface SrTextinput {
         /**
-          * TODOJCS describe prop
+          * Text label to place alongside the input
          */
         "label"?: string;
         /**
-          * TODOJCS describe prop
+          * Emitted when the input's value changes
+         */
+        "on_change"?: (event: SrTextinputCustomEvent<any>) => void;
+        /**
+          * The text to display when the input is empty
          */
         "placeholder"?: string;
     }

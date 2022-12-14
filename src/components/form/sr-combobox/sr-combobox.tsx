@@ -38,7 +38,7 @@ export class SRCombobox {
   /**
    * Emitted when the one of the options in the combobox is selected
    */
-  @Event({})
+  @Event()
   selected;
 
   selectHandler(e) {

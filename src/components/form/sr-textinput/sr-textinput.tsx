@@ -1,7 +1,10 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, Event, h, Prop } from '@stencil/core';
 
 /**
- * Text input component TODOJCS document
+ * Text input that emits event on change
+ * @property `label`
+ * @property `placeholder` (default 'Input text')
+ * @emits `change`
  */
 @Component({
   tag: 'sr-textinput',
@@ -11,19 +14,25 @@ import { Component, h, Prop } from '@stencil/core';
 })
 export class SRTextinput {
   /**
-   *  TODOJCS describe prop
+   *  Text label to place alongside the input
    */
   @Prop()
   label?: string;
 
   /**
-   *  TODOJCS describe prop
+   *  The text to display when the input is empty
    */
   @Prop()
   placeholder: string = 'Input text';
 
-  componentWillLoad() {
-    console.log('loading ti with', this.label, this.placeholder);
+  /**
+   * Emitted when the input's value changes
+   */
+  @Event()
+  _change;
+
+  changeHandler(e) {
+    this._change.emit(e);
   }
 
   // TODOJCS replace margin right by tony's spacer token
@@ -32,7 +41,11 @@ export class SRTextinput {
     return (
       <sr-stack orientation="horizontal">
         {this.label && <sr-text marginRight={1}>{this.label}</sr-text>}
-        <input type="text" placeholder={this.placeholder}></input>
+        <input
+          onChange={this.changeHandler}
+          type="text"
+          placeholder={this.placeholder}
+        ></input>
       </sr-stack>
     );
   }

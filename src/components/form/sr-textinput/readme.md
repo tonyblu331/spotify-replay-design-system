@@ -7,14 +7,21 @@
 
 ## Overview
 
-Text input component TODOJCS document
+Text input that emits event on change
 
 ## Properties
 
-| Property      | Attribute     | Description           | Type     | Default        |
-| ------------- | ------------- | --------------------- | -------- | -------------- |
-| `label`       | `label`       | TODOJCS describe prop | `string` | `undefined`    |
-| `placeholder` | `placeholder` | TODOJCS describe prop | `string` | `'Input text'` |
+| Property      | Attribute     | Description                                 | Type     | Default        |
+| ------------- | ------------- | ------------------------------------------- | -------- | -------------- |
+| `label`       | `label`       | Text label to place alongside the input     | `string` | `undefined`    |
+| `placeholder` | `placeholder` | The text to display when the input is empty | `string` | `'Input text'` |
+
+
+## Events
+
+| Event     | Description                            | Type               |
+| --------- | -------------------------------------- | ------------------ |
+| `_change` | Emitted when the input's value changes | `CustomEvent<any>` |
 
 
 ## Dependencies
