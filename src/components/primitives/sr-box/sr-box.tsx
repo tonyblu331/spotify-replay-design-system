@@ -2,11 +2,9 @@ import { Component, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
 import { SPACER } from '~/enum.js';
 import {
-  ColorFoundationUiGreenUiGreen,
-  ColorFoundationPinkPink300,
-  ColorFoundationBlueBlue300,
   ColorFoundationNeutralPureBlack,
   ColorFoundationNeutralPureWhite,
+  ColorFoundationNeutralBlack400,
   SpacerSpacer1,
   SpacerSpacer2,
   SpacerSpacer3,
@@ -31,10 +29,10 @@ import {
  * @property `marginRight`
  * @property `marginLeft`
  * @property `marginBottom`
- * @property `backgroundColor` (default 'default')
+ * @property `backgroundColor`
  * @property `color` (default black)
  * @property `hasBorder` (default false)
- * @property `borderColor` (default 'default')
+ * @property `borderColor`
  * @property `width`
  * @property `height`
  * @property `boxShadow`
@@ -122,13 +120,13 @@ export class SRBox {
    * Specify background fill inside box component
    */
   @Prop({ reflect: true, attribute: 'backgroundColor' })
-  backgroundColor: 'primary' | 'secondary' | 'default' | 'dark' = 'default';
+  backgroundColor = ColorFoundationNeutralPureWhite;
 
   /**
    * Specify text color inside box component
    */
   @Prop({ reflect: true })
-  color: 'black' | 'white' = 'black';
+  color = ColorFoundationNeutralBlack400;
 
   /**
    * Enable or disable border around box component
@@ -140,25 +138,25 @@ export class SRBox {
    * Specify border color
    */
   @Prop({ reflect: true, attribute: 'borderColor' })
-  borderColor: 'default' | 'primary' = 'default';
+  borderColor = ColorFoundationNeutralPureBlack;
 
   /**
    * Specify border radius
    */
   @Prop({ reflect: true, attribute: 'borderRadius' })
-  borderRadius: 'default' | 'none' = 'default';
+  borderRadius: 'rounded' | 'squared' = 'squared';
 
   /**
    * Specify border width
    */
   @Prop({ reflect: true, attribute: 'borderWidth' })
-  borderWidth: 'thin' | 'thick' = 'thick';
+  borderWidth: 'thin' | 'medium' | 'thick' = 'thick';
 
   /**
    * Specify width of box component
    */
   @Prop({ reflect: true })
-  width: 'small' | 'medium' | 'large';
+  width: 'small' | 'medium' | 'large' | 'fit-content' = 'fit-content';
 
   /**
    * Specify height of box component
@@ -195,6 +193,66 @@ export class SRBox {
    */
   @Prop({ reflect: true, attribute: 'boxShadow' })
   boxShadow: 'level0' | 'level1' | 'level2' | 'level3' | 'level4';
+
+  /**
+   * Control hover color
+   */
+  @Prop({ reflect: true, attribute: '_hoverBackground' })
+  _hoverBackground?;
+
+  /**
+   * Control active background color
+   */
+  @Prop({ reflect: true, attribute: '_activeBackground' })
+  _activeBackground?;
+
+  /**
+   * Control hover border width
+   */
+  @Prop({ reflect: true, attribute: '_hoverBorderWidth' })
+  _hoverBorderWidth?: 'thin' | 'medium' | 'thick';
+
+  /**
+   * Control hover border color width
+   */
+  @Prop({ reflect: true, attribute: '_hoverBorderColor' })
+  _hoverBorderColor?;
+
+  /**
+   * Control active border width
+   */
+  @Prop({ reflect: true, attribute: '_activeBorderWidth' })
+  _activeBorderWidth?: 'thin' | 'medium' | 'thick';
+
+  /**
+   * Control focus border width
+   */
+  @Prop({ reflect: true, attribute: '_focusBorderWidth' })
+  _focusBorderWidth?: 'thin' | 'medium' | 'thick';
+
+  /**
+   * Control focus border color
+   */
+  @Prop({ reflect: true, attribute: '_focusBorderColor' })
+  _focusBorderColor?;
+
+  /**
+   * Control focus background color
+   */
+  @Prop({ reflect: true, attribute: '_focusBackgroundColor' })
+  _focusBackgroundColor;
+
+  /**
+   * Control disable state
+   */
+  @Prop({ reflect: true, attribute: 'isDisabled' })
+  isDisabled: boolean = false;
+
+  /**
+   * Control clickable state
+   */
+  @Prop({ reflect: true, attribute: 'isClickable' })
+  isClickable: boolean = false;
 
   spacingHandler(selectedType, side?) {
     if (!selectedType || selectedType == 'undefined') return;
@@ -246,7 +304,7 @@ export class SRBox {
       case 'large':
         return '100%';
       default:
-        break;
+        return 'fit-content';
     }
   }
 
@@ -267,65 +325,27 @@ export class SRBox {
   }
 
   /**
-   *
-   * TODOROSE Update color referring to design
-   */
-  backgroundHandler() {
-    switch (this.backgroundColor) {
-      case 'primary':
-        return ColorFoundationUiGreenUiGreen;
-      case 'secondary':
-        return ColorFoundationPinkPink300;
-      case 'dark':
-        return ColorFoundationBlueBlue300;
-      default:
-        break;
-    }
-  }
-
-  /**
    * TODOROSE Fix base on design token
    */
   borderRadiusHandler() {
     switch (this.borderRadius) {
-      case 'default':
-        return '6px';
+      case 'squared':
+        return '8px';
+      case 'rounded':
+        return '27px';
       default:
         return '0px';
     }
   }
 
-  textColorHandler() {
-    switch (this.color) {
-      case 'black':
-        return ColorFoundationNeutralPureBlack;
-      case 'white':
-        return ColorFoundationNeutralPureWhite;
-      default:
-        break;
-    }
-  }
-
-  /**
-   * TODOROSE Fix base on design token
-   */
-  borderColorHandler() {
-    switch (this.borderColor) {
-      case 'default':
-        return ColorFoundationNeutralPureBlack;
-      case 'primary':
-        return ColorFoundationUiGreenUiGreen;
-      default:
-        break;
-    }
-  }
-
-  borderWidthHandler() {
-    switch (this.borderWidth) {
+  borderWidthHandler(value) {
+    switch (value) {
       case 'thin':
-        return '1px';
-      case 'thick':
+        return '1.5px';
+      case 'medium':
         return '2px';
+      case 'thick':
+        return '3px';
       default:
         break;
     }
@@ -352,10 +372,12 @@ export class SRBox {
   }
 
   renderStyling() {
+    console.log(this.isBorder);
+
     return css`
       width: ${this.widthHandler()};
       height: ${this.heightHandler()};
-      color: ${this.textColorHandler()};
+      color: ${this.color};
       padding: ${this.spacingHandler(this.padding)};
       padding-top: ${this.spacingHandler(this.paddingTop, 'top')};
       padding-right: ${this.spacingHandler(this.paddingRight, 'right')};
@@ -366,9 +388,11 @@ export class SRBox {
       margin-right: ${this.spacingHandler(this.marginRight, 'right')};
       margin-bottom: ${this.spacingHandler(this.marginBottom, 'bottom')};
       margin-left: ${this.spacingHandler(this.marginLeft, 'left')};
-      background-color: ${this.backgroundHandler()};
+      background-color: ${this.backgroundColor};
       border: ${this.isBorder
-        ? this.borderWidthHandler() + ' solid ' + this.borderColorHandler()
+        ? this.borderWidthHandler(this.borderWidth) +
+          ' solid ' +
+          this.borderColor
         : ''};
       border-radius: ${this.borderRadiusHandler()};
       box-shadow: ${this.boxShadowHandler()};
@@ -376,6 +400,35 @@ export class SRBox {
       min-height: ${this.minHeight}px;
       max-width: ${this.maxWidth}px;
       max-height: ${this.maxHeight}px;
+      cursor: ${this.isClickable ? 'pointer' : ''};
+      &:hover:not(:active) {
+        background-color: ${!this.isDisabled
+          ? this._hoverBackground
+          : ''} !important;
+        border: ${!this.isDisabled
+          ? this.borderWidthHandler(this._hoverBorderWidth) +
+            ' solid ' +
+            this._hoverBorderColor
+          : ''};
+      }
+      &:active {
+        background-color: ${!this.isDisabled
+          ? this._activeBackground
+          : ''} !important;
+        border-width: ${!this.isDisabled
+          ? this.borderWidthHandler(this._activeBorderWidth)
+          : ''}!important;
+      }
+      &:focus {
+        border: ${!this.isDisabled
+          ? this.borderWidthHandler(this._focusBorderWidth) +
+            ' solid ' +
+            this._focusBorderColor
+          : ''};
+        background-color: ${!this.isDisabled
+          ? this._focusBackgroundColor
+          : ''} !important;
+      }
     `;
   }
   render() {

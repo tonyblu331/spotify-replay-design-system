@@ -9,25 +9,57 @@ import { SPACER } from "~/enum.js";
 export namespace Components {
     interface SrBox {
         /**
+          * Control active background color
+         */
+        "_activeBackground"?: any;
+        /**
+          * Control active border width
+         */
+        "_activeBorderWidth"?: 'thin' | 'medium' | 'thick';
+        /**
+          * Control focus background color
+         */
+        "_focusBackgroundColor": any;
+        /**
+          * Control focus border color
+         */
+        "_focusBorderColor"?: any;
+        /**
+          * Control focus border width
+         */
+        "_focusBorderWidth"?: 'thin' | 'medium' | 'thick';
+        /**
+          * Control hover color
+         */
+        "_hoverBackground"?: any;
+        /**
+          * Control hover border color width
+         */
+        "_hoverBorderColor"?: any;
+        /**
+          * Control hover border width
+         */
+        "_hoverBorderWidth"?: 'thin' | 'medium' | 'thick';
+        /**
           * Specify wrapper HTML element
          */
         "as": 'div' | 'section' | 'article' | 'span';
         /**
           * Specify background fill inside box component
          */
-        "backgroundColor": 'primary' | 'secondary' | 'default' | 'dark';
+        "backgroundColor": any;
         /**
           * Specify border color
          */
-        "borderColor": 'default' | 'primary';
+        "borderColor": any;
         /**
           * Specify border radius
          */
-        "borderRadius": 'default' | 'none';
+        "borderRadius": 'rounded' | 'squared';
         /**
           * Specify border width
          */
-        "borderWidth": 'thin' | 'thick';
+        "borderWidth": 'thin' | 'medium' | 'thick';
         /**
           * Control shadow effects around box component
          */
@@ -35,7 +67,7 @@ export namespace Components {
         /**
           * Specify text color inside box component
          */
-        "color": 'black' | 'white';
+        "color": any;
         /**
           * Specify height of box component
          */
@@ -44,6 +76,14 @@ export namespace Components {
           * Enable or disable border around box component
          */
         "isBorder": boolean;
+        /**
+          * Control clickable state
+         */
+        "isClickable": boolean;
+        /**
+          * Control disable state
+         */
+        "isDisabled": boolean;
         /**
           * Control amount of white space around the box component itself.
          */
@@ -103,17 +143,22 @@ export namespace Components {
         /**
           * Specify width of box component
          */
-        "width": 'small' | 'medium' | 'large';
+        "width": 'small' | 'medium' | 'large' | 'fit-content';
     }
     interface SrButton {
+        "isDisabled": boolean;
+        "text": string;
         /**
-          * Button size. TODOJCS add available variants as | expr
+          * Type of button.
          */
-        "size": string;
-        /**
-          * Type of button. TODOJCS add available variants as | expression
-         */
-        "variant": string;
+        "variant": | 'roundBtn'
+    | 'squaredBtn'
+    | 'outlinedRoundBtn'
+    | 'outlinedSquaredBtn'
+    | 'blackRoundButton'
+    | 'blackSquaredBtn'
+    | 'blackOutlinedRoundBtn'
+    | 'blackOutlinedSquaredBtn';
     }
     interface SrCallout {
         /**
@@ -392,25 +437,57 @@ declare global {
 declare namespace LocalJSX {
     interface SrBox {
         /**
+          * Control active background color
+         */
+        "_activeBackground"?: any;
+        /**
+          * Control active border width
+         */
+        "_activeBorderWidth"?: 'thin' | 'medium' | 'thick';
+        /**
+          * Control focus background color
+         */
+        "_focusBackgroundColor"?: any;
+        /**
+          * Control focus border color
+         */
+        "_focusBorderColor"?: any;
+        /**
+          * Control focus border width
+         */
+        "_focusBorderWidth"?: 'thin' | 'medium' | 'thick';
+        /**
+          * Control hover color
+         */
+        "_hoverBackground"?: any;
+        /**
+          * Control hover border color width
+         */
+        "_hoverBorderColor"?: any;
+        /**
+          * Control hover border width
+         */
+        "_hoverBorderWidth"?: 'thin' | 'medium' | 'thick';
+        /**
           * Specify wrapper HTML element
          */
         "as"?: 'div' | 'section' | 'article' | 'span';
         /**
           * Specify background fill inside box component
          */
-        "backgroundColor"?: 'primary' | 'secondary' | 'default' | 'dark';
+        "backgroundColor"?: any;
         /**
           * Specify border color
          */
-        "borderColor"?: 'default' | 'primary';
+        "borderColor"?: any;
         /**
           * Specify border radius
          */
-        "borderRadius"?: 'default' | 'none';
+        "borderRadius"?: 'rounded' | 'squared';
         /**
           * Specify border width
          */
-        "borderWidth"?: 'thin' | 'thick';
+        "borderWidth"?: 'thin' | 'medium' | 'thick';
         /**
           * Control shadow effects around box component
          */
@@ -418,7 +495,7 @@ declare namespace LocalJSX {
         /**
           * Specify text color inside box component
          */
-        "color"?: 'black' | 'white';
+        "color"?: any;
         /**
           * Specify height of box component
          */
@@ -427,6 +504,14 @@ declare namespace LocalJSX {
           * Enable or disable border around box component
          */
         "isBorder"?: boolean;
+        /**
+          * Control clickable state
+         */
+        "isClickable"?: boolean;
+        /**
+          * Control disable state
+         */
+        "isDisabled"?: boolean;
         /**
           * Control amount of white space around the box component itself.
          */
@@ -486,21 +571,26 @@ declare namespace LocalJSX {
         /**
           * Specify width of box component
          */
-        "width"?: 'small' | 'medium' | 'large';
+        "width"?: 'small' | 'medium' | 'large' | 'fit-content';
     }
     interface SrButton {
+        "isDisabled"?: boolean;
         /**
           * Emitted when button is clicked
          */
         "onClicked"?: (event: SrButtonCustomEvent<any>) => void;
+        "text"?: string;
         /**
-          * Button size. TODOJCS add available variants as | expr
+          * Type of button.
          */
-        "size"?: string;
-        /**
-          * Type of button. TODOJCS add available variants as | expression
-         */
-        "variant"?: string;
+        "variant"?: | 'roundBtn'
+    | 'squaredBtn'
+    | 'outlinedRoundBtn'
+    | 'outlinedSquaredBtn'
+    | 'blackRoundButton'
+    | 'blackSquaredBtn'
+    | 'blackOutlinedRoundBtn'
+    | 'blackOutlinedSquaredBtn';
     }
     interface SrCallout {
         /**

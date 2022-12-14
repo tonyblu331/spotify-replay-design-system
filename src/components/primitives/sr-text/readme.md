@@ -31,11 +31,13 @@
 
 ### Used by
 
+ - [sr-button](../../form/sr-button)
  - [sr-heading](../../typography/sr-heading)
 
 ### Graph
 ```mermaid
 graph TD;
+  sr-button --> sr-text
   sr-heading --> sr-text
   style sr-text fill:#f9f,stroke:#333,stroke-width:4px
 ```
