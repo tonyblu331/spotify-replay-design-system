@@ -1,5 +1,4 @@
 import { Component, h } from '@stencil/core';
-import { SRText } from '~/components/primitives/sr-text/sr-text';
 /**
  * Paragraph component
  * no properties - only a slot for the text to insert in the paragraph
@@ -13,9 +12,9 @@ import { SRText } from '~/components/primitives/sr-text/sr-text';
 export class SRParagraph {
   render() {
     return (
-      <SRText as="p">
+      <sr-text as="p">
         <slot></slot>
-      </SRText>
+      </sr-text>
     );
   }
 }
