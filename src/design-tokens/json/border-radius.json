@@ -1,0 +1,20 @@
+{
+  "border-radius": {
+    "border-radius-sm": {
+      "value": "8",
+      "type": "borderRadius",
+      "description": "Small Border radius"
+    },
+    "border-radius-full": {
+      "value": "50",
+      "type": "borderRadius",
+      "description": "Full Border radius"
+    }
+  },
+  "$themes": [],
+  "$metadata": {
+    "tokenSetOrder": [
+      "Remix-Styleguides"
+    ]
+  }
+}
