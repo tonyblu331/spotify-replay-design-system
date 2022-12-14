@@ -100,7 +100,7 @@ const Template = args => {
 
   return `
   <sr-text ${argsProps}>
-    ${(args.text, 'Header')}
+    ${args.text || 'Header'}
   </sr-text>
 `;
 };
@@ -108,10 +108,12 @@ const Template = args => {
 const defaultOptions = {
   as: 'h1',
   color: 'black',
+  fontWeight: 'extraBold',
+  fontSize: 52,
 };
 
 export const Text = Template.bind({});
 Text.args = {
   ...defaultOptions,
-  text: 'Lorem ipsum dolor sit amet',
+  text: 'Tune in to the sound of your soul',
 };
