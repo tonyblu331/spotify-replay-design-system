@@ -2,592 +2,6 @@
   "typography": {
     "typography": {
       "headers": {
-        "subheaders": {
-          "subheading1-400": {
-            "value": {
-              "font": {
-                "type": "font",
-                "value": {
-                  "family": {
-                    "type": "string",
-                    "value": "Plus Jakarta Sans"
-                  },
-                  "subfamily": {
-                    "type": "string",
-                    "value": "Regular"
-                  }
-                }
-              },
-              "fontSize": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 28
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "pixels"
-                  }
-                }
-              },
-              "textDecoration": "None",
-              "textCase": "Original",
-              "letterSpacing": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 0.89
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "percent"
-                  }
-                }
-              },
-              "paragraphIndent": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 0
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "pixels"
-                  }
-                }
-              },
-              "lineHeight": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 125
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "percent"
-                  }
-                }
-              }
-            },
-            "type": "typography",
-            "comment": "H3, Subheading Variation 1 in Regular"
-          },
-          "subheading2-400": {
-            "value": {
-              "font": {
-                "type": "font",
-                "value": {
-                  "family": {
-                    "type": "string",
-                    "value": "Plus Jakarta Sans"
-                  },
-                  "subfamily": {
-                    "type": "string",
-                    "value": "Regular"
-                  }
-                }
-              },
-              "fontSize": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 20
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "pixels"
-                  }
-                }
-              },
-              "textDecoration": "None",
-              "textCase": "Original",
-              "letterSpacing": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 0
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "percent"
-                  }
-                }
-              },
-              "paragraphIndent": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 0
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "pixels"
-                  }
-                }
-              },
-              "lineHeight": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 130
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "percent"
-                  }
-                }
-              }
-            },
-            "type": "typography",
-            "comment": "H4, Subheading Variation 2 in Regular"
-          },
-          "subheading2-700": {
-            "value": {
-              "font": {
-                "type": "font",
-                "value": {
-                  "family": {
-                    "type": "string",
-                    "value": "Plus Jakarta Sans"
-                  },
-                  "subfamily": {
-                    "type": "string",
-                    "value": "Bold"
-                  }
-                }
-              },
-              "fontSize": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 20
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "pixels"
-                  }
-                }
-              },
-              "textDecoration": "None",
-              "textCase": "Original",
-              "letterSpacing": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 0
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "percent"
-                  }
-                }
-              },
-              "paragraphIndent": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 0
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "pixels"
-                  }
-                }
-              },
-              "lineHeight": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 130
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "percent"
-                  }
-                }
-              }
-            },
-            "type": "typography",
-            "comment": "H4, Subheading Variation 2 in Bold"
-          },
-          "subheading3-400": {
-            "value": {
-              "font": {
-                "type": "font",
-                "value": {
-                  "family": {
-                    "type": "string",
-                    "value": "Plus Jakarta Sans"
-                  },
-                  "subfamily": {
-                    "type": "string",
-                    "value": "Regular"
-                  }
-                }
-              },
-              "fontSize": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 17
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "pixels"
-                  }
-                }
-              },
-              "textDecoration": "None",
-              "textCase": "Original",
-              "letterSpacing": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 0
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "percent"
-                  }
-                }
-              },
-              "paragraphIndent": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 0
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "pixels"
-                  }
-                }
-              },
-              "lineHeight": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 140
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "percent"
-                  }
-                }
-              }
-            },
-            "type": "typography",
-            "comment": "H5, Subheading Variation 3 in Regular"
-          },
-          "subheading4-700": {
-            "value": {
-              "font": {
-                "type": "font",
-                "value": {
-                  "family": {
-                    "type": "string",
-                    "value": "Plus Jakarta Sans"
-                  },
-                  "subfamily": {
-                    "type": "string",
-                    "value": "Bold"
-                  }
-                }
-              },
-              "fontSize": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 16
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "pixels"
-                  }
-                }
-              },
-              "textDecoration": "None",
-              "textCase": "Original",
-              "letterSpacing": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 0
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "percent"
-                  }
-                }
-              },
-              "paragraphIndent": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 0
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "pixels"
-                  }
-                }
-              },
-              "lineHeight": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 140
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "percent"
-                  }
-                }
-              }
-            },
-            "type": "typography",
-            "comment": "H6, Subheading Variation 3 in Bold"
-          },
-          "subheading1-700": {
-            "value": {
-              "font": {
-                "type": "font",
-                "value": {
-                  "family": {
-                    "type": "string",
-                    "value": "Plus Jakarta Sans"
-                  },
-                  "subfamily": {
-                    "type": "string",
-                    "value": "Bold"
-                  }
-                }
-              },
-              "fontSize": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 28
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "pixels"
-                  }
-                }
-              },
-              "textDecoration": "None",
-              "textCase": "Original",
-              "letterSpacing": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 0.89
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "percent"
-                  }
-                }
-              },
-              "paragraphIndent": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 0
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "pixels"
-                  }
-                }
-              },
-              "lineHeight": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 125
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "percent"
-                  }
-                }
-              }
-            },
-            "type": "typography",
-            "comment": "H3, Subheading Variation 1 in Bold"
-          },
-          "subheading3-700": {
-            "value": {
-              "font": {
-                "type": "font",
-                "value": {
-                  "family": {
-                    "type": "string",
-                    "value": "Plus Jakarta Sans"
-                  },
-                  "subfamily": {
-                    "type": "string",
-                    "value": "Bold"
-                  }
-                }
-              },
-              "fontSize": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 17
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "pixels"
-                  }
-                }
-              },
-              "textDecoration": "None",
-              "textCase": "Original",
-              "letterSpacing": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 0
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "percent"
-                  }
-                }
-              },
-              "paragraphIndent": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 0
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "pixels"
-                  }
-                }
-              },
-              "lineHeight": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 140
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "percent"
-                  }
-                }
-              }
-            },
-            "type": "typography",
-            "comment": "H5, Subheading Variation 3 in Bold"
-          },
-          "subheading4-400": {
-            "value": {
-              "font": {
-                "type": "font",
-                "value": {
-                  "family": {
-                    "type": "string",
-                    "value": "Plus Jakarta Sans"
-                  },
-                  "subfamily": {
-                    "type": "string",
-                    "value": "Regular"
-                  }
-                }
-              },
-              "fontSize": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 16
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "pixels"
-                  }
-                }
-              },
-              "textDecoration": "None",
-              "textCase": "Original",
-              "letterSpacing": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 0
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "percent"
-                  }
-                }
-              },
-              "paragraphIndent": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 0
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "pixels"
-                  }
-                }
-              },
-              "lineHeight": {
-                "type": "measure",
-                "value": {
-                  "measure": {
-                    "type": "size",
-                    "value": 140
-                  },
-                  "unit": {
-                    "type": "string",
-                    "value": "percent"
-                  }
-                }
-              }
-            },
-            "type": "typography",
-            "comment": "H6, Subheading Variation 3 in Regular"
-          }
-        },
         "displayxl-400": {
           "value": {
             "font": {
@@ -660,298 +74,6 @@
           },
           "type": "typography",
           "comment": "H1, Display, or XL Title in Regular"
-        },
-        "displayxl-700": {
-          "value": {
-            "font": {
-              "type": "font",
-              "value": {
-                "family": {
-                  "type": "string",
-                  "value": "Plus Jakarta Sans"
-                },
-                "subfamily": {
-                  "type": "string",
-                  "value": "Bold"
-                }
-              }
-            },
-            "fontSize": {
-              "type": "measure",
-              "value": {
-                "measure": {
-                  "type": "size",
-                  "value": 52
-                },
-                "unit": {
-                  "type": "string",
-                  "value": "pixels"
-                }
-              }
-            },
-            "textDecoration": "None",
-            "textCase": "Original",
-            "letterSpacing": {
-              "type": "measure",
-              "value": {
-                "measure": {
-                  "type": "size",
-                  "value": 0.96
-                },
-                "unit": {
-                  "type": "string",
-                  "value": "percent"
-                }
-              }
-            },
-            "paragraphIndent": {
-              "type": "measure",
-              "value": {
-                "measure": {
-                  "type": "size",
-                  "value": 0
-                },
-                "unit": {
-                  "type": "string",
-                  "value": "pixels"
-                }
-              }
-            },
-            "lineHeight": {
-              "type": "measure",
-              "value": {
-                "measure": {
-                  "type": "size",
-                  "value": 120.00000762939453
-                },
-                "unit": {
-                  "type": "string",
-                  "value": "percent"
-                }
-              }
-            }
-          },
-          "type": "typography",
-          "comment": "H1, Display, or XL Title in Bold"
-        },
-        "displayxl-900": {
-          "value": {
-            "font": {
-              "type": "font",
-              "value": {
-                "family": {
-                  "type": "string",
-                  "value": "Plus Jakarta Sans"
-                },
-                "subfamily": {
-                  "type": "string",
-                  "value": "ExtraBold"
-                }
-              }
-            },
-            "fontSize": {
-              "type": "measure",
-              "value": {
-                "measure": {
-                  "type": "size",
-                  "value": 52
-                },
-                "unit": {
-                  "type": "string",
-                  "value": "pixels"
-                }
-              }
-            },
-            "textDecoration": "None",
-            "textCase": "Original",
-            "letterSpacing": {
-              "type": "measure",
-              "value": {
-                "measure": {
-                  "type": "size",
-                  "value": 0.96
-                },
-                "unit": {
-                  "type": "string",
-                  "value": "percent"
-                }
-              }
-            },
-            "paragraphIndent": {
-              "type": "measure",
-              "value": {
-                "measure": {
-                  "type": "size",
-                  "value": 0
-                },
-                "unit": {
-                  "type": "string",
-                  "value": "pixels"
-                }
-              }
-            },
-            "lineHeight": {
-              "type": "measure",
-              "value": {
-                "measure": {
-                  "type": "size",
-                  "value": 120.00000762939453
-                },
-                "unit": {
-                  "type": "string",
-                  "value": "percent"
-                }
-              }
-            }
-          },
-          "type": "typography",
-          "comment": "H1, Display, or XL Title in Extra Bold"
-        },
-        "displaylg-400": {
-          "value": {
-            "font": {
-              "type": "font",
-              "value": {
-                "family": {
-                  "type": "string",
-                  "value": "Plus Jakarta Sans"
-                },
-                "subfamily": {
-                  "type": "string",
-                  "value": "Regular"
-                }
-              }
-            },
-            "fontSize": {
-              "type": "measure",
-              "value": {
-                "measure": {
-                  "type": "size",
-                  "value": 40
-                },
-                "unit": {
-                  "type": "string",
-                  "value": "pixels"
-                }
-              }
-            },
-            "textDecoration": "None",
-            "textCase": "Original",
-            "letterSpacing": {
-              "type": "measure",
-              "value": {
-                "measure": {
-                  "type": "size",
-                  "value": 0
-                },
-                "unit": {
-                  "type": "string",
-                  "value": "percent"
-                }
-              }
-            },
-            "paragraphIndent": {
-              "type": "measure",
-              "value": {
-                "measure": {
-                  "type": "size",
-                  "value": 0
-                },
-                "unit": {
-                  "type": "string",
-                  "value": "pixels"
-                }
-              }
-            },
-            "lineHeight": {
-              "type": "measure",
-              "value": {
-                "measure": {
-                  "type": "size",
-                  "value": 120.00000762939453
-                },
-                "unit": {
-                  "type": "string",
-                  "value": "percent"
-                }
-              }
-            }
-          },
-          "type": "typography",
-          "comment": "H2, Large Display, or Main Section Title in Regular"
-        },
-        "displaylg-700": {
-          "value": {
-            "font": {
-              "type": "font",
-              "value": {
-                "family": {
-                  "type": "string",
-                  "value": "Plus Jakarta Sans"
-                },
-                "subfamily": {
-                  "type": "string",
-                  "value": "Bold"
-                }
-              }
-            },
-            "fontSize": {
-              "type": "measure",
-              "value": {
-                "measure": {
-                  "type": "size",
-                  "value": 40
-                },
-                "unit": {
-                  "type": "string",
-                  "value": "pixels"
-                }
-              }
-            },
-            "textDecoration": "None",
-            "textCase": "Original",
-            "letterSpacing": {
-              "type": "measure",
-              "value": {
-                "measure": {
-                  "type": "size",
-                  "value": 0
-                },
-                "unit": {
-                  "type": "string",
-                  "value": "percent"
-                }
-              }
-            },
-            "paragraphIndent": {
-              "type": "measure",
-              "value": {
-                "measure": {
-                  "type": "size",
-                  "value": 0
-                },
-                "unit": {
-                  "type": "string",
-                  "value": "pixels"
-                }
-              }
-            },
-            "lineHeight": {
-              "type": "measure",
-              "value": {
-                "measure": {
-                  "type": "size",
-                  "value": 120.00000762939453
-                },
-                "unit": {
-                  "type": "string",
-                  "value": "percent"
-                }
-              }
-            }
-          },
-          "type": "typography",
-          "comment": "H2, Large Display, or Main Section Title in Bold"
         },
         "displaylg-900": {
           "value": {
@@ -2124,6 +1246,882 @@
           "comment": "Endnote Text in Extra Bold"
         }
       }
+    },
+    "displayxl-700": {
+      "value": {
+        "font": {
+          "type": "font",
+          "value": {
+            "family": {
+              "type": "string",
+              "value": "Plus Jakarta Sans"
+            },
+            "subfamily": {
+              "type": "string",
+              "value": "Bold"
+            }
+          }
+        },
+        "fontSize": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 52
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "textDecoration": "None",
+        "textCase": "Original",
+        "letterSpacing": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0.96
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        },
+        "paragraphIndent": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "lineHeight": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 120.00000762939453
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        }
+      },
+      "type": "typography",
+      "comment": "H1, Display, or XL Title in Bold"
+    },
+    "displayxl-900": {
+      "value": {
+        "font": {
+          "type": "font",
+          "value": {
+            "family": {
+              "type": "string",
+              "value": "Plus Jakarta Sans"
+            },
+            "subfamily": {
+              "type": "string",
+              "value": "ExtraBold"
+            }
+          }
+        },
+        "fontSize": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 52
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "textDecoration": "None",
+        "textCase": "Original",
+        "letterSpacing": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0.96
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        },
+        "paragraphIndent": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "lineHeight": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 120.00000762939453
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        }
+      },
+      "type": "typography",
+      "comment": "H1, Display, or XL Title in Extra Bold"
+    },
+    "displaylg-400": {
+      "value": {
+        "font": {
+          "type": "font",
+          "value": {
+            "family": {
+              "type": "string",
+              "value": "Plus Jakarta Sans"
+            },
+            "subfamily": {
+              "type": "string",
+              "value": "Regular"
+            }
+          }
+        },
+        "fontSize": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 40
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "textDecoration": "None",
+        "textCase": "Original",
+        "letterSpacing": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        },
+        "paragraphIndent": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "lineHeight": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 120.00000762939453
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        }
+      },
+      "type": "typography",
+      "comment": "H2, Large Display, or Main Section Title in Regular"
+    },
+    "displaylg-700": {
+      "value": {
+        "font": {
+          "type": "font",
+          "value": {
+            "family": {
+              "type": "string",
+              "value": "Plus Jakarta Sans"
+            },
+            "subfamily": {
+              "type": "string",
+              "value": "Bold"
+            }
+          }
+        },
+        "fontSize": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 40
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "textDecoration": "None",
+        "textCase": "Original",
+        "letterSpacing": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        },
+        "paragraphIndent": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "lineHeight": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 120.00000762939453
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        }
+      },
+      "type": "typography",
+      "comment": "H2, Large Display, or Main Section Title in Bold"
+    },
+    "subheading1-400": {
+      "value": {
+        "font": {
+          "type": "font",
+          "value": {
+            "family": {
+              "type": "string",
+              "value": "Plus Jakarta Sans"
+            },
+            "subfamily": {
+              "type": "string",
+              "value": "Regular"
+            }
+          }
+        },
+        "fontSize": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 28
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "textDecoration": "None",
+        "textCase": "Original",
+        "letterSpacing": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0.89
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        },
+        "paragraphIndent": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "lineHeight": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 125
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        }
+      },
+      "type": "typography",
+      "comment": "H3, Subheading Variation 1 in Regular"
+    },
+    "subheading2-400": {
+      "value": {
+        "font": {
+          "type": "font",
+          "value": {
+            "family": {
+              "type": "string",
+              "value": "Plus Jakarta Sans"
+            },
+            "subfamily": {
+              "type": "string",
+              "value": "Regular"
+            }
+          }
+        },
+        "fontSize": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 20
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "textDecoration": "None",
+        "textCase": "Original",
+        "letterSpacing": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        },
+        "paragraphIndent": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "lineHeight": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 130
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        }
+      },
+      "type": "typography",
+      "comment": "H4, Subheading Variation 2 in Regular"
+    },
+    "subheading2-700": {
+      "value": {
+        "font": {
+          "type": "font",
+          "value": {
+            "family": {
+              "type": "string",
+              "value": "Plus Jakarta Sans"
+            },
+            "subfamily": {
+              "type": "string",
+              "value": "Bold"
+            }
+          }
+        },
+        "fontSize": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 20
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "textDecoration": "None",
+        "textCase": "Original",
+        "letterSpacing": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        },
+        "paragraphIndent": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "lineHeight": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 130
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        }
+      },
+      "type": "typography",
+      "comment": "H4, Subheading Variation 2 in Bold"
+    },
+    "subheading3-400": {
+      "value": {
+        "font": {
+          "type": "font",
+          "value": {
+            "family": {
+              "type": "string",
+              "value": "Plus Jakarta Sans"
+            },
+            "subfamily": {
+              "type": "string",
+              "value": "Regular"
+            }
+          }
+        },
+        "fontSize": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 17
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "textDecoration": "None",
+        "textCase": "Original",
+        "letterSpacing": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        },
+        "paragraphIndent": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "lineHeight": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 140
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        }
+      },
+      "type": "typography",
+      "comment": "H5, Subheading Variation 3 in Regular"
+    },
+    "subheading4-700": {
+      "value": {
+        "font": {
+          "type": "font",
+          "value": {
+            "family": {
+              "type": "string",
+              "value": "Plus Jakarta Sans"
+            },
+            "subfamily": {
+              "type": "string",
+              "value": "Bold"
+            }
+          }
+        },
+        "fontSize": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 16
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "textDecoration": "None",
+        "textCase": "Original",
+        "letterSpacing": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        },
+        "paragraphIndent": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "lineHeight": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 140
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        }
+      },
+      "type": "typography",
+      "comment": "H6, Subheading Variation 3 in Bold"
+    },
+    "subheading1-700": {
+      "value": {
+        "font": {
+          "type": "font",
+          "value": {
+            "family": {
+              "type": "string",
+              "value": "Plus Jakarta Sans"
+            },
+            "subfamily": {
+              "type": "string",
+              "value": "Bold"
+            }
+          }
+        },
+        "fontSize": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 28
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "textDecoration": "None",
+        "textCase": "Original",
+        "letterSpacing": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0.89
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        },
+        "paragraphIndent": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "lineHeight": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 125
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        }
+      },
+      "type": "typography",
+      "comment": "H3, Subheading Variation 1 in Bold"
+    },
+    "subheading3-700": {
+      "value": {
+        "font": {
+          "type": "font",
+          "value": {
+            "family": {
+              "type": "string",
+              "value": "Plus Jakarta Sans"
+            },
+            "subfamily": {
+              "type": "string",
+              "value": "Bold"
+            }
+          }
+        },
+        "fontSize": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 17
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "textDecoration": "None",
+        "textCase": "Original",
+        "letterSpacing": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        },
+        "paragraphIndent": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "lineHeight": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 140
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        }
+      },
+      "type": "typography",
+      "comment": "H5, Subheading Variation 3 in Bold"
+    },
+    "subheading4-400": {
+      "value": {
+        "font": {
+          "type": "font",
+          "value": {
+            "family": {
+              "type": "string",
+              "value": "Plus Jakarta Sans"
+            },
+            "subfamily": {
+              "type": "string",
+              "value": "Regular"
+            }
+          }
+        },
+        "fontSize": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 16
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "textDecoration": "None",
+        "textCase": "Original",
+        "letterSpacing": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        },
+        "paragraphIndent": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 0
+            },
+            "unit": {
+              "type": "string",
+              "value": "pixels"
+            }
+          }
+        },
+        "lineHeight": {
+          "type": "measure",
+          "value": {
+            "measure": {
+              "type": "size",
+              "value": 140
+            },
+            "unit": {
+              "type": "string",
+              "value": "percent"
+            }
+          }
+        }
+      },
+      "type": "typography",
+      "comment": "H6, Subheading Variation 3 in Regular"
     }
   }
 }
