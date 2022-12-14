@@ -15,14 +15,14 @@ import {
 } from '../../../design-tokens/js/variables.js';
 
 /**
- * Heading component, with support for heading elements spanning from `h1` to `h6`, and custom alignment.
+ * Heading component, with support for heading elements, and custom alignment.
  * Its convenience for pointing out document sections makes it one of the most consumed components in our Design System.
- @property `level` (default 1)
+ @property `level` (default h1)
  @property `align` (default 'left')
 
  * ### Example:
  * ```html
- * <sr-heading level="2" text-align="center">Section name</hs-header>
+ * <sr-heading level="h1" text-align="center">Section name</hs-header>
  * ```
  */
 @Component({
@@ -34,7 +34,7 @@ import {
 export class SRHeading {
   /**
    * The `level` property allows users to indicate what header hierarchy this element is.
-   * It must take a number from `1` to `6`.  */
+   * */
   @Prop({ reflect: true })
   level:
     | 'h1'
