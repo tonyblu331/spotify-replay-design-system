@@ -7,6 +7,20 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { SPACER } from "~/enum.js";
 export namespace Components {
+    interface SrAnchor {
+        /**
+          * Indicates whether the component points to an external URL. You define external, and it will be styled differently. Defaults to false.
+         */
+        "external": boolean;
+        /**
+          * The URL to redirect to.
+         */
+        "href": string;
+        /**
+          * Whether or not to open the URL in a new tab. Defaults to false.
+         */
+        "openInNewTab": boolean;
+    }
     interface SrBox {
         /**
           * Control active background color
@@ -350,6 +364,12 @@ export interface SrTextinputCustomEvent<T> extends CustomEvent<T> {
     target: HTMLSrTextinputElement;
 }
 declare global {
+    interface HTMLSrAnchorElement extends Components.SrAnchor, HTMLStencilElement {
+    }
+    var HTMLSrAnchorElement: {
+        prototype: HTMLSrAnchorElement;
+        new (): HTMLSrAnchorElement;
+    };
     interface HTMLSrBoxElement extends Components.SrBox, HTMLStencilElement {
     }
     var HTMLSrBoxElement: {
@@ -423,6 +443,7 @@ declare global {
         new (): HTMLSrTextinputElement;
     };
     interface HTMLElementTagNameMap {
+        "sr-anchor": HTMLSrAnchorElement;
         "sr-box": HTMLSrBoxElement;
         "sr-button": HTMLSrButtonElement;
         "sr-callout": HTMLSrCalloutElement;
@@ -438,6 +459,20 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface SrAnchor {
+        /**
+          * Indicates whether the component points to an external URL. You define external, and it will be styled differently. Defaults to false.
+         */
+        "external"?: boolean;
+        /**
+          * The URL to redirect to.
+         */
+        "href"?: string;
+        /**
+          * Whether or not to open the URL in a new tab. Defaults to false.
+         */
+        "openInNewTab"?: boolean;
+    }
     interface SrBox {
         /**
           * Control active background color
@@ -780,6 +815,7 @@ declare namespace LocalJSX {
         "placeholder"?: string;
     }
     interface IntrinsicElements {
+        "sr-anchor": SrAnchor;
         "sr-box": SrBox;
         "sr-button": SrButton;
         "sr-callout": SrCallout;
@@ -798,6 +834,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "sr-anchor": LocalJSX.SrAnchor & JSXBase.HTMLAttributes<HTMLSrAnchorElement>;
             "sr-box": LocalJSX.SrBox & JSXBase.HTMLAttributes<HTMLSrBoxElement>;
             "sr-button": LocalJSX.SrButton & JSXBase.HTMLAttributes<HTMLSrButtonElement>;
             "sr-callout": LocalJSX.SrCallout & JSXBase.HTMLAttributes<HTMLSrCalloutElement>;
