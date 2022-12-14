@@ -1,8 +1,8 @@
 import { Component, h } from '@stencil/core';
+import { SRText } from '~/components/primitives/sr-text/sr-text';
 /**
  * Paragraph component
  * no properties - only a slot for the text to insert in the paragraph
- * @extends `<p>`
  */
 @Component({
   tag: 'sr-paragraph',
@@ -13,10 +13,9 @@ import { Component, h } from '@stencil/core';
 export class SRParagraph {
   render() {
     return (
-      // <p style={FontBody}> // TODOJCS fix this, design tokens broke this import
-      <p>
+      <SRText as="p">
         <slot></slot>
-      </p>
+      </SRText>
     );
   }
 }
