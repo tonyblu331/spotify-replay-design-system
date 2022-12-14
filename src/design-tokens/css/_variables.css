@@ -1,9 +1,11 @@
 /**
  * Do not edit directly
- * Generated on Wed, 14 Dec 2022 11:44:28 GMT
+ * Generated on Wed, 14 Dec 2022 18:58:11 GMT
  */
 
 :root {
+  --sr-border-radius-border-radius-sm: 8;
+  --sr-border-radius-border-radius-full: 50;
   --sr-color-foundation-ui-green-ui-green-light: #e9f8ee;
   --sr-color-foundation-ui-green-ui-green-light-hover: #ddf5e6;
   --sr-color-foundation-ui-green-ui-green-light-active: #b9e9ca;

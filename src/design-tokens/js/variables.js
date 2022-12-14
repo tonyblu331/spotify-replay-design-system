@@ -1,8 +1,10 @@
 /**
  * Do not edit directly
- * Generated on Wed, 14 Dec 2022 11:44:28 GMT
+ * Generated on Wed, 14 Dec 2022 18:58:11 GMT
  */
 
+export const BorderRadiusBorderRadiusSm = "8";
+export const BorderRadiusBorderRadiusFull = "50";
 export const ColorFoundationUiGreenUiGreenLight = "#e9f8ee";
 export const ColorFoundationUiGreenUiGreenLightHover = "#ddf5e6";
 export const ColorFoundationUiGreenUiGreenLightActive = "#b9e9ca";
