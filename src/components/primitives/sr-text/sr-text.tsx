@@ -1,6 +1,6 @@
 import { Component, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
-// import { number = 0 } from '~/enum';
+// import { number } from '~/enum';
 import {
   ColorFoundationNeutralPureBlack,
   ColorFoundationNeutralPureWhite,
@@ -18,6 +18,7 @@ export class SrText {
    */
   @Prop({ reflect: true })
   as:
+    | 'div'
     | 'h1'
     | 'h2'
     | 'h3'
@@ -27,97 +28,98 @@ export class SrText {
     | 'p'
     | 'blockquote'
     | 'caption'
-    | 'endnote' = 'p';
+    | 'endnote'
+    | 'span' = 'div';
 
   /**
-   * Control font size
+   * Specify font color
    */
-  @Prop({ reflect: true, attribute: 'fontWeight' })
+  @Prop({ reflect: true })
   color: 'black' | 'white';
 
   /**
-   * Control font size
+   * Specify font size
    */
-  @Prop({ reflect: true, attribute: 'fontWeight' })
+  @Prop({ reflect: true, attribute: 'fontSize' })
   fontSize: number;
 
   /**
    * Control font weight
    */
   @Prop({ reflect: true, attribute: 'fontWeight' })
-  fontWeight: 'regular' | 'bold' | 'extraBold';
+  fontWeight: 'regular' | 'bold' | 'extraBold' = 'regular';
 
   /**
    * Control amount of white space around child components inside of a box
    */
   @Prop({ reflect: true })
-  padding: number = 0;
+  padding: number;
 
   /**
    * Define amount of white space at top side only
    */
   @Prop({ reflect: true, attribute: 'paddingTop' })
-  paddingTop?: number = 0;
+  paddingTop?: number;
 
   /**
    * Define amount of white space at right side only
    */
   @Prop({ reflect: true, attribute: 'paddingRight' })
-  paddingRight?: number = 0;
+  paddingRight?: number;
 
   /**
    * Define amount of white space at left side only
    */
   @Prop({ reflect: true, attribute: 'paddingLeft' })
-  paddingLeft?: number = 0;
+  paddingLeft?: number;
 
   /**
    * Define amount of white space at bottom side only
    */
   @Prop({ reflect: true, attribute: 'paddingBottom' })
-  paddingBottom?: number = 0;
+  paddingBottom?: number;
 
   /**
    * Control amount of white space around the box component itself.
    */
   @Prop({ reflect: true })
-  margin?: number = 0;
+  margin?: number;
 
   /**
    * Define amount of space at top side only.
    */
   @Prop({ reflect: true, attribute: 'marginTop' })
-  marginTop?: number = 0;
+  marginTop?: number;
 
   /**
    * Define amount of space at right side only.
    */
   @Prop({ reflect: true, attribute: 'marginRight' })
-  marginRight?: number = 0;
+  marginRight?: number;
 
   /**
    * Define amount of space at left side only.
    */
   @Prop({ reflect: true, attribute: 'marginLeft' })
-  marginLeft?: number = 0;
+  marginLeft?: number;
 
   /**
    * Define amount of space at bottom side only.
    */
   @Prop({ reflect: true, attribute: 'marginBottom' })
-  marginBottom?: number = 0;
+  marginBottom?: number;
 
   /**
    * Define the space between characters in a text
    */
   @Prop({ reflect: true, attribute: 'letterSpacing' })
-  letterSpacing?: number = 0;
+  letterSpacing?: number;
 
   /**
    * Define the height of a line
    */
   @Prop({ reflect: true, attribute: 'lineHeight' })
-  lineHeight?: number = 0;
+  lineHeight?: number;
 
   renderFontWeight() {
     switch (this.fontWeight) {
@@ -144,6 +146,8 @@ export class SrText {
   }
 
   render() {
+    console.log(this.padding, 'font');
+
     const Tag = `${this.as}`;
     const tagStyles = css`
       color: ${this.getFontColor()};

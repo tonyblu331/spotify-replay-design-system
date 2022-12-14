@@ -194,7 +194,8 @@ export namespace Components {
         /**
           * Specify wrapper HTML element
          */
-        "as": | 'h1'
+        "as": | 'div'
+    | 'h1'
     | 'h2'
     | 'h3'
     | 'h4'
@@ -203,13 +204,14 @@ export namespace Components {
     | 'p'
     | 'blockquote'
     | 'caption'
-    | 'endnote';
+    | 'endnote'
+    | 'span';
         /**
-          * Control font size
+          * Specify font color
          */
         "color": 'black' | 'white';
         /**
-          * Control font size
+          * Specify font size
          */
         "fontSize": number;
         /**
@@ -567,7 +569,8 @@ declare namespace LocalJSX {
         /**
           * Specify wrapper HTML element
          */
-        "as"?: | 'h1'
+        "as"?: | 'div'
+    | 'h1'
     | 'h2'
     | 'h3'
     | 'h4'
@@ -576,13 +579,14 @@ declare namespace LocalJSX {
     | 'p'
     | 'blockquote'
     | 'caption'
-    | 'endnote';
+    | 'endnote'
+    | 'span';
         /**
-          * Control font size
+          * Specify font color
          */
         "color"?: 'black' | 'white';
         /**
-          * Control font size
+          * Specify font size
          */
         "fontSize"?: number;
         /**
