@@ -2,6 +2,8 @@ import { Component, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
 import { SPACER } from '~/enum.js';
 import {
+  BorderRadiusBorderRadiusFull,
+  BorderRadiusBorderRadiusSm,
   ColorFoundationNeutralPureBlack,
   ColorFoundationNeutralPureWhite,
   ColorFoundationNeutralBlack400,
@@ -330,9 +332,9 @@ export class SRBox {
   borderRadiusHandler() {
     switch (this.borderRadius) {
       case 'squared':
-        return '8px';
+        return `${BorderRadiusBorderRadiusSm}px`;
       case 'rounded':
-        return '27px';
+        return `${BorderRadiusBorderRadiusFull}px`;
       default:
         return '0px';
     }
@@ -410,6 +412,10 @@ export class SRBox {
             ' solid ' +
             this._hoverBorderColor
           : ''};
+        -webkit-transition: all 0.2s 0s ease-out;
+        -moz-transition: all 0.2s 0s ease-out;
+        -o-transition: all 0.2s 0s ease-out;
+        transition: all 0.2s 0s ease-out;
       }
       &:active {
         background-color: ${!this.isDisabled
@@ -418,6 +424,10 @@ export class SRBox {
         border-width: ${!this.isDisabled
           ? this.borderWidthHandler(this._activeBorderWidth)
           : ''}!important;
+        -webkit-transition: all 0.2s 0s ease-out;
+        -moz-transition: all 0.2s 0s ease-out;
+        -o-transition: all 0.2s 0s ease-out;
+        transition: all 0.2s 0s ease-out;
       }
       &:focus {
         border: ${!this.isDisabled
@@ -425,6 +435,10 @@ export class SRBox {
             ' solid ' +
             this._focusBorderColor
           : ''};
+        -webkit-transition: all 0.2s 0s ease-out;
+        -moz-transition: all 0.2s 0s ease-out;
+        -o-transition: all 0.2s 0s ease-out;
+        transition: all 0.2s 0s ease-out;
         background-color: ${!this.isDisabled
           ? this._focusBackgroundColor
           : ''} !important;
