@@ -11,7 +11,7 @@ import {
   shadow: false,
   scoped: true,
 })
-export class SrText {
+export class SRText {
   /**
    * Specify wrapper HTML element
    */
