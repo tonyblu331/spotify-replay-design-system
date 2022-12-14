@@ -192,8 +192,6 @@ export namespace Components {
          */
         "ordered": boolean;
     }
-    interface SrListItem {
-    }
     interface SrParagraph {
     }
     interface SrStack {
@@ -351,12 +349,6 @@ declare global {
         prototype: HTMLSrListElement;
         new (): HTMLSrListElement;
     };
-    interface HTMLSrListItemElement extends Components.SrListItem, HTMLStencilElement {
-    }
-    var HTMLSrListItemElement: {
-        prototype: HTMLSrListItemElement;
-        new (): HTMLSrListItemElement;
-    };
     interface HTMLSrParagraphElement extends Components.SrParagraph, HTMLStencilElement {
     }
     var HTMLSrParagraphElement: {
@@ -390,7 +382,6 @@ declare global {
         "sr-heading": HTMLSrHeadingElement;
         "sr-helptext": HTMLSrHelptextElement;
         "sr-list": HTMLSrListElement;
-        "sr-list-item": HTMLSrListItemElement;
         "sr-paragraph": HTMLSrParagraphElement;
         "sr-stack": HTMLSrStackElement;
         "sr-text": HTMLSrTextElement;
@@ -591,8 +582,6 @@ declare namespace LocalJSX {
          */
         "ordered"?: boolean;
     }
-    interface SrListItem {
-    }
     interface SrParagraph {
     }
     interface SrStack {
@@ -701,7 +690,6 @@ declare namespace LocalJSX {
         "sr-heading": SrHeading;
         "sr-helptext": SrHelptext;
         "sr-list": SrList;
-        "sr-list-item": SrListItem;
         "sr-paragraph": SrParagraph;
         "sr-stack": SrStack;
         "sr-text": SrText;
@@ -720,7 +708,6 @@ declare module "@stencil/core" {
             "sr-heading": LocalJSX.SrHeading & JSXBase.HTMLAttributes<HTMLSrHeadingElement>;
             "sr-helptext": LocalJSX.SrHelptext & JSXBase.HTMLAttributes<HTMLSrHelptextElement>;
             "sr-list": LocalJSX.SrList & JSXBase.HTMLAttributes<HTMLSrListElement>;
-            "sr-list-item": LocalJSX.SrListItem & JSXBase.HTMLAttributes<HTMLSrListItemElement>;
             "sr-paragraph": LocalJSX.SrParagraph & JSXBase.HTMLAttributes<HTMLSrParagraphElement>;
             "sr-stack": LocalJSX.SrStack & JSXBase.HTMLAttributes<HTMLSrStackElement>;
             "sr-text": LocalJSX.SrText & JSXBase.HTMLAttributes<HTMLSrTextElement>;
