@@ -2,7 +2,8 @@ export default {
   title: 'Components/Form/Combo box',
   argTypes: {
     options: {
-      description: 'The available options selectable from to the combobox',
+      description:
+        'The available options for selection. Please wrap each option in a pair of `<option>` tags',
     },
     labelText: {
       control: 'text',
@@ -26,13 +27,13 @@ const Template = ({ labelText, options, allowEmpty }) =>
 
 export const Labelless = Template.bind({});
 Labelless.args = {
-  options: `<option>Potáto</option><option>Potäto</option>`,
+  options: `<option>Potáto</option>\n<option>Potäto</option>`,
   allowEmpty: false,
 };
 
 export const Labelled = Template.bind({});
 Labelled.args = {
-  options: `<option>Avatar</option><option>Ghost in the Shell</option><option>Memento</option>`,
+  options: `<option>Avatar</option>\n<option>Ghost in the Shell</option>\n<option>Memento</option>`,
   labelText: 'My favorite movie',
   allowEmpty: false,
 };

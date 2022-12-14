@@ -2,7 +2,8 @@ export default {
   title: 'Components/Text Content/List',
   argTypes: {
     items: {
-      description: 'Items to be injected in the component slot',
+      description:
+        'The items to list. Please wrap each item in a pair of `<li>` tags.',
     },
     ordered: {
       description:
@@ -23,11 +24,16 @@ const Template = ({ items, ordered }) => `
 
 export const Unordered = Template.bind({});
 Unordered.args = {
-  items: `<li>Item 1</li><li>Item 2</li>`,
+  items: `<li>Item 1</li>\n<li>Item 2</li>`,
 };
 
 export const Ordered = Template.bind({});
 Ordered.args = {
-  items: `<li>Item 1</li><li>Item 2</li>`,
+  items: `<li>Item 1</li>\n<li>Item 2</li>`,
   ordered: true,
+};
+
+export const LongText = Template.bind({});
+LongText.args = {
+  items: `<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li><li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>`,
 };
