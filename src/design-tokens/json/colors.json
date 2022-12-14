@@ -45,69 +45,93 @@
           "type": "color",
           "comment": "Pure White"
         },
-        "white-25": {
-          "value": "#fdfdfdff",
-          "type": "color"
-        },
         "white-50": {
-          "value": "#f7f7f7ff",
+          "value": "#fdfdfdff",
           "type": "color"
         },
         "white-100": {
           "value": "#f3f3f3ff",
           "type": "color"
         },
-        "gray-25": {
+        "white-200": {
           "value": "#e0e1e1ff",
           "type": "color"
         },
-        "gray-50": {
+        "white-300": {
           "value": "#cccdcdff",
           "type": "color"
         },
-        "gray-75": {
+        "gray-200": {
           "value": "#a3a4a5ff",
           "type": "color"
         },
-        "gray-100": {
+        "gray-300": {
           "value": "#7a7c7eff",
           "type": "color"
         },
-        "gray-200": {
-          "value": "#696c6eff",
+        "gray-100": {
+          "value": "#a9a9a9ff",
           "type": "color"
         },
-        "black-25": {
-          "value": "#515356ff",
-          "type": "color"
-        },
-        "black-50": {
+        "gray-400": {
           "value": "#4b4d50ff",
           "type": "color"
         },
-        "black-75": {
+        "black-100": {
           "value": "#424548ff",
           "type": "color"
         },
-        "black-100": {
+        "black-200": {
           "value": "#323538ff",
           "type": "color"
         },
-        "pure-blak": {
+        "pure-black": {
           "value": "#000000ff",
           "type": "color",
           "comment": "Pure Black"
+        },
+        "black-300": {
+          "value": "#181818ff",
+          "type": "color"
+        },
+        "black-400": {
+          "value": "#121212ff",
+          "type": "color"
+        }
+      },
+      "pink": {
+        "pink-50": {
+          "value": "#fbc6d9ff",
+          "type": "color"
+        },
+        "pink-100": {
+          "value": "#faaec9ff",
+          "type": "color"
+        },
+        "pink-200": {
+          "value": "#f88bb2ff",
+          "type": "color"
+        },
+        "pink-300": {
+          "value": "#f673a2ff",
+          "type": "color"
+        },
+        "pink-25": {
+          "value": "#ffccd3ff",
+          "type": "color"
+        }
+      },
+      "aqua": {
+        "aqua-100": {
+          "value": "#c6f6eeff",
+          "type": "color"
+        },
+        "aqua-200": {
+          "value": "#9cefe1ff",
+          "type": "color"
         }
       },
       "blue": {
-        "blue-50": {
-          "value": "#eef5feff",
-          "type": "color"
-        },
-        "blue-75": {
-          "value": "#b8d6faff",
-          "type": "color"
-        },
         "blue-100": {
           "value": "#9ac5f9ff",
           "type": "color"
@@ -125,49 +149,11 @@
           "type": "color"
         },
         "blue-500": {
-          "value": "#315f95ff",
-          "type": "color"
-        }
-      },
-      "pink": {
-        "pink-50": {
-          "value": "#fef1f6ff",
-          "type": "color"
-        },
-        "pink-75": {
-          "value": "#fbc6d9ff",
-          "type": "color"
-        },
-        "pink-100": {
-          "value": "#faaec9ff",
-          "type": "color"
-        },
-        "pink-200": {
-          "value": "#f88bb2ff",
-          "type": "color"
-        },
-        "pink-300": {
-          "value": "#f673a2ff",
-          "type": "color"
-        },
-        "pink-400": {
-          "value": "#ac5171ff",
-          "type": "color"
-        },
-        "pink-500": {
-          "value": "#964663ff",
+          "value": "#2941abff",
           "type": "color"
         }
       },
       "yellow": {
-        "yellow-50": {
-          "value": "#fefceaff",
-          "type": "color"
-        },
-        "yellow-75": {
-          "value": "#fcf4a8ff",
-          "type": "color"
-        },
         "yellow-100": {
           "value": "#faef85ff",
           "type": "color"
@@ -179,26 +165,28 @@
         "yellow-300": {
           "value": "#f7e32cff",
           "type": "color"
-        },
-        "yellow-400": {
-          "value": "#ad9f1fff",
+        }
+      },
+      "pastel-orange": {
+        "pastel-orange-100": {
+          "value": "#ffdea6ff",
           "type": "color"
         },
-        "yellow-500": {
-          "value": "#978a1bff",
+        "pastel-orange-200": {
+          "value": "#ffd07fff",
+          "type": "color"
+        },
+        "pastel-orange-300": {
+          "value": "#ffc665ff",
           "type": "color"
         }
       },
       "rose": {
-        "rose-50": {
-          "value": "#ffedebff",
-          "type": "color"
-        },
-        "rose-75": {
+        "rose-100": {
           "value": "#ffb3abff",
           "type": "color"
         },
-        "rose-100": {
+        "rose-200": {
           "value": "#ff9489ff",
           "type": "color"
         }
@@ -208,73 +196,102 @@
           "value": "#ff6556ff",
           "type": "color"
         },
-        "red-75": {
+        "red-100": {
           "value": "#ff4633ff",
           "type": "color"
         },
-        "red-100": {
-          "value": "#b33124ff",
+        "red-200": {
+          "value": "#e12310ff",
           "type": "color"
         },
-        "red-200": {
+        "red-300": {
           "value": "#9c2b1fff",
+          "type": "color"
+        }
+      },
+      "purple": {
+        "purple-50": {
+          "value": "#b2a1e1ff",
+          "type": "color"
+        },
+        "purple-100": {
+          "value": "#927ad5ff",
+          "type": "color"
+        },
+        "purple-200": {
+          "value": "#6341c3ff",
+          "type": "color"
+        },
+        "purple-300": {
+          "value": "#431ab7ff",
+          "type": "color"
+        },
+        "purple-400": {
+          "value": "#2f1280ff",
+          "type": "color"
+        }
+      },
+      "pastel-pink": {
+        "pastel-pink-100": {
+          "value": "#fed4daff",
+          "type": "color"
+        },
+        "pastel-pink-200": {
+          "value": "#fecbd2ff",
           "type": "color"
         }
       }
     },
-    "spotify-brand": {
-      "brand-palette": {
-        "pastel-pink": {
-          "value": "#ffcdd3ff",
-          "type": "color",
-          "comment": "Spotify Brand Palette Color, Pastel Pink"
-        },
-        "beige": {
-          "value": "#fbf0efff",
-          "type": "color",
-          "comment": "Spotify Brand Palette Color, Beige"
-        },
-        "pastel-blue": {
-          "value": "#a1c3d3ff",
-          "type": "color",
-          "comment": "Spotify Brand Palette Color, Pastel Blue"
-        },
-        "lime-green": {
-          "value": "#cdf564ff",
-          "type": "color",
-          "comment": "Spotify Brand Palette Color, Lime Green"
-        },
-        "pastel-orange": {
-          "value": "#ffc665ff",
-          "type": "color",
-          "comment": "Spotify Brand Palette Color, Pastel Orange"
-        },
-        "blue": {
-          "value": "#519bf4ff",
-          "type": "color",
-          "comment": "Spotify Brand Palette, Blue"
-        },
-        "red": {
-          "value": "#ff4633ff",
-          "type": "color",
-          "comment": "Spotify Brand Palette, Red"
-        },
-        "pink": {
-          "value": "#f673a2ff",
-          "type": "color",
-          "comment": "Spotify Brand Palette, Pink"
-        },
-        "yellow": {
-          "value": "#f7e32cff",
-          "type": "color",
-          "comment": "Spotify Brand Palette, Yellow"
-        }
+    "brand-palette": {
+      "pastel-pink": {
+        "value": "#ffcdd3ff",
+        "type": "color",
+        "comment": "Spotify Brand Palette Color, Pastel Pink"
+      },
+      "beige": {
+        "value": "#fbf0efff",
+        "type": "color",
+        "comment": "Spotify Brand Palette Color, Beige"
+      },
+      "pastel-blue": {
+        "value": "#a1c3d3ff",
+        "type": "color",
+        "comment": "Spotify Brand Palette Color, Pastel Blue"
+      },
+      "lime-green": {
+        "value": "#cdf564ff",
+        "type": "color",
+        "comment": "Spotify Brand Palette Color, Lime Green"
+      },
+      "pastel-orange": {
+        "value": "#ffc665ff",
+        "type": "color",
+        "comment": "Spotify Brand Palette Color, Pastel Orange"
+      },
+      "blue": {
+        "value": "#519bf4ff",
+        "type": "color",
+        "comment": "Spotify Brand Palette, Blue"
+      },
+      "red": {
+        "value": "#ff4633ff",
+        "type": "color",
+        "comment": "Spotify Brand Palette, Red"
+      },
+      "pink": {
+        "value": "#f673a2ff",
+        "type": "color",
+        "comment": "Spotify Brand Palette, Pink"
+      },
+      "yellow": {
+        "value": "#f7e32cff",
+        "type": "color",
+        "comment": "Spotify Brand Palette, Yellow"
       },
       "spotify-green": {
-        "spotify-green": {
-          "value": "#1ed860ff",
-          "type": "color"
-        }
+        "value": "#1ed860ff",
+        "type": "color",
+        "comment": "The Spotify Green"
       }
     }
   }
