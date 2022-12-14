@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 13 Dec 2022 16:25:30 GMT
+ * Generated on Wed, 14 Dec 2022 11:44:28 GMT
  */
 
 :root {
@@ -96,19 +96,7 @@
   --sr-spacer-spacer-6: 48;
   --sr-spacer-spacer-7: 56;
   --sr-spacer-spacer-8: 64;
-  --sr-typography-typography-headers-subheaders-subheading1-400: [object Object]; /* H3, Subheading Variation 1 in Regular */
-  --sr-typography-typography-headers-subheaders-subheading2-400: [object Object]; /* H4, Subheading Variation 2 in Regular */
-  --sr-typography-typography-headers-subheaders-subheading2-700: [object Object]; /* H4, Subheading Variation 2 in Bold */
-  --sr-typography-typography-headers-subheaders-subheading3-400: [object Object]; /* H5, Subheading Variation 3 in Regular */
-  --sr-typography-typography-headers-subheaders-subheading4-700: [object Object]; /* H6, Subheading Variation 3 in Bold */
-  --sr-typography-typography-headers-subheaders-subheading1-700: [object Object]; /* H3, Subheading Variation 1 in Bold */
-  --sr-typography-typography-headers-subheaders-subheading3-700: [object Object]; /* H5, Subheading Variation 3 in Bold */
-  --sr-typography-typography-headers-subheaders-subheading4-400: [object Object]; /* H6, Subheading Variation 3 in Regular */
   --sr-typography-typography-headers-displayxl-400: [object Object]; /* H1, Display, or XL Title in Regular */
-  --sr-typography-typography-headers-displayxl-700: [object Object]; /* H1, Display, or XL Title in Bold */
-  --sr-typography-typography-headers-displayxl-900: [object Object]; /* H1, Display, or XL Title in Extra Bold */
-  --sr-typography-typography-headers-displaylg-400: [object Object]; /* H2, Large Display, or Main Section Title in Regular */
-  --sr-typography-typography-headers-displaylg-700: [object Object]; /* H2, Large Display, or Main Section Title in Bold */
   --sr-typography-typography-headers-displaylg-900: [object Object]; /* H2, Large Display, or Main Section Title in Extra Bold */
   --sr-typography-typography-headers-subheading1-900: [object Object]; /* H3, Subheading Variation 1 in Extra Bold */
   --sr-typography-typography-headers-subheading2-900: [object Object]; /* H4, Subheading Variation 2 in Extra Bold */
@@ -125,4 +113,16 @@
   --sr-typography-typography-text-endnote-400: [object Object]; /* Endnote Text in Regular */
   --sr-typography-typography-text-endnote-700: [object Object]; /* Endnote Text in Bold */
   --sr-typography-typography-text-endnote-900: [object Object]; /* Endnote Text in Extra Bold */
+  --sr-typography-displayxl-700: [object Object]; /* H1, Display, or XL Title in Bold */
+  --sr-typography-displayxl-900: [object Object]; /* H1, Display, or XL Title in Extra Bold */
+  --sr-typography-displaylg-400: [object Object]; /* H2, Large Display, or Main Section Title in Regular */
+  --sr-typography-displaylg-700: [object Object]; /* H2, Large Display, or Main Section Title in Bold */
+  --sr-typography-subheading1-400: [object Object]; /* H3, Subheading Variation 1 in Regular */
+  --sr-typography-subheading2-400: [object Object]; /* H4, Subheading Variation 2 in Regular */
+  --sr-typography-subheading2-700: [object Object]; /* H4, Subheading Variation 2 in Bold */
+  --sr-typography-subheading3-400: [object Object]; /* H5, Subheading Variation 3 in Regular */
+  --sr-typography-subheading4-700: [object Object]; /* H6, Subheading Variation 3 in Bold */
+  --sr-typography-subheading1-700: [object Object]; /* H3, Subheading Variation 1 in Bold */
+  --sr-typography-subheading3-700: [object Object]; /* H5, Subheading Variation 3 in Bold */
+  --sr-typography-subheading4-400: [object Object]; /* H6, Subheading Variation 3 in Regular */
 }

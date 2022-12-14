@@ -148,7 +148,7 @@ export class SRFlex {
     const flexStyle = css`
       display: flex;
       flex-direction: ${this.directionHandler()};
-      gap: ${this.gap}px;
+      gap: ${this.gapHandler()}px;
       flex-wrap: ${this.wrap ? 'wrap' : 'unset'};
       justify-content: ${this.hAlignHandler()};
       align-items: ${this.vAlignHandler()};

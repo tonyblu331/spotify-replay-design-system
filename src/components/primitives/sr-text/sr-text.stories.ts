@@ -108,8 +108,6 @@ const Template = args => {
 const defaultOptions = {
   as: 'h1',
   color: 'black',
-  fontWeight: 'extraBold',
-  fontSize: 52,
 };
 
 export const Text = Template.bind({});
