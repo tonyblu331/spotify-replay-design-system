@@ -1,23 +1,52 @@
 export default {
   title: 'Components/Form/Text input',
-  // TODOJCS
-  // argTypes: {
-  //   variant: {
-  //     options: ['neutral', 'error'], // Value presets
-  //     control: { type: 'select' }, // Knob type. It can be select, radio, etc
-  //     description: 'The button variant', // The description text displayed in the knobs table
-  //   },
-  // },
+  argTypes: {
+    label: {
+      control: { type: 'text' },
+      description: 'The label to accompany the text input',
+    },
+    placeholder: {
+      control: { type: 'text' },
+      description: 'The placeholder to display when the text input is empty',
+    },
+  },
 };
 
-const Template = args => `
-  <sr-textinput>
-    ${args.content}
-  </sr-textinput>
-`;
+const Template = ({ label, placeholder }) => {
+  if (label) {
+    if (placeholder) {
+      return `
+        <sr-textinput label="${label}" placeholder="${placeholder}" />
+      `;
+    } else {
+      return `
+        <sr-textinput label="${label}" />
+      `;
+    }
+  } else {
+    if (placeholder) {
+      return `
+        <sr-textinput placeholder="${placeholder}" />
+      `;
+    } else {
+      return `
+        <sr-textinput />
+      `;
+    }
+  }
+};
 
-export const ComponentStory = Template.bind({});
-ComponentStory.args = {
-  // Populate this object with key/value pairs, customizing the component atribute values or even its content. Eg:
-  // content: 'Demo text',
+// const Template = ({ label, placeholder }) => `
+//   <sr-textinput ${label !== '' ? `label='${label}"` : ''} ${
+//   placeholder ? `placeholder="${placeholder}"` : ''
+// } />
+// `;
+
+export const DefaultPlaceholder = Template.bind({});
+DefaultPlaceholder.args = {};
+
+export const PlaceholderAndLabel = Template.bind({});
+PlaceholderAndLabel.args = {
+  label: 'My favorite genre',
+  placeholder: 'e.g. ska',
 };

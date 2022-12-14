@@ -18,6 +18,19 @@ along the vertical or horizontal axis.
 | `orientation` | `orientation` | The `orientation` property sets the direction for the flow, either vertical or horizontal.                     | `"horizontal" \| "vertical"`                                                                                   | `'vertical'` |
 
 
+## Dependencies
+
+### Used by
+
+ - [sr-textinput](../../form/sr-textinput)
+
+### Graph
+```mermaid
+graph TD;
+  sr-textinput --> sr-stack
+  style sr-stack fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

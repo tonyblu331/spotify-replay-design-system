@@ -37,7 +37,7 @@ export class SRButton {
   /**
    * Emitted when button is clicked
    */
-  @Event({})
+  @Event()
   clicked;
 
   clickHandler(e) {

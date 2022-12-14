@@ -7,9 +7,8 @@
 
 ## Overview
 
-List of text (?) TODOJCS define List element with Tony,
-i.e. only for text? can we even validate a slot's content? possibly yes
-can apply margin/padding in children via box primitives
+List element for showing text, separated into list elements
+This component expects that the HTML elements passed in the slot are of type <li>
 
 ## Properties
 

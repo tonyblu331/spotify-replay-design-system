@@ -2,7 +2,8 @@ export default {
   title: 'Components/Form/Combo box',
   argTypes: {
     options: {
-      description: 'The available options selectable from to the combobox',
+      description:
+        'The available options for selection. Please wrap each option in a pair of `<option>` tags',
     },
     labelText: {
       control: 'text',
@@ -17,22 +18,21 @@ export default {
   },
 };
 
+// prettier-ignore
 const Template = ({ labelText, options, allowEmpty }) =>
-  `<sr-combobox 
-      ${labelText ? `labelText="${labelText}"` : ''} 
-      ${allowEmpty ? 'allowEmpty' : ''}>
+  `<sr-combobox ${labelText ? `labelText="${labelText}"` : ''}${allowEmpty ?' allowEmpty' : ''}>
     ${options}
   <sr-combobox/>`;
 
 export const Labelless = Template.bind({});
 Labelless.args = {
-  options: `<option>Potáto</option><option>Potäto</option>`,
+  options: `<option>Potáto</option> <option>Potäto</option>`,
   allowEmpty: false,
 };
 
 export const Labelled = Template.bind({});
 Labelled.args = {
-  options: `<option>Avatar</option><option>Ghost in the Shell</option><option>Memento</option>`,
+  options: `<option>Avatar</option> <option>Ghost in the Shell</option> <option>Memento</option>`,
   labelText: 'My favorite movie',
   allowEmpty: false,
 };
