@@ -29,21 +29,26 @@ function renderCard() {
   let temp = '';
   for (let i = 0; i < 3; i++) {
     const color = i % 2 == 0 ? 'dark' : 'primary';
-    temp += `<sr-box backgroundColor="${color}" padding="spacer-2">
-      <sr-heading level="1">Header ${i + 1}</sr-heading>
-      <sr-paragraph>Show content here!</sr-paragraph>
+    temp += `<sr-box backgroundColor="${color}" padding="spacer-3">
+      <sr-heading level="h3-bold">Header ${i + 1}</sr-heading>
+      <sr-text>Show content here!</sr-text>
     </sr-box>`;
   }
   return temp;
 }
 
-const Template = args => `
-  <sr-box padding="spacer-2" hasBorder>
-    <sr-stack gap=${args.gap} orientation=${args.orientation}>
+const Template = args => {
+  const argsProps = Object.entries(args).reduce((prev, [key, value]) => {
+    return `${prev} ${key}="${value}"`.trim();
+  }, '');
+  return `
+  <sr-box padding="spacer-3" hasBorder>
+    <sr-stack ${argsProps}>
     ${renderCard()}
     </sr-stack>
   </sr-box>
 `;
+};
 
 export const StackVertical = Template.bind({});
 StackVertical.args = {

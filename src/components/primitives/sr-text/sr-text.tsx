@@ -1,6 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
-// import { number } from '~/enum';
 import {
   ColorFoundationNeutralPureBlack,
   ColorFoundationNeutralPureWhite,
@@ -53,61 +52,61 @@ export class SrText {
    * Control amount of white space around child components inside of a box
    */
   @Prop({ reflect: true })
-  padding: number;
+  padding: number = 0;
 
   /**
    * Define amount of white space at top side only
    */
   @Prop({ reflect: true, attribute: 'paddingTop' })
-  paddingTop?: number;
+  paddingTop?: number = 0;
 
   /**
    * Define amount of white space at right side only
    */
   @Prop({ reflect: true, attribute: 'paddingRight' })
-  paddingRight?: number;
+  paddingRight?: number = 0;
 
   /**
    * Define amount of white space at left side only
    */
   @Prop({ reflect: true, attribute: 'paddingLeft' })
-  paddingLeft?: number;
+  paddingLeft?: number = 0;
 
   /**
    * Define amount of white space at bottom side only
    */
   @Prop({ reflect: true, attribute: 'paddingBottom' })
-  paddingBottom?: number;
+  paddingBottom?: number = 0;
 
   /**
    * Control amount of white space around the box component itself.
    */
   @Prop({ reflect: true })
-  margin?: number;
+  margin?: number = 0;
 
   /**
    * Define amount of space at top side only.
    */
   @Prop({ reflect: true, attribute: 'marginTop' })
-  marginTop?: number;
+  marginTop?: number = 0;
 
   /**
    * Define amount of space at right side only.
    */
   @Prop({ reflect: true, attribute: 'marginRight' })
-  marginRight?: number;
+  marginRight?: number = 0;
 
   /**
    * Define amount of space at left side only.
    */
   @Prop({ reflect: true, attribute: 'marginLeft' })
-  marginLeft?: number;
+  marginLeft?: number = 0;
 
   /**
    * Define amount of space at bottom side only.
    */
   @Prop({ reflect: true, attribute: 'marginBottom' })
-  marginBottom?: number;
+  marginBottom?: number = 0;
 
   /**
    * Define the space between characters in a text
@@ -146,8 +145,6 @@ export class SrText {
   }
 
   render() {
-    console.log(this.padding, 'font');
-
     const Tag = `${this.as}`;
     const tagStyles = css`
       color: ${this.getFontColor()};
@@ -156,15 +153,21 @@ export class SrText {
       line-height: ${this.lineHeight}%;
       font-size: ${this.fontSize}px !important;
       padding: ${this.padding}em;
-      padding-top: ${this.paddingTop}em;
-      padding-left: ${this.paddingLeft}em;
-      padding-right: ${this.paddingRight}em;
-      padding-bottom: ${this.paddingBottom}em;
+      padding-top: ${this.paddingTop > 0 ? this.paddingTop : this.padding}em;
+      padding-left: ${this.paddingLeft > 0 ? this.paddingLeft : this.padding}em;
+      padding-right: ${this.paddingRight > 0
+        ? this.paddingRight
+        : this.padding}em;
+      padding-bottom: ${this.paddingBottom > 0
+        ? this.paddingBottom
+        : this.padding}em;
       margin: ${this.margin}em;
-      margin-top: ${this.marginTop}em;
-      margin-left: ${this.marginLeft}em;
-      margin-right: ${this.marginRight}em;
-      margin-bottom: ${this.marginBottom}em;
+      margin-top: ${this.marginTop > 0 ? this.marginTop : this.margin}em;
+      margin-left: ${this.marginLeft > 0 ? this.marginLeft : this.margin}em;
+      margin-right: ${this.marginRight > 0 ? this.marginRight : this.margin}em;
+      margin-bottom: ${this.marginBottom > 0
+        ? this.marginBottom
+        : this.margin}em;
       letter-spacing: ${this.letterSpacing}px;
       font-weight: ${this.renderFontWeight()};
     `;

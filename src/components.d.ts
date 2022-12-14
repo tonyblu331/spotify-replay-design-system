@@ -35,7 +35,7 @@ export namespace Components {
         /**
           * Specify text color inside box component
          */
-        "color": 'dark' | 'bright';
+        "color": 'black' | 'white';
         /**
           * Specify height of box component
          */
@@ -64,6 +64,22 @@ export namespace Components {
           * Define amount of space at top side only.
          */
         "marginTop"?: SPACER;
+        /**
+          * Specify max height of box component
+         */
+        "maxHeight"?: number;
+        /**
+          * Specify max width of box component
+         */
+        "maxWidth"?: number;
+        /**
+          * Specify min height of box component
+         */
+        "minHeight": number;
+        /**
+          * Specify min width of box component
+         */
+        "minWidth": number;
         /**
           * Control amount of white space around child components inside of a box
          */
@@ -402,7 +418,7 @@ declare namespace LocalJSX {
         /**
           * Specify text color inside box component
          */
-        "color"?: 'dark' | 'bright';
+        "color"?: 'black' | 'white';
         /**
           * Specify height of box component
          */
@@ -431,6 +447,22 @@ declare namespace LocalJSX {
           * Define amount of space at top side only.
          */
         "marginTop"?: SPACER;
+        /**
+          * Specify max height of box component
+         */
+        "maxHeight"?: number;
+        /**
+          * Specify max width of box component
+         */
+        "maxWidth"?: number;
+        /**
+          * Specify min height of box component
+         */
+        "minHeight"?: number;
+        /**
+          * Specify min width of box component
+         */
+        "minWidth"?: number;
         /**
           * Control amount of white space around child components inside of a box
          */

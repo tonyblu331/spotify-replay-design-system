@@ -53,41 +53,39 @@ function renderCard(items) {
   let temp = '';
   for (let i = 0; i < items; i++) {
     const color = i % 2 == 0 ? 'dark' : 'primary';
-    temp += `<sr-box backgroundColor="${color}" padding="spacer-2">
-      <sr-heading level="1">Header ${i + 1}</sr-heading>
-      <sr-paragraph>Show content here!</sr-paragraph>
+    temp += `<sr-box backgroundColor="${color}" padding="spacer-3">
+      <sr-heading level="h3-bold">Header ${i + 1}</sr-heading>
+      <sr-text>Show content here!</sr-text>
     </sr-box>`;
   }
   return temp;
 }
 
-const Template = args => `
-<sr-box padding="spacer-2" hasBorder>
-  <sr-flex 
-      direction=${args.direction}
-      vAlignment=${args.vAlignment}
-      hAlignment=${args.hAlignment}
-      wrap=${args.wrap} 
-      gap=${args.gap}
-    >
+const Template = args => {
+  const argsProps = Object.entries(args).reduce((prev, [key, value]) => {
+    return `${prev} ${key}="${value}"`.trim();
+  }, '');
+  return `
+<sr-box padding="spacer-3" hasBorder>
+  <sr-flex ${argsProps}>
     ${renderCard(3)}
   </sr-flex>
 </sr-box>
 `;
+};
 
-const TemplateWrap = args => `
-<sr-box padding="spacer-2" hasBorder>
-  <sr-flex 
-      direction=${args.direction}
-      vAlignment=${args.vAlignment}
-      hAlignment=${args.hAlignment}
-      wrap=${args.wrap} 
-      gap=${args.gap}
-    >
+const TemplateWrap = args => {
+  const argsProps = Object.entries(args).reduce((prev, [key, value]) => {
+    return `${prev} ${key}="${value}"`.trim();
+  }, '');
+  return `
+<sr-box padding="spacer-3" hasBorder>
+<sr-flex ${argsProps}>
     ${renderCard(10)}
   </sr-flex>
 </sr-box>
 `;
+};
 
 export const FlexRow = Template.bind({});
 FlexRow.args = {
@@ -105,6 +103,6 @@ export const FlexWrap = TemplateWrap.bind({});
 FlexWrap.args = {
   wrap: 'true',
   direction: 'horizontal',
-  hAlignment: 'center',
+  hAlignment: 'left',
   gap: 'spacer-1',
 };

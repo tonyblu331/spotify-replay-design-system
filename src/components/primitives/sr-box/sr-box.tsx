@@ -32,13 +32,17 @@ import {
  * @property `marginLeft`
  * @property `marginBottom`
  * @property `backgroundColor` (default 'default')
- * @property `color` (default dark)
+ * @property `color` (default black)
  * @property `hasBorder` (default false)
  * @property `borderColor` (default 'default')
  * @property `width`
  * @property `height`
  * @property `boxShadow`
  * @property `borderWidth`
+ * @property `minWidth`
+ * @property `minHeight`
+ * @property `maxWidth`
+ * @property `maxHeight`
  * */
 
 @Component({
@@ -124,7 +128,7 @@ export class SRBox {
    * Specify text color inside box component
    */
   @Prop({ reflect: true })
-  color: 'dark' | 'bright' = 'dark';
+  color: 'black' | 'white' = 'black';
 
   /**
    * Enable or disable border around box component
@@ -161,6 +165,30 @@ export class SRBox {
    */
   @Prop({ reflect: true })
   height: 'small' | 'medium' | 'large';
+
+  /**
+   * Specify min width of box component
+   */
+  @Prop({ reflect: true, attribute: 'minWidth' })
+  minWidth: number;
+
+  /**
+   * Specify min height of box component
+   */
+  @Prop({ reflect: true, attribute: 'minHeight' })
+  minHeight: number;
+
+  /**
+   * Specify max width of box component
+   */
+  @Prop({ reflect: true, attribute: 'maxWidth' })
+  maxWidth?: number;
+
+  /**
+   * Specify max height of box component
+   */
+  @Prop({ reflect: true, attribute: 'maxHeight' })
+  maxHeight?: number;
 
   /**
    * Control shadow effects around box component
@@ -269,9 +297,9 @@ export class SRBox {
 
   textColorHandler() {
     switch (this.color) {
-      case 'dark':
+      case 'black':
         return ColorFoundationNeutralPureBlack;
-      case 'bright':
+      case 'white':
         return ColorFoundationNeutralPureWhite;
       default:
         break;
@@ -344,6 +372,10 @@ export class SRBox {
         : ''};
       border-radius: ${this.borderRadiusHandler()};
       box-shadow: ${this.boxShadowHandler()};
+      min-width: ${this.minWidth}px;
+      min-height: ${this.minHeight}px;
+      max-width: ${this.maxWidth}px;
+      max-height: ${this.maxHeight}px;
     `;
   }
   render() {

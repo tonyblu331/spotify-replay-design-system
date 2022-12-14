@@ -28,10 +28,26 @@ export default {
       options: ['small', 'medium', 'large'],
       control: { type: 'select' },
     },
+    minWidth: {
+      description: "Specify min width of box component <br> `'number'``",
+      control: { type: 'number' },
+    },
+    minHeight: {
+      description: "Specify min height of box component <br> `'number'`",
+      control: { type: 'number' },
+    },
+    maxWidth: {
+      description: "Specify max width of box component <br> `'number'``",
+      control: { type: 'number' },
+    },
+    maxHeight: {
+      description: "Specify max height of box component <br> `'number'`",
+      control: { type: 'number' },
+    },
     color: {
       description:
-        "Specify text color inside box component <br> `'dark'` `'bright'`",
-      options: ['dark', 'bright'],
+        "Specify text color inside box component <br> `'black'` `'white'`",
+      options: ['black', 'white'],
       control: { type: 'radio' },
     },
     isBorder: {
@@ -222,8 +238,8 @@ const Template = args => {
   <sr-box 
     ${argsProps}
     >
-    <sr-heading level="h2-bold">${(args.text, 'Header')}</sr-heading>
-    <sr-paragraph>Show content here!</sr-paragraph>
+    <sr-heading level="h2-bold">${args.text || 'Header'}</sr-heading>
+    <sr-text>Show content here!</sr-text>
   </sr-box>
 `;
 };
@@ -231,34 +247,35 @@ const Template = args => {
 const defaultOptions = {
   as: 'div',
   backgroundColor: 'primary',
+  minHeight: '100px',
+  color: 'white',
+  padding: 'spacer-2',
 };
 
 export const BoxPadding = Template.bind({ as: 'div' });
 BoxPadding.args = {
   ...defaultOptions,
-  padding: 'spacer-1',
+  padding: 'spacer-2',
   text: 'Box Padding',
-  color: 'bright',
 };
 
 export const BoxMargin = Template.bind({});
 BoxMargin.args = {
-  margin: 'spacer-1',
-  backgroundColor: 'primary',
+  ...defaultOptions,
+  margin: 'spacer-6',
   text: 'Box Margin',
-  color: 'bright',
 };
 
 export const BoxBorder = Template.bind({});
 BoxBorder.args = {
   isBorder: 'true',
   text: 'Box Border',
+  padding: 'spacer-2',
 };
 
 export const BoxShadow = Template.bind({});
 BoxShadow.args = {
-  backgroundColor: 'primary',
+  ...defaultOptions,
   boxShadow: 'level4',
   text: 'Box Shadow',
-  color: 'bright',
 };
