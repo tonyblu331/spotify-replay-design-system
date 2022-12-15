@@ -3,6 +3,7 @@ import { css } from '@emotion/css';
 
 import {
   SpacerSpacer2,
+  BorderRadiusBorderRadiusSm,
   ColorFoundationNeutralBlack200,
   ColorFoundationNeutralGray400,
   ColorFoundationRedRed200,
@@ -46,7 +47,7 @@ export class SrTextArea {
     return css`
       padding: ${SpacerSpacer2}px;
       border: 1px solid ${ColorFoundationNeutralBlack200};
-      border-radius: 4px;
+      border-radius: ${BorderRadiusBorderRadiusSm};
       ::placeholder {
         color: ${ColorFoundationNeutralGray400};
       }

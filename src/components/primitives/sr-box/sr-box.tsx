@@ -3,7 +3,7 @@ import { css } from '@emotion/css';
 import { SPACER } from '~/type.js';
 import {
   BorderRadiusBorderRadiusFull,
-  BorderRadiusBorderRadiusSm,
+  BorderRadiusBorderRadiusMd,
   ColorFoundationNeutralPureBlack,
   ColorFoundationNeutralPureWhite,
   ColorFoundationNeutralBlack400,
@@ -334,7 +334,7 @@ export class SRBox {
   borderRadiusHandler() {
     switch (this.borderRadius) {
       case 'squared':
-        return `${BorderRadiusBorderRadiusSm}px`;
+        return `${BorderRadiusBorderRadiusMd}px`;
       case 'rounded':
         return `${BorderRadiusBorderRadiusFull}px`;
       default:

@@ -1,9 +1,10 @@
 /**
  * Do not edit directly
- * Generated on Thu, 15 Dec 2022 00:16:32 GMT
+ * Generated on Thu, 15 Dec 2022 15:20:04 GMT
  */
 
-export const BorderRadiusBorderRadiusSm = "8";
+export const BorderRadiusBorderRadiusSm = "4";
+export const BorderRadiusBorderRadiusMd = "8";
 export const BorderRadiusBorderRadiusFull = "50";
 export const ColorFoundationUiGreenUiGreenLight = "#e9f8ee";
 export const ColorFoundationUiGreenUiGreenLightHover = "#ddf5e6";

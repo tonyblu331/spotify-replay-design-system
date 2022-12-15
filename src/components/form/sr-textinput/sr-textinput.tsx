@@ -2,6 +2,7 @@ import { css } from '@emotion/css';
 import { Component, Event, h, Prop } from '@stencil/core';
 import {
   SpacerSpacer2,
+  BorderRadiusBorderRadiusSm,
   BorderRadiusBorderRadiusFull,
   ColorFoundationNeutralBlack200,
   ColorFoundationNeutralGray400,
@@ -104,7 +105,7 @@ export class SRTextInput {
           : ColorFoundationNeutralBlack200};
       border-radius: ${this.variant === 'rounded'
         ? BorderRadiusBorderRadiusFull
-        : 4}px;
+        : BorderRadiusBorderRadiusSm}px;
       ::placeholder {
         color: ${ColorFoundationNeutralGray400};
       }
