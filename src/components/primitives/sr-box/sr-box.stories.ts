@@ -55,8 +55,8 @@ export default {
       description: 'Specify border color <br> `color`',
     },
     borderRadius: {
-      description: "Specify border radius <br> `'squared'` `'rounded'`",
-      options: ['squared', 'rounded'],
+      description: "Specify border radius <br> `'small'` `'medium'` `'full'`",
+      options: ['small', 'medium', 'full'],
       control: { type: 'radio' },
     },
     borderWidth: {

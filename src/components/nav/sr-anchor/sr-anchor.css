@@ -1,23 +1,37 @@
+@import '../../../design-tokens/css/_variables.css';
+
 :host {
   display: block;
 }
 
 a {
-  text-decoration: underline;
-}
-
-a:hover {
   text-decoration: none;
-  color: black;
+  color: var(--sr-color-foundation-neutral-black-400);
 }
 
-/* TODO CHECK WITH TONY WAT DO FOR EXTERNAL ANCHORS */
-a.external {
-  background-color: #76f4918a;
+sr-box {
+  margin-top: 2px;
 }
 
-/* TODO CHECK WITH TONY WAT DO FOR EXTERNAL ANCHORS */
-a.external:hover {
-  background-color: black;
-  color: white;
+.in-active {
+  color: var(--sr-color-foundation-neutral-gray-300);
+  cursor: default;
+}
+
+.selected .normal,
+.normal:hover {
+  color: var(--sr-color-foundation-ui-green-ui-green-hover) !important;
+}
+
+.selected .underline sr-stack,
+.underline sr-stack:hover,
+.external sr-stack:hover {
+  color: var(--sr-color-foundation-ui-green-ui-green-hover) !important;
+  border-bottom: 2px solid var(--sr-color-foundation-ui-green-ui-green-hover);
+  padding-bottom: 5px;
+  width: fit-content;
+}
+
+.external sr-stack:hover path {
+  stroke: var(--sr-color-foundation-ui-green-ui-green-hover);
 }

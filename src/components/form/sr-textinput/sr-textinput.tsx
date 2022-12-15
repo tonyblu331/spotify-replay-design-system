@@ -77,6 +77,18 @@ export class SRTextInput {
   type: 'number' | 'text' | 'email' = 'text';
 
   /**
+   *  Indicate Error state
+   */
+  @Prop({ reflect: true, attribute: 'isError' })
+  isError: boolean = false;
+
+  /**
+   *  Indicate Success state
+   */
+  @Prop({ reflect: true, attribute: 'isSuccess' })
+  isSuccess: boolean = false;
+
+  /**
    * Emitted when the input's value changes
    */
   @Event()
@@ -84,15 +96,7 @@ export class SRTextInput {
 
   isValid: boolean = false;
 
-  componentWillLoad() {
-    if (this.value != '' && !this.isDisabled && !this.isReadOnly) {
-      this.isValid = true;
-    }
-  }
-
   changeHandler(e) {
-    this.value = e.target.value;
-    this.isValid = e.target.validity.valid;
     this._change.emit(e);
   }
 
@@ -100,7 +104,7 @@ export class SRTextInput {
     return css`
       padding: ${SpacerSpacer2}px;
       border: 1px solid
-        ${this.isValid
+        ${this.isSuccess
           ? ColorFoundationUiGreenUiGreen
           : ColorFoundationNeutralBlack200};
       border-radius: ${this.variant === 'rounded'
@@ -114,7 +118,7 @@ export class SRTextInput {
       }
       :focus:not(:read-only) {
         border: 2px solid
-          ${this.isValid
+          ${this.isSuccess
             ? ColorFoundationUiGreenUiGreen
             : ColorFoundationNeutralBlack200};
         transition: all 0.2s 0s ease-out;
@@ -135,11 +139,7 @@ export class SRTextInput {
         {this.label && (
           <sr-label
             variant={
-              this.isRequired && !this.isValid
-                ? 'error'
-                : this.isValid && !this.isDisabled && !this.isReadOnly
-                ? 'success'
-                : 'default'
+              this.isError ? 'error' : this.isSuccess ? 'success' : 'default'
             }
           >
             {this.label}
@@ -158,11 +158,7 @@ export class SRTextInput {
         {this.helperText && (
           <sr-help-text
             variant={
-              this.isRequired && !this.isValid
-                ? 'error'
-                : this.isValid && !this.isDisabled && !this.isReadOnly
-                ? 'success'
-                : 'default'
+              this.isError ? 'error' : this.isSuccess ? 'success' : 'default'
             }
           >
             {this.helperText}

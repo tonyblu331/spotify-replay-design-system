@@ -25,7 +25,7 @@ It is a simple wrapper component that can create other components such as card.
 | `as`                    | `as`                    | Specify wrapper HTML element                                          | `"article" \| "div" \| "section" \| "span"`                                                                                  | `'div'`                           |
 | `backgroundColor`       | `backgroundcolor`       | Specify background fill inside box component                          | `any`                                                                                                                        | `ColorFoundationNeutralPureWhite` |
 | `borderColor`           | `bordercolor`           | Specify border color                                                  | `any`                                                                                                                        | `ColorFoundationNeutralPureBlack` |
-| `borderRadius`          | `borderradius`          | Specify border radius                                                 | `"rounded" \| "squared"`                                                                                                     | `'squared'`                       |
+| `borderRadius`          | `borderradius`          | Specify border radius                                                 | `any`                                                                                                                        | `'medium'`                        |
 | `borderWidth`           | `borderwidth`           | Specify border width                                                  | `"medium" \| "thick" \| "thin"`                                                                                              | `'thick'`                         |
 | `boxShadow`             | `boxshadow`             | Control shadow effects around box component                           | `"level0" \| "level1" \| "level2" \| "level3" \| "level4"`                                                                   | `undefined`                       |
 | `color`                 | `color`                 | Specify text color inside box component                               | `any`                                                                                                                        | `ColorFoundationNeutralBlack400`  |
@@ -54,12 +54,18 @@ It is a simple wrapper component that can create other components such as card.
 
 ### Used by
 
+ - [sr-anchor](../../nav/sr-anchor)
+ - [sr-breadcrumb-item](../../nav/sr-breadcrumb-item)
  - [sr-button](../../form/sr-button)
+ - [sr-card](../../displays/sr-card)
 
 ### Graph
 ```mermaid
 graph TD;
+  sr-anchor --> sr-box
+  sr-breadcrumb-item --> sr-box
   sr-button --> sr-box
+  sr-card --> sr-box
   style sr-box fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

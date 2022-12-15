@@ -127,6 +127,12 @@ export class SRText {
   @Prop({ reflect: true, attribute: 'lineHeight' })
   lineHeight?: number;
 
+  @Prop({ reflect: true, attribute: '_hoverColor' })
+  _hoverColor?;
+
+  @Prop({ reflect: true, attribute: 'isClickable' })
+  isClickable: boolean = false;
+
   renderFontWeight() {
     switch (this.fontWeight) {
       case 'regular':
@@ -207,6 +213,10 @@ export class SRText {
         : this.getSpacer(this.margin)}px;
       letter-spacing: ${this.letterSpacing}px;
       font-weight: ${this.renderFontWeight()};
+      cursor: ${this.isClickable ? 'pointer' : 'unset'};
+      &:hover {
+        color: ${this._hoverColor};
+      }
     `;
     return (
       <Tag class={tagStyles}>

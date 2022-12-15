@@ -15,11 +15,23 @@ export namespace Components {
         /**
           * The URL to redirect to.
          */
-        "href": string;
+        "href"?: string;
+        /**
+          * Indicate inActive state of anchor Use this prop in tab component
+         */
+        "inActive": boolean;
         /**
           * Whether or not to open the URL in a new tab. Defaults to false.
          */
         "openInNewTab": boolean;
+        /**
+          * Indicate active state of anchor Use this prop in tab component
+         */
+        "selected": boolean;
+        /**
+          * Anchor variant
+         */
+        "variant": 'normal' | 'underline';
     }
     interface SrBox {
         /**
@@ -69,7 +81,7 @@ export namespace Components {
         /**
           * Specify border radius
          */
-        "borderRadius": 'rounded' | 'squared';
+        "borderRadius": 'full' | 'small' | 'medium' | any;
         /**
           * Specify border width
          */
@@ -159,6 +171,14 @@ export namespace Components {
          */
         "width": 'small' | 'medium' | 'large' | 'fit-content';
     }
+    interface SrBreadcrumb {
+    }
+    interface SrBreadcrumbItem {
+        "href"?: string;
+        "isLastItem": boolean;
+        "name": string;
+        "selectedItem"?: string;
+    }
     interface SrButton {
         "isDisabled": boolean;
         "text": string;
@@ -189,6 +209,10 @@ export namespace Components {
           * Indicates the importance of the callout. The default is 'note', for the lowest level of importance.
          */
         "type": 'note' | 'warning' | 'critical';
+    }
+    interface SrCard {
+        "heading": string;
+        "hideBorder": boolean;
     }
     interface SrCombobox {
         /**
@@ -229,17 +253,7 @@ export namespace Components {
         /**
           * The `level` property allows users to indicate what header hierarchy this element is.
          */
-        "level": | 'h1'
-    | 'h2-regular'
-    | 'h2-bold'
-    | 'h3-regular'
-    | 'h3-bold'
-    | 'h4-regular'
-    | 'h4-bold'
-    | 'h5-regular'
-    | 'h5-bold'
-    | 'h6-regular'
-    | 'h6-bold';
+        "level": 1 | 2 | 3 | 4 | 5 | 6 | '1' | '2' | '3' | '4' | '5' | '6';
         /**
           * Provides support for implementing horizontal alignment to the text contained in the header.
          */
@@ -275,7 +289,28 @@ export namespace Components {
          */
         "orientation": 'vertical' | 'horizontal';
     }
+    interface SrTab {
+    }
+    interface SrTabItem {
+        /**
+          * Specify Tab content
+         */
+        "href"?: string;
+        /**
+          * Inactive Tab
+         */
+        "inActive"?: boolean;
+        /**
+          * Specify Tab header
+         */
+        "name": string;
+        /**
+          * Selected Tab header
+         */
+        "selectedItem"?: string;
+    }
     interface SrText {
+        "_hoverColor"?: any;
         /**
           * Specify wrapper HTML element
          */
@@ -303,6 +338,7 @@ export namespace Components {
           * Control font weight
          */
         "fontWeight": 'regular' | 'bold' | 'extraBold';
+        "isClickable": boolean;
         /**
           * Define the space between characters in a text
          */
@@ -358,6 +394,10 @@ export namespace Components {
          */
         "helperText"?: string;
         /**
+          * Error State
+         */
+        "isError": boolean;
+        /**
           * Text label to place alongside the input
          */
         "label"?: string;
@@ -376,6 +416,10 @@ export namespace Components {
          */
         "isDisabled": boolean;
         /**
+          * Indicate Error state
+         */
+        "isError": boolean;
+        /**
           * Indicate whether this text field is readonly or not
          */
         "isReadOnly": boolean;
@@ -383,6 +427,10 @@ export namespace Components {
           * Indicate whether this text field is required or not
          */
         "isRequired": boolean;
+        /**
+          * Indicate Success state
+         */
+        "isSuccess": boolean;
         /**
           * Text label to place alongside the input
          */
@@ -405,6 +453,10 @@ export namespace Components {
         "variant": 'rounded' | 'squared';
     }
 }
+export interface SrBreadcrumbCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLSrBreadcrumbElement;
+}
 export interface SrButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLSrButtonElement;
@@ -412,6 +464,10 @@ export interface SrButtonCustomEvent<T> extends CustomEvent<T> {
 export interface SrComboboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLSrComboboxElement;
+}
+export interface SrTabCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLSrTabElement;
 }
 export interface SrTextAreaCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -434,6 +490,18 @@ declare global {
         prototype: HTMLSrBoxElement;
         new (): HTMLSrBoxElement;
     };
+    interface HTMLSrBreadcrumbElement extends Components.SrBreadcrumb, HTMLStencilElement {
+    }
+    var HTMLSrBreadcrumbElement: {
+        prototype: HTMLSrBreadcrumbElement;
+        new (): HTMLSrBreadcrumbElement;
+    };
+    interface HTMLSrBreadcrumbItemElement extends Components.SrBreadcrumbItem, HTMLStencilElement {
+    }
+    var HTMLSrBreadcrumbItemElement: {
+        prototype: HTMLSrBreadcrumbItemElement;
+        new (): HTMLSrBreadcrumbItemElement;
+    };
     interface HTMLSrButtonElement extends Components.SrButton, HTMLStencilElement {
     }
     var HTMLSrButtonElement: {
@@ -445,6 +513,12 @@ declare global {
     var HTMLSrCalloutElement: {
         prototype: HTMLSrCalloutElement;
         new (): HTMLSrCalloutElement;
+    };
+    interface HTMLSrCardElement extends Components.SrCard, HTMLStencilElement {
+    }
+    var HTMLSrCardElement: {
+        prototype: HTMLSrCardElement;
+        new (): HTMLSrCardElement;
     };
     interface HTMLSrComboboxElement extends Components.SrCombobox, HTMLStencilElement {
     }
@@ -494,6 +568,18 @@ declare global {
         prototype: HTMLSrStackElement;
         new (): HTMLSrStackElement;
     };
+    interface HTMLSrTabElement extends Components.SrTab, HTMLStencilElement {
+    }
+    var HTMLSrTabElement: {
+        prototype: HTMLSrTabElement;
+        new (): HTMLSrTabElement;
+    };
+    interface HTMLSrTabItemElement extends Components.SrTabItem, HTMLStencilElement {
+    }
+    var HTMLSrTabItemElement: {
+        prototype: HTMLSrTabItemElement;
+        new (): HTMLSrTabItemElement;
+    };
     interface HTMLSrTextElement extends Components.SrText, HTMLStencilElement {
     }
     var HTMLSrTextElement: {
@@ -515,8 +601,11 @@ declare global {
     interface HTMLElementTagNameMap {
         "sr-anchor": HTMLSrAnchorElement;
         "sr-box": HTMLSrBoxElement;
+        "sr-breadcrumb": HTMLSrBreadcrumbElement;
+        "sr-breadcrumb-item": HTMLSrBreadcrumbItemElement;
         "sr-button": HTMLSrButtonElement;
         "sr-callout": HTMLSrCalloutElement;
+        "sr-card": HTMLSrCardElement;
         "sr-combobox": HTMLSrComboboxElement;
         "sr-flex": HTMLSrFlexElement;
         "sr-heading": HTMLSrHeadingElement;
@@ -525,6 +614,8 @@ declare global {
         "sr-list": HTMLSrListElement;
         "sr-paragraph": HTMLSrParagraphElement;
         "sr-stack": HTMLSrStackElement;
+        "sr-tab": HTMLSrTabElement;
+        "sr-tab-item": HTMLSrTabItemElement;
         "sr-text": HTMLSrTextElement;
         "sr-text-area": HTMLSrTextAreaElement;
         "sr-text-input": HTMLSrTextInputElement;
@@ -541,9 +632,21 @@ declare namespace LocalJSX {
          */
         "href"?: string;
         /**
+          * Indicate inActive state of anchor Use this prop in tab component
+         */
+        "inActive"?: boolean;
+        /**
           * Whether or not to open the URL in a new tab. Defaults to false.
          */
         "openInNewTab"?: boolean;
+        /**
+          * Indicate active state of anchor Use this prop in tab component
+         */
+        "selected"?: boolean;
+        /**
+          * Anchor variant
+         */
+        "variant"?: 'normal' | 'underline';
     }
     interface SrBox {
         /**
@@ -593,7 +696,7 @@ declare namespace LocalJSX {
         /**
           * Specify border radius
          */
-        "borderRadius"?: 'rounded' | 'squared';
+        "borderRadius"?: 'full' | 'small' | 'medium' | any;
         /**
           * Specify border width
          */
@@ -683,6 +786,15 @@ declare namespace LocalJSX {
          */
         "width"?: 'small' | 'medium' | 'large' | 'fit-content';
     }
+    interface SrBreadcrumb {
+        "onValueChange"?: (event: SrBreadcrumbCustomEvent<any>) => void;
+    }
+    interface SrBreadcrumbItem {
+        "href"?: string;
+        "isLastItem"?: boolean;
+        "name"?: string;
+        "selectedItem"?: string;
+    }
     interface SrButton {
         "isDisabled"?: boolean;
         /**
@@ -717,6 +829,10 @@ declare namespace LocalJSX {
           * Indicates the importance of the callout. The default is 'note', for the lowest level of importance.
          */
         "type"?: 'note' | 'warning' | 'critical';
+    }
+    interface SrCard {
+        "heading"?: string;
+        "hideBorder"?: boolean;
     }
     interface SrCombobox {
         /**
@@ -761,17 +877,7 @@ declare namespace LocalJSX {
         /**
           * The `level` property allows users to indicate what header hierarchy this element is.
          */
-        "level"?: | 'h1'
-    | 'h2-regular'
-    | 'h2-bold'
-    | 'h3-regular'
-    | 'h3-bold'
-    | 'h4-regular'
-    | 'h4-bold'
-    | 'h5-regular'
-    | 'h5-bold'
-    | 'h6-regular'
-    | 'h6-bold';
+        "level"?: 1 | 2 | 3 | 4 | 5 | 6 | '1' | '2' | '3' | '4' | '5' | '6';
         /**
           * Provides support for implementing horizontal alignment to the text contained in the header.
          */
@@ -807,7 +913,29 @@ declare namespace LocalJSX {
          */
         "orientation"?: 'vertical' | 'horizontal';
     }
+    interface SrTab {
+        "onValueChange"?: (event: SrTabCustomEvent<any>) => void;
+    }
+    interface SrTabItem {
+        /**
+          * Specify Tab content
+         */
+        "href"?: string;
+        /**
+          * Inactive Tab
+         */
+        "inActive"?: boolean;
+        /**
+          * Specify Tab header
+         */
+        "name"?: string;
+        /**
+          * Selected Tab header
+         */
+        "selectedItem"?: string;
+    }
     interface SrText {
+        "_hoverColor"?: any;
         /**
           * Specify wrapper HTML element
          */
@@ -835,6 +963,7 @@ declare namespace LocalJSX {
           * Control font weight
          */
         "fontWeight"?: 'regular' | 'bold' | 'extraBold';
+        "isClickable"?: boolean;
         /**
           * Define the space between characters in a text
          */
@@ -890,6 +1019,10 @@ declare namespace LocalJSX {
          */
         "helperText"?: string;
         /**
+          * Error State
+         */
+        "isError"?: boolean;
+        /**
           * Text label to place alongside the input
          */
         "label"?: string;
@@ -912,6 +1045,10 @@ declare namespace LocalJSX {
          */
         "isDisabled"?: boolean;
         /**
+          * Indicate Error state
+         */
+        "isError"?: boolean;
+        /**
           * Indicate whether this text field is readonly or not
          */
         "isReadOnly"?: boolean;
@@ -919,6 +1056,10 @@ declare namespace LocalJSX {
           * Indicate whether this text field is required or not
          */
         "isRequired"?: boolean;
+        /**
+          * Indicate Success state
+         */
+        "isSuccess"?: boolean;
         /**
           * Text label to place alongside the input
          */
@@ -947,8 +1088,11 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "sr-anchor": SrAnchor;
         "sr-box": SrBox;
+        "sr-breadcrumb": SrBreadcrumb;
+        "sr-breadcrumb-item": SrBreadcrumbItem;
         "sr-button": SrButton;
         "sr-callout": SrCallout;
+        "sr-card": SrCard;
         "sr-combobox": SrCombobox;
         "sr-flex": SrFlex;
         "sr-heading": SrHeading;
@@ -957,6 +1101,8 @@ declare namespace LocalJSX {
         "sr-list": SrList;
         "sr-paragraph": SrParagraph;
         "sr-stack": SrStack;
+        "sr-tab": SrTab;
+        "sr-tab-item": SrTabItem;
         "sr-text": SrText;
         "sr-text-area": SrTextArea;
         "sr-text-input": SrTextInput;
@@ -968,8 +1114,11 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "sr-anchor": LocalJSX.SrAnchor & JSXBase.HTMLAttributes<HTMLSrAnchorElement>;
             "sr-box": LocalJSX.SrBox & JSXBase.HTMLAttributes<HTMLSrBoxElement>;
+            "sr-breadcrumb": LocalJSX.SrBreadcrumb & JSXBase.HTMLAttributes<HTMLSrBreadcrumbElement>;
+            "sr-breadcrumb-item": LocalJSX.SrBreadcrumbItem & JSXBase.HTMLAttributes<HTMLSrBreadcrumbItemElement>;
             "sr-button": LocalJSX.SrButton & JSXBase.HTMLAttributes<HTMLSrButtonElement>;
             "sr-callout": LocalJSX.SrCallout & JSXBase.HTMLAttributes<HTMLSrCalloutElement>;
+            "sr-card": LocalJSX.SrCard & JSXBase.HTMLAttributes<HTMLSrCardElement>;
             "sr-combobox": LocalJSX.SrCombobox & JSXBase.HTMLAttributes<HTMLSrComboboxElement>;
             "sr-flex": LocalJSX.SrFlex & JSXBase.HTMLAttributes<HTMLSrFlexElement>;
             "sr-heading": LocalJSX.SrHeading & JSXBase.HTMLAttributes<HTMLSrHeadingElement>;
@@ -978,6 +1127,8 @@ declare module "@stencil/core" {
             "sr-list": LocalJSX.SrList & JSXBase.HTMLAttributes<HTMLSrListElement>;
             "sr-paragraph": LocalJSX.SrParagraph & JSXBase.HTMLAttributes<HTMLSrParagraphElement>;
             "sr-stack": LocalJSX.SrStack & JSXBase.HTMLAttributes<HTMLSrStackElement>;
+            "sr-tab": LocalJSX.SrTab & JSXBase.HTMLAttributes<HTMLSrTabElement>;
+            "sr-tab-item": LocalJSX.SrTabItem & JSXBase.HTMLAttributes<HTMLSrTabItemElement>;
             "sr-text": LocalJSX.SrText & JSXBase.HTMLAttributes<HTMLSrTextElement>;
             "sr-text-area": LocalJSX.SrTextArea & JSXBase.HTMLAttributes<HTMLSrTextAreaElement>;
             "sr-text-input": LocalJSX.SrTextInput & JSXBase.HTMLAttributes<HTMLSrTextInputElement>;

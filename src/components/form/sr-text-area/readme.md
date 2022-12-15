@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property      | Attribute     | Description                                 | Type     | Default              |
-| ------------- | ------------- | ------------------------------------------- | -------- | -------------------- |
-| `helperText`  | `helpertext`  | Indicate the purpose of the text field      | `string` | `undefined`          |
-| `label`       | `label`       | Text label to place alongside the input     | `string` | `undefined`          |
-| `placeholder` | `placeholder` | The text to display when the input is empty | `string` | `'Placeholder text'` |
+| Property      | Attribute     | Description                                 | Type      | Default              |
+| ------------- | ------------- | ------------------------------------------- | --------- | -------------------- |
+| `helperText`  | `helpertext`  | Indicate the purpose of the text field      | `string`  | `undefined`          |
+| `isError`     | `iserror`     | Error State                                 | `boolean` | `false`              |
+| `label`       | `label`       | Text label to place alongside the input     | `string`  | `undefined`          |
+| `placeholder` | `placeholder` | The text to display when the input is empty | `string`  | `'Placeholder text'` |
 
 
 ## Events

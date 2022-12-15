@@ -2,16 +2,11 @@ import { Component, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
 import {
   TypographyDisplayxl900,
-  TypographyDisplaylg400,
   TypographyDisplaylg700,
-  TypographySubheading1400,
   TypographySubheading2400,
   TypographySubheading3400,
   TypographySubheading4400,
   TypographySubheading1700,
-  TypographySubheading2700,
-  TypographySubheading3700,
-  TypographySubheading4700,
 } from '../../../design-tokens/js/variables.js';
 import { SPACE_TEXT } from '~/type.js';
 
@@ -37,18 +32,7 @@ export class SRHeading {
    * The `level` property allows users to indicate what header hierarchy this element is.
    * */
   @Prop({ reflect: true })
-  level:
-    | 'h1'
-    | 'h2-regular'
-    | 'h2-bold'
-    | 'h3-regular'
-    | 'h3-bold'
-    | 'h4-regular'
-    | 'h4-bold'
-    | 'h5-regular'
-    | 'h5-bold'
-    | 'h6-regular'
-    | 'h6-bold' = 'h1';
+  level: 1 | 2 | 3 | 4 | 5 | 6 | '1' | '2' | '3' | '4' | '5' | '6' = 1;
 
   /**
    * Provides support for implementing horizontal alignment to the text contained in the header.
@@ -64,150 +48,76 @@ export class SRHeading {
 
   getFontSize() {
     switch (this.level) {
-      case 'h1':
+      case 1:
         return TypographyDisplayxl900.fontSize.value.measure.value;
-      case 'h2-regular':
-        return TypographyDisplaylg400.fontSize.value.measure.value;
-      case 'h2-bold':
+      case 2:
         return TypographyDisplaylg700.fontSize.value.measure.value;
-      case 'h3-regular':
-        return TypographySubheading1400.fontSize.value.measure.value;
-      case 'h3-bold':
+      case 3:
         return TypographySubheading1700.fontSize.value.measure.value;
-      case 'h4-regular':
+      case 4:
         return TypographySubheading2400.fontSize.value.measure.value;
-      case 'h4-bold':
-        return TypographySubheading2700.fontSize.value.measure.value;
-      case 'h5-regular':
+      case 5:
         return TypographySubheading3400.fontSize.value.measure.value;
-      case 'h5-bold':
-        return TypographySubheading3700.fontSize.value.measure.value;
-      case 'h6-regular':
+      case 6:
         return TypographySubheading4400.fontSize.value.measure.value;
-      case 'h6-bold':
-        return TypographySubheading4700.fontSize.value.measure.value;
     }
   }
 
   getLineHeight() {
     switch (this.level) {
-      case 'h1':
+      case 1:
         return TypographyDisplayxl900.lineHeight.value.measure.value;
-      case 'h2-regular':
-        return TypographyDisplaylg400.lineHeight.value.measure.value;
-      case 'h2-bold':
+      case 2:
         return TypographyDisplaylg700.lineHeight.value.measure.value;
-      case 'h3-regular':
-        return TypographySubheading1400.lineHeight.value.measure.value;
-      case 'h3-bold':
+      case 3:
         return TypographySubheading1700.lineHeight.value.measure.value;
-      case 'h4-regular':
+      case 4:
         return TypographySubheading2400.lineHeight.value.measure.value;
-      case 'h4-bold':
-        return TypographySubheading2700.lineHeight.value.measure.value;
-      case 'h5-regular':
+      case 5:
         return TypographySubheading3400.lineHeight.value.measure.value;
-      case 'h5-bold':
-        return TypographySubheading3700.lineHeight.value.measure.value;
-      case 'h6-regular':
+      case 6:
         return TypographySubheading4400.lineHeight.value.measure.value;
-      case 'h6-bold':
-        return TypographySubheading4700.lineHeight.value.measure.value;
     }
   }
 
+  // TODOJCS hook
   getLetterSpacing() {
     switch (this.level) {
-      case 'h1':
-      case 'h2-regular':
-      case 'h2-bold':
+      case 1:
+      case 2:
         return 0.5;
-      case 'h3-regular':
-      case 'h3-bold':
+      case 3:
         return 0.25;
-      case 'h4-regular':
-      case 'h4-bold':
+      case 4:
         return 0;
-      case 'h5-regular':
-      case 'h5-bold':
-      case 'h6-regular':
-      case 'h6-bold':
+      case 5:
+      case 6:
         return 0.15;
     }
   }
 
   getMarginBottom() {
-    switch (this.level) {
-      case 'h1':
-        return 'spacer-h1';
-      case 'h2-bold':
-      case 'h2-regular':
-        return 'spacer-h2';
-      case 'h3-regular':
-      case 'h3-bold':
-        return 'spacer-h3';
-      case 'h4-regular':
-      case 'h4-bold':
-        return 'spacer-h4';
-      case 'h5-regular':
-      case 'h5-bold':
-        return 'spacer-h5';
-      case 'h6-regular':
-      case 'h6-bold':
-        return 'spacer-h6';
-      default:
-        break;
-    }
+    return `spacer-h${this.level}`;
   }
 
   renderTag() {
-    switch (this.level) {
-      case 'h1':
-        return 'h1';
-      case 'h2-bold':
-      case 'h2-regular':
-        return 'h2';
-      case 'h3-regular':
-      case 'h3-bold':
-        return 'h3';
-      case 'h4-regular':
-      case 'h4-bold':
-        return 'h4';
-      case 'h5-regular':
-      case 'h5-bold':
-        return 'h5';
-      case 'h6-regular':
-      case 'h6-bold':
-        return 'h6';
-      default:
-        break;
-    }
+    return `h${this.level}`;
   }
 
   getFontWeight() {
     switch (this.level) {
-      case 'h1':
+      case 1:
         return `${TypographyDisplayxl900.font.value.subfamily.value}`.toLocaleLowerCase();
-      case 'h2-regular':
-        return `${TypographyDisplaylg400.font.value.subfamily.value}`.toLocaleLowerCase();
-      case 'h2-bold':
+      case 2:
         return `${TypographyDisplaylg700.font.value.subfamily.value}`.toLocaleLowerCase();
-      case 'h3-regular':
-        return `${TypographySubheading1400.font.value.subfamily.value}`.toLocaleLowerCase();
-      case 'h3-bold':
+      case 3:
         return `${TypographySubheading1700.font.value.subfamily.value}`.toLocaleLowerCase();
-      case 'h4-regular':
+      case 4:
         return `${TypographySubheading2400.font.value.subfamily.value}`.toLocaleLowerCase();
-      case 'h4-bold':
-        return `${TypographySubheading2700.font.value.subfamily.value}`.toLocaleLowerCase();
-      case 'h5-regular':
+      case 5:
         return `${TypographySubheading3400.font.value.subfamily.value}`.toLocaleLowerCase();
-      case 'h5-bold':
-        return `${TypographySubheading3700.font.value.subfamily.value}`.toLocaleLowerCase();
-      case 'h6-regular':
+      case 6:
         return `${TypographySubheading4400.font.value.subfamily.value}`.toLocaleLowerCase();
-      case 'h6-bold':
-        return `${TypographySubheading4700.font.value.subfamily.value}`.toLocaleLowerCase();
     }
   }
 

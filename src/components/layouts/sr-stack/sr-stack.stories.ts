@@ -31,7 +31,7 @@ function renderCard() {
     const color =
       i % 2 == 0
         ? 'var(--sr-color-foundation-ui-green-ui-green)'
-        : 'var(--sr-color-foundation-blue-blue-300)';
+        : 'var(--sr-color-foundation-neutral-black-400)';
     temp += `<sr-box backgroundColor="${color}" padding="spacer-3">
       <sr-heading level="h3-bold">Header ${i + 1}</sr-heading>
       <sr-text>Show content here!</sr-text>

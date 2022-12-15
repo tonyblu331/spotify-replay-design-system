@@ -15,8 +15,10 @@ A <sr-text-input> component is an input component used to enter critical informa
 | ------------- | ------------- | --------------------------------------------------- | ------------------------------- | -------------------- |
 | `helperText`  | `helpertext`  | Indicate the purpose of the text field              | `string`                        | `undefined`          |
 | `isDisabled`  | `isdisabled`  | Indicate whether this text field is disabled or not | `boolean`                       | `false`              |
+| `isError`     | `iserror`     | Indicate Error state                                | `boolean`                       | `false`              |
 | `isReadOnly`  | `isreadonly`  | Indicate whether this text field is readonly or not | `boolean`                       | `false`              |
 | `isRequired`  | `isrequired`  | Indicate whether this text field is required or not | `boolean`                       | `false`              |
+| `isSuccess`   | `issuccess`   | Indicate Success state                              | `boolean`                       | `false`              |
 | `label`       | `label`       | Text label to place alongside the input             | `string`                        | `undefined`          |
 | `placeholder` | `placeholder` | The text to display when the input is empty         | `string`                        | `'Placeholder text'` |
 | `type`        | `type`        | Specify type of text field                          | `"email" \| "number" \| "text"` | `'text'`             |

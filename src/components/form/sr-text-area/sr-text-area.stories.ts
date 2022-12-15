@@ -13,6 +13,10 @@ export default {
       control: { type: 'text' },
       description: 'Indicate the purpose of the text field',
     },
+    isError: {
+      control: { type: 'boolean' },
+      description: 'Indicate Error state',
+    },
   },
 };
 
@@ -33,4 +37,10 @@ export const TextAreaWithHelperText = Template.bind({});
 TextAreaWithHelperText.args = {
   label: 'Label',
   helperText: 'Insert helper text here',
+};
+
+export const TextAreaWithErrorState = Template.bind({});
+TextAreaWithErrorState.args = {
+  label: 'Label',
+  isError: 'true',
 };
