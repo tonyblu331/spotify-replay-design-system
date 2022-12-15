@@ -14,10 +14,15 @@ import { ColorFoundationNeutralBlack400 } from '../../../design-tokens/js/variab
 })
 export class SRAnchor {
   /**
+   * Anchor variant
+   */
+  @Prop({ reflect: true })
+  variant: 'normal' | 'underline' = 'normal';
+  /**
    * The URL to redirect to.
    */
   @Prop()
-  href: string;
+  href?: string;
 
   /**
    * Indicates whether the component points to an external URL. You define external, and it will be styled differently. Defaults to false.
@@ -31,13 +36,23 @@ export class SRAnchor {
   @Prop()
   openInNewTab: boolean = false;
 
+  addClass() {
+    if (this.external) return 'external';
+    switch (this.variant) {
+      case 'underline':
+        return 'underline';
+      case 'normal':
+        return 'normal';
+    }
+  }
+
   render() {
     return (
       <sr-box minHeight={28}>
         <a
           target={this.openInNewTab ? '_blank' : '_top'}
           href={this.href}
-          class={this.external ? 'external' : ''}
+          class={this.addClass()}
         >
           <sr-stack orientation="horizontal" gap="spacer-1">
             <sr-text fontWeight="bold">

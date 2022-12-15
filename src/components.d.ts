@@ -15,11 +15,15 @@ export namespace Components {
         /**
           * The URL to redirect to.
          */
-        "href": string;
+        "href"?: string;
         /**
           * Whether or not to open the URL in a new tab. Defaults to false.
          */
         "openInNewTab": boolean;
+        /**
+          * Anchor variant
+         */
+        "variant": 'normal' | 'underline';
     }
     interface SrBox {
         /**
@@ -585,6 +589,10 @@ declare namespace LocalJSX {
           * Whether or not to open the URL in a new tab. Defaults to false.
          */
         "openInNewTab"?: boolean;
+        /**
+          * Anchor variant
+         */
+        "variant"?: 'normal' | 'underline';
     }
     interface SrBox {
         /**

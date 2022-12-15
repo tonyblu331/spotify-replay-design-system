@@ -13,13 +13,18 @@ sr-box {
   margin-top: 2px;
 }
 
-sr-stack:hover {
+.normal:hover {
+  color: var(--sr-color-foundation-ui-green-ui-green-hover) !important;
+}
+
+.underline sr-stack:hover,
+.external sr-stack:hover {
   color: var(--sr-color-foundation-ui-green-ui-green-hover) !important;
   border-bottom: 2px solid var(--sr-color-foundation-ui-green-ui-green-hover);
   padding-bottom: 5px;
   width: fit-content;
 }
 
-sr-stack:hover path {
+.external sr-stack:hover path {
   stroke: var(--sr-color-foundation-ui-green-ui-green-hover);
 }

@@ -1,6 +1,11 @@
 export default {
   title: 'Components/Navigation/Anchor',
   argTypes: {
+    variant: {
+      description: 'Anchor variants',
+      control: { type: 'select' },
+      options: ['normal', 'underline'],
+    },
     text: {
       description: 'Text to be injected in the component slot.',
       control: { type: 'text' },
@@ -21,14 +26,25 @@ export default {
   },
 };
 
-const Template = ({ text, href, external }) => `
-  <sr-anchor ${href ? `href="${href}"` : ''} ${external ? 'external' : ''}>
+const Template = ({ variant, text, href, external }) => `
+  <sr-anchor variant="${variant ? variant : 'normal'}" ${
+  href ? `href="${href}"` : ''
+} ${external ? 'external' : ''}>
     ${text}
   </sr-anchor>
 `;
 
-export const Link = Template.bind({});
-Link.args = {
+export const NormalAnchor = Template.bind({});
+NormalAnchor.args = {
+  text: 'Revision of versions',
+  href: 'https://re-play.supernova-docs.io/spotify-re-play/latest/introduction.html',
+  external: false,
+  toNewTab: true,
+};
+
+export const UnderlinedAnchor = Template.bind({});
+UnderlinedAnchor.args = {
+  variant: 'underline',
   text: 'Revision of versions',
   href: 'https://re-play.supernova-docs.io/spotify-re-play/latest/introduction.html',
   external: false,
