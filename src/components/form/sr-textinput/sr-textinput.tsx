@@ -7,6 +7,8 @@ import {
   ColorFoundationNeutralBlack200,
   ColorFoundationNeutralGray400,
   ColorFoundationRedRed200,
+  ColorFoundationNeutralWhite200,
+  ColorFoundationUiGreenUiGreen,
 } from '../../../design-tokens/js/variables.js';
 /**
  * Text input that emits event on change
@@ -63,6 +65,12 @@ export class SRTextInput {
   isReadOnly: boolean = false;
 
   /**
+   *  Indicate whether this text field is disabled or not
+   */
+  @Prop({ reflect: true, attribute: 'isDisabled' })
+  isDisabled: boolean = false;
+
+  /**
    *  Specify type of text field
    */
   @Prop({ reflect: true })
@@ -74,19 +82,27 @@ export class SRTextInput {
   @Event()
   _change;
 
-  changeHandler(e) {
-    console.log(e);
+  isValid: boolean = false;
 
-    if (e.target.invalid) {
-      console.log('this element is not valid');
+  componentWillLoad() {
+    if (this.value != '' && !this.isDisabled && !this.isReadOnly) {
+      this.isValid = true;
     }
+  }
+
+  changeHandler(e) {
+    this.value = e.target.value;
+    this.isValid = e.target.validity.valid;
     this._change.emit(e);
   }
 
   renderInputStyling() {
     return css`
       padding: ${SpacerSpacer2}px;
-      border: 1px solid ${ColorFoundationNeutralBlack200};
+      border: 1px solid
+        ${this.isValid
+          ? ColorFoundationUiGreenUiGreen
+          : ColorFoundationNeutralBlack200};
       border-radius: ${this.variant === 'rounded'
         ? BorderRadiusBorderRadiusFull
         : BorderRadiusBorderRadiusSm}px;
@@ -99,19 +115,38 @@ export class SRTextInput {
         outline: none !important;
       }
       :focus:not(:read-only) {
-        border: 2px solid ${ColorFoundationNeutralBlack200};
+        border: 2px solid
+          ${this.isValid
+            ? ColorFoundationUiGreenUiGreen
+            : ColorFoundationNeutralBlack200};
         transition: all 0.2s 0s ease-out;
       }
       :invalid:not(:read-only) {
         border: 2px solid ${ColorFoundationRedRed200};
         transition: all 0.2s 0s ease-out;
       }
+      :disabled {
+        background-color: ${ColorFoundationNeutralWhite200};
+        border: none;
+      }
     `;
   }
   render() {
     return (
       <sr-stack orientation="vertical" gap="spacer-0">
-        {this.label && <sr-label>{this.label}</sr-label>}
+        {this.label && (
+          <sr-label
+            variant={
+              this.isRequired && !this.isValid
+                ? 'error'
+                : this.isValid && !this.isDisabled && !this.isReadOnly
+                ? 'success'
+                : 'default'
+            }
+          >
+            {this.label}
+          </sr-label>
+        )}
         <input
           class={this.renderInputStyling()}
           onInput={event => this.changeHandler(event)}
@@ -120,8 +155,21 @@ export class SRTextInput {
           required={this.isRequired}
           readonly={this.isReadOnly}
           value={this.value ? this.value : ''}
+          disabled={this.isDisabled}
         ></input>
-        {this.helperText && <sr-help-text>{this.helperText}</sr-help-text>}
+        {this.helperText && (
+          <sr-help-text
+            variant={
+              this.isRequired && !this.isValid
+                ? 'error'
+                : this.isValid && !this.isDisabled && !this.isReadOnly
+                ? 'success'
+                : 'default'
+            }
+          >
+            {this.helperText}
+          </sr-help-text>
+        )}
       </sr-stack>
     );
   }

@@ -358,6 +358,10 @@ export namespace Components {
          */
         "helperText"?: string;
         /**
+          * Indicate whether this text field is disabled or not
+         */
+        "isDisabled": boolean;
+        /**
           * Indicate whether this text field is readonly or not
          */
         "isReadOnly": boolean;
@@ -860,6 +864,10 @@ declare namespace LocalJSX {
           * Indicate the purpose of the text field
          */
         "helperText"?: string;
+        /**
+          * Indicate whether this text field is disabled or not
+         */
+        "isDisabled"?: boolean;
         /**
           * Indicate whether this text field is readonly or not
          */

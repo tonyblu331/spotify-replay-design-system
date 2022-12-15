@@ -14,6 +14,7 @@ Text input that emits event on change
 | Property      | Attribute     | Description                                         | Type                            | Default        |
 | ------------- | ------------- | --------------------------------------------------- | ------------------------------- | -------------- |
 | `helperText`  | `helpertext`  | Indicate the purpose of the text field              | `string`                        | `undefined`    |
+| `isDisabled`  | `isdisabled`  | Indicate whether this text field is disabled or not | `boolean`                       | `false`        |
 | `isReadOnly`  | `isreadonly`  | Indicate whether this text field is readonly or not | `boolean`                       | `false`        |
 | `isRequired`  | `isrequired`  | Indicate whether this text field is required or not | `boolean`                       | `false`        |
 | `label`       | `label`       | Text label to place alongside the input             | `string`                        | `undefined`    |

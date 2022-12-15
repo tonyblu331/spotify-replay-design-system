@@ -8,6 +8,7 @@ export default {
     },
     value: {
       description: 'Specify current text value in text field',
+      control: { type: 'text' },
     },
     label: {
       control: { type: 'text' },
@@ -24,6 +25,10 @@ export default {
     isRequired: {
       control: { type: 'boolean' },
       description: 'Indicate whether this text field is required or not',
+    },
+    isDisabled: {
+      control: { type: 'boolean' },
+      description: 'Indicate whether this text field is disabled or not',
     },
     type: {
       control: { type: 'select' },
@@ -61,4 +66,34 @@ RoundedInputText.args = {
   helperText: 'Please insert your favorite genre',
   variant: 'rounded',
   value: '',
+};
+
+export const SuccessInputText = Template.bind({});
+SuccessInputText.args = {
+  label: 'Enter username',
+  value: 'Rose',
+};
+
+export const ErrorInputTextWithHelperText = Template.bind({});
+ErrorInputTextWithHelperText.args = {
+  label: 'Enter username',
+  value: '',
+  isRequired: true,
+  helperText: 'Please enter your username',
+};
+
+export const ReadOnlyInputText = Template.bind({});
+ReadOnlyInputText.args = {
+  label: 'Username',
+  variant: 'squared',
+  value: 'Juan',
+  isReadonly: true,
+};
+
+export const DisabledInputText = Template.bind({});
+DisabledInputText.args = {
+  label: 'Broken Record',
+  variant: 'squared',
+  value: ' ',
+  isDisabled: true,
 };
