@@ -1,5 +1,5 @@
 export default {
-  title: 'Components/Form/Combo box',
+  title: 'Components/Form/Combobox',
   argTypes: {
     options: {
       description:

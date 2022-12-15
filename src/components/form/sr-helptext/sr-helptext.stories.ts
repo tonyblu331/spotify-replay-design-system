@@ -1,5 +1,5 @@
 export default {
-  title: 'Components/Form/Help text',
+  title: 'Components/Form/Help Text',
   argTypes: {
     content: {
       description: 'Text to be injected in the component slot',

@@ -1,5 +1,5 @@
 export default {
-  title: 'Components/Form/Text input',
+  title: 'Components/Form/Text Input',
   argTypes: {
     variant: {
       control: { type: 'select' },
