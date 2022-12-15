@@ -358,6 +358,18 @@ export namespace Components {
     }
     interface SrTextInput {
         /**
+          * Indicate the purpose of the text field
+         */
+        "helperText"?: string;
+        /**
+          * Indicate whether this text field is readonly or not
+         */
+        "isReadOnly": boolean;
+        /**
+          * Indicate whether this text field is required or not
+         */
+        "isRequired": boolean;
+        /**
           * Text label to place alongside the input
          */
         "label"?: string;
@@ -365,6 +377,18 @@ export namespace Components {
           * The text to display when the input is empty
          */
         "placeholder": string;
+        /**
+          * Specify type of text field
+         */
+        "type": 'number' | 'text' | 'email';
+        /**
+          * Specify current value in text field
+         */
+        "value"?: any;
+        /**
+          * Specify Button variant
+         */
+        "variant": 'rounded' | 'squared';
     }
 }
 export interface SrButtonCustomEvent<T> extends CustomEvent<T> {
@@ -841,6 +865,18 @@ declare namespace LocalJSX {
     }
     interface SrTextInput {
         /**
+          * Indicate the purpose of the text field
+         */
+        "helperText"?: string;
+        /**
+          * Indicate whether this text field is readonly or not
+         */
+        "isReadOnly"?: boolean;
+        /**
+          * Indicate whether this text field is required or not
+         */
+        "isRequired"?: boolean;
+        /**
           * Text label to place alongside the input
          */
         "label"?: string;
@@ -852,6 +888,18 @@ declare namespace LocalJSX {
           * The text to display when the input is empty
          */
         "placeholder"?: string;
+        /**
+          * Specify type of text field
+         */
+        "type"?: 'number' | 'text' | 'email';
+        /**
+          * Specify current value in text field
+         */
+        "value"?: any;
+        /**
+          * Specify Button variant
+         */
+        "variant"?: 'rounded' | 'squared';
     }
     interface IntrinsicElements {
         "sr-anchor": SrAnchor;
