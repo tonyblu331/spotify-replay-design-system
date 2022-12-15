@@ -106,8 +106,6 @@ export class SRTextInput {
       border-radius: ${this.variant === 'rounded'
         ? BorderRadiusBorderRadiusFull
         : 4}px;
-      margin: 5px 0;
-
       ::placeholder {
         color: ${ColorFoundationNeutralGray400};
       }
@@ -133,7 +131,7 @@ export class SRTextInput {
   }
   render() {
     return (
-      <sr-stack orientation="vertical" gap="spacer-0">
+      <sr-stack orientation="vertical" gap="spacer-1">
         {this.label && (
           <sr-label
             variant={

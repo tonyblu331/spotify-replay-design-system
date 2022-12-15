@@ -59,7 +59,7 @@ export class SRCombobox {
   // prettier-ignore
   render() {
     return (
-      <sr-stack orientation="vertical" gap="spacer-0">
+      <sr-stack orientation="vertical" gap="spacer-1">
         {this.label && <sr-label>{this.label}</sr-label>}
           <select onClick={this.onClickHandler}
             class={css`
