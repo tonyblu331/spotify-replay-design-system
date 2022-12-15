@@ -1,3 +1,19 @@
+@import '../../../design-tokens/css/_variables.css';
+
 :host {
   display: block;
+}
+
+/* TODO design tokens for border color /thickness?, font height? fontcolor? */
+select {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: var(--sr-color-foundation-neutral-pure-white);
+  background-color: var(--sr-color-foundation-ui-green-ui-green);
+}
+select:focus-visible {
+  outline-color: var(--sr-color-foundation-ui-green-ui-green-active);
 }

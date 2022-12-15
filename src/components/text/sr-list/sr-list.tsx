@@ -2,9 +2,9 @@ import { css } from '@emotion/css';
 import { Component, h, Prop } from '@stencil/core';
 
 /**
- * List of text (?) TODOJCS define List element with Tony,
- * i.e. only for text? can we even validate a slot's content? possibly yes
- * can apply margin/padding in children via box primitives
+ * List element for showing text, separated into list elements
+ * This component expects that the HTML elements passed in the slot are of type <li>
+ *
  * @property `ordered` (default false)
  */
 @Component({
@@ -14,25 +14,27 @@ import { Component, h, Prop } from '@stencil/core';
   scoped: true,
 })
 export class SRList {
-  // TODOJCS ASK TONY Prop for ordered / unordered?
   /**
    * Opt for an ordered list `<ol>` or `<ul>` if false. False by default
    */
   @Prop({ reflect: true })
   ordered: boolean = false;
 
-  // TODOJCS ASK PABLO what is up with the comma being rendered between list items
-
   render() {
-    console.debug('rendering sr-list with ordered=', this.ordered);
     const Tag = `${this.ordered ? 'o' : 'u'}l`;
 
-    const tagStyles = css``;
+    const tagStyles = css`
+      line-height: 20px;
+    `;
 
     return (
-      <Tag class={tagStyles}>
-        <slot></slot>
-      </Tag>
+      <sr-text as="p">
+        <Tag class={tagStyles}>
+          <sr-stack gap="spacer-2">
+            <slot></slot>
+          </sr-stack>
+        </Tag>
+      </sr-text>
     );
   }
 }

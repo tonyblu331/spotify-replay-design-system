@@ -1,9 +1,12 @@
 /**
  * Do not edit directly
- * Generated on Tue, 13 Dec 2022 16:25:30 GMT
+ * Generated on Thu, 15 Dec 2022 15:20:04 GMT
  */
 
 :root {
+  --sr-border-radius-border-radius-sm: 4;
+  --sr-border-radius-border-radius-md: 8;
+  --sr-border-radius-border-radius-full: 50;
   --sr-color-foundation-ui-green-ui-green-light: #e9f8ee;
   --sr-color-foundation-ui-green-ui-green-light-hover: #ddf5e6;
   --sr-color-foundation-ui-green-ui-green-light-active: #b9e9ca;
@@ -96,19 +99,15 @@
   --sr-spacer-spacer-6: 48;
   --sr-spacer-spacer-7: 56;
   --sr-spacer-spacer-8: 64;
-  --sr-typography-typography-headers-subheaders-subheading1-400: [object Object]; /* H3, Subheading Variation 1 in Regular */
-  --sr-typography-typography-headers-subheaders-subheading2-400: [object Object]; /* H4, Subheading Variation 2 in Regular */
-  --sr-typography-typography-headers-subheaders-subheading2-700: [object Object]; /* H4, Subheading Variation 2 in Bold */
-  --sr-typography-typography-headers-subheaders-subheading3-400: [object Object]; /* H5, Subheading Variation 3 in Regular */
-  --sr-typography-typography-headers-subheaders-subheading4-700: [object Object]; /* H6, Subheading Variation 3 in Bold */
-  --sr-typography-typography-headers-subheaders-subheading1-700: [object Object]; /* H3, Subheading Variation 1 in Bold */
-  --sr-typography-typography-headers-subheaders-subheading3-700: [object Object]; /* H5, Subheading Variation 3 in Bold */
-  --sr-typography-typography-headers-subheaders-subheading4-400: [object Object]; /* H6, Subheading Variation 3 in Regular */
+  --sr-spacer-spacer-h1: 34.78;
+  --sr-spacer-spacer-h2: 26.6;
+  --sr-spacer-spacer-h3: 18.60;
+  --sr-spacer-spacer-h4: 26.6;
+  --sr-spacer-spacer-h5: 22.85;
+  --sr-spacer-spacer-text: 21.3;
+  --sr-spacer-spacer-caption: 17.39;
+  --sr-spacer-spacer-endnote: 16;
   --sr-typography-typography-headers-displayxl-400: [object Object]; /* H1, Display, or XL Title in Regular */
-  --sr-typography-typography-headers-displayxl-700: [object Object]; /* H1, Display, or XL Title in Bold */
-  --sr-typography-typography-headers-displayxl-900: [object Object]; /* H1, Display, or XL Title in Extra Bold */
-  --sr-typography-typography-headers-displaylg-400: [object Object]; /* H2, Large Display, or Main Section Title in Regular */
-  --sr-typography-typography-headers-displaylg-700: [object Object]; /* H2, Large Display, or Main Section Title in Bold */
   --sr-typography-typography-headers-displaylg-900: [object Object]; /* H2, Large Display, or Main Section Title in Extra Bold */
   --sr-typography-typography-headers-subheading1-900: [object Object]; /* H3, Subheading Variation 1 in Extra Bold */
   --sr-typography-typography-headers-subheading2-900: [object Object]; /* H4, Subheading Variation 2 in Extra Bold */
@@ -125,4 +124,16 @@
   --sr-typography-typography-text-endnote-400: [object Object]; /* Endnote Text in Regular */
   --sr-typography-typography-text-endnote-700: [object Object]; /* Endnote Text in Bold */
   --sr-typography-typography-text-endnote-900: [object Object]; /* Endnote Text in Extra Bold */
+  --sr-typography-displayxl-700: [object Object]; /* H1, Display, or XL Title in Bold */
+  --sr-typography-displayxl-900: [object Object]; /* H1, Display, or XL Title in Extra Bold */
+  --sr-typography-displaylg-400: [object Object]; /* H2, Large Display, or Main Section Title in Regular */
+  --sr-typography-displaylg-700: [object Object]; /* H2, Large Display, or Main Section Title in Bold */
+  --sr-typography-subheading1-400: [object Object]; /* H3, Subheading Variation 1 in Regular */
+  --sr-typography-subheading2-400: [object Object]; /* H4, Subheading Variation 2 in Regular */
+  --sr-typography-subheading2-700: [object Object]; /* H4, Subheading Variation 2 in Bold */
+  --sr-typography-subheading3-400: [object Object]; /* H5, Subheading Variation 3 in Regular */
+  --sr-typography-subheading4-700: [object Object]; /* H6, Subheading Variation 3 in Bold */
+  --sr-typography-subheading1-700: [object Object]; /* H3, Subheading Variation 1 in Bold */
+  --sr-typography-subheading3-700: [object Object]; /* H5, Subheading Variation 3 in Bold */
+  --sr-typography-subheading4-400: [object Object]; /* H6, Subheading Variation 3 in Regular */
 }

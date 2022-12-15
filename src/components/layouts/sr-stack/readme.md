@@ -12,11 +12,30 @@ along the vertical or horizontal axis.
 
 ## Properties
 
-| Property      | Attribute     | Description                                                                                                    | Type                                                                                                           | Default      |
-| ------------- | ------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------ |
-| `gap`         | `gap`         | The `gap` property sets the spacing in between elements, and has no effect in the leading or trailing element. | `"spacer-1" \| "spacer-2" \| "spacer-3" \| "spacer-4" \| "spacer-5" \| "spacer-6" \| "spacer-7" \| "spacer-8"` | `undefined`  |
-| `orientation` | `orientation` | The `orientation` property sets the direction for the flow, either vertical or horizontal.                     | `"horizontal" \| "vertical"`                                                                                   | `'vertical'` |
+| Property      | Attribute     | Description                                                                                                    | Type                                                                                                                         | Default      |
+| ------------- | ------------- | -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| `gap`         | `gap`         | The `gap` property sets the spacing in between elements, and has no effect in the leading or trailing element. | `"spacer-0" \| "spacer-1" \| "spacer-2" \| "spacer-3" \| "spacer-4" \| "spacer-5" \| "spacer-6" \| "spacer-7" \| "spacer-8"` | `undefined`  |
+| `orientation` | `orientation` | The `orientation` property sets the direction for the flow, either vertical or horizontal.                     | `"horizontal" \| "vertical"`                                                                                                 | `'vertical'` |
 
+
+## Dependencies
+
+### Used by
+
+ - [sr-combobox](../../form/sr-combobox)
+ - [sr-list](../../text/sr-list)
+ - [sr-text-area](../../form/sr-text-area)
+ - [sr-text-input](../../form/sr-textinput)
+
+### Graph
+```mermaid
+graph TD;
+  sr-combobox --> sr-stack
+  sr-list --> sr-stack
+  sr-text-area --> sr-stack
+  sr-text-input --> sr-stack
+  style sr-stack fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

@@ -41,7 +41,7 @@
       "description": "64px Padding"
     },
     "spacer-h1": {
-      "value": "34.78px",
+      "value": "34.78",
       "type": "spacing",
       "description": "Margin-Bottom for H1"
     },

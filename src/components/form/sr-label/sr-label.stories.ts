@@ -1,5 +1,5 @@
 export default {
-  title: 'Components/Form/Help Text',
+  title: 'Components/Form/Label',
   argTypes: {
     content: {
       description: 'Text to be injected in the component slot',
@@ -8,8 +8,7 @@ export default {
     variant: {
       options: ['default', 'success', 'error'],
       control: { type: 'select' },
-      description:
-        "Help text variant state <br> `'default'` `'success'` `'error'`",
+      description: "Label variant state <br> `'default'` `'success'` `'error'`",
     },
   },
 };
@@ -19,26 +18,26 @@ const Template = args => {
     return `${prev} ${key}="${value}"`.trim();
   }, '');
   return `
-  <sr-help-text ${argsProps}>
+  <sr-label ${argsProps}>
     ${args.content}
-  </sr-help-text>
+  </sr-label>
 `;
 };
 
-export const HelpTextDefault = Template.bind({});
-HelpTextDefault.args = {
+export const LabelDefault = Template.bind({});
+LabelDefault.args = {
   variant: 'default',
-  content: 'Helper Text Default Status',
+  content: 'Default Label',
 };
 
-export const HelpTextSuccess = Template.bind({});
-HelpTextSuccess.args = {
+export const LabelSuccess = Template.bind({});
+LabelSuccess.args = {
   variant: 'success',
-  content: 'Helper Text Valid Status',
+  content: 'Success Label',
 };
 
-export const HelpTextError = Template.bind({});
-HelpTextError.args = {
+export const LabelError = Template.bind({});
+LabelError.args = {
   variant: 'error',
-  content: 'Helper Text Invalid Status',
+  content: 'Error Label',
 };

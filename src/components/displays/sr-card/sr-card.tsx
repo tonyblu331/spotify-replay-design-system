@@ -31,7 +31,7 @@
 //   shadow: false,
 //   scoped: true,
 // })
-// export class SrCard {
+// export class SRCard {
 //   /**
 //    * TODOROSE Update type referring to design
 //    */

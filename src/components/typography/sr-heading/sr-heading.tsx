@@ -1,18 +1,19 @@
 import { Component, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
 import {
-  TypographyTypographyHeadersDisplayxl900,
-  TypographyTypographyHeadersDisplaylg400,
-  TypographyTypographyHeadersDisplaylg700,
-  TypographyTypographyHeadersSubheadersSubheading1400,
-  TypographyTypographyHeadersSubheadersSubheading1700,
-  TypographyTypographyHeadersSubheadersSubheading2700,
-  TypographyTypographyHeadersSubheadersSubheading2400,
-  TypographyTypographyHeadersSubheadersSubheading3400,
-  TypographyTypographyHeadersSubheadersSubheading3700,
-  TypographyTypographyHeadersSubheadersSubheading4400,
-  TypographyTypographyHeadersSubheadersSubheading4700,
+  TypographyDisplayxl900,
+  TypographyDisplaylg400,
+  TypographyDisplaylg700,
+  TypographySubheading1400,
+  TypographySubheading2400,
+  TypographySubheading3400,
+  TypographySubheading4400,
+  TypographySubheading1700,
+  TypographySubheading2700,
+  TypographySubheading3700,
+  TypographySubheading4700,
 } from '../../../design-tokens/js/variables.js';
+import { SPACE_TEXT } from '~/type.js';
 
 /**
  * Heading component, with support for heading elements, and custom alignment.
@@ -59,81 +60,59 @@ export class SRHeading {
    * Specify text color
    */
   @Prop({ reflect: true })
-  color: 'black' | 'white' = 'black';
+  color?;
 
   getFontSize() {
     switch (this.level) {
       case 'h1':
-        return TypographyTypographyHeadersDisplayxl900.fontSize.value.measure
-          .value;
+        return TypographyDisplayxl900.fontSize.value.measure.value;
       case 'h2-regular':
-        return TypographyTypographyHeadersDisplaylg400.fontSize.value.measure
-          .value;
+        return TypographyDisplaylg400.fontSize.value.measure.value;
       case 'h2-bold':
-        return TypographyTypographyHeadersDisplaylg700.fontSize.value.measure
-          .value;
+        return TypographyDisplaylg700.fontSize.value.measure.value;
       case 'h3-regular':
-        return TypographyTypographyHeadersSubheadersSubheading1400.fontSize
-          .value.measure.value;
+        return TypographySubheading1400.fontSize.value.measure.value;
       case 'h3-bold':
-        return TypographyTypographyHeadersSubheadersSubheading1700.fontSize
-          .value.measure.value;
+        return TypographySubheading1700.fontSize.value.measure.value;
       case 'h4-regular':
-        return TypographyTypographyHeadersSubheadersSubheading2400.fontSize
-          .value.measure.value;
+        return TypographySubheading2400.fontSize.value.measure.value;
       case 'h4-bold':
-        return TypographyTypographyHeadersSubheadersSubheading2700.fontSize
-          .value.measure.value;
+        return TypographySubheading2700.fontSize.value.measure.value;
       case 'h5-regular':
-        return TypographyTypographyHeadersSubheadersSubheading3400.fontSize
-          .value.measure.value;
+        return TypographySubheading3400.fontSize.value.measure.value;
       case 'h5-bold':
-        return TypographyTypographyHeadersSubheadersSubheading3700.fontSize
-          .value.measure.value;
+        return TypographySubheading3700.fontSize.value.measure.value;
       case 'h6-regular':
-        return TypographyTypographyHeadersSubheadersSubheading4400.fontSize
-          .value.measure.value;
+        return TypographySubheading4400.fontSize.value.measure.value;
       case 'h6-bold':
-        return TypographyTypographyHeadersSubheadersSubheading4700.fontSize
-          .value.measure.value;
+        return TypographySubheading4700.fontSize.value.measure.value;
     }
   }
 
   getLineHeight() {
     switch (this.level) {
       case 'h1':
-        return TypographyTypographyHeadersDisplayxl900.lineHeight.value.measure
-          .value;
+        return TypographyDisplayxl900.lineHeight.value.measure.value;
       case 'h2-regular':
-        return TypographyTypographyHeadersDisplaylg400.lineHeight.value.measure
-          .value;
+        return TypographyDisplaylg400.lineHeight.value.measure.value;
       case 'h2-bold':
-        return TypographyTypographyHeadersDisplaylg700.lineHeight.value.measure
-          .value;
+        return TypographyDisplaylg700.lineHeight.value.measure.value;
       case 'h3-regular':
-        return TypographyTypographyHeadersSubheadersSubheading1400.lineHeight
-          .value.measure.value;
+        return TypographySubheading1400.lineHeight.value.measure.value;
       case 'h3-bold':
-        return TypographyTypographyHeadersSubheadersSubheading1700.lineHeight
-          .value.measure.value;
+        return TypographySubheading1700.lineHeight.value.measure.value;
       case 'h4-regular':
-        return TypographyTypographyHeadersSubheadersSubheading2400.lineHeight
-          .value.measure.value;
+        return TypographySubheading2400.lineHeight.value.measure.value;
       case 'h4-bold':
-        return TypographyTypographyHeadersSubheadersSubheading2700.lineHeight
-          .value.measure.value;
+        return TypographySubheading2700.lineHeight.value.measure.value;
       case 'h5-regular':
-        return TypographyTypographyHeadersSubheadersSubheading3400.lineHeight
-          .value.measure.value;
+        return TypographySubheading3400.lineHeight.value.measure.value;
       case 'h5-bold':
-        return TypographyTypographyHeadersSubheadersSubheading3700.lineHeight
-          .value.measure.value;
+        return TypographySubheading3700.lineHeight.value.measure.value;
       case 'h6-regular':
-        return TypographyTypographyHeadersSubheadersSubheading4400.lineHeight
-          .value.measure.value;
+        return TypographySubheading4400.lineHeight.value.measure.value;
       case 'h6-bold':
-        return TypographyTypographyHeadersSubheadersSubheading4700.lineHeight
-          .value.measure.value;
+        return TypographySubheading4700.lineHeight.value.measure.value;
     }
   }
 
@@ -160,21 +139,22 @@ export class SRHeading {
   getMarginBottom() {
     switch (this.level) {
       case 'h1':
-        return 0.46;
+        return 'spacer-h1';
       case 'h2-bold':
       case 'h2-regular':
-      case 'h4-regular':
-      case 'h4-bold':
-        return 0.6;
+        return 'spacer-h2';
       case 'h3-regular':
       case 'h3-bold':
-        return 0.86;
+        return 'spacer-h3';
+      case 'h4-regular':
+      case 'h4-bold':
+        return 'spacer-h4';
       case 'h5-regular':
       case 'h5-bold':
-        return 0.7;
+        return 'spacer-h5';
       case 'h6-regular':
       case 'h6-bold':
-        return 0.75;
+        return 'spacer-h6';
       default:
         break;
     }
@@ -207,27 +187,27 @@ export class SRHeading {
   getFontWeight() {
     switch (this.level) {
       case 'h1':
-        return `${TypographyTypographyHeadersDisplayxl900.font.value.subfamily.value}`.toLocaleLowerCase();
+        return `${TypographyDisplayxl900.font.value.subfamily.value}`.toLocaleLowerCase();
       case 'h2-regular':
-        return `${TypographyTypographyHeadersDisplaylg400.font.value.subfamily.value}`.toLocaleLowerCase();
+        return `${TypographyDisplaylg400.font.value.subfamily.value}`.toLocaleLowerCase();
       case 'h2-bold':
-        return `${TypographyTypographyHeadersDisplaylg700.font.value.subfamily.value}`.toLocaleLowerCase();
+        return `${TypographyDisplaylg700.font.value.subfamily.value}`.toLocaleLowerCase();
       case 'h3-regular':
-        return `${TypographyTypographyHeadersSubheadersSubheading1400.font.value.subfamily.value}`.toLocaleLowerCase();
+        return `${TypographySubheading1400.font.value.subfamily.value}`.toLocaleLowerCase();
       case 'h3-bold':
-        return `${TypographyTypographyHeadersSubheadersSubheading1700.font.value.subfamily.value}`.toLocaleLowerCase();
+        return `${TypographySubheading1700.font.value.subfamily.value}`.toLocaleLowerCase();
       case 'h4-regular':
-        return `${TypographyTypographyHeadersSubheadersSubheading2400.font.value.subfamily.value}`.toLocaleLowerCase();
+        return `${TypographySubheading2400.font.value.subfamily.value}`.toLocaleLowerCase();
       case 'h4-bold':
-        return `${TypographyTypographyHeadersSubheadersSubheading2700.font.value.subfamily.value}`.toLocaleLowerCase();
+        return `${TypographySubheading2700.font.value.subfamily.value}`.toLocaleLowerCase();
       case 'h5-regular':
-        return `${TypographyTypographyHeadersSubheadersSubheading3400.font.value.subfamily.value}`.toLocaleLowerCase();
+        return `${TypographySubheading3400.font.value.subfamily.value}`.toLocaleLowerCase();
       case 'h5-bold':
-        return `${TypographyTypographyHeadersSubheadersSubheading3700.font.value.subfamily.value}`.toLocaleLowerCase();
+        return `${TypographySubheading3700.font.value.subfamily.value}`.toLocaleLowerCase();
       case 'h6-regular':
-        return `${TypographyTypographyHeadersSubheadersSubheading4400.font.value.subfamily.value}`.toLocaleLowerCase();
+        return `${TypographySubheading4400.font.value.subfamily.value}`.toLocaleLowerCase();
       case 'h6-bold':
-        return `${TypographyTypographyHeadersSubheadersSubheading4700.font.value.subfamily.value}`.toLocaleLowerCase();
+        return `${TypographySubheading4700.font.value.subfamily.value}`.toLocaleLowerCase();
     }
   }
 
@@ -239,13 +219,13 @@ export class SRHeading {
     return (
       <sr-text
         as={Tag as any}
-        marginBottom={this.getMarginBottom()}
+        marginBottom={this.getMarginBottom() as SPACE_TEXT}
         letterSpacing={this.getLetterSpacing()}
         lineHeight={this.getLineHeight()}
         fontSize={this.getFontSize()}
         fontWeight={this.getFontWeight() as any}
         aria-role="heading"
-        color={this.color}
+        color={this.color ? this.color : null}
         class={tagStyles}
       >
         <slot></slot>

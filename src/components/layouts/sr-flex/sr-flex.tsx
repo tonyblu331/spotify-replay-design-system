@@ -1,6 +1,6 @@
 import { Component, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
-import { SPACER } from '~/enum.js';
+import { SPACER } from '~/type.js';
 import {
   SpacerSpacer1,
   SpacerSpacer2,
@@ -148,7 +148,7 @@ export class SRFlex {
     const flexStyle = css`
       display: flex;
       flex-direction: ${this.directionHandler()};
-      gap: ${this.gap}px;
+      gap: ${this.gapHandler()}px;
       flex-wrap: ${this.wrap ? 'wrap' : 'unset'};
       justify-content: ${this.hAlignHandler()};
       align-items: ${this.vAlignHandler()};

@@ -11,10 +11,8 @@ export default {
       control: { type: 'select' },
     },
     backgroundColor: {
-      description:
-        "Specify background fill inside box component <br> `'default'` `'primary'` `'secondary'` `'dark'`",
-      options: ['default', 'primary', 'secondary', 'dark'],
-      control: { type: 'select' },
+      description: 'Specify background fill inside box component <br> `color`',
+      control: { type: 'color' },
     },
     width: {
       description:
@@ -45,10 +43,8 @@ export default {
       control: { type: 'number' },
     },
     color: {
-      description:
-        "Specify text color inside box component <br> `'black'` `'white'`",
-      options: ['black', 'white'],
-      control: { type: 'radio' },
+      description: 'Specify text color inside box component <br> `color`',
+      control: { type: 'color' },
     },
     isBorder: {
       description:
@@ -56,19 +52,17 @@ export default {
       control: { type: 'boolean' },
     },
     borderColor: {
-      description: "Specify border color <br> `'default'` `'primary'`",
-      options: ['default', 'primary'],
-      control: { type: 'select' },
+      description: 'Specify border color <br> `color`',
     },
     borderRadius: {
-      description: "Specify border radius <br> `'default'` `'none'`",
-      options: ['default', 'none'],
+      description: "Specify border radius <br> `'squared'` `'rounded'`",
+      options: ['squared', 'rounded'],
       control: { type: 'radio' },
     },
     borderWidth: {
       description: "Specify border width <br> `'thin'` `'thick'`",
-      options: ['thin', 'thick'],
-      control: { type: 'radio' },
+      options: ['thin', 'medium', 'thick'],
+      control: { type: 'select' },
     },
     padding: {
       description:
@@ -246,7 +240,7 @@ const Template = args => {
 
 const defaultOptions = {
   as: 'div',
-  backgroundColor: 'primary',
+  backgroundColor: 'var(--sr-color-foundation-ui-green-ui-green)',
   minHeight: '100px',
   color: 'white',
   padding: 'spacer-2',

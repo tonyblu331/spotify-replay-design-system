@@ -5,9 +5,55 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { SPACER } from "~/enum.js";
+import { SPACE_TEXT, SPACER } from "~/type.js";
 export namespace Components {
+    interface SrAnchor {
+        /**
+          * Indicates whether the component points to an external URL. You define external, and it will be styled differently. Defaults to false.
+         */
+        "external": boolean;
+        /**
+          * The URL to redirect to.
+         */
+        "href": string;
+        /**
+          * Whether or not to open the URL in a new tab. Defaults to false.
+         */
+        "openInNewTab": boolean;
+    }
     interface SrBox {
+        /**
+          * Control active background color
+         */
+        "_activeBackground"?: any;
+        /**
+          * Control active border width
+         */
+        "_activeBorderWidth"?: 'thin' | 'medium' | 'thick';
+        /**
+          * Control focus background color
+         */
+        "_focusBackgroundColor": any;
+        /**
+          * Control focus border color
+         */
+        "_focusBorderColor"?: any;
+        /**
+          * Control focus border width
+         */
+        "_focusBorderWidth"?: 'thin' | 'medium' | 'thick';
+        /**
+          * Control hover color
+         */
+        "_hoverBackground"?: any;
+        /**
+          * Control hover border color width
+         */
+        "_hoverBorderColor"?: any;
+        /**
+          * Control hover border width
+         */
+        "_hoverBorderWidth"?: 'thin' | 'medium' | 'thick';
         /**
           * Specify wrapper HTML element
          */
@@ -15,19 +61,19 @@ export namespace Components {
         /**
           * Specify background fill inside box component
          */
-        "backgroundColor": 'primary' | 'secondary' | 'default' | 'dark';
+        "backgroundColor": any;
         /**
           * Specify border color
          */
-        "borderColor": 'default' | 'primary';
+        "borderColor": any;
         /**
           * Specify border radius
          */
-        "borderRadius": 'default' | 'none';
+        "borderRadius": 'rounded' | 'squared';
         /**
           * Specify border width
          */
-        "borderWidth": 'thin' | 'thick';
+        "borderWidth": 'thin' | 'medium' | 'thick';
         /**
           * Control shadow effects around box component
          */
@@ -35,7 +81,7 @@ export namespace Components {
         /**
           * Specify text color inside box component
          */
-        "color": 'black' | 'white';
+        "color"?: any;
         /**
           * Specify height of box component
          */
@@ -44,6 +90,14 @@ export namespace Components {
           * Enable or disable border around box component
          */
         "isBorder": boolean;
+        /**
+          * Control clickable state
+         */
+        "isClickable": boolean;
+        /**
+          * Control disable state
+         */
+        "isDisabled": boolean;
         /**
           * Control amount of white space around the box component itself.
          */
@@ -103,17 +157,28 @@ export namespace Components {
         /**
           * Specify width of box component
          */
-        "width": 'small' | 'medium' | 'large';
+        "width": 'small' | 'medium' | 'large' | 'fit-content';
     }
     interface SrButton {
+        "isDisabled": boolean;
+        "text": string;
         /**
-          * Button size. TODOJCS add available variants as | expr
+          * Type of button.
          */
-        "size": string;
-        /**
-          * Type of button. TODOJCS add available variants as | expression
-         */
-        "variant": string;
+        "variant": | 'roundedBtn'
+    | 'squaredBtn'
+    | 'outlinedRoundBtn'
+    | 'outlinedSquaredBtn'
+    | 'blackRoundButton'
+    | 'blackSquaredBtn'
+    | 'blackOutlinedRoundBtn'
+    | 'blackOutlinedSquaredBtn'
+    | 'roundedBtnWithWhiteText'
+    | 'squaredBtnWithWhiteText'
+    | 'whiteRoundedBtn'
+    | 'whiteSquaredBtn'
+    | 'whiteOutlineRoundedBtn'
+    | 'whiteOutlineSquaredBtn';
     }
     interface SrCallout {
         /**
@@ -127,13 +192,9 @@ export namespace Components {
     }
     interface SrCombobox {
         /**
-          * If true, the checkbox will allow the selection of an empty value
-         */
-        "allowEmpty": boolean;
-        /**
           * Text string to add to a label to describe the combobox
          */
-        "labelText"?: string;
+        "label"?: string;
     }
     interface SrFlex {
         /**
@@ -164,7 +225,7 @@ export namespace Components {
         /**
           * Specify text color
          */
-        "color": 'black' | 'white';
+        "color"?: any;
         /**
           * The `level` property allows users to indicate what header hierarchy this element is.
          */
@@ -184,15 +245,23 @@ export namespace Components {
          */
         "textAlign": 'left' | 'right' | 'center' | 'justify';
     }
-    interface SrHelptext {
+    interface SrHelpText {
+        /**
+          * Helper Text State
+         */
+        "variant": 'default' | 'error' | 'success';
+    }
+    interface SrLabel {
+        /**
+          * Label variant state
+         */
+        "variant": 'default' | 'error' | 'success';
     }
     interface SrList {
         /**
           * Opt for an ordered list `<ol>` or `<ul>` if false. False by default
          */
         "ordered": boolean;
-    }
-    interface SrListItem {
     }
     interface SrParagraph {
     }
@@ -225,7 +294,7 @@ export namespace Components {
         /**
           * Specify font color
          */
-        "color": 'black' | 'white';
+        "color"?: any;
         /**
           * Specify font size
          */
@@ -245,45 +314,95 @@ export namespace Components {
         /**
           * Control amount of white space around the box component itself.
          */
-        "margin"?: number;
+        "margin"?: SPACE_TEXT;
         /**
           * Define amount of space at bottom side only.
          */
-        "marginBottom"?: number;
+        "marginBottom"?: SPACE_TEXT;
         /**
           * Define amount of space at left side only.
          */
-        "marginLeft"?: number;
+        "marginLeft"?: SPACE_TEXT;
         /**
           * Define amount of space at right side only.
          */
-        "marginRight"?: number;
+        "marginRight"?: SPACE_TEXT;
         /**
           * Define amount of space at top side only.
          */
-        "marginTop"?: number;
+        "marginTop"?: SPACE_TEXT;
         /**
           * Control amount of white space around child components inside of a box
          */
-        "padding": number;
+        "padding": SPACE_TEXT;
         /**
           * Define amount of white space at bottom side only
          */
-        "paddingBottom"?: number;
+        "paddingBottom"?: SPACE_TEXT;
         /**
           * Define amount of white space at left side only
          */
-        "paddingLeft"?: number;
+        "paddingLeft"?: SPACE_TEXT;
         /**
           * Define amount of white space at right side only
          */
-        "paddingRight"?: number;
+        "paddingRight"?: SPACE_TEXT;
         /**
           * Define amount of white space at top side only
          */
-        "paddingTop"?: number;
+        "paddingTop"?: SPACE_TEXT;
     }
-    interface SrTextinput {
+    interface SrTextArea {
+        /**
+          * Indicate the purpose of the text field
+         */
+        "helperText"?: string;
+        /**
+          * Text label to place alongside the input
+         */
+        "label"?: string;
+        /**
+          * The text to display when the input is empty
+         */
+        "placeholder": string;
+    }
+    interface SrTextInput {
+        /**
+          * Indicate the purpose of the text field
+         */
+        "helperText"?: string;
+        /**
+          * Indicate whether this text field is disabled or not
+         */
+        "isDisabled": boolean;
+        /**
+          * Indicate whether this text field is readonly or not
+         */
+        "isReadOnly": boolean;
+        /**
+          * Indicate whether this text field is required or not
+         */
+        "isRequired": boolean;
+        /**
+          * Text label to place alongside the input
+         */
+        "label"?: string;
+        /**
+          * The text to display when the input is empty
+         */
+        "placeholder": string;
+        /**
+          * Specify type of text field
+         */
+        "type": 'number' | 'text' | 'email';
+        /**
+          * Specify current value in text field
+         */
+        "value"?: any;
+        /**
+          * Specify Button variant
+         */
+        "variant": 'rounded' | 'squared';
     }
 }
 export interface SrButtonCustomEvent<T> extends CustomEvent<T> {
@@ -294,7 +413,21 @@ export interface SrComboboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLSrComboboxElement;
 }
+export interface SrTextAreaCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLSrTextAreaElement;
+}
+export interface SrTextInputCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLSrTextInputElement;
+}
 declare global {
+    interface HTMLSrAnchorElement extends Components.SrAnchor, HTMLStencilElement {
+    }
+    var HTMLSrAnchorElement: {
+        prototype: HTMLSrAnchorElement;
+        new (): HTMLSrAnchorElement;
+    };
     interface HTMLSrBoxElement extends Components.SrBox, HTMLStencilElement {
     }
     var HTMLSrBoxElement: {
@@ -331,23 +464,23 @@ declare global {
         prototype: HTMLSrHeadingElement;
         new (): HTMLSrHeadingElement;
     };
-    interface HTMLSrHelptextElement extends Components.SrHelptext, HTMLStencilElement {
+    interface HTMLSrHelpTextElement extends Components.SrHelpText, HTMLStencilElement {
     }
-    var HTMLSrHelptextElement: {
-        prototype: HTMLSrHelptextElement;
-        new (): HTMLSrHelptextElement;
+    var HTMLSrHelpTextElement: {
+        prototype: HTMLSrHelpTextElement;
+        new (): HTMLSrHelpTextElement;
+    };
+    interface HTMLSrLabelElement extends Components.SrLabel, HTMLStencilElement {
+    }
+    var HTMLSrLabelElement: {
+        prototype: HTMLSrLabelElement;
+        new (): HTMLSrLabelElement;
     };
     interface HTMLSrListElement extends Components.SrList, HTMLStencilElement {
     }
     var HTMLSrListElement: {
         prototype: HTMLSrListElement;
         new (): HTMLSrListElement;
-    };
-    interface HTMLSrListItemElement extends Components.SrListItem, HTMLStencilElement {
-    }
-    var HTMLSrListItemElement: {
-        prototype: HTMLSrListItemElement;
-        new (): HTMLSrListItemElement;
     };
     interface HTMLSrParagraphElement extends Components.SrParagraph, HTMLStencilElement {
     }
@@ -367,30 +500,84 @@ declare global {
         prototype: HTMLSrTextElement;
         new (): HTMLSrTextElement;
     };
-    interface HTMLSrTextinputElement extends Components.SrTextinput, HTMLStencilElement {
+    interface HTMLSrTextAreaElement extends Components.SrTextArea, HTMLStencilElement {
     }
-    var HTMLSrTextinputElement: {
-        prototype: HTMLSrTextinputElement;
-        new (): HTMLSrTextinputElement;
+    var HTMLSrTextAreaElement: {
+        prototype: HTMLSrTextAreaElement;
+        new (): HTMLSrTextAreaElement;
+    };
+    interface HTMLSrTextInputElement extends Components.SrTextInput, HTMLStencilElement {
+    }
+    var HTMLSrTextInputElement: {
+        prototype: HTMLSrTextInputElement;
+        new (): HTMLSrTextInputElement;
     };
     interface HTMLElementTagNameMap {
+        "sr-anchor": HTMLSrAnchorElement;
         "sr-box": HTMLSrBoxElement;
         "sr-button": HTMLSrButtonElement;
         "sr-callout": HTMLSrCalloutElement;
         "sr-combobox": HTMLSrComboboxElement;
         "sr-flex": HTMLSrFlexElement;
         "sr-heading": HTMLSrHeadingElement;
-        "sr-helptext": HTMLSrHelptextElement;
+        "sr-help-text": HTMLSrHelpTextElement;
+        "sr-label": HTMLSrLabelElement;
         "sr-list": HTMLSrListElement;
-        "sr-list-item": HTMLSrListItemElement;
         "sr-paragraph": HTMLSrParagraphElement;
         "sr-stack": HTMLSrStackElement;
         "sr-text": HTMLSrTextElement;
-        "sr-textinput": HTMLSrTextinputElement;
+        "sr-text-area": HTMLSrTextAreaElement;
+        "sr-text-input": HTMLSrTextInputElement;
     }
 }
 declare namespace LocalJSX {
+    interface SrAnchor {
+        /**
+          * Indicates whether the component points to an external URL. You define external, and it will be styled differently. Defaults to false.
+         */
+        "external"?: boolean;
+        /**
+          * The URL to redirect to.
+         */
+        "href"?: string;
+        /**
+          * Whether or not to open the URL in a new tab. Defaults to false.
+         */
+        "openInNewTab"?: boolean;
+    }
     interface SrBox {
+        /**
+          * Control active background color
+         */
+        "_activeBackground"?: any;
+        /**
+          * Control active border width
+         */
+        "_activeBorderWidth"?: 'thin' | 'medium' | 'thick';
+        /**
+          * Control focus background color
+         */
+        "_focusBackgroundColor"?: any;
+        /**
+          * Control focus border color
+         */
+        "_focusBorderColor"?: any;
+        /**
+          * Control focus border width
+         */
+        "_focusBorderWidth"?: 'thin' | 'medium' | 'thick';
+        /**
+          * Control hover color
+         */
+        "_hoverBackground"?: any;
+        /**
+          * Control hover border color width
+         */
+        "_hoverBorderColor"?: any;
+        /**
+          * Control hover border width
+         */
+        "_hoverBorderWidth"?: 'thin' | 'medium' | 'thick';
         /**
           * Specify wrapper HTML element
          */
@@ -398,19 +585,19 @@ declare namespace LocalJSX {
         /**
           * Specify background fill inside box component
          */
-        "backgroundColor"?: 'primary' | 'secondary' | 'default' | 'dark';
+        "backgroundColor"?: any;
         /**
           * Specify border color
          */
-        "borderColor"?: 'default' | 'primary';
+        "borderColor"?: any;
         /**
           * Specify border radius
          */
-        "borderRadius"?: 'default' | 'none';
+        "borderRadius"?: 'rounded' | 'squared';
         /**
           * Specify border width
          */
-        "borderWidth"?: 'thin' | 'thick';
+        "borderWidth"?: 'thin' | 'medium' | 'thick';
         /**
           * Control shadow effects around box component
          */
@@ -418,7 +605,7 @@ declare namespace LocalJSX {
         /**
           * Specify text color inside box component
          */
-        "color"?: 'black' | 'white';
+        "color"?: any;
         /**
           * Specify height of box component
          */
@@ -427,6 +614,14 @@ declare namespace LocalJSX {
           * Enable or disable border around box component
          */
         "isBorder"?: boolean;
+        /**
+          * Control clickable state
+         */
+        "isClickable"?: boolean;
+        /**
+          * Control disable state
+         */
+        "isDisabled"?: boolean;
         /**
           * Control amount of white space around the box component itself.
          */
@@ -486,21 +681,32 @@ declare namespace LocalJSX {
         /**
           * Specify width of box component
          */
-        "width"?: 'small' | 'medium' | 'large';
+        "width"?: 'small' | 'medium' | 'large' | 'fit-content';
     }
     interface SrButton {
+        "isDisabled"?: boolean;
         /**
           * Emitted when button is clicked
          */
         "onClicked"?: (event: SrButtonCustomEvent<any>) => void;
+        "text"?: string;
         /**
-          * Button size. TODOJCS add available variants as | expr
+          * Type of button.
          */
-        "size"?: string;
-        /**
-          * Type of button. TODOJCS add available variants as | expression
-         */
-        "variant"?: string;
+        "variant"?: | 'roundedBtn'
+    | 'squaredBtn'
+    | 'outlinedRoundBtn'
+    | 'outlinedSquaredBtn'
+    | 'blackRoundButton'
+    | 'blackSquaredBtn'
+    | 'blackOutlinedRoundBtn'
+    | 'blackOutlinedSquaredBtn'
+    | 'roundedBtnWithWhiteText'
+    | 'squaredBtnWithWhiteText'
+    | 'whiteRoundedBtn'
+    | 'whiteSquaredBtn'
+    | 'whiteOutlineRoundedBtn'
+    | 'whiteOutlineSquaredBtn';
     }
     interface SrCallout {
         /**
@@ -514,13 +720,9 @@ declare namespace LocalJSX {
     }
     interface SrCombobox {
         /**
-          * If true, the checkbox will allow the selection of an empty value
-         */
-        "allowEmpty"?: boolean;
-        /**
           * Text string to add to a label to describe the combobox
          */
-        "labelText"?: string;
+        "label"?: string;
         /**
           * Emitted when the one of the options in the combobox is selected
          */
@@ -555,7 +757,7 @@ declare namespace LocalJSX {
         /**
           * Specify text color
          */
-        "color"?: 'black' | 'white';
+        "color"?: any;
         /**
           * The `level` property allows users to indicate what header hierarchy this element is.
          */
@@ -575,15 +777,23 @@ declare namespace LocalJSX {
          */
         "textAlign"?: 'left' | 'right' | 'center' | 'justify';
     }
-    interface SrHelptext {
+    interface SrHelpText {
+        /**
+          * Helper Text State
+         */
+        "variant"?: 'default' | 'error' | 'success';
+    }
+    interface SrLabel {
+        /**
+          * Label variant state
+         */
+        "variant"?: 'default' | 'error' | 'success';
     }
     interface SrList {
         /**
           * Opt for an ordered list `<ol>` or `<ul>` if false. False by default
          */
         "ordered"?: boolean;
-    }
-    interface SrListItem {
     }
     interface SrParagraph {
     }
@@ -616,7 +826,7 @@ declare namespace LocalJSX {
         /**
           * Specify font color
          */
-        "color"?: 'black' | 'white';
+        "color"?: any;
         /**
           * Specify font size
          */
@@ -636,79 +846,141 @@ declare namespace LocalJSX {
         /**
           * Control amount of white space around the box component itself.
          */
-        "margin"?: number;
+        "margin"?: SPACE_TEXT;
         /**
           * Define amount of space at bottom side only.
          */
-        "marginBottom"?: number;
+        "marginBottom"?: SPACE_TEXT;
         /**
           * Define amount of space at left side only.
          */
-        "marginLeft"?: number;
+        "marginLeft"?: SPACE_TEXT;
         /**
           * Define amount of space at right side only.
          */
-        "marginRight"?: number;
+        "marginRight"?: SPACE_TEXT;
         /**
           * Define amount of space at top side only.
          */
-        "marginTop"?: number;
+        "marginTop"?: SPACE_TEXT;
         /**
           * Control amount of white space around child components inside of a box
          */
-        "padding"?: number;
+        "padding"?: SPACE_TEXT;
         /**
           * Define amount of white space at bottom side only
          */
-        "paddingBottom"?: number;
+        "paddingBottom"?: SPACE_TEXT;
         /**
           * Define amount of white space at left side only
          */
-        "paddingLeft"?: number;
+        "paddingLeft"?: SPACE_TEXT;
         /**
           * Define amount of white space at right side only
          */
-        "paddingRight"?: number;
+        "paddingRight"?: SPACE_TEXT;
         /**
           * Define amount of white space at top side only
          */
-        "paddingTop"?: number;
+        "paddingTop"?: SPACE_TEXT;
     }
-    interface SrTextinput {
+    interface SrTextArea {
+        /**
+          * Indicate the purpose of the text field
+         */
+        "helperText"?: string;
+        /**
+          * Text label to place alongside the input
+         */
+        "label"?: string;
+        /**
+          * Emitted when the input's value changes
+         */
+        "on_change"?: (event: SrTextAreaCustomEvent<any>) => void;
+        /**
+          * The text to display when the input is empty
+         */
+        "placeholder"?: string;
+    }
+    interface SrTextInput {
+        /**
+          * Indicate the purpose of the text field
+         */
+        "helperText"?: string;
+        /**
+          * Indicate whether this text field is disabled or not
+         */
+        "isDisabled"?: boolean;
+        /**
+          * Indicate whether this text field is readonly or not
+         */
+        "isReadOnly"?: boolean;
+        /**
+          * Indicate whether this text field is required or not
+         */
+        "isRequired"?: boolean;
+        /**
+          * Text label to place alongside the input
+         */
+        "label"?: string;
+        /**
+          * Emitted when the input's value changes
+         */
+        "on_change"?: (event: SrTextInputCustomEvent<any>) => void;
+        /**
+          * The text to display when the input is empty
+         */
+        "placeholder"?: string;
+        /**
+          * Specify type of text field
+         */
+        "type"?: 'number' | 'text' | 'email';
+        /**
+          * Specify current value in text field
+         */
+        "value"?: any;
+        /**
+          * Specify Button variant
+         */
+        "variant"?: 'rounded' | 'squared';
     }
     interface IntrinsicElements {
+        "sr-anchor": SrAnchor;
         "sr-box": SrBox;
         "sr-button": SrButton;
         "sr-callout": SrCallout;
         "sr-combobox": SrCombobox;
         "sr-flex": SrFlex;
         "sr-heading": SrHeading;
-        "sr-helptext": SrHelptext;
+        "sr-help-text": SrHelpText;
+        "sr-label": SrLabel;
         "sr-list": SrList;
-        "sr-list-item": SrListItem;
         "sr-paragraph": SrParagraph;
         "sr-stack": SrStack;
         "sr-text": SrText;
-        "sr-textinput": SrTextinput;
+        "sr-text-area": SrTextArea;
+        "sr-text-input": SrTextInput;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "sr-anchor": LocalJSX.SrAnchor & JSXBase.HTMLAttributes<HTMLSrAnchorElement>;
             "sr-box": LocalJSX.SrBox & JSXBase.HTMLAttributes<HTMLSrBoxElement>;
             "sr-button": LocalJSX.SrButton & JSXBase.HTMLAttributes<HTMLSrButtonElement>;
             "sr-callout": LocalJSX.SrCallout & JSXBase.HTMLAttributes<HTMLSrCalloutElement>;
             "sr-combobox": LocalJSX.SrCombobox & JSXBase.HTMLAttributes<HTMLSrComboboxElement>;
             "sr-flex": LocalJSX.SrFlex & JSXBase.HTMLAttributes<HTMLSrFlexElement>;
             "sr-heading": LocalJSX.SrHeading & JSXBase.HTMLAttributes<HTMLSrHeadingElement>;
-            "sr-helptext": LocalJSX.SrHelptext & JSXBase.HTMLAttributes<HTMLSrHelptextElement>;
+            "sr-help-text": LocalJSX.SrHelpText & JSXBase.HTMLAttributes<HTMLSrHelpTextElement>;
+            "sr-label": LocalJSX.SrLabel & JSXBase.HTMLAttributes<HTMLSrLabelElement>;
             "sr-list": LocalJSX.SrList & JSXBase.HTMLAttributes<HTMLSrListElement>;
-            "sr-list-item": LocalJSX.SrListItem & JSXBase.HTMLAttributes<HTMLSrListItemElement>;
             "sr-paragraph": LocalJSX.SrParagraph & JSXBase.HTMLAttributes<HTMLSrParagraphElement>;
             "sr-stack": LocalJSX.SrStack & JSXBase.HTMLAttributes<HTMLSrStackElement>;
             "sr-text": LocalJSX.SrText & JSXBase.HTMLAttributes<HTMLSrTextElement>;
-            "sr-textinput": LocalJSX.SrTextinput & JSXBase.HTMLAttributes<HTMLSrTextinputElement>;
+            "sr-text-area": LocalJSX.SrTextArea & JSXBase.HTMLAttributes<HTMLSrTextAreaElement>;
+            "sr-text-input": LocalJSX.SrTextInput & JSXBase.HTMLAttributes<HTMLSrTextInputElement>;
         }
     }
 }

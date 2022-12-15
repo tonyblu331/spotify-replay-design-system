@@ -11,10 +11,11 @@ Button component with variable size and variants
 
 ## Properties
 
-| Property  | Attribute | Description                                                     | Type     | Default     |
-| --------- | --------- | --------------------------------------------------------------- | -------- | ----------- |
-| `size`    | `size`    | Button size. TODOJCS add available variants as \| expr          | `string` | `'medium'`  |
-| `variant` | `variant` | Type of button. TODOJCS add available variants as \| expression | `string` | `'neutral'` |
+| Property     | Attribute    | Description     | Type                                                                                                                                                                                                                                                                                                                                        | Default                  |
+| ------------ | ------------ | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
+| `isDisabled` | `isdisabled` |                 | `boolean`                                                                                                                                                                                                                                                                                                                                   | `false`                  |
+| `text`       | `text`       |                 | `string`                                                                                                                                                                                                                                                                                                                                    | `'I’m a Re:Play Button'` |
+| `variant`    | `variant`    | Type of button. | `"blackOutlinedRoundBtn" \| "blackOutlinedSquaredBtn" \| "blackRoundButton" \| "blackSquaredBtn" \| "outlinedRoundBtn" \| "outlinedSquaredBtn" \| "roundedBtn" \| "roundedBtnWithWhiteText" \| "squaredBtn" \| "squaredBtnWithWhiteText" \| "whiteOutlineRoundedBtn" \| "whiteOutlineSquaredBtn" \| "whiteRoundedBtn" \| "whiteSquaredBtn"` | `'roundedBtn'`           |
 
 
 ## Events
@@ -23,6 +24,21 @@ Button component with variable size and variants
 | --------- | ------------------------------ | ------------------ |
 | `clicked` | Emitted when button is clicked | `CustomEvent<any>` |
 
+
+## Dependencies
+
+### Depends on
+
+- [sr-text](../../primitives/sr-text)
+- [sr-box](../../primitives/sr-box)
+
+### Graph
+```mermaid
+graph TD;
+  sr-button --> sr-text
+  sr-button --> sr-box
+  style sr-button fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

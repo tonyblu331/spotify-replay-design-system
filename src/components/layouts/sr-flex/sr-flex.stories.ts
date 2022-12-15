@@ -52,7 +52,10 @@ export default {
 function renderCard(items) {
   let temp = '';
   for (let i = 0; i < items; i++) {
-    const color = i % 2 == 0 ? 'dark' : 'primary';
+    const color =
+      i % 2 == 0
+        ? 'var(--sr-color-foundation-ui-green-ui-green)'
+        : 'var(--sr-color-foundation-blue-blue-300)';
     temp += `<sr-box backgroundColor="${color}" padding="spacer-3">
       <sr-heading level="h3-bold">Header ${i + 1}</sr-heading>
       <sr-text>Show content here!</sr-text>

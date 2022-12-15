@@ -3,36 +3,107 @@ export default {
   argTypes: {
     text: {
       description: 'Transcluded text to be injected in the component slot',
+      control: { type: 'text' },
     },
     variant: {
-      options: ['neutral', 'error'],
+      options: [
+        'roundedBtn',
+        'squaredBtn',
+        'outlinedRoundBtn',
+        'outlinedSquaredBtn',
+        'blackRoundButton',
+        'blackSquaredBtn',
+        'blackOutlinedRoundBtn',
+        'blackOutlinedSquaredBtn',
+        'roundedBtnWithWhiteText',
+        'squaredBtnWithWhiteText',
+        'whiteRoundedBtn',
+        'whiteSquaredBtn',
+        'whiteOutlineRoundedBtn',
+        'whiteOutlineSquaredBtn',
+      ],
       control: { type: 'select' },
-      description: 'The button variant',
+      description:
+        "The button variant <br> `'roundedBtn'` `'squaredBtn'` `'outlinedRoundBtn'` `'outlinedSquaredBtn'` `'blackRoundButton'` `'blackSquaredBtn'` `'blackOutlinedRoundBtn'` `'blackOutlinedSquaredBtn'` `'roundedBtnWithWhiteText'` `'squaredBtnWithWhiteText'` `'whiteRoundedBtn'` `'whiteSquaredBtn'` `whiteOutlineRoundedBtn` `'whiteOutlineSquaredBtn'`",
     },
-    size: {
-      options: ['small', 'medium', 'large'],
-      control: { type: 'radio' },
-      description: 'The button size',
+    isDisabled: {
+      control: { type: 'boolean' },
+      description: 'Control Disabled button',
     },
   },
 };
 
-const Template = args => `
-  <sr-button variant="${args.variant}" size="${args.size}">
-    ${args.text}
+const Template = args => {
+  const argsProps = Object.entries(args).reduce((prev, [key, value]) => {
+    return `${prev} ${key}="${value}"`.trim();
+  }, '');
+  return `
+  <sr-button ${argsProps}>
   </sr-button>
 `;
-
-export const Button = Template.bind({});
-Button.args = {
-  text: 'Button',
-  variant: 'neutral',
-  size: 'medium',
 };
 
-export const RedButton = Template.bind({});
-RedButton.args = {
-  text: 'Button',
-  variant: 'error',
-  size: 'small',
+export const RoundedButton = Template.bind({});
+RoundedButton.args = {
+  variant: 'roundedBtn',
+};
+
+export const SquaredButton = Template.bind({});
+SquaredButton.args = {
+  variant: 'squaredBtn',
+};
+
+export const OutlineRoundedButton = Template.bind({});
+OutlineRoundedButton.args = {
+  variant: 'outlinedRoundBtn',
+};
+
+export const BlackRoundedButton = Template.bind({});
+BlackRoundedButton.args = {
+  variant: 'outlinedSquaredBtn',
+};
+
+export const BlackSquaredButton = Template.bind({});
+BlackSquaredButton.args = {
+  variant: 'blackSquaredBtn',
+};
+
+export const BlackOutlineRoundedButton = Template.bind({});
+BlackOutlineRoundedButton.args = {
+  variant: 'blackOutlinedRoundBtn',
+};
+
+export const BlackOutlinedSquaredButton = Template.bind({});
+BlackOutlinedSquaredButton.args = {
+  variant: 'blackOutlinedSquaredBtn',
+};
+
+export const RoundedButtonWithWhiteText = Template.bind({});
+RoundedButtonWithWhiteText.args = {
+  variant: 'roundedBtnWithWhiteText',
+};
+
+export const SquaredButtonWithWhiteText = Template.bind({});
+SquaredButtonWithWhiteText.args = {
+  variant: 'squaredBtnWithWhiteText',
+};
+
+export const WhiteRoundedButton = Template.bind({});
+WhiteRoundedButton.args = {
+  variant: 'whiteRoundedBtn',
+};
+
+export const WhiteSquaredButton = Template.bind({});
+WhiteSquaredButton.args = {
+  variant: 'whiteSquaredBtn',
+};
+
+export const WhiteOutlineRoundedButton = Template.bind({});
+WhiteOutlineRoundedButton.args = {
+  variant: 'whiteOutlineRoundedBtn',
+};
+
+export const WhiteOutlineSquaredButton = Template.bind({});
+WhiteOutlineSquaredButton.args = {
+  variant: 'whiteOutlineSquaredBtn',
 };
