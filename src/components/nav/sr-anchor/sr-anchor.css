@@ -13,10 +13,17 @@ sr-box {
   margin-top: 2px;
 }
 
+.in-active {
+  color: var(--sr-color-foundation-neutral-gray-300);
+  cursor: default;
+}
+
+.selected .normal,
 .normal:hover {
   color: var(--sr-color-foundation-ui-green-ui-green-hover) !important;
 }
 
+.selected .underline sr-stack,
 .underline sr-stack:hover,
 .external sr-stack:hover {
   color: var(--sr-color-foundation-ui-green-ui-green-hover) !important;

@@ -17,9 +17,17 @@ export namespace Components {
          */
         "href"?: string;
         /**
+          * Indicate inActive state of anchor Use this prop in tab component
+         */
+        "inActive": boolean;
+        /**
           * Whether or not to open the URL in a new tab. Defaults to false.
          */
         "openInNewTab": boolean;
+        /**
+          * Indicate active state of anchor Use this prop in tab component
+         */
+        "selected": boolean;
         /**
           * Anchor variant
          */
@@ -73,7 +81,7 @@ export namespace Components {
         /**
           * Specify border radius
          */
-        "borderRadius": 'full' | 'small' | 'medium';
+        "borderRadius": 'full' | 'small' | 'medium' | any;
         /**
           * Specify border width
          */
@@ -281,6 +289,26 @@ export namespace Components {
          */
         "orientation": 'vertical' | 'horizontal';
     }
+    interface SrTab {
+    }
+    interface SrTabItem {
+        /**
+          * Specify Tab content
+         */
+        "href"?: string;
+        /**
+          * Inactive Tab
+         */
+        "inActive"?: boolean;
+        /**
+          * Specify Tab header
+         */
+        "name": string;
+        /**
+          * Selected Tab header
+         */
+        "selectedItem"?: string;
+    }
     interface SrText {
         "_hoverColor"?: any;
         /**
@@ -437,6 +465,10 @@ export interface SrComboboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLSrComboboxElement;
 }
+export interface SrTabCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLSrTabElement;
+}
 export interface SrTextAreaCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLSrTextAreaElement;
@@ -536,6 +568,18 @@ declare global {
         prototype: HTMLSrStackElement;
         new (): HTMLSrStackElement;
     };
+    interface HTMLSrTabElement extends Components.SrTab, HTMLStencilElement {
+    }
+    var HTMLSrTabElement: {
+        prototype: HTMLSrTabElement;
+        new (): HTMLSrTabElement;
+    };
+    interface HTMLSrTabItemElement extends Components.SrTabItem, HTMLStencilElement {
+    }
+    var HTMLSrTabItemElement: {
+        prototype: HTMLSrTabItemElement;
+        new (): HTMLSrTabItemElement;
+    };
     interface HTMLSrTextElement extends Components.SrText, HTMLStencilElement {
     }
     var HTMLSrTextElement: {
@@ -570,6 +614,8 @@ declare global {
         "sr-list": HTMLSrListElement;
         "sr-paragraph": HTMLSrParagraphElement;
         "sr-stack": HTMLSrStackElement;
+        "sr-tab": HTMLSrTabElement;
+        "sr-tab-item": HTMLSrTabItemElement;
         "sr-text": HTMLSrTextElement;
         "sr-text-area": HTMLSrTextAreaElement;
         "sr-text-input": HTMLSrTextInputElement;
@@ -586,9 +632,17 @@ declare namespace LocalJSX {
          */
         "href"?: string;
         /**
+          * Indicate inActive state of anchor Use this prop in tab component
+         */
+        "inActive"?: boolean;
+        /**
           * Whether or not to open the URL in a new tab. Defaults to false.
          */
         "openInNewTab"?: boolean;
+        /**
+          * Indicate active state of anchor Use this prop in tab component
+         */
+        "selected"?: boolean;
         /**
           * Anchor variant
          */
@@ -642,7 +696,7 @@ declare namespace LocalJSX {
         /**
           * Specify border radius
          */
-        "borderRadius"?: 'full' | 'small' | 'medium';
+        "borderRadius"?: 'full' | 'small' | 'medium' | any;
         /**
           * Specify border width
          */
@@ -859,6 +913,27 @@ declare namespace LocalJSX {
          */
         "orientation"?: 'vertical' | 'horizontal';
     }
+    interface SrTab {
+        "onValueChange"?: (event: SrTabCustomEvent<any>) => void;
+    }
+    interface SrTabItem {
+        /**
+          * Specify Tab content
+         */
+        "href"?: string;
+        /**
+          * Inactive Tab
+         */
+        "inActive"?: boolean;
+        /**
+          * Specify Tab header
+         */
+        "name"?: string;
+        /**
+          * Selected Tab header
+         */
+        "selectedItem"?: string;
+    }
     interface SrText {
         "_hoverColor"?: any;
         /**
@@ -1026,6 +1101,8 @@ declare namespace LocalJSX {
         "sr-list": SrList;
         "sr-paragraph": SrParagraph;
         "sr-stack": SrStack;
+        "sr-tab": SrTab;
+        "sr-tab-item": SrTabItem;
         "sr-text": SrText;
         "sr-text-area": SrTextArea;
         "sr-text-input": SrTextInput;
@@ -1050,6 +1127,8 @@ declare module "@stencil/core" {
             "sr-list": LocalJSX.SrList & JSXBase.HTMLAttributes<HTMLSrListElement>;
             "sr-paragraph": LocalJSX.SrParagraph & JSXBase.HTMLAttributes<HTMLSrParagraphElement>;
             "sr-stack": LocalJSX.SrStack & JSXBase.HTMLAttributes<HTMLSrStackElement>;
+            "sr-tab": LocalJSX.SrTab & JSXBase.HTMLAttributes<HTMLSrTabElement>;
+            "sr-tab-item": LocalJSX.SrTabItem & JSXBase.HTMLAttributes<HTMLSrTabItemElement>;
             "sr-text": LocalJSX.SrText & JSXBase.HTMLAttributes<HTMLSrTextElement>;
             "sr-text-area": LocalJSX.SrTextArea & JSXBase.HTMLAttributes<HTMLSrTextAreaElement>;
             "sr-text-input": LocalJSX.SrTextInput & JSXBase.HTMLAttributes<HTMLSrTextInputElement>;

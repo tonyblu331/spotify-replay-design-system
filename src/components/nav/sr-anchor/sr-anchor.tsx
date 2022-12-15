@@ -36,7 +36,22 @@ export class SRAnchor {
   @Prop()
   openInNewTab: boolean = false;
 
+  /**
+   * Indicate active state of anchor
+   * Use this prop in tab component
+   */
+  @Prop()
+  selected: boolean = false;
+
+  /**
+   * Indicate inActive state of anchor
+   * Use this prop in tab component
+   */
+  @Prop({ reflect: true, attribute: 'inActive' })
+  inActive: boolean = false;
+
   addClass() {
+    if (this.inActive) return 'in-active';
     if (this.external) return 'external';
     switch (this.variant) {
       case 'underline':
@@ -48,10 +63,15 @@ export class SRAnchor {
 
   render() {
     return (
-      <sr-box minHeight={28}>
+      <sr-box
+        minHeight={28}
+        class={this.inActive ? 'in-active' : this.selected ? 'selected' : ''}
+        margin="spacer-0"
+        borderRadius="none"
+      >
         <a
           target={this.openInNewTab ? '_blank' : '_top'}
-          href={this.href}
+          href={!this.inActive ? this.href : null}
           class={this.addClass()}
         >
           <sr-stack orientation="horizontal" gap="spacer-1">

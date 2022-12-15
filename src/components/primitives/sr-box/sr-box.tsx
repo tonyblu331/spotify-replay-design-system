@@ -147,7 +147,7 @@ export class SRBox {
    * Specify border radius
    */
   @Prop({ reflect: true, attribute: 'borderRadius' })
-  borderRadius: 'full' | 'small' | 'medium' = 'medium';
+  borderRadius: 'full' | 'small' | 'medium' | any = 'medium';
 
   /**
    * Specify border width

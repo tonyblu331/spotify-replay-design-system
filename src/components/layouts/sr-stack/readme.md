@@ -27,6 +27,7 @@ along the vertical or horizontal axis.
  - [sr-breadcrumb-item](../../nav/sr-breadcrumb-item)
  - [sr-combobox](../../form/sr-combobox)
  - [sr-list](../../text/sr-list)
+ - [sr-tab](../../nav/sr-tab)
  - [sr-text-area](../../form/sr-text-area)
  - [sr-text-input](../../form/sr-textinput)
 
@@ -38,6 +39,7 @@ graph TD;
   sr-breadcrumb-item --> sr-stack
   sr-combobox --> sr-stack
   sr-list --> sr-stack
+  sr-tab --> sr-stack
   sr-text-area --> sr-stack
   sr-text-input --> sr-stack
   style sr-stack fill:#f9f,stroke:#333,stroke-width:4px
