@@ -26,18 +26,15 @@ const Template = (args) => {
 export const DisabledOptionAsPlaceholder = Template.bind({});
 DisabledOptionAsPlaceholder.args = {
   options: `<option selected disabled>Choose a genre</option> <option>Ska</option> <option>Pop</option> <option>Rock</option>`,
-  allowEmpty: false,
 };
 
 export const Labelless = Template.bind({});
 Labelless.args = {
   options: `<option selected>Potáto</option> <option>Potäto</option>`,
-  allowEmpty: false,
 };
 
 export const Labelled = Template.bind({});
 Labelled.args = {
   options: `<option>Avatar</option> <option selected>Ghost in the Shell</option> <option>Memento</option>`,
   label: 'My favorite movie',
-  allowEmpty: false,
 };
