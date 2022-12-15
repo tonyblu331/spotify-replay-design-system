@@ -8,17 +8,31 @@
 ## Overview
 
 The `<sr-card>` component is used to group various pieces of content
-into a container.
+into a container. Add a heading title with the `title` property, and introduce other content in the component's slot.
 
 ## Properties
 
-| Property          | Attribute         | Description                              | Type                                              | Default        |
-| ----------------- | ----------------- | ---------------------------------------- | ------------------------------------------------- | -------------- |
-| `backgroundColor` | `backgroundcolor` | TODOROSE Update type referring to design | `"dark" \| "default" \| "primary" \| "secondary"` | `'default'`    |
-| `hasBorder`       | `hasborder`       |                                          | `boolean`                                         | `false`        |
-| `margin`          | `margin`          | TODOROSE Update type referring to design | `any`                                             | `undefined`    |
-| `padding`         | `padding`         | TODOROSE Update type referring to design | `any`                                             | `SpacingSmall` |
+| Property     | Attribute    | Description | Type      | Default |
+| ------------ | ------------ | ----------- | --------- | ------- |
+| `hideBorder` | `hideborder` |             | `boolean` | `false` |
+| `title`      | `title`      |             | `string`  | `''`    |
 
+
+## Dependencies
+
+### Depends on
+
+- [sr-box](../../primitives/sr-box)
+- [sr-heading](../../typography/sr-heading)
+
+### Graph
+```mermaid
+graph TD;
+  sr-card --> sr-box
+  sr-card --> sr-heading
+  sr-heading --> sr-text
+  style sr-card fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 
