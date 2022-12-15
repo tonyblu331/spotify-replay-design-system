@@ -1,7 +1,7 @@
 {
   "border-radius": {
     "border-radius-sm": {
-      "value": "8",
+      "value": "4",
       "type": "borderRadius",
       "description": "Small Border radius"
     },
