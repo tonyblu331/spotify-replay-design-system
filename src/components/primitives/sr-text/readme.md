@@ -9,10 +9,12 @@
 
 | Property        | Attribute       | Description                                                           | Type                                                                                                                                                                                   | Default      |
 | --------------- | --------------- | --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| `_hoverColor`   | `_hovercolor`   |                                                                       | `any`                                                                                                                                                                                  | `undefined`  |
 | `as`            | `as`            | Specify wrapper HTML element                                          | `"blockquote" \| "caption" \| "div" \| "endnote" \| "h1" \| "h2" \| "h3" \| "h4" \| "h5" \| "h6" \| "p" \| "span"`                                                                     | `'div'`      |
 | `color`         | `color`         | Specify font color                                                    | `any`                                                                                                                                                                                  | `undefined`  |
 | `fontSize`      | `fontsize`      | Specify font size                                                     | `number`                                                                                                                                                                               | `undefined`  |
 | `fontWeight`    | `fontweight`    | Control font weight                                                   | `"bold" \| "extraBold" \| "regular"`                                                                                                                                                   | `'regular'`  |
+| `isClickable`   | `isclickable`   |                                                                       | `boolean`                                                                                                                                                                              | `false`      |
 | `letterSpacing` | `letterspacing` | Define the space between characters in a text                         | `number`                                                                                                                                                                               | `undefined`  |
 | `lineHeight`    | `lineheight`    | Define the height of a line                                           | `number`                                                                                                                                                                               | `undefined`  |
 | `margin`        | `margin`        | Control amount of white space around the box component itself.        | `"spacer-0" \| "spacer-blockquote" \| "spacer-caption" \| "spacer-endnote" \| "spacer-h1" \| "spacer-h2" \| "spacer-h3" \| "spacer-h4" \| "spacer-h5" \| "spacer-h6" \| "spacer-text"` | `'spacer-0'` |
@@ -32,6 +34,7 @@
 ### Used by
 
  - [sr-anchor](../../nav/sr-anchor)
+ - [sr-breadcrumb-item](../../nav/sr-breadcrumb-item)
  - [sr-button](../../form/sr-button)
  - [sr-heading](../../typography/sr-heading)
  - [sr-help-text](../../form/sr-helptext)
@@ -43,6 +46,7 @@
 ```mermaid
 graph TD;
   sr-anchor --> sr-text
+  sr-breadcrumb-item --> sr-text
   sr-button --> sr-text
   sr-heading --> sr-text
   sr-help-text --> sr-text

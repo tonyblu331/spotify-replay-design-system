@@ -26,7 +26,7 @@ export const ButtonType = {
       backgroundColor: ColorFoundationUiGreenUiGreen,
       isBorder: false,
       color: ColorFoundationNeutralBlack400,
-      borderRadius: 'rounded',
+      borderRadius: 'full',
     },
     hover: {
       backgroundColor: ColorFoundationUiGreenUiGreenHover,
@@ -59,7 +59,7 @@ export const ButtonType = {
       backgroundColor: ColorFoundationUiGreenUiGreen,
       isBorder: false,
       color: ColorFoundationNeutralBlack400,
-      borderRadius: 'squared',
+      borderRadius: 'medium',
     },
     hover: {
       backgroundColor: ColorFoundationUiGreenUiGreenHover,
@@ -93,7 +93,7 @@ export const ButtonType = {
       isBorder: true,
       color: ColorFoundationNeutralBlack400,
       borderColor: ColorFoundationUiGreenUiGreen,
-      borderRadius: 'rounded',
+      borderRadius: 'full',
       borderWidth: 'thin',
     },
     hover: {
@@ -129,7 +129,7 @@ export const ButtonType = {
       isBorder: true,
       color: ColorFoundationNeutralBlack400,
       borderColor: ColorFoundationUiGreenUiGreen,
-      borderRadius: 'squared',
+      borderRadius: 'medium',
       borderWidth: 'thin',
     },
     hover: {
@@ -164,7 +164,7 @@ export const ButtonType = {
       backgroundColor: ColorFoundationNeutralBlack400,
       isBorder: false,
       color: ColorFoundationNeutralPureWhite,
-      borderRadius: 'rounded',
+      borderRadius: 'full',
     },
     hover: {
       backgroundColor: ColorFoundationNeutralBlack200,
@@ -198,7 +198,7 @@ export const ButtonType = {
       backgroundColor: ColorFoundationNeutralBlack400,
       isBorder: false,
       color: ColorFoundationNeutralPureWhite,
-      borderRadius: 'squared',
+      borderRadius: 'medium',
     },
     hover: {
       backgroundColor: ColorFoundationNeutralBlack200,
@@ -233,7 +233,7 @@ export const ButtonType = {
       isBorder: true,
       color: ColorFoundationNeutralBlack400,
       borderColor: ColorFoundationNeutralBlack400,
-      borderRadius: 'rounded',
+      borderRadius: 'full',
       borderWidth: 'thin',
     },
     hover: {
@@ -269,7 +269,7 @@ export const ButtonType = {
       isBorder: true,
       color: ColorFoundationNeutralBlack400,
       borderColor: ColorFoundationNeutralBlack400,
-      borderRadius: 'squared',
+      borderRadius: 'medium',
       borderWidth: 'thin',
     },
     hover: {
@@ -304,7 +304,7 @@ export const ButtonType = {
       backgroundColor: ColorFoundationUiGreenUiGreen,
       isBorder: false,
       color: ColorFoundationNeutralPureWhite,
-      borderRadius: 'rounded',
+      borderRadius: 'full',
     },
     hover: {
       backgroundColor: ColorFoundationUiGreenUiGreenHover,
@@ -337,7 +337,7 @@ export const ButtonType = {
       backgroundColor: ColorFoundationUiGreenUiGreen,
       isBorder: false,
       color: ColorFoundationNeutralPureWhite,
-      borderRadius: 'squared',
+      borderRadius: 'medium',
     },
     hover: {
       backgroundColor: ColorFoundationUiGreenUiGreenHover,
@@ -370,7 +370,7 @@ export const ButtonType = {
       backgroundColor: ColorFoundationNeutralWhite50,
       isBorder: false,
       color: ColorFoundationNeutralBlack400,
-      borderRadius: 'rounded',
+      borderRadius: 'full',
     },
     hover: {
       backgroundColor: ColorFoundationNeutralWhite200,
@@ -403,7 +403,7 @@ export const ButtonType = {
       backgroundColor: ColorFoundationNeutralWhite50,
       isBorder: false,
       color: ColorFoundationNeutralBlack400,
-      borderRadius: 'squared',
+      borderRadius: 'medium',
     },
     hover: {
       backgroundColor: ColorFoundationNeutralWhite200,
@@ -437,7 +437,7 @@ export const ButtonType = {
       isBorder: true,
       color: ColorFoundationNeutralWhite50,
       borderColor: ColorFoundationNeutralWhite50,
-      borderRadius: 'rounded',
+      borderRadius: 'full',
       borderWidth: 'thin',
     },
     hover: {
@@ -473,7 +473,7 @@ export const ButtonType = {
       isBorder: true,
       color: ColorFoundationNeutralWhite50,
       borderColor: ColorFoundationNeutralWhite50,
-      borderRadius: 'squared',
+      borderRadius: 'medium',
       borderWidth: 'thin',
     },
     hover: {

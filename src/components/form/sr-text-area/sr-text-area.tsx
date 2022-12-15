@@ -33,6 +33,12 @@ export class SrTextArea {
    */
   @Prop()
   placeholder: string = 'Placeholder text';
+
+  /**
+   * Error State
+   */
+  @Prop({ reflect: true, attribute: 'isError' })
+  isError: boolean = false;
   /**
    * Emitted when the input's value changes
    */
@@ -46,8 +52,11 @@ export class SrTextArea {
   renderInputStyling() {
     return css`
       padding: ${SpacerSpacer2}px;
-      border: 1px solid ${ColorFoundationNeutralBlack200};
-      border-radius: ${BorderRadiusBorderRadiusSm};
+      border: 1px solid
+        ${!this.isError
+          ? ColorFoundationNeutralBlack200
+          : ColorFoundationRedRed200};
+      border-radius: ${BorderRadiusBorderRadiusSm}px !important;
       ::placeholder {
         color: ${ColorFoundationNeutralGray400};
       }
@@ -68,14 +77,20 @@ export class SrTextArea {
   render() {
     return (
       <sr-stack orientation="vertical" gap="spacer-1">
-        {this.label && <sr-label variant="default">{this.label}</sr-label>}
+        {this.label && (
+          <sr-label variant={this.isError ? 'error' : 'default'}>
+            {this.label}
+          </sr-label>
+        )}
         <textarea
           class={this.renderInputStyling()}
           onChange={event => this.changeHandler(event)}
           placeholder={this.placeholder}
         ></textarea>
         {this.helperText && (
-          <sr-help-text variant="default">{this.helperText}</sr-help-text>
+          <sr-help-text variant={this.isError ? 'error' : 'default'}>
+            {this.helperText}
+          </sr-help-text>
         )}
       </sr-stack>
     );

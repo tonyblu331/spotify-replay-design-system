@@ -2,6 +2,7 @@ import { Component, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
 import { SPACER } from '~/type.js';
 import {
+  BorderRadiusBorderRadiusSm,
   BorderRadiusBorderRadiusFull,
   BorderRadiusBorderRadiusMd,
   ColorFoundationNeutralPureBlack,
@@ -146,7 +147,7 @@ export class SRBox {
    * Specify border radius
    */
   @Prop({ reflect: true, attribute: 'borderRadius' })
-  borderRadius: 'rounded' | 'squared' = 'squared';
+  borderRadius: 'full' | 'small' | 'medium' = 'medium';
 
   /**
    * Specify border width
@@ -329,13 +330,15 @@ export class SRBox {
   }
 
   /**
-   * TODOROSE Fix base on design token
+   *  Fix base on design token
    */
   borderRadiusHandler() {
     switch (this.borderRadius) {
-      case 'squared':
+      case 'small':
+        return `${BorderRadiusBorderRadiusSm}px`;
+      case 'medium':
         return `${BorderRadiusBorderRadiusMd}px`;
-      case 'rounded':
+      case 'full':
         return `${BorderRadiusBorderRadiusFull}px`;
       default:
         return '0px';

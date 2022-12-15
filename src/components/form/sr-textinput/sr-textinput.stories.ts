@@ -3,8 +3,8 @@ export default {
   argTypes: {
     variant: {
       control: { type: 'select' },
-      options: ['squared', 'rounded'],
-      description: "Specify Button variant <br> `'squared'` `'rounded'`",
+      options: ['medium', 'rounded'],
+      description: "Specify Button variant <br> `'medium'` `'rounded'`",
     },
     value: {
       description: 'Specify current text value in text field',
@@ -29,6 +29,14 @@ export default {
     isDisabled: {
       control: { type: 'boolean' },
       description: 'Indicate whether this text field is disabled or not',
+    },
+    isError: {
+      control: { type: 'boolean' },
+      description: 'Indicate Error state',
+    },
+    isSuccess: {
+      control: { type: 'boolean' },
+      description: 'Indicate Success state',
     },
     type: {
       control: { type: 'select' },
@@ -55,7 +63,7 @@ export const SquaredInputText = Template.bind({});
 SquaredInputText.args = {
   label: 'My favorite genre',
   placeholder: 'e.g. ska',
-  variant: 'squared',
+  variant: 'medium',
   value: '',
 };
 
@@ -72,6 +80,7 @@ export const SuccessInputText = Template.bind({});
 SuccessInputText.args = {
   label: 'Enter username',
   value: 'Rose',
+  isSuccess: true,
 };
 
 export const ErrorInputTextWithHelperText = Template.bind({});
@@ -80,12 +89,13 @@ ErrorInputTextWithHelperText.args = {
   value: '',
   isRequired: true,
   helperText: 'Please enter your username',
+  isError: true,
 };
 
 export const ReadOnlyInputText = Template.bind({});
 ReadOnlyInputText.args = {
   label: 'Username',
-  variant: 'squared',
+  variant: 'medium',
   value: 'Juan',
   isReadonly: true,
 };
@@ -93,7 +103,7 @@ ReadOnlyInputText.args = {
 export const DisabledInputText = Template.bind({});
 DisabledInputText.args = {
   label: 'Broken Record',
-  variant: 'squared',
+  variant: 'medium',
   value: ' ',
   isDisabled: true,
 };

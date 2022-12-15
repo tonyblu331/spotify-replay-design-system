@@ -22,6 +22,8 @@ along the vertical or horizontal axis.
 
 ### Used by
 
+ - [sr-breadcrumb](../../nav/sr-breadcrumb)
+ - [sr-breadcrumb-item](../../nav/sr-breadcrumb-item)
  - [sr-combobox](../../form/sr-combobox)
  - [sr-list](../../text/sr-list)
  - [sr-text-area](../../form/sr-text-area)
@@ -30,6 +32,8 @@ along the vertical or horizontal axis.
 ### Graph
 ```mermaid
 graph TD;
+  sr-breadcrumb --> sr-stack
+  sr-breadcrumb-item --> sr-stack
   sr-combobox --> sr-stack
   sr-list --> sr-stack
   sr-text-area --> sr-stack

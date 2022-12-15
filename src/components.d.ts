@@ -69,7 +69,7 @@ export namespace Components {
         /**
           * Specify border radius
          */
-        "borderRadius": 'rounded' | 'squared';
+        "borderRadius": 'full' | 'small' | 'medium';
         /**
           * Specify border width
          */
@@ -158,6 +158,13 @@ export namespace Components {
           * Specify width of box component
          */
         "width": 'small' | 'medium' | 'large' | 'fit-content';
+    }
+    interface SrBreadcrumb {
+    }
+    interface SrBreadcrumbItem {
+        "href"?: string;
+        "isLastItem": boolean;
+        "name": string;
     }
     interface SrButton {
         "isDisabled": boolean;
@@ -276,6 +283,7 @@ export namespace Components {
         "orientation": 'vertical' | 'horizontal';
     }
     interface SrText {
+        "_hoverColor"?: any;
         /**
           * Specify wrapper HTML element
          */
@@ -303,6 +311,7 @@ export namespace Components {
           * Control font weight
          */
         "fontWeight": 'regular' | 'bold' | 'extraBold';
+        "isClickable": boolean;
         /**
           * Define the space between characters in a text
          */
@@ -358,6 +367,10 @@ export namespace Components {
          */
         "helperText"?: string;
         /**
+          * Error State
+         */
+        "isError": boolean;
+        /**
           * Text label to place alongside the input
          */
         "label"?: string;
@@ -376,6 +389,10 @@ export namespace Components {
          */
         "isDisabled": boolean;
         /**
+          * Indicate Error state
+         */
+        "isError": boolean;
+        /**
           * Indicate whether this text field is readonly or not
          */
         "isReadOnly": boolean;
@@ -383,6 +400,10 @@ export namespace Components {
           * Indicate whether this text field is required or not
          */
         "isRequired": boolean;
+        /**
+          * Indicate Success state
+         */
+        "isSuccess": boolean;
         /**
           * Text label to place alongside the input
          */
@@ -433,6 +454,18 @@ declare global {
     var HTMLSrBoxElement: {
         prototype: HTMLSrBoxElement;
         new (): HTMLSrBoxElement;
+    };
+    interface HTMLSrBreadcrumbElement extends Components.SrBreadcrumb, HTMLStencilElement {
+    }
+    var HTMLSrBreadcrumbElement: {
+        prototype: HTMLSrBreadcrumbElement;
+        new (): HTMLSrBreadcrumbElement;
+    };
+    interface HTMLSrBreadcrumbItemElement extends Components.SrBreadcrumbItem, HTMLStencilElement {
+    }
+    var HTMLSrBreadcrumbItemElement: {
+        prototype: HTMLSrBreadcrumbItemElement;
+        new (): HTMLSrBreadcrumbItemElement;
     };
     interface HTMLSrButtonElement extends Components.SrButton, HTMLStencilElement {
     }
@@ -515,6 +548,8 @@ declare global {
     interface HTMLElementTagNameMap {
         "sr-anchor": HTMLSrAnchorElement;
         "sr-box": HTMLSrBoxElement;
+        "sr-breadcrumb": HTMLSrBreadcrumbElement;
+        "sr-breadcrumb-item": HTMLSrBreadcrumbItemElement;
         "sr-button": HTMLSrButtonElement;
         "sr-callout": HTMLSrCalloutElement;
         "sr-combobox": HTMLSrComboboxElement;
@@ -593,7 +628,7 @@ declare namespace LocalJSX {
         /**
           * Specify border radius
          */
-        "borderRadius"?: 'rounded' | 'squared';
+        "borderRadius"?: 'full' | 'small' | 'medium';
         /**
           * Specify border width
          */
@@ -682,6 +717,13 @@ declare namespace LocalJSX {
           * Specify width of box component
          */
         "width"?: 'small' | 'medium' | 'large' | 'fit-content';
+    }
+    interface SrBreadcrumb {
+    }
+    interface SrBreadcrumbItem {
+        "href"?: string;
+        "isLastItem"?: boolean;
+        "name"?: string;
     }
     interface SrButton {
         "isDisabled"?: boolean;
@@ -808,6 +850,7 @@ declare namespace LocalJSX {
         "orientation"?: 'vertical' | 'horizontal';
     }
     interface SrText {
+        "_hoverColor"?: any;
         /**
           * Specify wrapper HTML element
          */
@@ -835,6 +878,7 @@ declare namespace LocalJSX {
           * Control font weight
          */
         "fontWeight"?: 'regular' | 'bold' | 'extraBold';
+        "isClickable"?: boolean;
         /**
           * Define the space between characters in a text
          */
@@ -890,6 +934,10 @@ declare namespace LocalJSX {
          */
         "helperText"?: string;
         /**
+          * Error State
+         */
+        "isError"?: boolean;
+        /**
           * Text label to place alongside the input
          */
         "label"?: string;
@@ -912,6 +960,10 @@ declare namespace LocalJSX {
          */
         "isDisabled"?: boolean;
         /**
+          * Indicate Error state
+         */
+        "isError"?: boolean;
+        /**
           * Indicate whether this text field is readonly or not
          */
         "isReadOnly"?: boolean;
@@ -919,6 +971,10 @@ declare namespace LocalJSX {
           * Indicate whether this text field is required or not
          */
         "isRequired"?: boolean;
+        /**
+          * Indicate Success state
+         */
+        "isSuccess"?: boolean;
         /**
           * Text label to place alongside the input
          */
@@ -947,6 +1003,8 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "sr-anchor": SrAnchor;
         "sr-box": SrBox;
+        "sr-breadcrumb": SrBreadcrumb;
+        "sr-breadcrumb-item": SrBreadcrumbItem;
         "sr-button": SrButton;
         "sr-callout": SrCallout;
         "sr-combobox": SrCombobox;
@@ -968,6 +1026,8 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "sr-anchor": LocalJSX.SrAnchor & JSXBase.HTMLAttributes<HTMLSrAnchorElement>;
             "sr-box": LocalJSX.SrBox & JSXBase.HTMLAttributes<HTMLSrBoxElement>;
+            "sr-breadcrumb": LocalJSX.SrBreadcrumb & JSXBase.HTMLAttributes<HTMLSrBreadcrumbElement>;
+            "sr-breadcrumb-item": LocalJSX.SrBreadcrumbItem & JSXBase.HTMLAttributes<HTMLSrBreadcrumbItemElement>;
             "sr-button": LocalJSX.SrButton & JSXBase.HTMLAttributes<HTMLSrButtonElement>;
             "sr-callout": LocalJSX.SrCallout & JSXBase.HTMLAttributes<HTMLSrCalloutElement>;
             "sr-combobox": LocalJSX.SrCombobox & JSXBase.HTMLAttributes<HTMLSrComboboxElement>;
