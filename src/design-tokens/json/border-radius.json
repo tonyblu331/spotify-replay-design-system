@@ -5,6 +5,11 @@
       "type": "borderRadius",
       "description": "Small Border radius"
     },
+    "border-radius-md": {
+      "value": "8",
+      "type": "borderRadius",
+      "description": "Border-Radius Medium"
+    },
     "border-radius-full": {
       "value": "50",
       "type": "borderRadius",
