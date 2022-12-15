@@ -8,19 +8,20 @@ export default {
     variant: {
       options: ['default', 'success', 'error'],
       control: { type: 'select' },
-      description:
-        "Help text variant state <br> `'default'` `'success'` `'error'`",
+      description: 'Help text variants <br> `default` `success` `error`',
     },
   },
 };
 
 const Template = args => {
+  const content = args.content;
+  delete args.content;
   const argsProps = Object.entries(args).reduce((prev, [key, value]) => {
     return `${prev} ${key}="${value}"`.trim();
   }, '');
   return `
   <sr-help-text ${argsProps}>
-    ${args.content}
+    ${content}
   </sr-help-text>
 `;
 };
@@ -28,17 +29,17 @@ const Template = args => {
 export const HelpTextDefault = Template.bind({});
 HelpTextDefault.args = {
   variant: 'default',
-  content: 'Helper Text Default Status',
+  content: 'Helpful helptext to help you',
 };
 
 export const HelpTextSuccess = Template.bind({});
 HelpTextSuccess.args = {
   variant: 'success',
-  content: 'Helper Text Valid Status',
+  content: 'Text confirms successful state',
 };
 
 export const HelpTextError = Template.bind({});
 HelpTextError.args = {
   variant: 'error',
-  content: 'Helper Text Invalid Status',
+  content: 'Add more special characters to your password',
 };

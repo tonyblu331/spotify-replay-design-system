@@ -197,6 +197,10 @@ export namespace Components {
          */
         "type": 'note' | 'warning' | 'critical';
     }
+    interface SrCard {
+        "hideBorder": boolean;
+        "title": string;
+    }
     interface SrCombobox {
         /**
           * Text string to add to a label to describe the combobox
@@ -236,17 +240,7 @@ export namespace Components {
         /**
           * The `level` property allows users to indicate what header hierarchy this element is.
          */
-        "level": | 'h1'
-    | 'h2-regular'
-    | 'h2-bold'
-    | 'h3-regular'
-    | 'h3-bold'
-    | 'h4-regular'
-    | 'h4-bold'
-    | 'h5-regular'
-    | 'h5-bold'
-    | 'h6-regular'
-    | 'h6-bold';
+        "level": 1 | 2 | 3 | 4 | 5 | 6 | '1' | '2' | '3' | '4' | '5' | '6';
         /**
           * Provides support for implementing horizontal alignment to the text contained in the header.
          */
@@ -479,6 +473,12 @@ declare global {
         prototype: HTMLSrCalloutElement;
         new (): HTMLSrCalloutElement;
     };
+    interface HTMLSrCardElement extends Components.SrCard, HTMLStencilElement {
+    }
+    var HTMLSrCardElement: {
+        prototype: HTMLSrCardElement;
+        new (): HTMLSrCardElement;
+    };
     interface HTMLSrComboboxElement extends Components.SrCombobox, HTMLStencilElement {
     }
     var HTMLSrComboboxElement: {
@@ -552,6 +552,7 @@ declare global {
         "sr-breadcrumb-item": HTMLSrBreadcrumbItemElement;
         "sr-button": HTMLSrButtonElement;
         "sr-callout": HTMLSrCalloutElement;
+        "sr-card": HTMLSrCardElement;
         "sr-combobox": HTMLSrComboboxElement;
         "sr-flex": HTMLSrFlexElement;
         "sr-heading": HTMLSrHeadingElement;
@@ -760,6 +761,10 @@ declare namespace LocalJSX {
          */
         "type"?: 'note' | 'warning' | 'critical';
     }
+    interface SrCard {
+        "hideBorder"?: boolean;
+        "title"?: string;
+    }
     interface SrCombobox {
         /**
           * Text string to add to a label to describe the combobox
@@ -803,17 +808,7 @@ declare namespace LocalJSX {
         /**
           * The `level` property allows users to indicate what header hierarchy this element is.
          */
-        "level"?: | 'h1'
-    | 'h2-regular'
-    | 'h2-bold'
-    | 'h3-regular'
-    | 'h3-bold'
-    | 'h4-regular'
-    | 'h4-bold'
-    | 'h5-regular'
-    | 'h5-bold'
-    | 'h6-regular'
-    | 'h6-bold';
+        "level"?: 1 | 2 | 3 | 4 | 5 | 6 | '1' | '2' | '3' | '4' | '5' | '6';
         /**
           * Provides support for implementing horizontal alignment to the text contained in the header.
          */
@@ -1007,6 +1002,7 @@ declare namespace LocalJSX {
         "sr-breadcrumb-item": SrBreadcrumbItem;
         "sr-button": SrButton;
         "sr-callout": SrCallout;
+        "sr-card": SrCard;
         "sr-combobox": SrCombobox;
         "sr-flex": SrFlex;
         "sr-heading": SrHeading;
@@ -1030,6 +1026,7 @@ declare module "@stencil/core" {
             "sr-breadcrumb-item": LocalJSX.SrBreadcrumbItem & JSXBase.HTMLAttributes<HTMLSrBreadcrumbItemElement>;
             "sr-button": LocalJSX.SrButton & JSXBase.HTMLAttributes<HTMLSrButtonElement>;
             "sr-callout": LocalJSX.SrCallout & JSXBase.HTMLAttributes<HTMLSrCalloutElement>;
+            "sr-card": LocalJSX.SrCard & JSXBase.HTMLAttributes<HTMLSrCardElement>;
             "sr-combobox": LocalJSX.SrCombobox & JSXBase.HTMLAttributes<HTMLSrComboboxElement>;
             "sr-flex": LocalJSX.SrFlex & JSXBase.HTMLAttributes<HTMLSrFlexElement>;
             "sr-heading": LocalJSX.SrHeading & JSXBase.HTMLAttributes<HTMLSrHeadingElement>;

@@ -56,12 +56,14 @@ It is a simple wrapper component that can create other components such as card.
 
  - [sr-breadcrumb-item](../../nav/sr-breadcrumb-item)
  - [sr-button](../../form/sr-button)
+ - [sr-card](../../displays/sr-card)
 
 ### Graph
 ```mermaid
 graph TD;
   sr-breadcrumb-item --> sr-box
   sr-button --> sr-box
+  sr-card --> sr-box
   style sr-box fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

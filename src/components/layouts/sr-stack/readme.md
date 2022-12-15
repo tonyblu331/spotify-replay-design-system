@@ -34,6 +34,7 @@ along the vertical or horizontal axis.
 graph TD;
   sr-breadcrumb --> sr-stack
   sr-breadcrumb-item --> sr-stack
+  sr-anchor --> sr-stack
   sr-combobox --> sr-stack
   sr-list --> sr-stack
   sr-text-area --> sr-stack

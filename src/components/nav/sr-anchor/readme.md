@@ -22,11 +22,13 @@ Anchor component to redirect to another URL.
 
 ### Depends on
 
+- [sr-stack](../../layouts/sr-stack)
 - [sr-text](../../primitives/sr-text)
 
 ### Graph
 ```mermaid
 graph TD;
+  sr-anchor --> sr-stack
   sr-anchor --> sr-text
   style sr-anchor fill:#f9f,stroke:#333,stroke-width:4px
 ```
