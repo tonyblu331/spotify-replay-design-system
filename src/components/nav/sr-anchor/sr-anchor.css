@@ -1,23 +1,14 @@
+@import '../../../design-tokens/css/_variables.css';
+
 :host {
   display: block;
 }
 
 a {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:hover {
-  text-decoration: none;
-  color: black;
-}
-
-/* TODO CHECK WITH TONY WAT DO FOR EXTERNAL ANCHORS */
-a.external {
-  background-color: #76f4918a;
-}
-
-/* TODO CHECK WITH TONY WAT DO FOR EXTERNAL ANCHORS */
-a.external:hover {
-  background-color: black;
-  color: white;
+  text-decoration: underline;
+  color: var(-sr-color-foundation-ui-green-ui-green-hover);
 }

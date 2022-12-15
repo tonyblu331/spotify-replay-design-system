@@ -1,5 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
-
+import { ColorFoundationNeutralBlack400 } from '../../../design-tokens/js/variables.js';
 /**
  * Anchor component to redirect to another URL.
  * @property `href`
@@ -9,7 +9,7 @@ import { Component, h, Prop } from '@stencil/core';
 @Component({
   tag: 'sr-anchor',
   styleUrl: 'sr-anchor.css',
-  shadow: true,
+  shadow: false,
 })
 export class SRAnchor {
   /**
@@ -31,17 +31,18 @@ export class SRAnchor {
   openInNewTab: boolean = false;
 
   render() {
-    // TODO style conditionally in response to external or remove the prop
     return (
       <a
         target={this.openInNewTab ? '_blank' : '_top'}
         href={this.href}
         class={this.external ? 'external' : ''}
       >
-        <sr-text>
-          <slot></slot>
-        </sr-text>
-        {this.external && '⬈'}
+        <sr-stack orientation="horizontal" gap="spacer-1">
+          <sr-text color={ColorFoundationNeutralBlack400}>
+            <slot></slot>
+          </sr-text>
+          {this.external && ' ⬈'}
+        </sr-stack>
       </a>
     );
   }
