@@ -8,8 +8,8 @@
 ## Overview
 
 Combobox allows selection of a single value from the options specified in the transcluded slot.
-This component expects that the HTML elements passed in the slot are of type <option>
-If you want an empty option to be selectable, add an empty `<option>`. The last option will be the initial selection.
+This component expects that the HTML elements passed in the slot are of type `<option>`, which you can customize with the `disabled` and `selected` properties.
+If no options have the `selected` property, the last option will be selected initially.
 
 ## Properties
 
