@@ -10,6 +10,7 @@ import { ColorFoundationNeutralBlack400 } from '../../../design-tokens/js/variab
   tag: 'sr-anchor',
   styleUrl: 'sr-anchor.css',
   shadow: false,
+  scoped: true,
 })
 export class SRAnchor {
   /**
