@@ -1,23 +1,44 @@
 export default {
   title: 'Components/Form/Help text',
-  // TODOJCS
-  // argTypes: {
-  //   variant: {
-  //     options: ['neutral', 'error'], // Value presets
-  //     control: { type: 'select' }, // Knob type. It can be select, radio, etc
-  //     description: 'The button variant', // The description text displayed in the knobs table
-  //   },
-  // },
+  argTypes: {
+    content: {
+      description: 'Text to be injected in the component slot',
+      control: { type: 'text' },
+    },
+    variant: {
+      options: ['default', 'success', 'error'],
+      control: { type: 'select' },
+      description:
+        "Help text variant state <br> `'default'` `'success'` `'error'`",
+    },
+  },
 };
 
-const Template = args => `
-  <sr-helptext>
+const Template = args => {
+  const argsProps = Object.entries(args).reduce((prev, [key, value]) => {
+    return `${prev} ${key}="${value}"`.trim();
+  }, '');
+  return `
+  <sr-help-text ${argsProps}>
     ${args.content}
-  </sr-helptext>
+  </sr-help-text>
 `;
+};
 
-export const ComponentStory = Template.bind({});
-ComponentStory.args = {
-  // Populate this object with key/value pairs, customizing the component atribute values or even its content. Eg:
-  // content: 'Demo text',
+export const HelpTextDefault = Template.bind({});
+HelpTextDefault.args = {
+  variant: 'default',
+  content: 'Helper Text Default Status',
+};
+
+export const HelpTextSuccess = Template.bind({});
+HelpTextSuccess.args = {
+  variant: 'success',
+  content: 'Helper Text Valid Status',
+};
+
+export const HelpTextError = Template.bind({});
+HelpTextError.args = {
+  variant: 'error',
+  content: 'Helper Text Invalid Status',
 };

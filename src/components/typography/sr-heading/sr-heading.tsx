@@ -60,7 +60,7 @@ export class SRHeading {
    * Specify text color
    */
   @Prop({ reflect: true })
-  color: 'black' | 'white' = 'black';
+  color?;
 
   getFontSize() {
     switch (this.level) {
@@ -225,7 +225,7 @@ export class SRHeading {
         fontSize={this.getFontSize()}
         fontWeight={this.getFontWeight() as any}
         aria-role="heading"
-        color={this.color}
+        color={this.color ? this.color : null}
         class={tagStyles}
       >
         <slot></slot>

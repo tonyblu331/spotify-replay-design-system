@@ -2,7 +2,6 @@ import { Component, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
 import {
   ColorFoundationNeutralPureBlack,
-  ColorFoundationNeutralPureWhite,
   SpacerSpacerH1,
   SpacerSpacerH2,
   SpacerSpacerH3,
@@ -43,7 +42,7 @@ export class SRText {
    * Specify font color
    */
   @Prop({ reflect: true })
-  color: 'black' | 'white';
+  color?;
 
   /**
    * Specify font size
@@ -143,14 +142,10 @@ export class SRText {
   }
 
   getFontColor() {
-    switch (this.color) {
-      case 'black':
-        return ColorFoundationNeutralPureBlack;
-      case 'white':
-        return ColorFoundationNeutralPureWhite;
-      default:
-        break;
+    if (!this.color) {
+      return ColorFoundationNeutralPureBlack;
     }
+    return this.color;
   }
 
   getSpacer(variant) {

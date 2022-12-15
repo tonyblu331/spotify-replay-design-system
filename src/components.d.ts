@@ -229,7 +229,7 @@ export namespace Components {
         /**
           * Specify text color
          */
-        "color": 'black' | 'white';
+        "color"?: any;
         /**
           * The `level` property allows users to indicate what header hierarchy this element is.
          */
@@ -249,7 +249,8 @@ export namespace Components {
          */
         "textAlign": 'left' | 'right' | 'center' | 'justify';
     }
-    interface SrHelptext {
+    interface SrHelpText {
+        "variant": 'default' | 'error' | 'success';
     }
     interface SrList {
         /**
@@ -288,7 +289,7 @@ export namespace Components {
         /**
           * Specify font color
          */
-        "color": 'black' | 'white';
+        "color"?: any;
         /**
           * Specify font size
          */
@@ -412,11 +413,11 @@ declare global {
         prototype: HTMLSrHeadingElement;
         new (): HTMLSrHeadingElement;
     };
-    interface HTMLSrHelptextElement extends Components.SrHelptext, HTMLStencilElement {
+    interface HTMLSrHelpTextElement extends Components.SrHelpText, HTMLStencilElement {
     }
-    var HTMLSrHelptextElement: {
-        prototype: HTMLSrHelptextElement;
-        new (): HTMLSrHelptextElement;
+    var HTMLSrHelpTextElement: {
+        prototype: HTMLSrHelpTextElement;
+        new (): HTMLSrHelpTextElement;
     };
     interface HTMLSrListElement extends Components.SrList, HTMLStencilElement {
     }
@@ -456,7 +457,7 @@ declare global {
         "sr-combobox": HTMLSrComboboxElement;
         "sr-flex": HTMLSrFlexElement;
         "sr-heading": HTMLSrHeadingElement;
-        "sr-helptext": HTMLSrHelptextElement;
+        "sr-help-text": HTMLSrHelpTextElement;
         "sr-list": HTMLSrListElement;
         "sr-paragraph": HTMLSrParagraphElement;
         "sr-stack": HTMLSrStackElement;
@@ -695,7 +696,7 @@ declare namespace LocalJSX {
         /**
           * Specify text color
          */
-        "color"?: 'black' | 'white';
+        "color"?: any;
         /**
           * The `level` property allows users to indicate what header hierarchy this element is.
          */
@@ -715,7 +716,8 @@ declare namespace LocalJSX {
          */
         "textAlign"?: 'left' | 'right' | 'center' | 'justify';
     }
-    interface SrHelptext {
+    interface SrHelpText {
+        "variant"?: 'default' | 'error' | 'success';
     }
     interface SrList {
         /**
@@ -754,7 +756,7 @@ declare namespace LocalJSX {
         /**
           * Specify font color
          */
-        "color"?: 'black' | 'white';
+        "color"?: any;
         /**
           * Specify font size
          */
@@ -834,7 +836,7 @@ declare namespace LocalJSX {
         "sr-combobox": SrCombobox;
         "sr-flex": SrFlex;
         "sr-heading": SrHeading;
-        "sr-helptext": SrHelptext;
+        "sr-help-text": SrHelpText;
         "sr-list": SrList;
         "sr-paragraph": SrParagraph;
         "sr-stack": SrStack;
@@ -853,7 +855,7 @@ declare module "@stencil/core" {
             "sr-combobox": LocalJSX.SrCombobox & JSXBase.HTMLAttributes<HTMLSrComboboxElement>;
             "sr-flex": LocalJSX.SrFlex & JSXBase.HTMLAttributes<HTMLSrFlexElement>;
             "sr-heading": LocalJSX.SrHeading & JSXBase.HTMLAttributes<HTMLSrHeadingElement>;
-            "sr-helptext": LocalJSX.SrHelptext & JSXBase.HTMLAttributes<HTMLSrHelptextElement>;
+            "sr-help-text": LocalJSX.SrHelpText & JSXBase.HTMLAttributes<HTMLSrHelpTextElement>;
             "sr-list": LocalJSX.SrList & JSXBase.HTMLAttributes<HTMLSrListElement>;
             "sr-paragraph": LocalJSX.SrParagraph & JSXBase.HTMLAttributes<HTMLSrParagraphElement>;
             "sr-stack": LocalJSX.SrStack & JSXBase.HTMLAttributes<HTMLSrStackElement>;

@@ -10,7 +10,7 @@
 | Property        | Attribute       | Description                                                           | Type                                                                                                                                                                                                                                                                                                   | Default      |
 | --------------- | --------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ |
 | `as`            | `as`            | Specify wrapper HTML element                                          | `"blockquote" \| "caption" \| "div" \| "endnote" \| "h1" \| "h2" \| "h3" \| "h4" \| "h5" \| "h6" \| "p" \| "span"`                                                                                                                                                                                     | `'div'`      |
-| `color`         | `color`         | Specify font color                                                    | `"black" \| "white"`                                                                                                                                                                                                                                                                                   | `undefined`  |
+| `color`         | `color`         | Specify font color                                                    | `any`                                                                                                                                                                                                                                                                                                  | `undefined`  |
 | `fontSize`      | `fontsize`      | Specify font size                                                     | `"spacer-0" \| "spacer-1" \| "spacer-2" \| "spacer-3" \| "spacer-4" \| "spacer-5" \| "spacer-6" \| "spacer-7" \| "spacer-8" \| "spacer-blockquote" \| "spacer-caption" \| "spacer-endnote" \| "spacer-h1" \| "spacer-h2" \| "spacer-h3" \| "spacer-h4" \| "spacer-h5" \| "spacer-h6" \| "spacer-text"` | `undefined`  |
 | `fontWeight`    | `fontweight`    | Control font weight                                                   | `"bold" \| "extraBold" \| "regular"`                                                                                                                                                                                                                                                                   | `'regular'`  |
 | `letterSpacing` | `letterspacing` | Define the space between characters in a text                         | `number`                                                                                                                                                                                                                                                                                               | `undefined`  |
@@ -33,6 +33,7 @@
 
  - [sr-button](../../form/sr-button)
  - [sr-heading](../../typography/sr-heading)
+ - [sr-help-text](../../form/sr-helptext)
  - [sr-list](../../text/sr-list)
  - [sr-paragraph](../../typography/sr-paragraph)
  - [sr-text-input](../../form/sr-textinput)
@@ -42,6 +43,7 @@
 graph TD;
   sr-button --> sr-text
   sr-heading --> sr-text
+  sr-help-text --> sr-text
   sr-list --> sr-text
   sr-paragraph --> sr-text
   sr-text-input --> sr-text
