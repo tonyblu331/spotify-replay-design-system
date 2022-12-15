@@ -3,12 +3,17 @@
     "border-radius-sm": {
       "value": "4",
       "type": "borderRadius",
-      "description": "Small Border radius"
+      "description": "Border-Radius Small"
     },
     "border-radius-md": {
       "value": "8",
       "type": "borderRadius",
       "description": "Border-Radius Medium"
+    },
+    "border-radius-big": {
+      "value": "16",
+      "type": "borderRadius",
+      "description": "Border-Radius Big"
     },
     "border-radius-full": {
       "value": "50",
