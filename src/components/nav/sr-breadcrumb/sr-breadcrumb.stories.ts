@@ -22,3 +22,6 @@ const Template = args => `
 `;
 
 export const Breadcrumb = Template.bind({});
+Breadcrumb.args = {
+  selectedItem: 'Breadcrumb 2',
+};
