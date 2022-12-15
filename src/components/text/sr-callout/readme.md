@@ -9,6 +9,7 @@
 
 Callout components provide a way to draw the user's attention.
 The available types are 'note', 'warning', and 'critical'.
+TODOJCS clarify with Tony
 
 ## Properties
 

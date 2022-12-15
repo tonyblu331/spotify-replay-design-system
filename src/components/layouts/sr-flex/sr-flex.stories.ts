@@ -57,8 +57,8 @@ function renderCard(items) {
         ? 'var(--sr-color-foundation-ui-green-ui-green)'
         : 'var(--sr-color-foundation-blue-blue-300)';
     temp += `<sr-box backgroundColor="${color}" padding="spacer-3">
-      <sr-heading level="h3-bold">Header ${i + 1}</sr-heading>
-      <sr-text>Show content here!</sr-text>
+      <sr-heading level="2">Header ${i + 1}</sr-heading>
+      <sr-paragraph>Show content here!</sr-paragraph>
     </sr-box>`;
   }
   return temp;

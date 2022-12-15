@@ -28,7 +28,7 @@ import {
 })
 export class SRCard {
   @Prop()
-  title: string = '';
+  heading: string = '';
 
   @Prop({ reflect: true, attribute: 'hideBorder' })
   hideBorder: boolean = false;
@@ -48,7 +48,7 @@ export class SRCard {
   render() {
     return (
       <sr-box class={this.boxStyles()}>
-        <sr-heading level={3}>{this.title}</sr-heading>
+        <sr-heading level={3}>{this.heading}</sr-heading>
         <slot></slot>
       </sr-box>
     );

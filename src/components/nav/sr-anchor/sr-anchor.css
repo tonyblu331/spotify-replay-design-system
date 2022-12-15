@@ -6,9 +6,10 @@
 
 a {
   text-decoration: none;
+  color: var(--sr-color-foundation-neutral-black-400);
 }
 
 a:hover {
+  color: var(--sr-color-foundation-ui-green-ui-green-hover);
   text-decoration: underline;
-  color: var(-sr-color-foundation-ui-green-ui-green-hover);
 }

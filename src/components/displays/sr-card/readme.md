@@ -14,8 +14,8 @@ into a container. Add a heading title with the `title` property, and introduce o
 
 | Property     | Attribute    | Description | Type      | Default |
 | ------------ | ------------ | ----------- | --------- | ------- |
+| `heading`    | `heading`    |             | `string`  | `''`    |
 | `hideBorder` | `hideborder` |             | `boolean` | `false` |
-| `title`      | `title`      |             | `string`  | `''`    |
 
 
 ## Dependencies

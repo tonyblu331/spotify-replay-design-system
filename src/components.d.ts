@@ -198,8 +198,8 @@ export namespace Components {
         "type": 'note' | 'warning' | 'critical';
     }
     interface SrCard {
+        "heading": string;
         "hideBorder": boolean;
-        "title": string;
     }
     interface SrCombobox {
         /**
@@ -762,8 +762,8 @@ declare namespace LocalJSX {
         "type"?: 'note' | 'warning' | 'critical';
     }
     interface SrCard {
+        "heading"?: string;
         "hideBorder"?: boolean;
-        "title"?: string;
     }
     interface SrCombobox {
         /**
