@@ -192,13 +192,9 @@ export namespace Components {
     }
     interface SrCombobox {
         /**
-          * If true, the checkbox will allow the selection of an empty value
-         */
-        "allowEmpty": boolean;
-        /**
           * Text string to add to a label to describe the combobox
          */
-        "labelText"?: string;
+        "label"?: string;
     }
     interface SrFlex {
         /**
@@ -695,13 +691,9 @@ declare namespace LocalJSX {
     }
     interface SrCombobox {
         /**
-          * If true, the checkbox will allow the selection of an empty value
-         */
-        "allowEmpty"?: boolean;
-        /**
           * Text string to add to a label to describe the combobox
          */
-        "labelText"?: string;
+        "label"?: string;
         /**
           * Emitted when the one of the options in the combobox is selected
          */

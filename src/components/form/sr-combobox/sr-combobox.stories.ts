@@ -5,7 +5,7 @@ export default {
       description:
         'The available options for selection. Please wrap each option in a pair of `<option>` tags',
     },
-    labelText: {
+    label: {
       control: 'text',
       description:
         'The text to add to the label that is paired with the combo box',
@@ -19,10 +19,14 @@ export default {
 };
 
 // prettier-ignore
-const Template = ({ labelText, options, allowEmpty }) =>
-  `<sr-combobox ${labelText ? `labelText="${labelText}"` : ''}${allowEmpty ?' allowEmpty' : ''}>
-    ${options}
-  <sr-combobox/>`;
+const Template = (args) => {
+  const options = args.options
+  delete(args.options)
+  const propsString = Object.entries(args).reduce((prev, [key, value]) => `${prev} ${key}="${value}"`.trim(), '');
+  return `<sr-combobox ${propsString}>
+            ${options}
+          </sr-combobox>`
+}
 
 export const Labelless = Template.bind({});
 Labelless.args = {
@@ -33,6 +37,6 @@ Labelless.args = {
 export const Labelled = Template.bind({});
 Labelled.args = {
   options: `<option>Avatar</option> <option>Ghost in the Shell</option> <option>Memento</option>`,
-  labelText: 'My favorite movie',
+  label: 'My favorite movie',
   allowEmpty: false,
 };

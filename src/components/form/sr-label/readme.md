@@ -20,6 +20,7 @@ The `<sr-label>` component is a caption that helps provide context regarding fie
 
 ### Used by
 
+ - [sr-combobox](../sr-combobox)
  - [sr-text-input](../sr-textinput)
 
 ### Depends on
@@ -30,6 +31,7 @@ The `<sr-label>` component is a caption that helps provide context regarding fie
 ```mermaid
 graph TD;
   sr-label --> sr-text
+  sr-combobox --> sr-label
   sr-text-input --> sr-label
   style sr-label fill:#f9f,stroke:#333,stroke-width:4px
 ```

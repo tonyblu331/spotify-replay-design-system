@@ -9,13 +9,13 @@
 
 Combobox allows selection of a single value from the options specified in the transcluded slot.
 This component expects that the HTML elements passed in the slot are of type <option>
+If you want an empty option to be selectable, add an empty `<option>`. The last option will be the initial selection.
 
 ## Properties
 
-| Property     | Attribute     | Description                                                      | Type      | Default     |
-| ------------ | ------------- | ---------------------------------------------------------------- | --------- | ----------- |
-| `allowEmpty` | `allow-empty` | If true, the checkbox will allow the selection of an empty value | `boolean` | `true`      |
-| `labelText`  | `label-text`  | Text string to add to a label to describe the combobox           | `string`  | `undefined` |
+| Property | Attribute | Description                                            | Type     | Default     |
+| -------- | --------- | ------------------------------------------------------ | -------- | ----------- |
+| `label`  | `label`   | Text string to add to a label to describe the combobox | `string` | `undefined` |
 
 
 ## Events
@@ -24,6 +24,22 @@ This component expects that the HTML elements passed in the slot are of type <op
 | ---------- | --------------------------------------------------------------- | ------------------ |
 | `selected` | Emitted when the one of the options in the combobox is selected | `CustomEvent<any>` |
 
+
+## Dependencies
+
+### Depends on
+
+- [sr-stack](../../layouts/sr-stack)
+- [sr-label](../sr-label)
+
+### Graph
+```mermaid
+graph TD;
+  sr-combobox --> sr-stack
+  sr-combobox --> sr-label
+  sr-label --> sr-text
+  style sr-combobox fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

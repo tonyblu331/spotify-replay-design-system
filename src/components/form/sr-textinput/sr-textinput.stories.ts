@@ -39,16 +39,18 @@ export default {
 };
 
 const Template = args => {
-  const argsProps = Object.entries(args).reduce((prev, [key, value]) => {
-    return `${prev} ${key}="${value}"`.trim();
-  }, '');
-  return ` <sr-text-input ${argsProps} />`;
+  const argsProps = Object.entries(args).reduce(
+    (prev, [key, value]) => `${prev} ${key}="${value}"`.trim(),
+    '',
+  );
+  return `<sr-text-input ${argsProps} />`;
 };
 
 export const SquaredInputText = Template.bind({});
 SquaredInputText.args = {
   label: 'My favorite genre',
   placeholder: 'e.g. ska',
+  variant: 'squared',
   value: '',
 };
 
@@ -57,6 +59,6 @@ RoundedInputText.args = {
   label: 'My favorite genre',
   placeholder: 'e.g. ska',
   helperText: 'Please insert your favorite genre',
-  variant: 'roundedInput',
+  variant: 'rounded',
   value: '',
 };

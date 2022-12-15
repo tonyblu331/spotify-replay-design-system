@@ -22,12 +22,14 @@ along the vertical or horizontal axis.
 
 ### Used by
 
+ - [sr-combobox](../../form/sr-combobox)
  - [sr-list](../../text/sr-list)
  - [sr-text-input](../../form/sr-textinput)
 
 ### Graph
 ```mermaid
 graph TD;
+  sr-combobox --> sr-stack
   sr-list --> sr-stack
   sr-text-input --> sr-stack
   style sr-stack fill:#f9f,stroke:#333,stroke-width:4px
