@@ -39,6 +39,46 @@
       "value": "64",
       "type": "spacing",
       "description": "64px Padding"
+    },
+    "spacer-h1": {
+      "value": "34.78px",
+      "type": "spacing",
+      "description": "Margin-Bottom for H1"
+    },
+    "spacer-h2": {
+      "value": "26.6",
+      "type": "spacing",
+      "description": "Margin-Bottom for H2"
+    },
+    "spacer-h3": {
+      "value": "18.60",
+      "type": "spacing",
+      "description": "Margin-Bottom for H3"
+    },
+    "spacer-h4": {
+      "value": "26.6",
+      "type": "spacing",
+      "description": "Margin-Bottom for H4"
+    },
+    "spacer-h5": {
+      "value": "22.85",
+      "type": "spacing",
+      "description": "Margin-Bottom for H5"
+    },
+    "spacer-text": {
+      "value": "21.3",
+      "type": "spacing",
+      "description": "Margin-Bottom for H6, Blockquote, and Body."
+    },
+    "spacer-caption": {
+      "value": "17.39",
+      "type": "spacing",
+      "description": "Margin-bottom for Caption"
+    },
+    "spacer-endnote": {
+      "value": "16",
+      "type": "spacing",
+      "description": "Margin-Bottom for Endnote"
     }
   }
 }
