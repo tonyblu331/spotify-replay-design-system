@@ -1,7 +1,6 @@
 import { Component, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
 import {
-  ColorFoundationNeutralPureBlack,
   SpacerSpacerH1,
   SpacerSpacerH2,
   SpacerSpacerH3,
@@ -142,9 +141,6 @@ export class SRText {
   }
 
   getFontColor() {
-    if (!this.color) {
-      return ColorFoundationNeutralPureBlack;
-    }
     return this.color;
   }
 

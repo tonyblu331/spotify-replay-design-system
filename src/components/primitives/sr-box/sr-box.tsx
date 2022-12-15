@@ -127,8 +127,8 @@ export class SRBox {
   /**
    * Specify text color inside box component
    */
-  @Prop({ reflect: true })
-  color = ColorFoundationNeutralBlack400;
+  @Prop({ reflect: true, attribute: 'color' })
+  color? = ColorFoundationNeutralBlack400;
 
   /**
    * Enable or disable border around box component
@@ -376,6 +376,8 @@ export class SRBox {
   }
 
   renderStyling() {
+    console.log(this.color, 'color');
+
     return css`
       width: ${this.widthHandler()};
       height: ${this.heightHandler()};

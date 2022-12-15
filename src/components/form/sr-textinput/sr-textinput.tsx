@@ -2,7 +2,7 @@ import { css } from '@emotion/css';
 import { Component, Event, h, Prop } from '@stencil/core';
 import {
   SpacerSpacer2,
-  BorderRadiusBorderRadiusSm,
+  // BorderRadiusBorderRadiusSm,
   BorderRadiusBorderRadiusFull,
   ColorFoundationNeutralBlack200,
   ColorFoundationNeutralGray400,
@@ -50,7 +50,7 @@ export class SRTextInput {
    *  The text to display when the input is empty
    */
   @Prop()
-  placeholder: string = 'Input text';
+  placeholder: string = 'Placeholder text';
 
   /**
    *  Indicate whether this text field is required or not
@@ -105,7 +105,7 @@ export class SRTextInput {
           : ColorFoundationNeutralBlack200};
       border-radius: ${this.variant === 'rounded'
         ? BorderRadiusBorderRadiusFull
-        : BorderRadiusBorderRadiusSm}px;
+        : 4}px;
       margin: 5px 0;
 
       ::placeholder {

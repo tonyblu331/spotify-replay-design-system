@@ -81,7 +81,7 @@ export namespace Components {
         /**
           * Specify text color inside box component
          */
-        "color": any;
+        "color"?: any;
         /**
           * Specify height of box component
          */
