@@ -352,6 +352,20 @@ export namespace Components {
          */
         "paddingTop"?: SPACE_TEXT;
     }
+    interface SrTextArea {
+        /**
+          * Indicate the purpose of the text field
+         */
+        "helperText"?: string;
+        /**
+          * Text label to place alongside the input
+         */
+        "label"?: string;
+        /**
+          * The text to display when the input is empty
+         */
+        "placeholder": string;
+    }
     interface SrTextInput {
         /**
           * Indicate the purpose of the text field
@@ -398,6 +412,10 @@ export interface SrButtonCustomEvent<T> extends CustomEvent<T> {
 export interface SrComboboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLSrComboboxElement;
+}
+export interface SrTextAreaCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLSrTextAreaElement;
 }
 export interface SrTextInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -482,6 +500,12 @@ declare global {
         prototype: HTMLSrTextElement;
         new (): HTMLSrTextElement;
     };
+    interface HTMLSrTextAreaElement extends Components.SrTextArea, HTMLStencilElement {
+    }
+    var HTMLSrTextAreaElement: {
+        prototype: HTMLSrTextAreaElement;
+        new (): HTMLSrTextAreaElement;
+    };
     interface HTMLSrTextInputElement extends Components.SrTextInput, HTMLStencilElement {
     }
     var HTMLSrTextInputElement: {
@@ -502,6 +526,7 @@ declare global {
         "sr-paragraph": HTMLSrParagraphElement;
         "sr-stack": HTMLSrStackElement;
         "sr-text": HTMLSrTextElement;
+        "sr-text-area": HTMLSrTextAreaElement;
         "sr-text-input": HTMLSrTextInputElement;
     }
 }
@@ -859,6 +884,24 @@ declare namespace LocalJSX {
          */
         "paddingTop"?: SPACE_TEXT;
     }
+    interface SrTextArea {
+        /**
+          * Indicate the purpose of the text field
+         */
+        "helperText"?: string;
+        /**
+          * Text label to place alongside the input
+         */
+        "label"?: string;
+        /**
+          * Emitted when the input's value changes
+         */
+        "on_change"?: (event: SrTextAreaCustomEvent<any>) => void;
+        /**
+          * The text to display when the input is empty
+         */
+        "placeholder"?: string;
+    }
     interface SrTextInput {
         /**
           * Indicate the purpose of the text field
@@ -915,6 +958,7 @@ declare namespace LocalJSX {
         "sr-paragraph": SrParagraph;
         "sr-stack": SrStack;
         "sr-text": SrText;
+        "sr-text-area": SrTextArea;
         "sr-text-input": SrTextInput;
     }
 }
@@ -935,6 +979,7 @@ declare module "@stencil/core" {
             "sr-paragraph": LocalJSX.SrParagraph & JSXBase.HTMLAttributes<HTMLSrParagraphElement>;
             "sr-stack": LocalJSX.SrStack & JSXBase.HTMLAttributes<HTMLSrStackElement>;
             "sr-text": LocalJSX.SrText & JSXBase.HTMLAttributes<HTMLSrTextElement>;
+            "sr-text-area": LocalJSX.SrTextArea & JSXBase.HTMLAttributes<HTMLSrTextAreaElement>;
             "sr-text-input": LocalJSX.SrTextInput & JSXBase.HTMLAttributes<HTMLSrTextInputElement>;
         }
     }

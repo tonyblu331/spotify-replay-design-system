@@ -7,7 +7,7 @@
 
 ## Overview
 
-Text input that emits event on change
+A <sr-text-input> component is an input component used to enter critical information required to use the service or user information.
 
 ## Properties
 

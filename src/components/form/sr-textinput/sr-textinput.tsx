@@ -2,7 +2,6 @@ import { css } from '@emotion/css';
 import { Component, Event, h, Prop } from '@stencil/core';
 import {
   SpacerSpacer2,
-  // BorderRadiusBorderRadiusSm,
   BorderRadiusBorderRadiusFull,
   ColorFoundationNeutralBlack200,
   ColorFoundationNeutralGray400,
@@ -11,7 +10,7 @@ import {
   ColorFoundationUiGreenUiGreen,
 } from '../../../design-tokens/js/variables.js';
 /**
- * Text input that emits event on change
+ *  A <sr-text-input> component is an input component used to enter critical information required to use the service or user information.
  * @property `label`
  * @property `placeholder` (default 'Input text')
  * @emits `change`

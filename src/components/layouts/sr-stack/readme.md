@@ -24,6 +24,7 @@ along the vertical or horizontal axis.
 
  - [sr-combobox](../../form/sr-combobox)
  - [sr-list](../../text/sr-list)
+ - [sr-text-area](../../form/sr-text-area)
  - [sr-text-input](../../form/sr-textinput)
 
 ### Graph
@@ -31,6 +32,7 @@ along the vertical or horizontal axis.
 graph TD;
   sr-combobox --> sr-stack
   sr-list --> sr-stack
+  sr-text-area --> sr-stack
   sr-text-input --> sr-stack
   style sr-stack fill:#f9f,stroke:#333,stroke-width:4px
 ```

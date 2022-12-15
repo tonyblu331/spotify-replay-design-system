@@ -20,6 +20,7 @@ The `<sr-help-text>` component is a guideline that helps provide context regardi
 
 ### Used by
 
+ - [sr-text-area](../sr-text-area)
  - [sr-text-input](../sr-textinput)
 
 ### Depends on
@@ -30,6 +31,7 @@ The `<sr-help-text>` component is a guideline that helps provide context regardi
 ```mermaid
 graph TD;
   sr-help-text --> sr-text
+  sr-text-area --> sr-help-text
   sr-text-input --> sr-help-text
   style sr-help-text fill:#f9f,stroke:#333,stroke-width:4px
 ```
