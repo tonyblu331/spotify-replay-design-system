@@ -165,14 +165,20 @@ export namespace Components {
         /**
           * Type of button.
          */
-        "variant": | 'roundBtn'
+        "variant": | 'roundedBtn'
     | 'squaredBtn'
     | 'outlinedRoundBtn'
     | 'outlinedSquaredBtn'
     | 'blackRoundButton'
     | 'blackSquaredBtn'
     | 'blackOutlinedRoundBtn'
-    | 'blackOutlinedSquaredBtn';
+    | 'blackOutlinedSquaredBtn'
+    | 'roundedBtnWithWhiteText'
+    | 'squaredBtnWithWhiteText'
+    | 'whiteRoundedBtn'
+    | 'whiteSquaredBtn'
+    | 'whiteOutlineRoundedBtn'
+    | 'whiteOutlineSquaredBtn';
     }
     interface SrCallout {
         /**
@@ -621,14 +627,20 @@ declare namespace LocalJSX {
         /**
           * Type of button.
          */
-        "variant"?: | 'roundBtn'
+        "variant"?: | 'roundedBtn'
     | 'squaredBtn'
     | 'outlinedRoundBtn'
     | 'outlinedSquaredBtn'
     | 'blackRoundButton'
     | 'blackSquaredBtn'
     | 'blackOutlinedRoundBtn'
-    | 'blackOutlinedSquaredBtn';
+    | 'blackOutlinedSquaredBtn'
+    | 'roundedBtnWithWhiteText'
+    | 'squaredBtnWithWhiteText'
+    | 'whiteRoundedBtn'
+    | 'whiteSquaredBtn'
+    | 'whiteOutlineRoundedBtn'
+    | 'whiteOutlineSquaredBtn';
     }
     interface SrCallout {
         /**

@@ -22,14 +22,20 @@ export class SRButton {
    */
   @Prop()
   variant:
-    | 'roundBtn'
+    | 'roundedBtn'
     | 'squaredBtn'
     | 'outlinedRoundBtn'
     | 'outlinedSquaredBtn'
     | 'blackRoundButton'
     | 'blackSquaredBtn'
     | 'blackOutlinedRoundBtn'
-    | 'blackOutlinedSquaredBtn' = 'roundBtn';
+    | 'blackOutlinedSquaredBtn'
+    | 'roundedBtnWithWhiteText'
+    | 'squaredBtnWithWhiteText'
+    | 'whiteRoundedBtn'
+    | 'whiteSquaredBtn'
+    | 'whiteOutlineRoundedBtn'
+    | 'whiteOutlineSquaredBtn' = 'roundedBtn';
 
   @Prop({ reflect: true, attribute: 'isDisabled' })
   isDisabled: boolean = false;
@@ -46,8 +52,6 @@ export class SRButton {
   }
 
   renderText() {
-    console.log(this.text);
-
     return <sr-text fontWeight="bold">{this.text}</sr-text>;
   }
 

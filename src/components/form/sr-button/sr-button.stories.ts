@@ -7,7 +7,7 @@ export default {
     },
     variant: {
       options: [
-        'roundBtn',
+        'roundedBtn',
         'squaredBtn',
         'outlinedRoundBtn',
         'outlinedSquaredBtn',
@@ -15,10 +15,16 @@ export default {
         'blackSquaredBtn',
         'blackOutlinedRoundBtn',
         'blackOutlinedSquaredBtn',
+        'roundedBtnWithWhiteText',
+        'squaredBtnWithWhiteText',
+        'whiteRoundedBtn',
+        'whiteSquaredBtn',
+        'whiteOutlineRoundedBtn',
+        'whiteOutlineSquaredBtn',
       ],
       control: { type: 'select' },
       description:
-        "The button variant <br> `'roundBtn'` `'squaredBtn'` `'outlinedRoundBtn'` `'outlinedSquaredBtn'` `'blackRoundButton'` `'blackSquaredBtn'` `'blackOutlinedRoundBtn'` `'blackOutlinedSquaredBtn'`",
+        "The button variant <br> `'roundedBtn'` `'squaredBtn'` `'outlinedRoundBtn'` `'outlinedSquaredBtn'` `'blackRoundButton'` `'blackSquaredBtn'` `'blackOutlinedRoundBtn'` `'blackOutlinedSquaredBtn'` `'roundedBtnWithWhiteText'` `'squaredBtnWithWhiteText'` `'whiteRoundedBtn'` `'whiteSquaredBtn'` `whiteOutlineRoundedBtn` `'whiteOutlineSquaredBtn'`",
     },
     isDisabled: {
       control: { type: 'boolean' },
@@ -39,7 +45,7 @@ const Template = args => {
 
 export const RoundedButton = Template.bind({});
 RoundedButton.args = {
-  variant: 'roundBtn',
+  variant: 'roundedBtn',
 };
 
 export const SquaredButton = Template.bind({});
@@ -70,4 +76,34 @@ BlackOutlineRoundedButton.args = {
 export const BlackOutlinedSquaredButton = Template.bind({});
 BlackOutlinedSquaredButton.args = {
   variant: 'blackOutlinedSquaredBtn',
+};
+
+export const RoundedButtonWithWhiteText = Template.bind({});
+RoundedButtonWithWhiteText.args = {
+  variant: 'roundedBtnWithWhiteText',
+};
+
+export const SquaredButtonWithWhiteText = Template.bind({});
+SquaredButtonWithWhiteText.args = {
+  variant: 'squaredBtnWithWhiteText',
+};
+
+export const WhiteRoundedButton = Template.bind({});
+WhiteRoundedButton.args = {
+  variant: 'whiteRoundedBtn',
+};
+
+export const WhiteSquaredButton = Template.bind({});
+WhiteSquaredButton.args = {
+  variant: 'whiteSquaredBtn',
+};
+
+export const WhiteOutlineRoundedButton = Template.bind({});
+WhiteOutlineRoundedButton.args = {
+  variant: 'whiteOutlineRoundedBtn',
+};
+
+export const WhiteOutlineSquaredButton = Template.bind({});
+WhiteOutlineSquaredButton.args = {
+  variant: 'whiteOutlineSquaredBtn',
 };

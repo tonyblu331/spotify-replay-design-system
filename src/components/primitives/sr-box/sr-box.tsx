@@ -374,8 +374,6 @@ export class SRBox {
   }
 
   renderStyling() {
-    console.log(this.isBorder);
-
     return css`
       width: ${this.widthHandler()};
       height: ${this.heightHandler()};

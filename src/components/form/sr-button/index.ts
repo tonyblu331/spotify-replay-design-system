@@ -15,10 +15,13 @@ import {
   ColorFoundationNeutralWhite300,
   ColorFoundationNeutralWhite200,
   ColorFoundationUiGreenUiGreenDarkHover,
+  ColorFoundationNeutralWhite50,
+  ColorFoundationNeutralGray100,
+  ColorFoundationNeutralPureBlack,
 } from '../../../design-tokens/js/variables.js';
 
 export const ButtonType = {
-  roundBtn: {
+  roundedBtn: {
     default: {
       backgroundColor: ColorFoundationUiGreenUiGreen,
       isBorder: false,
@@ -294,6 +297,210 @@ export const ButtonType = {
       backgroundColor: ColorFoundationNeutralWhite300,
       isBorder: false,
       color: ColorFoundationNeutralBlack100,
+    },
+  },
+  roundedBtnWithWhiteText: {
+    default: {
+      backgroundColor: ColorFoundationUiGreenUiGreen,
+      isBorder: false,
+      color: ColorFoundationNeutralPureWhite,
+      borderRadius: 'rounded',
+    },
+    hover: {
+      backgroundColor: ColorFoundationUiGreenUiGreenHover,
+      isBorder: true,
+      borderColor: ColorFoundationUiGreenUiGreenHover,
+      color: ColorFoundationNeutralPureWhite,
+      borderWidth: 'thick',
+    },
+    pressed: {
+      backgroundColor: ColorFoundationUiGreenUiGreenDark,
+      isBorder: false,
+      color: ColorFoundationNeutralPureWhite,
+      borderWidth: null,
+    },
+    focused: {
+      backgroundColor: ColorFoundationUiGreenUiGreen,
+      isBorder: true,
+      borderColor: ColorFoundationUiGreenUiGreenDarkActive,
+      color: ColorFoundationNeutralPureWhite,
+      borderWidth: 'medium',
+    },
+    disabled: {
+      backgroundColor: ColorFoundationUiGreenUiGreenLightHover,
+      isBorder: false,
+      color: ColorFoundationNeutralGray400,
+    },
+  },
+  squaredBtnWithWhiteText: {
+    default: {
+      backgroundColor: ColorFoundationUiGreenUiGreen,
+      isBorder: false,
+      color: ColorFoundationNeutralPureWhite,
+      borderRadius: 'squared',
+    },
+    hover: {
+      backgroundColor: ColorFoundationUiGreenUiGreenHover,
+      isBorder: true,
+      borderColor: ColorFoundationUiGreenUiGreenHover,
+      color: ColorFoundationNeutralPureWhite,
+      borderWidth: 'thick',
+    },
+    pressed: {
+      backgroundColor: ColorFoundationUiGreenUiGreenDark,
+      isBorder: false,
+      color: ColorFoundationNeutralPureWhite,
+      borderWidth: null,
+    },
+    focused: {
+      backgroundColor: ColorFoundationUiGreenUiGreen,
+      isBorder: true,
+      borderColor: ColorFoundationUiGreenUiGreenDarkActive,
+      color: ColorFoundationNeutralPureWhite,
+      borderWidth: 'medium',
+    },
+    disabled: {
+      backgroundColor: ColorFoundationUiGreenUiGreenLightHover,
+      isBorder: false,
+      color: ColorFoundationNeutralGray400,
+    },
+  },
+  whiteRoundedBtn: {
+    default: {
+      backgroundColor: ColorFoundationNeutralWhite50,
+      isBorder: false,
+      color: ColorFoundationNeutralBlack400,
+      borderRadius: 'rounded',
+    },
+    hover: {
+      backgroundColor: ColorFoundationNeutralWhite200,
+      isBorder: true,
+      borderColor: ColorFoundationNeutralWhite200,
+      color: ColorFoundationNeutralBlack400,
+      borderWidth: 'thick',
+    },
+    pressed: {
+      backgroundColor: ColorFoundationNeutralWhite300,
+      isBorder: false,
+      color: ColorFoundationNeutralBlack400,
+      borderWidth: null,
+    },
+    focused: {
+      backgroundColor: ColorFoundationNeutralWhite50,
+      isBorder: true,
+      borderColor: ColorFoundationNeutralGray100,
+      color: ColorFoundationNeutralBlack400,
+      borderWidth: 'medium',
+    },
+    disabled: {
+      backgroundColor: ColorFoundationNeutralBlack400,
+      isBorder: false,
+      color: ColorFoundationNeutralGray100,
+    },
+  },
+  whiteSquaredBtn: {
+    default: {
+      backgroundColor: ColorFoundationNeutralWhite50,
+      isBorder: false,
+      color: ColorFoundationNeutralBlack400,
+      borderRadius: 'squared',
+    },
+    hover: {
+      backgroundColor: ColorFoundationNeutralWhite200,
+      isBorder: true,
+      borderColor: ColorFoundationNeutralWhite200,
+      color: ColorFoundationNeutralBlack400,
+      borderWidth: 'thick',
+    },
+    pressed: {
+      backgroundColor: ColorFoundationNeutralWhite300,
+      isBorder: false,
+      color: ColorFoundationNeutralBlack400,
+      borderWidth: null,
+    },
+    focused: {
+      backgroundColor: ColorFoundationNeutralWhite50,
+      isBorder: true,
+      borderColor: ColorFoundationNeutralGray100,
+      color: ColorFoundationNeutralBlack400,
+      borderWidth: 'medium',
+    },
+    disabled: {
+      backgroundColor: ColorFoundationNeutralBlack400,
+      isBorder: false,
+      color: ColorFoundationNeutralGray100,
+    },
+  },
+  whiteOutlineRoundedBtn: {
+    default: {
+      backgroundColor: ColorFoundationNeutralPureBlack,
+      isBorder: true,
+      color: ColorFoundationNeutralWhite50,
+      borderColor: ColorFoundationNeutralWhite50,
+      borderRadius: 'rounded',
+      borderWidth: 'thin',
+    },
+    hover: {
+      backgroundColor: ColorFoundationNeutralPureBlack,
+      isBorder: true,
+      borderColor: ColorFoundationNeutralWhite50,
+      color: ColorFoundationNeutralWhite50,
+      borderWidth: 'thick',
+    },
+    pressed: {
+      backgroundColor: ColorFoundationNeutralPureBlack,
+      isBorder: true,
+      borderColor: ColorFoundationNeutralWhite50,
+      color: ColorFoundationNeutralWhite50,
+      borderWidth: 'thin',
+    },
+    focused: {
+      backgroundColor: ColorFoundationNeutralWhite50,
+      isBorder: true,
+      borderColor: ColorFoundationNeutralGray100,
+      color: ColorFoundationNeutralBlack400,
+      borderWidth: 'medium',
+    },
+    disabled: {
+      backgroundColor: ColorFoundationNeutralBlack400,
+      isBorder: false,
+      color: ColorFoundationNeutralGray100,
+    },
+  },
+  whiteOutlineSquaredBtn: {
+    default: {
+      backgroundColor: ColorFoundationNeutralPureBlack,
+      isBorder: true,
+      color: ColorFoundationNeutralWhite50,
+      borderColor: ColorFoundationNeutralWhite50,
+      borderRadius: 'squared',
+      borderWidth: 'thin',
+    },
+    hover: {
+      backgroundColor: ColorFoundationNeutralPureBlack,
+      isBorder: true,
+      borderColor: ColorFoundationNeutralWhite50,
+      color: ColorFoundationNeutralWhite50,
+      borderWidth: 'thick',
+    },
+    pressed: {
+      backgroundColor: ColorFoundationNeutralPureBlack,
+      isBorder: true,
+      borderColor: ColorFoundationNeutralWhite50,
+      color: ColorFoundationNeutralWhite50,
+      borderWidth: 'thin',
+    },
+    focused: {
+      backgroundColor: ColorFoundationNeutralWhite50,
+      isBorder: true,
+      borderColor: ColorFoundationNeutralGray100,
+      color: ColorFoundationNeutralBlack400,
+      borderWidth: 'medium',
+    },
+    disabled: {
+      backgroundColor: ColorFoundationNeutralBlack400,
+      isBorder: false,
+      color: ColorFoundationNeutralGray100,
     },
   },
 };
