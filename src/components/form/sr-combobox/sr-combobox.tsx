@@ -3,6 +3,7 @@ import { Component, Event, h, Prop } from '@stencil/core';
 import {
   SpacerSpacer1,
   SpacerSpacer2,
+  TypographyTypographyTextCaption400,
 } from '../../../design-tokens/js/variables.js';
 
 /**
@@ -70,6 +71,9 @@ export class SRCombobox {
               background-size: 25px 25px;
               background-position: 98%;
               background-repeat: no-repeat;
+              font-family: 'Plus Jakarta Sans', 'Helvetica Neue', 'Arial',
+              'San Francisco', 'Segoe UI', 'Roboto', 'sans-serif';
+              font-size: ${TypographyTypographyTextCaption400.fontSize.value.measure.value}px;
             `}
             onChange={e => this.selectHandler(e)}
           >
