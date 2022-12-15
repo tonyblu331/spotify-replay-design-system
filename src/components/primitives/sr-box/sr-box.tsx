@@ -273,6 +273,8 @@ export class SRBox {
   getSpacingValue(selectedType) {
     if (!selectedType || selectedType == undefined) return 0;
     switch (selectedType) {
+      case 'spacer-0':
+        return 0;
       case 'spacer-1':
         return SpacerSpacer1;
       case 'spacer-2':

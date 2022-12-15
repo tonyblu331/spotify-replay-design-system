@@ -1,5 +1,12 @@
+import { css } from '@emotion/css';
 import { Component, Event, h, Prop } from '@stencil/core';
-
+import {
+  SpacerSpacer2,
+  BorderRadiusBorderRadiusSm,
+  ColorFoundationNeutralBlack200,
+  ColorFoundationNeutralGray400,
+  ColorFoundationRedRed200,
+} from '../../../design-tokens/js/variables.js';
 /**
  * Text input that emits event on change
  * @property `label`
@@ -12,7 +19,7 @@ import { Component, Event, h, Prop } from '@stencil/core';
   shadow: false,
   scoped: true,
 })
-export class SRTextinput {
+export class SRTextInput {
   /**
    *  Text label to place alongside the input
    */
@@ -35,18 +42,37 @@ export class SRTextinput {
     this._change.emit(e);
   }
 
-  // TODOJCS replace margin right by tony's spacer token
-  // TODOJCS horiz orientation ok?
+  renderInputStyling() {
+    return css`
+      padding: ${SpacerSpacer2}px;
+      border: 1px solid ${ColorFoundationNeutralBlack200};
+      border-radius: ${BorderRadiusBorderRadiusSm}px;
+
+      ::placeholder {
+        color: ${ColorFoundationNeutralGray400};
+      }
+      :focus {
+        outline: none !important;
+        border: 2px solid ${ColorFoundationNeutralBlack200};
+        transition: all 0.2s 0s ease-out;
+      }
+      :invalid {
+        border: 2px solid ${ColorFoundationRedRed200};
+        transition: all 0.2s 0s ease-out;
+      }
+    `;
+  }
   render() {
     return (
-      <sr-stack orientation="horizontal">
-        {this.label && (
-          <sr-text marginRight="spacer-text">{this.label}</sr-text>
-        )}
+      <sr-stack orientation="vertical" gap="spacer-1">
+        {this.label && <sr-label>{this.label}</sr-label>}
         <input
+          class={this.renderInputStyling()}
           onChange={this.changeHandler}
-          type="text"
+          type="number"
           placeholder={this.placeholder}
+          value="5"
+          min="18"
         ></input>
       </sr-stack>
     );

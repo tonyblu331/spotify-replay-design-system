@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { SPACER } from "~/type.js";
+import { SPACE_TEXT, SPACER } from "~/type.js";
 export namespace Components {
     interface SrAnchor {
         /**
@@ -250,6 +250,15 @@ export namespace Components {
         "textAlign": 'left' | 'right' | 'center' | 'justify';
     }
     interface SrHelpText {
+        /**
+          * Helper Text State
+         */
+        "variant": 'default' | 'error' | 'success';
+    }
+    interface SrLabel {
+        /**
+          * Label variant state
+         */
         "variant": 'default' | 'error' | 'success';
     }
     interface SrList {
@@ -293,7 +302,7 @@ export namespace Components {
         /**
           * Specify font size
          */
-        "fontSize": SPACER;
+        "fontSize": number;
         /**
           * Control font weight
          */
@@ -309,43 +318,43 @@ export namespace Components {
         /**
           * Control amount of white space around the box component itself.
          */
-        "margin"?: SPACER;
+        "margin"?: SPACE_TEXT;
         /**
           * Define amount of space at bottom side only.
          */
-        "marginBottom"?: SPACER;
+        "marginBottom"?: SPACE_TEXT;
         /**
           * Define amount of space at left side only.
          */
-        "marginLeft"?: SPACER;
+        "marginLeft"?: SPACE_TEXT;
         /**
           * Define amount of space at right side only.
          */
-        "marginRight"?: SPACER;
+        "marginRight"?: SPACE_TEXT;
         /**
           * Define amount of space at top side only.
          */
-        "marginTop"?: SPACER;
+        "marginTop"?: SPACE_TEXT;
         /**
           * Control amount of white space around child components inside of a box
          */
-        "padding": SPACER;
+        "padding": SPACE_TEXT;
         /**
           * Define amount of white space at bottom side only
          */
-        "paddingBottom"?: SPACER;
+        "paddingBottom"?: SPACE_TEXT;
         /**
           * Define amount of white space at left side only
          */
-        "paddingLeft"?: SPACER;
+        "paddingLeft"?: SPACE_TEXT;
         /**
           * Define amount of white space at right side only
          */
-        "paddingRight"?: SPACER;
+        "paddingRight"?: SPACE_TEXT;
         /**
           * Define amount of white space at top side only
          */
-        "paddingTop"?: SPACER;
+        "paddingTop"?: SPACE_TEXT;
     }
     interface SrTextInput {
         /**
@@ -419,6 +428,12 @@ declare global {
         prototype: HTMLSrHelpTextElement;
         new (): HTMLSrHelpTextElement;
     };
+    interface HTMLSrLabelElement extends Components.SrLabel, HTMLStencilElement {
+    }
+    var HTMLSrLabelElement: {
+        prototype: HTMLSrLabelElement;
+        new (): HTMLSrLabelElement;
+    };
     interface HTMLSrListElement extends Components.SrList, HTMLStencilElement {
     }
     var HTMLSrListElement: {
@@ -458,6 +473,7 @@ declare global {
         "sr-flex": HTMLSrFlexElement;
         "sr-heading": HTMLSrHeadingElement;
         "sr-help-text": HTMLSrHelpTextElement;
+        "sr-label": HTMLSrLabelElement;
         "sr-list": HTMLSrListElement;
         "sr-paragraph": HTMLSrParagraphElement;
         "sr-stack": HTMLSrStackElement;
@@ -717,6 +733,15 @@ declare namespace LocalJSX {
         "textAlign"?: 'left' | 'right' | 'center' | 'justify';
     }
     interface SrHelpText {
+        /**
+          * Helper Text State
+         */
+        "variant"?: 'default' | 'error' | 'success';
+    }
+    interface SrLabel {
+        /**
+          * Label variant state
+         */
         "variant"?: 'default' | 'error' | 'success';
     }
     interface SrList {
@@ -760,7 +785,7 @@ declare namespace LocalJSX {
         /**
           * Specify font size
          */
-        "fontSize"?: SPACER;
+        "fontSize"?: number;
         /**
           * Control font weight
          */
@@ -776,43 +801,43 @@ declare namespace LocalJSX {
         /**
           * Control amount of white space around the box component itself.
          */
-        "margin"?: SPACER;
+        "margin"?: SPACE_TEXT;
         /**
           * Define amount of space at bottom side only.
          */
-        "marginBottom"?: SPACER;
+        "marginBottom"?: SPACE_TEXT;
         /**
           * Define amount of space at left side only.
          */
-        "marginLeft"?: SPACER;
+        "marginLeft"?: SPACE_TEXT;
         /**
           * Define amount of space at right side only.
          */
-        "marginRight"?: SPACER;
+        "marginRight"?: SPACE_TEXT;
         /**
           * Define amount of space at top side only.
          */
-        "marginTop"?: SPACER;
+        "marginTop"?: SPACE_TEXT;
         /**
           * Control amount of white space around child components inside of a box
          */
-        "padding"?: SPACER;
+        "padding"?: SPACE_TEXT;
         /**
           * Define amount of white space at bottom side only
          */
-        "paddingBottom"?: SPACER;
+        "paddingBottom"?: SPACE_TEXT;
         /**
           * Define amount of white space at left side only
          */
-        "paddingLeft"?: SPACER;
+        "paddingLeft"?: SPACE_TEXT;
         /**
           * Define amount of white space at right side only
          */
-        "paddingRight"?: SPACER;
+        "paddingRight"?: SPACE_TEXT;
         /**
           * Define amount of white space at top side only
          */
-        "paddingTop"?: SPACER;
+        "paddingTop"?: SPACE_TEXT;
     }
     interface SrTextInput {
         /**
@@ -837,6 +862,7 @@ declare namespace LocalJSX {
         "sr-flex": SrFlex;
         "sr-heading": SrHeading;
         "sr-help-text": SrHelpText;
+        "sr-label": SrLabel;
         "sr-list": SrList;
         "sr-paragraph": SrParagraph;
         "sr-stack": SrStack;
@@ -856,6 +882,7 @@ declare module "@stencil/core" {
             "sr-flex": LocalJSX.SrFlex & JSXBase.HTMLAttributes<HTMLSrFlexElement>;
             "sr-heading": LocalJSX.SrHeading & JSXBase.HTMLAttributes<HTMLSrHeadingElement>;
             "sr-help-text": LocalJSX.SrHelpText & JSXBase.HTMLAttributes<HTMLSrHelpTextElement>;
+            "sr-label": LocalJSX.SrLabel & JSXBase.HTMLAttributes<HTMLSrLabelElement>;
             "sr-list": LocalJSX.SrList & JSXBase.HTMLAttributes<HTMLSrListElement>;
             "sr-paragraph": LocalJSX.SrParagraph & JSXBase.HTMLAttributes<HTMLSrParagraphElement>;
             "sr-stack": LocalJSX.SrStack & JSXBase.HTMLAttributes<HTMLSrStackElement>;

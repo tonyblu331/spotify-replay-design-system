@@ -3,20 +3,20 @@ import {
   ColorFoundationRedRed200,
   ColorFoundationUiGreenUiGreen,
   ColorFoundationNeutralGray400,
-  TypographyTypographyTextCaption400,
+  TypographyTypographyTextBody700,
 } from '../../../design-tokens/js/variables.js';
 /**
- * The `<sr-help-text>` component is a guideline that helps provide context regarding field inputs.
+ * The `<sr-label>` component is a caption that helps provide context regarding field inputs.
  */
 @Component({
-  tag: 'sr-help-text',
-  styleUrl: 'sr-helptext.css',
+  tag: 'sr-label',
+  styleUrl: 'sr-label.css',
   shadow: false,
   scoped: true,
 })
-export class SRHelpText {
+export class SrLabel {
   /**
-   * Helper Text State
+   * Label variant state
    */
   @Prop({ reflect: true })
   variant: 'default' | 'error' | 'success' = 'default';
@@ -32,18 +32,19 @@ export class SRHelpText {
     }
   }
 
-  getCaptionFontSize() {
-    return TypographyTypographyTextCaption400.fontSize.value.measure.value;
+  getTextFontSize() {
+    return TypographyTypographyTextBody700.fontSize.value.measure.value;
   }
   render() {
     return (
       <sr-text
         as="span"
-        marginBottom="spacer-caption"
+        marginBottom="spacer-text"
         color={this.getColor()}
-        fontSize={this.getCaptionFontSize()}
-        letterSpacing={0.4}
-        lineHeight={1.6}
+        fontSize={this.getTextFontSize()}
+        fontWeight="extraBold"
+        letterSpacing={0.5}
+        lineHeight={1.625}
       >
         <slot></slot>
       </sr-text>

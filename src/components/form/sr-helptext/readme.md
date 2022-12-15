@@ -5,11 +5,15 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+The `<sr-help-text>` component is a guideline that helps provide context regarding field inputs.
+
 ## Properties
 
-| Property  | Attribute | Description | Type                                | Default     |
-| --------- | --------- | ----------- | ----------------------------------- | ----------- |
-| `variant` | `variant` |             | `"default" \| "error" \| "success"` | `'default'` |
+| Property  | Attribute | Description       | Type                                | Default     |
+| --------- | --------- | ----------------- | ----------------------------------- | ----------- |
+| `variant` | `variant` | Helper Text State | `"default" \| "error" \| "success"` | `'default'` |
 
 
 ## Dependencies

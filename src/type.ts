@@ -7,6 +7,9 @@ export type SPACER =
   | 'spacer-6'
   | 'spacer-7'
   | 'spacer-8'
+  | 'spacer-0';
+
+export type SPACE_TEXT =
   | 'spacer-h1'
   | 'spacer-h2'
   | 'spacer-h3'

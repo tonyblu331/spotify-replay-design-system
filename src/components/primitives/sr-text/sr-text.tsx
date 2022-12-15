@@ -11,7 +11,7 @@ import {
   SpacerSpacerCaption,
   SpacerSpacerEndnote,
 } from '../../../design-tokens/js/variables.js';
-import { SPACER } from '~/type.js';
+import { SPACE_TEXT } from '~/type.js';
 
 @Component({
   tag: 'sr-text',
@@ -48,7 +48,7 @@ export class SRText {
    * Specify font size
    */
   @Prop({ reflect: true, attribute: 'fontSize' })
-  fontSize: SPACER;
+  fontSize: number;
 
   /**
    * Control font weight
@@ -60,61 +60,61 @@ export class SRText {
    * Control amount of white space around child components inside of a box
    */
   @Prop({ reflect: true })
-  padding: SPACER = 'spacer-0';
+  padding: SPACE_TEXT = 'spacer-0';
 
   /**
    * Define amount of white space at top side only
    */
   @Prop({ reflect: true, attribute: 'paddingTop' })
-  paddingTop?: SPACER = 'spacer-0';
+  paddingTop?: SPACE_TEXT = 'spacer-0';
 
   /**
    * Define amount of white space at right side only
    */
   @Prop({ reflect: true, attribute: 'paddingRight' })
-  paddingRight?: SPACER = 'spacer-0';
+  paddingRight?: SPACE_TEXT = 'spacer-0';
 
   /**
    * Define amount of white space at left side only
    */
   @Prop({ reflect: true, attribute: 'paddingLeft' })
-  paddingLeft?: SPACER = 'spacer-0';
+  paddingLeft?: SPACE_TEXT = 'spacer-0';
 
   /**
    * Define amount of white space at bottom side only
    */
   @Prop({ reflect: true, attribute: 'paddingBottom' })
-  paddingBottom?: SPACER = 'spacer-0';
+  paddingBottom?: SPACE_TEXT = 'spacer-0';
 
   /**
    * Control amount of white space around the box component itself.
    */
   @Prop({ reflect: true })
-  margin?: SPACER = 'spacer-0';
+  margin?: SPACE_TEXT = 'spacer-0';
 
   /**
    * Define amount of space at top side only.
    */
   @Prop({ reflect: true, attribute: 'marginTop' })
-  marginTop?: SPACER = 'spacer-0';
+  marginTop?: SPACE_TEXT = 'spacer-0';
 
   /**
    * Define amount of space at right side only.
    */
   @Prop({ reflect: true, attribute: 'marginRight' })
-  marginRight?: SPACER = 'spacer-0';
+  marginRight?: SPACE_TEXT = 'spacer-0';
 
   /**
    * Define amount of space at left side only.
    */
   @Prop({ reflect: true, attribute: 'marginLeft' })
-  marginLeft?: SPACER = 'spacer-0';
+  marginLeft?: SPACE_TEXT = 'spacer-0';
 
   /**
    * Define amount of space at bottom side only.
    */
   @Prop({ reflect: true, attribute: 'marginBottom' })
-  marginBottom?: SPACER = 'spacer-0';
+  marginBottom?: SPACE_TEXT = 'spacer-0';
 
   /**
    * Define the space between characters in a text

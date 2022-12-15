@@ -32,10 +32,9 @@ export default {
     },
     color: {
       control: {
-        type: 'radio',
+        type: 'color',
       },
-      options: ['black', 'white'],
-      description: "Specify Font Color <br> `'black'` `'white'`",
+      description: 'Specify Font Color <br> `color`',
     },
   },
 };

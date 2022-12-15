@@ -29,13 +29,14 @@ Text input that emits event on change
 ### Depends on
 
 - [sr-stack](../../layouts/sr-stack)
-- [sr-text](../../primitives/sr-text)
+- [sr-label](../sr-label)
 
 ### Graph
 ```mermaid
 graph TD;
   sr-text-input --> sr-stack
-  sr-text-input --> sr-text
+  sr-text-input --> sr-label
+  sr-label --> sr-text
   style sr-text-input fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

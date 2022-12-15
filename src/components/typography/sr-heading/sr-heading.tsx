@@ -13,7 +13,7 @@ import {
   TypographySubheading3700,
   TypographySubheading4700,
 } from '../../../design-tokens/js/variables.js';
-import { SPACER } from '~/type.js';
+import { SPACE_TEXT } from '~/type.js';
 
 /**
  * Heading component, with support for heading elements, and custom alignment.
@@ -219,7 +219,7 @@ export class SRHeading {
     return (
       <sr-text
         as={Tag as any}
-        marginBottom={this.getMarginBottom() as SPACER}
+        marginBottom={this.getMarginBottom() as SPACE_TEXT}
         letterSpacing={this.getLetterSpacing()}
         lineHeight={this.getLineHeight()}
         fontSize={this.getFontSize()}
