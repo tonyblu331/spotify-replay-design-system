@@ -165,6 +165,7 @@ export namespace Components {
         "href"?: string;
         "isLastItem": boolean;
         "name": string;
+        "selectedItem"?: string;
     }
     interface SrButton {
         "isDisabled": boolean;
@@ -419,6 +420,10 @@ export namespace Components {
          */
         "variant": 'rounded' | 'squared';
     }
+}
+export interface SrBreadcrumbCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLSrBreadcrumbElement;
 }
 export interface SrButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -720,11 +725,13 @@ declare namespace LocalJSX {
         "width"?: 'small' | 'medium' | 'large' | 'fit-content';
     }
     interface SrBreadcrumb {
+        "onValueChange"?: (event: SrBreadcrumbCustomEvent<any>) => void;
     }
     interface SrBreadcrumbItem {
         "href"?: string;
         "isLastItem"?: boolean;
         "name"?: string;
+        "selectedItem"?: string;
     }
     interface SrButton {
         "isDisabled"?: boolean;

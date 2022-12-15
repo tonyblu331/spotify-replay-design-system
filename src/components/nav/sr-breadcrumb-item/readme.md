@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property     | Attribute    | Description | Type      | Default     |
-| ------------ | ------------ | ----------- | --------- | ----------- |
-| `href`       | `href`       |             | `string`  | `undefined` |
-| `isLastItem` | `islastitem` |             | `boolean` | `false`     |
-| `name`       | `name`       |             | `string`  | `undefined` |
+| Property       | Attribute      | Description | Type      | Default     |
+| -------------- | -------------- | ----------- | --------- | ----------- |
+| `href`         | `href`         |             | `string`  | `undefined` |
+| `isLastItem`   | `islastitem`   |             | `boolean` | `false`     |
+| `name`         | `name`         |             | `string`  | `undefined` |
+| `selectedItem` | `selecteditem` |             | `string`  | `undefined` |
 
 
 ## Dependencies

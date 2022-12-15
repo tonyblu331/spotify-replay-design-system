@@ -1,15 +1,22 @@
 export default {
   title: 'Components/Navigation/Breadcrumb',
+  argTypes: {
+    selectedItem: {
+      description: 'Selected Item',
+      control: { type: 'text' },
+    },
+  },
 };
 
-const Template = () => `
+const Template = args => `
 <sr-breadcrumb>
-  <sr-breadcrumb-item name="Breadcrumb 1" href="#"></sr-breadcrumb-item>
-  <sr-breadcrumb-item name="Breadcrumb 2" href="#"></sr-breadcrumb-item>
+  <sr-breadcrumb-item name="Breadcrumb 1" href="#" selectedItem="${args.selectedItem}"></sr-breadcrumb-item>
+  <sr-breadcrumb-item name="Breadcrumb 2" href="#" selectedItem="${args.selectedItem}"></sr-breadcrumb-item>
   <sr-breadcrumb-item
     name="Breadcrumb 3"
     href=""
-    isLastItem
+    isLastItem 
+    selectedItem="${args.selectedItem}"
   ></sr-breadcrumb-item>
 </sr-breadcrumb>
 `;

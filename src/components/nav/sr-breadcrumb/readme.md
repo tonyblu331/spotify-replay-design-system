@@ -5,6 +5,13 @@
 <!-- Auto Generated Below -->
 
 
+## Events
+
+| Event         | Description | Type               |
+| ------------- | ----------- | ------------------ |
+| `valueChange` |             | `CustomEvent<any>` |
+
+
 ## Dependencies
 
 ### Depends on

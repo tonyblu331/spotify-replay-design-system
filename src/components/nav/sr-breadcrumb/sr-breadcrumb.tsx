@@ -1,4 +1,5 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, Event, EventEmitter } from '@stencil/core';
+import { breadcrumbStore } from '../sr-breadcrumb-item/sr-breadcrumb-item.store';
 
 @Component({
   tag: 'sr-breadcrumb',
@@ -7,6 +8,15 @@ import { Component, h } from '@stencil/core';
   scoped: true,
 })
 export class SrBreadcrumb {
+  @Event({ eventName: 'valueChange' })
+  valueChange: EventEmitter;
+
+  componentWillLoad() {
+    breadcrumbStore.onChange('selectedValue', newValue => {
+      this.valueChange.emit(newValue);
+    });
+  }
+
   render() {
     return (
       <sr-stack orientation="horizontal" gap="spacer-1">
