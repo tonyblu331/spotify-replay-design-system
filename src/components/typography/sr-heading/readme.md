@@ -12,14 +12,18 @@ Its convenience for pointing out document sections makes it one of the most cons
 
 ## Properties
 
-| Property    | Attribute   | Description                                                                                 | Type                                                                                                                                                    | Default     |
-| ----------- | ----------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| `color`     | `color`     | Specify text color                                                                          | `any`                                                                                                                                                   | `undefined` |
-| `level`     | `level`     | The `level` property allows users to indicate what header hierarchy this element is.        | `"h1" \| "h2-bold" \| "h2-regular" \| "h3-bold" \| "h3-regular" \| "h4-bold" \| "h4-regular" \| "h5-bold" \| "h5-regular" \| "h6-bold" \| "h6-regular"` | `'h1'`      |
-| `textAlign` | `textalign` | Provides support for implementing horizontal alignment to the text contained in the header. | `"center" \| "justify" \| "left" \| "right"`                                                                                                            | `'left'`    |
+| Property    | Attribute   | Description                                                                                 | Type                                                                   | Default     |
+| ----------- | ----------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ----------- |
+| `color`     | `color`     | Specify text color                                                                          | `any`                                                                  | `undefined` |
+| `level`     | `level`     | The `level` property allows users to indicate what header hierarchy this element is.        | `"1" \| "2" \| "3" \| "4" \| "5" \| "6" \| 1 \| 2 \| 3 \| 4 \| 5 \| 6` | `1`         |
+| `textAlign` | `textalign` | Provides support for implementing horizontal alignment to the text contained in the header. | `"center" \| "justify" \| "left" \| "right"`                           | `'left'`    |
 
 
 ## Dependencies
+
+### Used by
+
+ - [sr-card](../../displays/sr-card)
 
 ### Depends on
 
@@ -29,6 +33,7 @@ Its convenience for pointing out document sections makes it one of the most cons
 ```mermaid
 graph TD;
   sr-heading --> sr-text
+  sr-card --> sr-heading
   style sr-heading fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
