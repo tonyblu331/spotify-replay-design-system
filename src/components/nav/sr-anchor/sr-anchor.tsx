@@ -38,9 +38,9 @@ export class SRAnchor {
         href={this.href}
         class={this.external ? 'external' : ''}
       >
-        {/* <sr-text as="a"> */}
-        <slot></slot>
-        {/* </sr-text> */}
+        <sr-text>
+          <slot></slot>
+        </sr-text>
         {this.external && '⬈'}
       </a>
     );

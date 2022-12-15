@@ -18,6 +18,19 @@ Anchor component to redirect to another URL.
 | `openInNewTab` | `open-in-new-tab` | Whether or not to open the URL in a new tab. Defaults to false.                                                                       | `boolean` | `false`     |
 
 
+## Dependencies
+
+### Depends on
+
+- [sr-text](../../primitives/sr-text)
+
+### Graph
+```mermaid
+graph TD;
+  sr-anchor --> sr-text
+  style sr-anchor fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

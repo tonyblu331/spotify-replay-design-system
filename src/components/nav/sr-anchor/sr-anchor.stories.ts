@@ -11,7 +11,7 @@ export default {
     },
     external: {
       description:
-        'Whether the href is to a site on a different domain, extenral to this one.',
+        'Whether the href is to a site on a different domain, external to this one.',
       control: { type: 'boolean' },
     },
     toNewTab: {

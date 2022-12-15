@@ -31,6 +31,7 @@
 
 ### Used by
 
+ - [sr-anchor](../../nav/sr-anchor)
  - [sr-button](../../form/sr-button)
  - [sr-heading](../../typography/sr-heading)
  - [sr-help-text](../../form/sr-helptext)
@@ -41,6 +42,7 @@
 ### Graph
 ```mermaid
 graph TD;
+  sr-anchor --> sr-text
   sr-button --> sr-text
   sr-heading --> sr-text
   sr-help-text --> sr-text
