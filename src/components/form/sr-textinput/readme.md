@@ -34,9 +34,9 @@ Text input that emits event on change
 ### Graph
 ```mermaid
 graph TD;
-  sr-textinput --> sr-stack
-  sr-textinput --> sr-text
-  style sr-textinput fill:#f9f,stroke:#333,stroke-width:4px
+  sr-text-input --> sr-stack
+  sr-text-input --> sr-text
+  style sr-text-input fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

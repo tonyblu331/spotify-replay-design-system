@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { SPACER } from "~/enum.js";
+import { SPACER } from "~/type.js";
 export namespace Components {
     interface SrAnchor {
         /**
@@ -286,7 +286,7 @@ export namespace Components {
         /**
           * Specify font size
          */
-        "fontSize": number;
+        "fontSize": SPACER;
         /**
           * Control font weight
          */
@@ -302,45 +302,45 @@ export namespace Components {
         /**
           * Control amount of white space around the box component itself.
          */
-        "margin"?: number;
+        "margin"?: SPACER;
         /**
           * Define amount of space at bottom side only.
          */
-        "marginBottom"?: number;
+        "marginBottom"?: SPACER;
         /**
           * Define amount of space at left side only.
          */
-        "marginLeft"?: number;
+        "marginLeft"?: SPACER;
         /**
           * Define amount of space at right side only.
          */
-        "marginRight"?: number;
+        "marginRight"?: SPACER;
         /**
           * Define amount of space at top side only.
          */
-        "marginTop"?: number;
+        "marginTop"?: SPACER;
         /**
           * Control amount of white space around child components inside of a box
          */
-        "padding": number;
+        "padding": SPACER;
         /**
           * Define amount of white space at bottom side only
          */
-        "paddingBottom"?: number;
+        "paddingBottom"?: SPACER;
         /**
           * Define amount of white space at left side only
          */
-        "paddingLeft"?: number;
+        "paddingLeft"?: SPACER;
         /**
           * Define amount of white space at right side only
          */
-        "paddingRight"?: number;
+        "paddingRight"?: SPACER;
         /**
           * Define amount of white space at top side only
          */
-        "paddingTop"?: number;
+        "paddingTop"?: SPACER;
     }
-    interface SrTextinput {
+    interface SrTextInput {
         /**
           * Text label to place alongside the input
          */
@@ -359,9 +359,9 @@ export interface SrComboboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLSrComboboxElement;
 }
-export interface SrTextinputCustomEvent<T> extends CustomEvent<T> {
+export interface SrTextInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLSrTextinputElement;
+    target: HTMLSrTextInputElement;
 }
 declare global {
     interface HTMLSrAnchorElement extends Components.SrAnchor, HTMLStencilElement {
@@ -436,11 +436,11 @@ declare global {
         prototype: HTMLSrTextElement;
         new (): HTMLSrTextElement;
     };
-    interface HTMLSrTextinputElement extends Components.SrTextinput, HTMLStencilElement {
+    interface HTMLSrTextInputElement extends Components.SrTextInput, HTMLStencilElement {
     }
-    var HTMLSrTextinputElement: {
-        prototype: HTMLSrTextinputElement;
-        new (): HTMLSrTextinputElement;
+    var HTMLSrTextInputElement: {
+        prototype: HTMLSrTextInputElement;
+        new (): HTMLSrTextInputElement;
     };
     interface HTMLElementTagNameMap {
         "sr-anchor": HTMLSrAnchorElement;
@@ -455,7 +455,7 @@ declare global {
         "sr-paragraph": HTMLSrParagraphElement;
         "sr-stack": HTMLSrStackElement;
         "sr-text": HTMLSrTextElement;
-        "sr-textinput": HTMLSrTextinputElement;
+        "sr-text-input": HTMLSrTextInputElement;
     }
 }
 declare namespace LocalJSX {
@@ -746,7 +746,7 @@ declare namespace LocalJSX {
         /**
           * Specify font size
          */
-        "fontSize"?: number;
+        "fontSize"?: SPACER;
         /**
           * Control font weight
          */
@@ -762,45 +762,45 @@ declare namespace LocalJSX {
         /**
           * Control amount of white space around the box component itself.
          */
-        "margin"?: number;
+        "margin"?: SPACER;
         /**
           * Define amount of space at bottom side only.
          */
-        "marginBottom"?: number;
+        "marginBottom"?: SPACER;
         /**
           * Define amount of space at left side only.
          */
-        "marginLeft"?: number;
+        "marginLeft"?: SPACER;
         /**
           * Define amount of space at right side only.
          */
-        "marginRight"?: number;
+        "marginRight"?: SPACER;
         /**
           * Define amount of space at top side only.
          */
-        "marginTop"?: number;
+        "marginTop"?: SPACER;
         /**
           * Control amount of white space around child components inside of a box
          */
-        "padding"?: number;
+        "padding"?: SPACER;
         /**
           * Define amount of white space at bottom side only
          */
-        "paddingBottom"?: number;
+        "paddingBottom"?: SPACER;
         /**
           * Define amount of white space at left side only
          */
-        "paddingLeft"?: number;
+        "paddingLeft"?: SPACER;
         /**
           * Define amount of white space at right side only
          */
-        "paddingRight"?: number;
+        "paddingRight"?: SPACER;
         /**
           * Define amount of white space at top side only
          */
-        "paddingTop"?: number;
+        "paddingTop"?: SPACER;
     }
-    interface SrTextinput {
+    interface SrTextInput {
         /**
           * Text label to place alongside the input
          */
@@ -808,7 +808,7 @@ declare namespace LocalJSX {
         /**
           * Emitted when the input's value changes
          */
-        "on_change"?: (event: SrTextinputCustomEvent<any>) => void;
+        "on_change"?: (event: SrTextInputCustomEvent<any>) => void;
         /**
           * The text to display when the input is empty
          */
@@ -827,7 +827,7 @@ declare namespace LocalJSX {
         "sr-paragraph": SrParagraph;
         "sr-stack": SrStack;
         "sr-text": SrText;
-        "sr-textinput": SrTextinput;
+        "sr-text-input": SrTextInput;
     }
 }
 export { LocalJSX as JSX };
@@ -846,7 +846,7 @@ declare module "@stencil/core" {
             "sr-paragraph": LocalJSX.SrParagraph & JSXBase.HTMLAttributes<HTMLSrParagraphElement>;
             "sr-stack": LocalJSX.SrStack & JSXBase.HTMLAttributes<HTMLSrStackElement>;
             "sr-text": LocalJSX.SrText & JSXBase.HTMLAttributes<HTMLSrTextElement>;
-            "sr-textinput": LocalJSX.SrTextinput & JSXBase.HTMLAttributes<HTMLSrTextinputElement>;
+            "sr-text-input": LocalJSX.SrTextInput & JSXBase.HTMLAttributes<HTMLSrTextInputElement>;
         }
     }
 }

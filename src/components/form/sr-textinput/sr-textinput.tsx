@@ -7,7 +7,7 @@ import { Component, Event, h, Prop } from '@stencil/core';
  * @emits `change`
  */
 @Component({
-  tag: 'sr-textinput',
+  tag: 'sr-text-input',
   styleUrl: 'sr-textinput.css',
   shadow: false,
   scoped: true,
@@ -40,7 +40,9 @@ export class SRTextinput {
   render() {
     return (
       <sr-stack orientation="horizontal">
-        {this.label && <sr-text marginRight={1}>{this.label}</sr-text>}
+        {this.label && (
+          <sr-text marginRight="spacer-text">{this.label}</sr-text>
+        )}
         <input
           onChange={this.changeHandler}
           type="text"

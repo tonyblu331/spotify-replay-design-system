@@ -12,22 +12,24 @@ along the vertical or horizontal axis.
 
 ## Properties
 
-| Property      | Attribute     | Description                                                                                                    | Type                                                                                                           | Default      |
-| ------------- | ------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------ |
-| `gap`         | `gap`         | The `gap` property sets the spacing in between elements, and has no effect in the leading or trailing element. | `"spacer-1" \| "spacer-2" \| "spacer-3" \| "spacer-4" \| "spacer-5" \| "spacer-6" \| "spacer-7" \| "spacer-8"` | `undefined`  |
-| `orientation` | `orientation` | The `orientation` property sets the direction for the flow, either vertical or horizontal.                     | `"horizontal" \| "vertical"`                                                                                   | `'vertical'` |
+| Property      | Attribute     | Description                                                                                                    | Type                                                                                                                                                                                                                                                                                                   | Default      |
+| ------------- | ------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ |
+| `gap`         | `gap`         | The `gap` property sets the spacing in between elements, and has no effect in the leading or trailing element. | `"spacer-0" \| "spacer-1" \| "spacer-2" \| "spacer-3" \| "spacer-4" \| "spacer-5" \| "spacer-6" \| "spacer-7" \| "spacer-8" \| "spacer-blockquote" \| "spacer-caption" \| "spacer-endnote" \| "spacer-h1" \| "spacer-h2" \| "spacer-h3" \| "spacer-h4" \| "spacer-h5" \| "spacer-h6" \| "spacer-text"` | `undefined`  |
+| `orientation` | `orientation` | The `orientation` property sets the direction for the flow, either vertical or horizontal.                     | `"horizontal" \| "vertical"`                                                                                                                                                                                                                                                                           | `'vertical'` |
 
 
 ## Dependencies
 
 ### Used by
 
- - [sr-textinput](../../form/sr-textinput)
+ - [sr-list](../../text/sr-list)
+ - [sr-text-input](../../form/sr-textinput)
 
 ### Graph
 ```mermaid
 graph TD;
-  sr-textinput --> sr-stack
+  sr-list --> sr-stack
+  sr-text-input --> sr-stack
   style sr-stack fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

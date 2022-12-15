@@ -13,6 +13,7 @@ import {
   TypographySubheading3700,
   TypographySubheading4700,
 } from '../../../design-tokens/js/variables.js';
+import { SPACER } from '~/type.js';
 
 /**
  * Heading component, with support for heading elements, and custom alignment.
@@ -138,21 +139,22 @@ export class SRHeading {
   getMarginBottom() {
     switch (this.level) {
       case 'h1':
-        return 0.46;
+        return 'spacer-h1';
       case 'h2-bold':
       case 'h2-regular':
-      case 'h4-regular':
-      case 'h4-bold':
-        return 0.6;
+        return 'spacer-h2';
       case 'h3-regular':
       case 'h3-bold':
-        return 0.86;
+        return 'spacer-h3';
+      case 'h4-regular':
+      case 'h4-bold':
+        return 'spacer-h4';
       case 'h5-regular':
       case 'h5-bold':
-        return 0.7;
+        return 'spacer-h5';
       case 'h6-regular':
       case 'h6-bold':
-        return 0.75;
+        return 'spacer-h6';
       default:
         break;
     }
@@ -217,7 +219,7 @@ export class SRHeading {
     return (
       <sr-text
         as={Tag as any}
-        marginBottom={this.getMarginBottom()}
+        marginBottom={this.getMarginBottom() as SPACER}
         letterSpacing={this.getLetterSpacing()}
         lineHeight={this.getLineHeight()}
         fontSize={this.getFontSize()}

@@ -1,6 +1,6 @@
 import { Component, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
-import { SPACER } from '~/enum.js';
+import { SPACER } from '~/type.js';
 import {
   SpacerSpacer1,
   SpacerSpacer2,

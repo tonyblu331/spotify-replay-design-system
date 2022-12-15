@@ -16,28 +16,28 @@ const Template = ({ label, placeholder }) => {
   if (label) {
     if (placeholder) {
       return `
-        <sr-textinput label="${label}" placeholder="${placeholder}" />
+        <sr-text-input label="${label}" placeholder="${placeholder}" />
       `;
     } else {
       return `
-        <sr-textinput label="${label}" />
+        <sr-text-input label="${label}" />
       `;
     }
   } else {
     if (placeholder) {
       return `
-        <sr-textinput placeholder="${placeholder}" />
+        <sr-text-input placeholder="${placeholder}" />
       `;
     } else {
       return `
-        <sr-textinput />
+        <sr-text-input />
       `;
     }
   }
 };
 
 // const Template = ({ label, placeholder }) => `
-//   <sr-textinput ${label !== '' ? `label='${label}"` : ''} ${
+//   <sr-text-input ${label !== '' ? `label='${label}"` : ''} ${
 //   placeholder ? `placeholder="${placeholder}"` : ''
 // } />
 // `;

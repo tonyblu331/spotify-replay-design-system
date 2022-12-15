@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 14 Dec 2022 18:58:11 GMT
+ * Generated on Thu, 15 Dec 2022 00:16:32 GMT
  */
 
 :root {
@@ -98,6 +98,14 @@
   --sr-spacer-spacer-6: 48;
   --sr-spacer-spacer-7: 56;
   --sr-spacer-spacer-8: 64;
+  --sr-spacer-spacer-h1: 34.78;
+  --sr-spacer-spacer-h2: 26.6;
+  --sr-spacer-spacer-h3: 18.60;
+  --sr-spacer-spacer-h4: 26.6;
+  --sr-spacer-spacer-h5: 22.85;
+  --sr-spacer-spacer-text: 21.3;
+  --sr-spacer-spacer-caption: 17.39;
+  --sr-spacer-spacer-endnote: 16;
   --sr-typography-typography-headers-displayxl-400: [object Object]; /* H1, Display, or XL Title in Regular */
   --sr-typography-typography-headers-displaylg-900: [object Object]; /* H2, Large Display, or Main Section Title in Extra Bold */
   --sr-typography-typography-headers-subheading1-900: [object Object]; /* H3, Subheading Variation 1 in Extra Bold */

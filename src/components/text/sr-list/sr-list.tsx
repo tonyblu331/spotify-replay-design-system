@@ -23,12 +23,18 @@ export class SRList {
   render() {
     const Tag = `${this.ordered ? 'o' : 'u'}l`;
 
-    const tagStyles = css``;
+    const tagStyles = css`
+      line-height: 20px;
+    `;
 
     return (
-      <Tag class={tagStyles}>
-        <slot></slot>
-      </Tag>
+      <sr-text as="p">
+        <Tag class={tagStyles}>
+          <sr-stack gap="spacer-2">
+            <slot></slot>
+          </sr-stack>
+        </Tag>
+      </sr-text>
     );
   }
 }

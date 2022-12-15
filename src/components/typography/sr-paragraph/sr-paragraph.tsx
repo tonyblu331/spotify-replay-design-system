@@ -12,7 +12,7 @@ import { Component, h } from '@stencil/core';
 export class SRParagraph {
   render() {
     return (
-      <sr-text as="p">
+      <sr-text as="p" marginBottom="spacer-text">
         <slot></slot>
       </sr-text>
     );
