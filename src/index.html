@@ -17,14 +17,30 @@
     />
   </head>
   <body>
-    <sr-flex hAlignment="center" vAlignment="center">
+    <sr-flex
+      hAlignment="center"
+      vAlignment="center"
+      direction="vertical"
+      gap="spacer-5"
+    >
+      <img
+        height="100px"
+        src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Green.png"
+      />
       <sr-card heading="Register form">
         <sr-stack gap="spacer-3">
           <sr-text-input
+            variant="rounded"
             label="Email"
             placeholder="johncoltrane@msn.com"
+            type="email"
           ></sr-text-input>
-          <sr-text-input label="Password" placeholder=""></sr-text-input>
+          <sr-text-input
+            variant="rounded"
+            label="Password"
+            placeholder=""
+            type="password"
+          ></sr-text-input>
           <sr-button text="Register"></sr-button>
         </sr-stack>
       </sr-card>

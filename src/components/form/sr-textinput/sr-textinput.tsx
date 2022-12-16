@@ -74,7 +74,7 @@ export class SRTextInput {
    *  Specify type of text field
    */
   @Prop({ reflect: true })
-  type: 'number' | 'text' | 'email' = 'text';
+  type: 'number' | 'text' | 'email' | 'password' = 'text';
 
   /**
    *  Indicate Error state
