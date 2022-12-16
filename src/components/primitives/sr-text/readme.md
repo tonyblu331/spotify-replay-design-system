@@ -34,6 +34,7 @@
 ### Used by
 
  - [sr-anchor](../../nav/sr-anchor)
+ - [sr-avatar](../../displays/sr-avatar)
  - [sr-badge](../../displays/sr-badge)
  - [sr-breadcrumb-item](../../nav/sr-breadcrumb-item)
  - [sr-button](../../form/sr-button)
@@ -48,6 +49,7 @@
 ```mermaid
 graph TD;
   sr-anchor --> sr-text
+  sr-avatar --> sr-text
   sr-badge --> sr-text
   sr-breadcrumb-item --> sr-text
   sr-button --> sr-text

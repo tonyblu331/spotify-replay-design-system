@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { AVATAR_LARGE, AVATAR_MEDIUM, AVATAR_SMALL } from "~/type";
 import { SPACE_TEXT, SPACER } from "~/type.js";
 export namespace Components {
     interface SrAnchor {
@@ -32,6 +33,28 @@ export namespace Components {
           * Anchor variant
          */
         "variant": 'normal' | 'underline';
+    }
+    interface SrAvatar {
+        /**
+          * Get Image
+         */
+        "image": any;
+        /**
+          * Get Username
+         */
+        "name": any;
+        /**
+          * Indicate size of avatar
+         */
+        "size": 'small' | 'medium' | 'large';
+        /**
+          * Get Username
+         */
+        "username": any;
+        /**
+          * Indicate variant status of avatar
+         */
+        "variant": AVATAR_SMALL | AVATAR_MEDIUM | AVATAR_LARGE;
     }
     interface SrBadge {
         /**
@@ -98,6 +121,10 @@ export namespace Components {
          */
         "backgroundColor": any;
         /**
+          * set backgroundImage
+         */
+        "backgroundImage": string;
+        /**
           * Specify border color
          */
         "borderColor": any;
@@ -125,6 +152,10 @@ export namespace Components {
           * Enable or disable border around box component
          */
         "isBorder": boolean;
+        /**
+          * Display as Circle
+         */
+        "isCircle": boolean;
         /**
           * Control clickable state
          */
@@ -516,6 +547,12 @@ declare global {
         prototype: HTMLSrAnchorElement;
         new (): HTMLSrAnchorElement;
     };
+    interface HTMLSrAvatarElement extends Components.SrAvatar, HTMLStencilElement {
+    }
+    var HTMLSrAvatarElement: {
+        prototype: HTMLSrAvatarElement;
+        new (): HTMLSrAvatarElement;
+    };
     interface HTMLSrBadgeElement extends Components.SrBadge, HTMLStencilElement {
     }
     var HTMLSrBadgeElement: {
@@ -638,6 +675,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "sr-anchor": HTMLSrAnchorElement;
+        "sr-avatar": HTMLSrAvatarElement;
         "sr-badge": HTMLSrBadgeElement;
         "sr-box": HTMLSrBoxElement;
         "sr-breadcrumb": HTMLSrBreadcrumbElement;
@@ -686,6 +724,28 @@ declare namespace LocalJSX {
           * Anchor variant
          */
         "variant"?: 'normal' | 'underline';
+    }
+    interface SrAvatar {
+        /**
+          * Get Image
+         */
+        "image"?: any;
+        /**
+          * Get Username
+         */
+        "name"?: any;
+        /**
+          * Indicate size of avatar
+         */
+        "size"?: 'small' | 'medium' | 'large';
+        /**
+          * Get Username
+         */
+        "username"?: any;
+        /**
+          * Indicate variant status of avatar
+         */
+        "variant"?: AVATAR_SMALL | AVATAR_MEDIUM | AVATAR_LARGE;
     }
     interface SrBadge {
         /**
@@ -752,6 +812,10 @@ declare namespace LocalJSX {
          */
         "backgroundColor"?: any;
         /**
+          * set backgroundImage
+         */
+        "backgroundImage"?: string;
+        /**
           * Specify border color
          */
         "borderColor"?: any;
@@ -779,6 +843,10 @@ declare namespace LocalJSX {
           * Enable or disable border around box component
          */
         "isBorder"?: boolean;
+        /**
+          * Display as Circle
+         */
+        "isCircle"?: boolean;
         /**
           * Control clickable state
          */
@@ -1158,6 +1226,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "sr-anchor": SrAnchor;
+        "sr-avatar": SrAvatar;
         "sr-badge": SrBadge;
         "sr-box": SrBox;
         "sr-breadcrumb": SrBreadcrumb;
@@ -1185,6 +1254,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "sr-anchor": LocalJSX.SrAnchor & JSXBase.HTMLAttributes<HTMLSrAnchorElement>;
+            "sr-avatar": LocalJSX.SrAvatar & JSXBase.HTMLAttributes<HTMLSrAvatarElement>;
             "sr-badge": LocalJSX.SrBadge & JSXBase.HTMLAttributes<HTMLSrBadgeElement>;
             "sr-box": LocalJSX.SrBox & JSXBase.HTMLAttributes<HTMLSrBoxElement>;
             "sr-breadcrumb": LocalJSX.SrBreadcrumb & JSXBase.HTMLAttributes<HTMLSrBreadcrumbElement>;

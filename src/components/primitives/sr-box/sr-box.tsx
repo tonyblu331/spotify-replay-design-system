@@ -257,6 +257,18 @@ export class SRBox {
   @Prop({ reflect: true, attribute: 'isClickable' })
   isClickable: boolean = false;
 
+  /**
+   * Display as Circle
+   */
+  @Prop({ reflect: true, attribute: 'isCircle' })
+  isCircle: boolean = false;
+
+  /**
+   * set backgroundImage
+   */
+  @Prop({ reflect: true, attribute: 'backgroundImage' })
+  backgroundImage: string;
+
   spacingHandler(selectedType, side?) {
     if (!selectedType || selectedType == 'undefined') return;
     const spacing = this.getSpacingValue(selectedType);
@@ -333,6 +345,7 @@ export class SRBox {
    *  Fix base on design token
    */
   borderRadiusHandler() {
+    if (this.isCircle) return '50%';
     switch (this.borderRadius) {
       case 'small':
         return `${BorderRadiusBorderRadiusSm}px`;
