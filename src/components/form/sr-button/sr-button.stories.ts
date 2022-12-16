@@ -58,9 +58,14 @@ OutlineRoundedButton.args = {
   variant: 'outlinedRoundBtn',
 };
 
+export const OutlineSquaredButton = Template.bind({});
+OutlineSquaredButton.args = {
+  variant: 'outlinedSquaredBtn',
+};
+
 export const BlackRoundedButton = Template.bind({});
 BlackRoundedButton.args = {
-  variant: 'outlinedSquaredBtn',
+  variant: 'blackRoundedBtn',
 };
 
 export const BlackSquaredButton = Template.bind({});
