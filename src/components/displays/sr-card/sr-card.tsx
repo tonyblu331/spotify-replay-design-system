@@ -99,7 +99,6 @@ export class SRCard {
         <sr-stack>
           <sr-heading level={3}>{this.heading}</sr-heading>
           <slot></slot>
-          {/* TODO FIX WHY DONT BUTTONS SHOW?? */}
           {(this.primaryButtonText || this.secondaryButtonText) &&
             this.renderButtons()}
         </sr-stack>
