@@ -21,6 +21,19 @@ Its convenience for arranging direction and alignment of children inside the fle
 | `wrap`       | `wrap`       | The `wrap` property allows children components wrap onto multiple lines                              | `boolean`                                                                                                                    | `false`        |
 
 
+## Dependencies
+
+### Used by
+
+ - [sr-callout](../../text/sr-callout)
+
+### Graph
+```mermaid
+graph TD;
+  sr-callout --> sr-flex
+  style sr-flex fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

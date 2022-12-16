@@ -25,6 +25,7 @@ along the vertical or horizontal axis.
  - [sr-anchor](../../nav/sr-anchor)
  - [sr-breadcrumb](../../nav/sr-breadcrumb)
  - [sr-breadcrumb-item](../../nav/sr-breadcrumb-item)
+ - [sr-callout](../../text/sr-callout)
  - [sr-combobox](../../form/sr-combobox)
  - [sr-list](../../text/sr-list)
  - [sr-tab](../../nav/sr-tab)
@@ -37,6 +38,7 @@ graph TD;
   sr-anchor --> sr-stack
   sr-breadcrumb --> sr-stack
   sr-breadcrumb-item --> sr-stack
+  sr-callout --> sr-stack
   sr-combobox --> sr-stack
   sr-list --> sr-stack
   sr-tab --> sr-stack

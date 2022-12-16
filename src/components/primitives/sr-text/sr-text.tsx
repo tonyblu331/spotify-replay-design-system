@@ -53,7 +53,7 @@ export class SRText {
    * Control font weight
    */
   @Prop({ reflect: true, attribute: 'fontWeight' })
-  fontWeight: 'regular' | 'bold' | 'extraBold' = 'regular';
+  fontWeight: 'regular' | 'bold' | 'extrabold' = 'regular';
 
   /**
    * Control amount of white space around child components inside of a box
@@ -139,7 +139,7 @@ export class SRText {
         return 400;
       case 'bold':
         return 700;
-      case 'extraBold':
+      case 'extrabold':
         return 800;
       default:
         break;

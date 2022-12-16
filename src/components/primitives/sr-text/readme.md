@@ -13,7 +13,7 @@
 | `as`            | `as`            | Specify wrapper HTML element                                          | `"blockquote" \| "caption" \| "div" \| "endnote" \| "h1" \| "h2" \| "h3" \| "h4" \| "h5" \| "h6" \| "p" \| "span"`                                                                     | `'div'`      |
 | `color`         | `color`         | Specify font color                                                    | `any`                                                                                                                                                                                  | `undefined`  |
 | `fontSize`      | `fontsize`      | Specify font size                                                     | `number`                                                                                                                                                                               | `undefined`  |
-| `fontWeight`    | `fontweight`    | Control font weight                                                   | `"bold" \| "extraBold" \| "regular"`                                                                                                                                                   | `'regular'`  |
+| `fontWeight`    | `fontweight`    | Control font weight                                                   | `"bold" \| "extrabold" \| "regular"`                                                                                                                                                   | `'regular'`  |
 | `isClickable`   | `isclickable`   |                                                                       | `boolean`                                                                                                                                                                              | `false`      |
 | `letterSpacing` | `letterspacing` | Define the space between characters in a text                         | `number`                                                                                                                                                                               | `undefined`  |
 | `lineHeight`    | `lineheight`    | Define the height of a line                                           | `number`                                                                                                                                                                               | `undefined`  |
@@ -36,6 +36,7 @@
  - [sr-anchor](../../nav/sr-anchor)
  - [sr-breadcrumb-item](../../nav/sr-breadcrumb-item)
  - [sr-button](../../form/sr-button)
+ - [sr-callout](../../text/sr-callout)
  - [sr-heading](../../typography/sr-heading)
  - [sr-help-text](../../form/sr-helptext)
  - [sr-label](../../form/sr-label)
@@ -48,6 +49,7 @@ graph TD;
   sr-anchor --> sr-text
   sr-breadcrumb-item --> sr-text
   sr-button --> sr-text
+  sr-callout --> sr-text
   sr-heading --> sr-text
   sr-help-text --> sr-text
   sr-label --> sr-text

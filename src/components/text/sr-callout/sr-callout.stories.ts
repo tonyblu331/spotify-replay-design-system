@@ -4,52 +4,69 @@ export default {
     headerText: {
       control: { type: 'text' },
       description: 'The text to place in the callout header',
-      defaultValue: '',
     },
     type: {
-      options: ['note', 'warning', 'critical'],
-      control: { type: 'radio' },
+      options: [
+        'informative',
+        'warning',
+        'success',
+        'template',
+        'new',
+        'critical',
+      ],
+      control: { type: 'select' },
       description: 'The callout variant',
-      defaultValue: 'note',
     },
     content: {
-      description: 'Content to be injected in the component slot',
+      description: 'Content details',
     },
   },
 };
 
-const Template = ({ headerText, type, content }) => {
-  if (headerText) {
-    return `
-      <sr-callout headerText="${headerText}" type="${type}">
-        ${content}
-      </sr-callout>
-    `;
-  } else {
-    return `
-      <sr-callout type="${type}">
-        ${content}
-      </sr-callout>
-    `;
-  }
+const Template = args => {
+  const argsProps = Object.entries(args).reduce((prev, [key, value]) => {
+    return `${prev} ${key}="${value}"`.trim();
+  }, '');
+  return `<sr-callout ${argsProps}></sr-callout>`;
 };
 
-export const Note = Template.bind({});
-Note.args = {
+const defaultOptions = {
+  headerText: 'Callout Header Title Placeholder',
   content:
-    'This is a message you should take note of, but its not that important',
+    'Use the content here to display useful information towards your audience. This is information that they need to know.',
 };
 
-export const Warning = Template.bind({});
-Warning.args = {
-  type: 'warning',
-  content: 'This message is alarming, but not too much',
+export const InformativeState = Template.bind({});
+InformativeState.args = {
+  ...defaultOptions,
 };
 
-// TODOJCS why doesnt headerText prop work?
-export const Critical = Template.bind({});
-Critical.args = {
+export const CriticalState = Template.bind({});
+CriticalState.args = {
+  ...defaultOptions,
   type: 'critical',
-  headerText: 'Danger ⚠️',
-  content: 'This message is important, proceed with caution',
+};
+
+export const WarningState = Template.bind({});
+WarningState.args = {
+  type: 'warning',
+  ...defaultOptions,
+};
+
+export const SuccessfulState = Template.bind({});
+SuccessfulState.args = {
+  type: 'success',
+  ...defaultOptions,
+};
+
+export const TemplateState = Template.bind({});
+TemplateState.args = {
+  type: 'template',
+  ...defaultOptions,
+};
+
+export const NewState = Template.bind({});
+NewState.args = {
+  type: 'new',
+  ...defaultOptions,
 };

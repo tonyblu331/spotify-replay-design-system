@@ -202,13 +202,22 @@ export namespace Components {
     }
     interface SrCallout {
         /**
+          * The detail to display in the topmost part of the callout
+         */
+        "content"?: string;
+        /**
           * The title to display in the topmost part of the callout
          */
         "headerText"?: string;
         /**
-          * Indicates the importance of the callout. The default is 'note', for the lowest level of importance.
+          * Indicates the importance of the callout. The default is 'informative', for the lowest level of importance.
          */
-        "type": 'note' | 'warning' | 'critical';
+        "type": | 'informative'
+    | 'warning'
+    | 'success'
+    | 'template'
+    | 'new'
+    | 'critical';
     }
     interface SrCard {
         "heading": string;
@@ -337,7 +346,7 @@ export namespace Components {
         /**
           * Control font weight
          */
-        "fontWeight": 'regular' | 'bold' | 'extraBold';
+        "fontWeight": 'regular' | 'bold' | 'extrabold';
         "isClickable": boolean;
         /**
           * Define the space between characters in a text
@@ -822,13 +831,22 @@ declare namespace LocalJSX {
     }
     interface SrCallout {
         /**
+          * The detail to display in the topmost part of the callout
+         */
+        "content"?: string;
+        /**
           * The title to display in the topmost part of the callout
          */
         "headerText"?: string;
         /**
-          * Indicates the importance of the callout. The default is 'note', for the lowest level of importance.
+          * Indicates the importance of the callout. The default is 'informative', for the lowest level of importance.
          */
-        "type"?: 'note' | 'warning' | 'critical';
+        "type"?: | 'informative'
+    | 'warning'
+    | 'success'
+    | 'template'
+    | 'new'
+    | 'critical';
     }
     interface SrCard {
         "heading"?: string;
@@ -962,7 +980,7 @@ declare namespace LocalJSX {
         /**
           * Control font weight
          */
-        "fontWeight"?: 'regular' | 'bold' | 'extraBold';
+        "fontWeight"?: 'regular' | 'bold' | 'extrabold';
         "isClickable"?: boolean;
         /**
           * Define the space between characters in a text
