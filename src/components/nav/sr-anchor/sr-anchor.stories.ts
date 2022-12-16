@@ -19,12 +19,21 @@ export default {
         'Whether the href is to a site on a different domain, external to this one.',
       control: { type: 'boolean' },
     },
-    toNewTab: {
+    openInNewTab: {
       description:
         'Open the href in a new tab instead of redirecting this one.',
     },
   },
 };
+
+const InlineTemplate = ({ variant, text, href, external }) => `
+  <sr-paragraph> Lorem ipsum dolor sit <sr-anchor variant="${
+    variant ? variant : 'normal'
+  }" ${href ? `href="${href}"` : ''} ${
+  external ? 'external' : ''
+}>${text}</sr-anchor>.
+  </sr-paragraph>
+`;
 
 const Template = ({ variant, text, href, external }) => `
   <sr-anchor variant="${variant ? variant : 'normal'}" ${
@@ -39,7 +48,15 @@ NormalAnchor.args = {
   text: 'Revision of versions',
   href: 'https://re-play.supernova-docs.io/spotify-re-play/latest/introduction.html',
   external: false,
-  toNewTab: true,
+  openInNewTab: true,
+};
+
+export const InlineAnchor = InlineTemplate.bind({});
+InlineAnchor.args = {
+  text: 'amet',
+  href: 'https://re-play.supernova-docs.io/spotify-re-play/latest/introduction.html',
+  external: false,
+  openInNewTab: true,
 };
 
 export const UnderlinedAnchor = Template.bind({});
@@ -48,7 +65,7 @@ UnderlinedAnchor.args = {
   text: 'Revision of versions',
   href: 'https://re-play.supernova-docs.io/spotify-re-play/latest/introduction.html',
   external: false,
-  toNewTab: true,
+  openInNewTab: true,
 };
 
 export const ExternalLink = Template.bind({});
@@ -56,5 +73,5 @@ ExternalLink.args = {
   text: 'Spotify Wikipedia page',
   href: 'https://en.wikipedia.org/wiki/Spotify',
   external: true,
-  toNewTab: true,
+  openInNewTab: true,
 };
