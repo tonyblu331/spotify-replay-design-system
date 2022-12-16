@@ -17,16 +17,23 @@
     />
   </head>
   <body>
-    <sr-flex
-      hAlignment="center"
-      vAlignment="center"
+    <sr-flex gap="spacer-5">
+      <!-- <sr-flex
       direction="vertical"
+      vAlignment="center"
+      hAlignment="center"
       gap="spacer-5"
-    >
-      <img
-        height="100px"
-        src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Green.png"
-      />
+    > -->
+      <sr-stack gap="spacer-4">
+        <img
+          height="100px"
+          src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Green.png"
+        />
+        <img
+          height="100px"
+          src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Black.png"
+        />
+      </sr-stack>
       <sr-card heading="Register form">
         <sr-stack gap="spacer-3">
           <sr-text-input
@@ -43,6 +50,57 @@
           ></sr-text-input>
           <sr-button text="Register"></sr-button>
         </sr-stack>
+      </sr-card>
+      <sr-card heading="Flex column distribution">
+        <sr-flex direction="vertical" gap="spacer-5" vAlignment="center">
+          <sr-card heading="Can you guess the artist?">
+            <sr-list ordered>
+              <li>White Wedding</li>
+              <li>Crazy Year</li>
+              <li>Replay</li>
+              <li>Disco Inferno</li>
+            </sr-list>
+          </sr-card>
+          <sr-card heading="What is your AOTY for 2022?">
+            <sr-combobox>
+              <option selected disabled>Pick an album</option>
+              <option>The Elephant Man's Bones</option>
+              <option>$oul $old $eparately</option>
+              <option>Her Loss</option>
+              <option>Dawn FM</option>
+              <option>2000</option>
+            </sr-combobox>
+          </sr-card>
+          <sr-card heading="Navigation components">
+            <sr-label>Tabs</sr-label>
+            <sr-tab>
+              <sr-tab-item name="Releases"></sr-tab-item>
+              <sr-tab-item name="Albums"></sr-tab-item>
+              <sr-tab-item name="Podcasts"></sr-tab-item>
+              <sr-tab-item name="To Be Annonuced" inActive></sr-tab-item>
+            </sr-tab>
+
+            <sr-label>Breadcrumbs</sr-label>
+            <sr-breadcrumb>
+              <sr-breadcrumb-item
+                name="Releases"
+                href="#"
+                selectedItem=""
+              ></sr-breadcrumb-item>
+              <sr-breadcrumb-item
+                name="2022"
+                href="#"
+                selectedItem=""
+              ></sr-breadcrumb-item>
+              <sr-breadcrumb-item
+                name="Rock"
+                href=""
+                isLastItem
+                selectedItem=""
+              ></sr-breadcrumb-item>
+            </sr-breadcrumb>
+          </sr-card>
+        </sr-flex>
       </sr-card>
     </sr-flex>
   </body>

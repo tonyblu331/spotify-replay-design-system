@@ -55,8 +55,6 @@ export class SRCard {
 
   boxStyles() {
     return css`
-      margin: 0;
-      padding: ${SpacerSpacer4};
       background-color: ${ColorFoundationNeutralWhite50};
       border: ${this.hideBorder ? 0 : 1}px solid
         ${ColorFoundationNeutralGray200};
@@ -96,10 +94,8 @@ export class SRCard {
   }
 
   render() {
-    console.log(this.primaryButtonText);
-    console.log(this.secondaryButtonText);
     return (
-      <sr-box class={this.boxStyles()}>
+      <sr-box class={this.boxStyles()} padding="spacer-4">
         <sr-stack>
           <sr-heading level={3}>{this.heading}</sr-heading>
           <slot></slot>
