@@ -26,11 +26,13 @@ Its convenience for arranging direction and alignment of children inside the fle
 ### Used by
 
  - [sr-callout](../../text/sr-callout)
+ - [sr-card](../../displays/sr-card)
 
 ### Graph
 ```mermaid
 graph TD;
   sr-callout --> sr-flex
+  sr-card --> sr-flex
   style sr-flex fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

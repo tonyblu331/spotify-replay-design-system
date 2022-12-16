@@ -276,6 +276,8 @@ export namespace Components {
     interface SrCard {
         "heading": string;
         "hideBorder": boolean;
+        "primaryButtonText"?: string;
+        "secondaryButtonText"?: string;
     }
     interface SrCombobox {
         /**
@@ -523,6 +525,10 @@ export interface SrBreadcrumbCustomEvent<T> extends CustomEvent<T> {
 export interface SrButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLSrButtonElement;
+}
+export interface SrCardCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLSrCardElement;
 }
 export interface SrComboboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -972,6 +978,10 @@ declare namespace LocalJSX {
     interface SrCard {
         "heading"?: string;
         "hideBorder"?: boolean;
+        "onPrimaryButtonClicked"?: (event: SrCardCustomEvent<any>) => void;
+        "onSecondaryButtonClicked"?: (event: SrCardCustomEvent<any>) => void;
+        "primaryButtonText"?: string;
+        "secondaryButtonText"?: string;
     }
     interface SrCombobox {
         /**

@@ -1,7 +1,7 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, Event, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
 import {
-  SpacerSpacer2,
+  SpacerSpacer4,
   ColorFoundationNeutralWhite50,
   ColorFoundationNeutralGray200,
 } from '../../../design-tokens/js/variables.js';
@@ -33,23 +33,78 @@ export class SRCard {
   @Prop({ reflect: true, attribute: 'hideBorder' })
   hideBorder: boolean = false;
 
+  @Prop()
+  primaryButtonText?: string;
+
+  @Event()
+  primaryButtonClicked;
+
+  @Prop()
+  secondaryButtonText?: string;
+
+  @Event()
+  secondaryButtonClicked;
+
+  handlePrimaryButtonClicked(e) {
+    this.primaryButtonClicked.emit(e);
+  }
+
+  handleSecondaryButtonClicked(e) {
+    this.secondaryButtonClicked.emit(e);
+  }
+
   boxStyles() {
     return css`
-      padding: ${SpacerSpacer2};
       margin: 0;
+      padding: ${SpacerSpacer4};
       background-color: ${ColorFoundationNeutralWhite50};
-      border: ${this.hideBorder ? 0 : 2}px solid
+      border: ${this.hideBorder ? 0 : 1}px solid
         ${ColorFoundationNeutralGray200};
-      border-radius: 5px;
+      border-radius: 8px;
+      box-shadow: 0 6px 12px -2.3px rgba(49, 49, 49, 0.22),
+        0.5px 3px 6px -3px rgba(60, 60, 60, 0.15);
     `;
-    //TODOJCS shadow? apply paired with border
+  }
+
+  renderButtons() {
+    if (this.primaryButtonText && this.secondaryButtonText) {
+      return (
+        <sr-flex hAlignment="between">
+          <sr-button
+            text={this.primaryButtonText}
+            variant="roundedBtn"
+            onClicked={this.handlePrimaryButtonClicked}
+          ></sr-button>
+          <sr-button
+            text={this.secondaryButtonText}
+            variant="outlinedRoundBtn"
+            onClicked={this.handleSecondaryButtonClicked}
+          />
+        </sr-flex>
+      );
+    } else if (this.primaryButtonText) {
+      return (
+        <sr-flex hAlignment="right">
+          <sr-button
+            text={this.primaryButtonText}
+            variant="roundedBtn"
+            onClicked={this.handlePrimaryButtonClicked}
+          />
+        </sr-flex>
+      );
+    }
   }
 
   render() {
     return (
       <sr-box class={this.boxStyles()}>
-        <sr-heading level={3}>{this.heading}</sr-heading>
-        <slot></slot>
+        <sr-stack>
+          <sr-heading level={3}>{this.heading}</sr-heading>
+          <slot></slot>
+          {/* TODO FIX WHY DONT BUTTONS SHOW?? */}
+          {(this.primaryButtonText || this.secondaryButtonText) &&
+            this.renderButtons()}
+        </sr-stack>
       </sr-box>
     );
   }
