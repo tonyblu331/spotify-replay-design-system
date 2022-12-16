@@ -33,13 +33,13 @@ export class SRCard {
   @Prop({ reflect: true, attribute: 'hideBorder' })
   hideBorder: boolean = false;
 
-  @Prop()
+  @Prop({ reflect: true, attribute: 'primaryButtonText' })
   primaryButtonText?: string;
 
   @Event()
   primaryButtonClicked;
 
-  @Prop()
+  @Prop({ reflect: true, attribute: 'secondaryButtonText' })
   secondaryButtonText?: string;
 
   @Event()
@@ -96,6 +96,8 @@ export class SRCard {
   }
 
   render() {
+    console.log(this.primaryButtonText);
+    console.log(this.secondaryButtonText);
     return (
       <sr-box class={this.boxStyles()}>
         <sr-stack>

@@ -12,12 +12,12 @@ into a container. Add a heading title with the `title` property, and introduce o
 
 ## Properties
 
-| Property              | Attribute               | Description | Type      | Default     |
-| --------------------- | ----------------------- | ----------- | --------- | ----------- |
-| `heading`             | `heading`               |             | `string`  | `''`        |
-| `hideBorder`          | `hideborder`            |             | `boolean` | `false`     |
-| `primaryButtonText`   | `primary-button-text`   |             | `string`  | `undefined` |
-| `secondaryButtonText` | `secondary-button-text` |             | `string`  | `undefined` |
+| Property              | Attribute             | Description | Type      | Default     |
+| --------------------- | --------------------- | ----------- | --------- | ----------- |
+| `heading`             | `heading`             |             | `string`  | `''`        |
+| `hideBorder`          | `hideborder`          |             | `boolean` | `false`     |
+| `primaryButtonText`   | `primarybuttontext`   |             | `string`  | `undefined` |
+| `secondaryButtonText` | `secondarybuttontext` |             | `string`  | `undefined` |
 
 
 ## Events
