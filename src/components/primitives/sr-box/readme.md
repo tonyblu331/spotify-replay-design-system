@@ -24,6 +24,7 @@ It is a simple wrapper component that can create other components such as card.
 | `_hoverBorderWidth`     | `_hoverborderwidth`     | Control hover border width                                            | `"medium" \| "thick" \| "thin"`                                                                                              | `undefined`                       |
 | `as`                    | `as`                    | Specify wrapper HTML element                                          | `"article" \| "div" \| "section" \| "span"`                                                                                  | `'div'`                           |
 | `backgroundColor`       | `backgroundcolor`       | Specify background fill inside box component                          | `any`                                                                                                                        | `ColorFoundationNeutralPureWhite` |
+| `backgroundImage`       | `backgroundimage`       | set backgroundImage                                                   | `string`                                                                                                                     | `undefined`                       |
 | `borderColor`           | `bordercolor`           | Specify border color                                                  | `any`                                                                                                                        | `ColorFoundationNeutralPureBlack` |
 | `borderRadius`          | `borderradius`          | Specify border radius                                                 | `any`                                                                                                                        | `'medium'`                        |
 | `borderWidth`           | `borderwidth`           | Specify border width                                                  | `"medium" \| "thick" \| "thin"`                                                                                              | `'thick'`                         |
@@ -31,6 +32,7 @@ It is a simple wrapper component that can create other components such as card.
 | `color`                 | `color`                 | Specify text color inside box component                               | `any`                                                                                                                        | `ColorFoundationNeutralBlack400`  |
 | `height`                | `height`                | Specify height of box component                                       | `"large" \| "medium" \| "small"`                                                                                             | `undefined`                       |
 | `isBorder`              | `isborder`              | Enable or disable border around box component                         | `boolean`                                                                                                                    | `false`                           |
+| `isCircle`              | `iscircle`              | Display as Circle                                                     | `boolean`                                                                                                                    | `false`                           |
 | `isClickable`           | `isclickable`           | Control clickable state                                               | `boolean`                                                                                                                    | `false`                           |
 | `isDisabled`            | `isdisabled`            | Control disable state                                                 | `boolean`                                                                                                                    | `false`                           |
 | `margin`                | `margin`                | Control amount of white space around the box component itself.        | `"spacer-0" \| "spacer-1" \| "spacer-2" \| "spacer-3" \| "spacer-4" \| "spacer-5" \| "spacer-6" \| "spacer-7" \| "spacer-8"` | `'spacer-1'`                      |
@@ -55,16 +57,22 @@ It is a simple wrapper component that can create other components such as card.
 ### Used by
 
  - [sr-anchor](../../nav/sr-anchor)
+ - [sr-avatar](../../displays/sr-avatar)
+ - [sr-badge](../../displays/sr-badge)
  - [sr-breadcrumb-item](../../nav/sr-breadcrumb-item)
  - [sr-button](../../form/sr-button)
+ - [sr-callout](../../text/sr-callout)
  - [sr-card](../../displays/sr-card)
 
 ### Graph
 ```mermaid
 graph TD;
   sr-anchor --> sr-box
+  sr-avatar --> sr-box
+  sr-badge --> sr-box
   sr-breadcrumb-item --> sr-box
   sr-button --> sr-box
+  sr-callout --> sr-box
   sr-card --> sr-box
   style sr-box fill:#f9f,stroke:#333,stroke-width:4px
 ```

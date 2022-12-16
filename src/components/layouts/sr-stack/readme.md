@@ -23,8 +23,12 @@ along the vertical or horizontal axis.
 ### Used by
 
  - [sr-anchor](../../nav/sr-anchor)
+ - [sr-avatar](../../displays/sr-avatar)
+ - [sr-badge](../../displays/sr-badge)
  - [sr-breadcrumb](../../nav/sr-breadcrumb)
  - [sr-breadcrumb-item](../../nav/sr-breadcrumb-item)
+ - [sr-callout](../../text/sr-callout)
+ - [sr-card](../../displays/sr-card)
  - [sr-combobox](../../form/sr-combobox)
  - [sr-list](../../text/sr-list)
  - [sr-tab](../../nav/sr-tab)
@@ -35,8 +39,12 @@ along the vertical or horizontal axis.
 ```mermaid
 graph TD;
   sr-anchor --> sr-stack
+  sr-avatar --> sr-stack
+  sr-badge --> sr-stack
   sr-breadcrumb --> sr-stack
   sr-breadcrumb-item --> sr-stack
+  sr-callout --> sr-stack
+  sr-card --> sr-stack
   sr-combobox --> sr-stack
   sr-list --> sr-stack
   sr-tab --> sr-stack

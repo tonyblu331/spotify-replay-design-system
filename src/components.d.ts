@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { AVATAR_LARGE, AVATAR_MEDIUM, AVATAR_SMALL } from "~/type";
 import { SPACE_TEXT, SPACER } from "~/type.js";
 export namespace Components {
     interface SrAnchor {
@@ -32,6 +33,51 @@ export namespace Components {
           * Anchor variant
          */
         "variant": 'normal' | 'underline';
+    }
+    interface SrAvatar {
+        /**
+          * Get Image
+         */
+        "image": any;
+        /**
+          * Get Username
+         */
+        "name": any;
+        /**
+          * Indicate size of avatar
+         */
+        "size": 'small' | 'medium' | 'large';
+        /**
+          * Get Username
+         */
+        "username": any;
+        /**
+          * Indicate variant status of avatar
+         */
+        "variant": AVATAR_SMALL | AVATAR_MEDIUM | AVATAR_LARGE;
+    }
+    interface SrBadge {
+        /**
+          * Indicate wording to show inside badge
+         */
+        "text": string;
+        /**
+          * Indicate type of Badge whether rounded or squared
+         */
+        "type": 'rounded' | 'squared';
+        /**
+          * Indicate the color of badge
+         */
+        "variant": | 'default'
+    | 'red'
+    | 'yellow'
+    | 'orange'
+    | 'aqua'
+    | 'pink'
+    | 'purple'
+    | 'lime'
+    | 'blue'
+    | 'withIcon';
     }
     interface SrBox {
         /**
@@ -75,6 +121,10 @@ export namespace Components {
          */
         "backgroundColor": any;
         /**
+          * set backgroundImage
+         */
+        "backgroundImage": string;
+        /**
           * Specify border color
          */
         "borderColor": any;
@@ -102,6 +152,10 @@ export namespace Components {
           * Enable or disable border around box component
          */
         "isBorder": boolean;
+        /**
+          * Display as Circle
+         */
+        "isCircle": boolean;
         /**
           * Control clickable state
          */
@@ -202,17 +256,28 @@ export namespace Components {
     }
     interface SrCallout {
         /**
+          * The detail to display in the topmost part of the callout
+         */
+        "content"?: string;
+        /**
           * The title to display in the topmost part of the callout
          */
         "headerText"?: string;
         /**
-          * Indicates the importance of the callout. The default is 'note', for the lowest level of importance.
+          * Indicates the importance of the callout. The default is 'informative', for the lowest level of importance.
          */
-        "type": 'note' | 'warning' | 'critical';
+        "type": | 'informative'
+    | 'warning'
+    | 'success'
+    | 'template'
+    | 'new'
+    | 'critical';
     }
     interface SrCard {
         "heading": string;
         "hideBorder": boolean;
+        "primaryButtonText"?: string;
+        "secondaryButtonText"?: string;
     }
     interface SrCombobox {
         /**
@@ -337,7 +402,7 @@ export namespace Components {
         /**
           * Control font weight
          */
-        "fontWeight": 'regular' | 'bold' | 'extraBold';
+        "fontWeight": 'regular' | 'bold' | 'extrabold';
         "isClickable": boolean;
         /**
           * Define the space between characters in a text
@@ -442,7 +507,7 @@ export namespace Components {
         /**
           * Specify type of text field
          */
-        "type": 'number' | 'text' | 'email';
+        "type": 'number' | 'text' | 'email' | 'password';
         /**
           * Specify current value in text field
          */
@@ -460,6 +525,10 @@ export interface SrBreadcrumbCustomEvent<T> extends CustomEvent<T> {
 export interface SrButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLSrButtonElement;
+}
+export interface SrCardCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLSrCardElement;
 }
 export interface SrComboboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -483,6 +552,18 @@ declare global {
     var HTMLSrAnchorElement: {
         prototype: HTMLSrAnchorElement;
         new (): HTMLSrAnchorElement;
+    };
+    interface HTMLSrAvatarElement extends Components.SrAvatar, HTMLStencilElement {
+    }
+    var HTMLSrAvatarElement: {
+        prototype: HTMLSrAvatarElement;
+        new (): HTMLSrAvatarElement;
+    };
+    interface HTMLSrBadgeElement extends Components.SrBadge, HTMLStencilElement {
+    }
+    var HTMLSrBadgeElement: {
+        prototype: HTMLSrBadgeElement;
+        new (): HTMLSrBadgeElement;
     };
     interface HTMLSrBoxElement extends Components.SrBox, HTMLStencilElement {
     }
@@ -600,6 +681,8 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "sr-anchor": HTMLSrAnchorElement;
+        "sr-avatar": HTMLSrAvatarElement;
+        "sr-badge": HTMLSrBadgeElement;
         "sr-box": HTMLSrBoxElement;
         "sr-breadcrumb": HTMLSrBreadcrumbElement;
         "sr-breadcrumb-item": HTMLSrBreadcrumbItemElement;
@@ -648,6 +731,51 @@ declare namespace LocalJSX {
          */
         "variant"?: 'normal' | 'underline';
     }
+    interface SrAvatar {
+        /**
+          * Get Image
+         */
+        "image"?: any;
+        /**
+          * Get Username
+         */
+        "name"?: any;
+        /**
+          * Indicate size of avatar
+         */
+        "size"?: 'small' | 'medium' | 'large';
+        /**
+          * Get Username
+         */
+        "username"?: any;
+        /**
+          * Indicate variant status of avatar
+         */
+        "variant"?: AVATAR_SMALL | AVATAR_MEDIUM | AVATAR_LARGE;
+    }
+    interface SrBadge {
+        /**
+          * Indicate wording to show inside badge
+         */
+        "text"?: string;
+        /**
+          * Indicate type of Badge whether rounded or squared
+         */
+        "type"?: 'rounded' | 'squared';
+        /**
+          * Indicate the color of badge
+         */
+        "variant"?: | 'default'
+    | 'red'
+    | 'yellow'
+    | 'orange'
+    | 'aqua'
+    | 'pink'
+    | 'purple'
+    | 'lime'
+    | 'blue'
+    | 'withIcon';
+    }
     interface SrBox {
         /**
           * Control active background color
@@ -690,6 +818,10 @@ declare namespace LocalJSX {
          */
         "backgroundColor"?: any;
         /**
+          * set backgroundImage
+         */
+        "backgroundImage"?: string;
+        /**
           * Specify border color
          */
         "borderColor"?: any;
@@ -717,6 +849,10 @@ declare namespace LocalJSX {
           * Enable or disable border around box component
          */
         "isBorder"?: boolean;
+        /**
+          * Display as Circle
+         */
+        "isCircle"?: boolean;
         /**
           * Control clickable state
          */
@@ -822,17 +958,30 @@ declare namespace LocalJSX {
     }
     interface SrCallout {
         /**
+          * The detail to display in the topmost part of the callout
+         */
+        "content"?: string;
+        /**
           * The title to display in the topmost part of the callout
          */
         "headerText"?: string;
         /**
-          * Indicates the importance of the callout. The default is 'note', for the lowest level of importance.
+          * Indicates the importance of the callout. The default is 'informative', for the lowest level of importance.
          */
-        "type"?: 'note' | 'warning' | 'critical';
+        "type"?: | 'informative'
+    | 'warning'
+    | 'success'
+    | 'template'
+    | 'new'
+    | 'critical';
     }
     interface SrCard {
         "heading"?: string;
         "hideBorder"?: boolean;
+        "onPrimaryButtonClicked"?: (event: SrCardCustomEvent<any>) => void;
+        "onSecondaryButtonClicked"?: (event: SrCardCustomEvent<any>) => void;
+        "primaryButtonText"?: string;
+        "secondaryButtonText"?: string;
     }
     interface SrCombobox {
         /**
@@ -962,7 +1111,7 @@ declare namespace LocalJSX {
         /**
           * Control font weight
          */
-        "fontWeight"?: 'regular' | 'bold' | 'extraBold';
+        "fontWeight"?: 'regular' | 'bold' | 'extrabold';
         "isClickable"?: boolean;
         /**
           * Define the space between characters in a text
@@ -1075,7 +1224,7 @@ declare namespace LocalJSX {
         /**
           * Specify type of text field
          */
-        "type"?: 'number' | 'text' | 'email';
+        "type"?: 'number' | 'text' | 'email' | 'password';
         /**
           * Specify current value in text field
          */
@@ -1087,6 +1236,8 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "sr-anchor": SrAnchor;
+        "sr-avatar": SrAvatar;
+        "sr-badge": SrBadge;
         "sr-box": SrBox;
         "sr-breadcrumb": SrBreadcrumb;
         "sr-breadcrumb-item": SrBreadcrumbItem;
@@ -1113,6 +1264,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "sr-anchor": LocalJSX.SrAnchor & JSXBase.HTMLAttributes<HTMLSrAnchorElement>;
+            "sr-avatar": LocalJSX.SrAvatar & JSXBase.HTMLAttributes<HTMLSrAvatarElement>;
+            "sr-badge": LocalJSX.SrBadge & JSXBase.HTMLAttributes<HTMLSrBadgeElement>;
             "sr-box": LocalJSX.SrBox & JSXBase.HTMLAttributes<HTMLSrBoxElement>;
             "sr-breadcrumb": LocalJSX.SrBreadcrumb & JSXBase.HTMLAttributes<HTMLSrBreadcrumbElement>;
             "sr-breadcrumb-item": LocalJSX.SrBreadcrumbItem & JSXBase.HTMLAttributes<HTMLSrBreadcrumbItemElement>;

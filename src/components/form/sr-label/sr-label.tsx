@@ -42,7 +42,7 @@ export class SrLabel {
         marginBottom="spacer-text"
         color={this.getColor()}
         fontSize={this.getTextFontSize()}
-        fontWeight="extraBold"
+        fontWeight="extrabold"
         letterSpacing={0.5}
         lineHeight={1.625}
       >

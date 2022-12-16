@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+.container {
+  position: relative;
+  width: fit-content;
+}
+
+.absolute-small,
+.absolute-medium {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}

@@ -49,16 +49,22 @@ export class SRHeading {
   getFontSize() {
     switch (this.level) {
       case 1:
+      case '1':
         return TypographyDisplayxl900.fontSize.value.measure.value;
       case 2:
+      case '2':
         return TypographyDisplaylg700.fontSize.value.measure.value;
       case 3:
+      case '3':
         return TypographySubheading1700.fontSize.value.measure.value;
       case 4:
+      case '4':
         return TypographySubheading2400.fontSize.value.measure.value;
       case 5:
+      case '5':
         return TypographySubheading3400.fontSize.value.measure.value;
       case 6:
+      case '6':
         return TypographySubheading4400.fontSize.value.measure.value;
     }
   }
@@ -66,16 +72,22 @@ export class SRHeading {
   getLineHeight() {
     switch (this.level) {
       case 1:
+      case '1':
         return TypographyDisplayxl900.lineHeight.value.measure.value;
       case 2:
+      case '2':
         return TypographyDisplaylg700.lineHeight.value.measure.value;
       case 3:
+      case '3':
         return TypographySubheading1700.lineHeight.value.measure.value;
       case 4:
+      case '4':
         return TypographySubheading2400.lineHeight.value.measure.value;
       case 5:
+      case '5':
         return TypographySubheading3400.lineHeight.value.measure.value;
       case 6:
+      case '6':
         return TypographySubheading4400.lineHeight.value.measure.value;
     }
   }
@@ -84,14 +96,20 @@ export class SRHeading {
   getLetterSpacing() {
     switch (this.level) {
       case 1:
+      case '1':
       case 2:
+      case '2':
         return 0.5;
       case 3:
+      case '3':
         return 0.25;
       case 4:
+      case '4':
         return 0;
       case 5:
+      case '5':
       case 6:
+      case '6':
         return 0.15;
     }
   }
@@ -107,16 +125,22 @@ export class SRHeading {
   getFontWeight() {
     switch (this.level) {
       case 1:
+      case '1':
         return `${TypographyDisplayxl900.font.value.subfamily.value}`.toLocaleLowerCase();
       case 2:
+      case '2':
         return `${TypographyDisplaylg700.font.value.subfamily.value}`.toLocaleLowerCase();
       case 3:
+      case '3':
         return `${TypographySubheading1700.font.value.subfamily.value}`.toLocaleLowerCase();
       case 4:
+      case '4':
         return `${TypographySubheading2400.font.value.subfamily.value}`.toLocaleLowerCase();
       case 5:
+      case '5':
         return `${TypographySubheading3400.font.value.subfamily.value}`.toLocaleLowerCase();
       case 6:
+      case '6':
         return `${TypographySubheading4400.font.value.subfamily.value}`.toLocaleLowerCase();
     }
   }

@@ -2,6 +2,7 @@ import { Component, h, Prop } from '@stencil/core';
 import { ColorFoundationNeutralBlack400 } from '../../../design-tokens/js/variables.js';
 /**
  * Anchor component to redirect to another URL.
+ * @property `variant` (default normal)
  * @property `href`
  * @property `external`
  * @property `openInNewTab`

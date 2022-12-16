@@ -4,6 +4,7 @@ import { ButtonType } from './index.js';
 
 /**
  * Button component with variable size and variants
+ * @property `text`(default '')
  * @property `variant` (default neutral)
  * @property `size` (default medium)
  * @emits `clicked` on button click
@@ -16,7 +17,7 @@ import { ButtonType } from './index.js';
 })
 export class SRButton {
   @Prop({ reflect: true })
-  text: string = 'I’m a Re:Play Button';
+  text: string = '';
   /**
    * Type of button.
    */

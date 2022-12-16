@@ -21,3 +21,14 @@ export type SPACE_TEXT =
   | 'spacer-caption'
   | 'spacer-endnote'
   | 'spacer-0';
+
+export type AVATAR_SMALL =
+  | 'labeled'
+  | 'offline'
+  | 'listening'
+  | 'online'
+  | 'template';
+
+export type AVATAR_MEDIUM = 'offline' | 'listening' | 'online' | 'template';
+
+export type AVATAR_LARGE = 'default' | 'verified';
