@@ -1,7 +1,6 @@
 import { Component, Event, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
 import {
-  SpacerSpacer4,
   ColorFoundationNeutralWhite50,
   ColorFoundationNeutralGray200,
 } from '../../../design-tokens/js/variables.js';
