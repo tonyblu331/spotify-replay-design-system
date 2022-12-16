@@ -33,6 +33,29 @@ export namespace Components {
          */
         "variant": 'normal' | 'underline';
     }
+    interface SrBadge {
+        /**
+          * Indicate wording to show inside badge
+         */
+        "text": string;
+        /**
+          * Indicate type of Badge whether rounded or squared
+         */
+        "type": 'rounded' | 'squared';
+        /**
+          * Indicate the color of badge
+         */
+        "variant": | 'default'
+    | 'red'
+    | 'yellow'
+    | 'orange'
+    | 'aqua'
+    | 'pink'
+    | 'purple'
+    | 'lime'
+    | 'blue'
+    | 'withIcon';
+    }
     interface SrBox {
         /**
           * Control active background color
@@ -493,6 +516,12 @@ declare global {
         prototype: HTMLSrAnchorElement;
         new (): HTMLSrAnchorElement;
     };
+    interface HTMLSrBadgeElement extends Components.SrBadge, HTMLStencilElement {
+    }
+    var HTMLSrBadgeElement: {
+        prototype: HTMLSrBadgeElement;
+        new (): HTMLSrBadgeElement;
+    };
     interface HTMLSrBoxElement extends Components.SrBox, HTMLStencilElement {
     }
     var HTMLSrBoxElement: {
@@ -609,6 +638,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "sr-anchor": HTMLSrAnchorElement;
+        "sr-badge": HTMLSrBadgeElement;
         "sr-box": HTMLSrBoxElement;
         "sr-breadcrumb": HTMLSrBreadcrumbElement;
         "sr-breadcrumb-item": HTMLSrBreadcrumbItemElement;
@@ -656,6 +686,29 @@ declare namespace LocalJSX {
           * Anchor variant
          */
         "variant"?: 'normal' | 'underline';
+    }
+    interface SrBadge {
+        /**
+          * Indicate wording to show inside badge
+         */
+        "text"?: string;
+        /**
+          * Indicate type of Badge whether rounded or squared
+         */
+        "type"?: 'rounded' | 'squared';
+        /**
+          * Indicate the color of badge
+         */
+        "variant"?: | 'default'
+    | 'red'
+    | 'yellow'
+    | 'orange'
+    | 'aqua'
+    | 'pink'
+    | 'purple'
+    | 'lime'
+    | 'blue'
+    | 'withIcon';
     }
     interface SrBox {
         /**
@@ -1105,6 +1158,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "sr-anchor": SrAnchor;
+        "sr-badge": SrBadge;
         "sr-box": SrBox;
         "sr-breadcrumb": SrBreadcrumb;
         "sr-breadcrumb-item": SrBreadcrumbItem;
@@ -1131,6 +1185,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "sr-anchor": LocalJSX.SrAnchor & JSXBase.HTMLAttributes<HTMLSrAnchorElement>;
+            "sr-badge": LocalJSX.SrBadge & JSXBase.HTMLAttributes<HTMLSrBadgeElement>;
             "sr-box": LocalJSX.SrBox & JSXBase.HTMLAttributes<HTMLSrBoxElement>;
             "sr-breadcrumb": LocalJSX.SrBreadcrumb & JSXBase.HTMLAttributes<HTMLSrBreadcrumbElement>;
             "sr-breadcrumb-item": LocalJSX.SrBreadcrumbItem & JSXBase.HTMLAttributes<HTMLSrBreadcrumbItemElement>;

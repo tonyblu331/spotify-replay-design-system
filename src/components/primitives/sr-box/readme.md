@@ -55,6 +55,7 @@ It is a simple wrapper component that can create other components such as card.
 ### Used by
 
  - [sr-anchor](../../nav/sr-anchor)
+ - [sr-badge](../../displays/sr-badge)
  - [sr-breadcrumb-item](../../nav/sr-breadcrumb-item)
  - [sr-button](../../form/sr-button)
  - [sr-callout](../../text/sr-callout)
@@ -64,6 +65,7 @@ It is a simple wrapper component that can create other components such as card.
 ```mermaid
 graph TD;
   sr-anchor --> sr-box
+  sr-badge --> sr-box
   sr-breadcrumb-item --> sr-box
   sr-button --> sr-box
   sr-callout --> sr-box

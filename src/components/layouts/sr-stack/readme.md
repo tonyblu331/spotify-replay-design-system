@@ -23,6 +23,7 @@ along the vertical or horizontal axis.
 ### Used by
 
  - [sr-anchor](../../nav/sr-anchor)
+ - [sr-badge](../../displays/sr-badge)
  - [sr-breadcrumb](../../nav/sr-breadcrumb)
  - [sr-breadcrumb-item](../../nav/sr-breadcrumb-item)
  - [sr-callout](../../text/sr-callout)
@@ -36,6 +37,7 @@ along the vertical or horizontal axis.
 ```mermaid
 graph TD;
   sr-anchor --> sr-stack
+  sr-badge --> sr-stack
   sr-breadcrumb --> sr-stack
   sr-breadcrumb-item --> sr-stack
   sr-callout --> sr-stack
