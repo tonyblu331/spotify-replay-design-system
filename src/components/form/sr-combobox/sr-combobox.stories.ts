@@ -28,13 +28,13 @@ DisabledOptionAsPlaceholder.args = {
   options: `<option selected disabled>Choose a genre</option> <option>Ska</option> <option>Pop</option> <option>Rock</option>`,
 };
 
+export const Labelled = Template.bind({});
+Labelled.args = {
+  label: 'My favorite artist',
+  options: `<option>Greenday</option> <option selected>Dimzy</option> <option>Coldplay</option>`,
+};
+
 export const Labelless = Template.bind({});
 Labelless.args = {
   options: `<option selected>Potáto</option> <option>Potäto</option>`,
-};
-
-export const Labelled = Template.bind({});
-Labelled.args = {
-  options: `<option>Avatar</option> <option selected>Ghost in the Shell</option> <option>Memento</option>`,
-  label: 'My favorite movie',
 };
